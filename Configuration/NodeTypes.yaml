@@ -6,8 +6,8 @@
   ui:
     inspector:
       groups:
-        helpers:
-          label: 'Utility classes'
+        utilityClasses:
+          label: 'Foundation utility classes'
           position: 99
   properties:
     float:
@@ -17,7 +17,7 @@
         label: 'Float'
         reloadIfChanged: TRUE
         inspector:
-          group: 'helpers'
+          group: 'utilityClasses'
           position: 30
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
@@ -29,7 +29,6 @@
                 label: 'left'
               right:
                 label: 'right'
-
     visibilityResponsive:
       type: string
       defaultValue: ''
@@ -37,7 +36,7 @@
         label: 'Responsive visibility'
         reloadIfChanged: TRUE
         inspector:
-          group: 'helpers'
+          group: 'utilityClasses'
           position: 40
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
@@ -67,7 +66,7 @@
         label: 'Clearfix'
         reloadIfChanged: TRUE
         inspector:
-          group: 'helpers'
+          group: 'utilityClasses'
           position: 99
 
 #
