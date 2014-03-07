@@ -1,0 +1,21 @@
+prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
+	# remove default Neos class processing
+	attributes.class.@process.nodeType >
+
+	attributes.class = TYPO3.TypoScript:RawArray {
+		# render class with node type (Neos default) - do we need that?
+		#nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
+
+		@process {
+			float = ${Array.push(value, q(node).property('float'))}
+			visibilityResponsive = ${Array.push(value, q(node).property('visibilityResponsive'))}
+			clearfix = ${Array.push(value, (q(node).property('clearfix') ? 'clearfix' : null))}
+		}
+
+		# At the end remove extra spaces after many class items were joined
+		@process.trimThatWitch {
+		 	expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
+		 	@position = 'end'
+		}
+	}
+}

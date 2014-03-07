@@ -1,0 +1,176 @@
+#
+# Abstract: foundation helper classes
+#
+'M12.Foundation:GenericHelpers':
+  abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        helpers:
+          label: 'Utility classes'
+          position: 99
+  properties:
+    float:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Float'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'helpers'
+          position: 30
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              left:
+                label: 'left'
+              right:
+                label: 'right'
+
+    visibilityResponsive:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Responsive visibility'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'helpers'
+          position: 40
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              hidden-xs:
+                label: 'Hidden on phone'
+              hidden-sm:
+                label: 'Hidden on tablet'
+              hidden-md:
+                label: 'Hidden on screen'
+              hidden-lg:
+                label: 'Hidden on large screen'
+              visible-xs:
+                label: 'Visible on phone'
+              visible-sm:
+                label: 'Visible on tablets'
+              visible-md:
+                label: 'Visible on screen'
+              visible-lg:
+                label: 'Visible on large screen'
+    clearfix:
+      type: boolean
+      ui:
+        label: 'Clearfix'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'helpers'
+          position: 99
+
+#
+# Add above extra properties to TYPO3.Neos:Content
+#
+'TYPO3.Neos:Content':
+  superTypes:
+    genericHelpers:     'M12.Foundation:GenericHelpers'
+
+
+#
+# Button
+#
+'M12.Foundation:Button':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Button'
+    icon: 'icon-minus'
+    group: 'foundation'
+    inspector:
+      groups:
+        options:
+          label: 'Button options'
+          position: 5
+  properties:
+    label:
+      type: string
+      defaultValue: 'Button'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format':
+            'p': FALSE
+          'link':
+            'a': TRUE
+    classType:
+      type: string
+      defaultValue: 'default'
+      ui:
+        label: 'Button type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              default:
+                label: 'Default'
+              primary:
+                label: 'Primary'
+              success:
+                label: 'Success'
+              info:
+                label: 'Info'
+              warning:
+                label: 'Warning'
+              danger:
+                label: 'Danger'
+              link:
+                label: 'Link'
+    classSize:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Button size'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              large:
+                label: 'Large'
+              small:
+                label: 'Small'
+              tiny:
+                label: 'Tiny'
+    classState:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'State'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              active:
+                label: 'Active'
+              disabled:
+                label: 'Disabled'
+    blockType:
+      type: boolean
+      ui:
+        label: 'Block level button'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'

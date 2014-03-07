@@ -1,0 +1,32 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'M12.Foundation': TRUE
+
+    nodeTypes:
+      groups:
+        foundation:
+          position: 10
+          label: 'Foundation'
+        foundationStructure:
+          position: 11
+          label: 'Foundation Structure'
+
+M12:
+  Foundation:
+    gridSize: 12
+
+    devices:
+      xs:
+        label: 'Phones'
+        size: '< 768'
+      sm:
+        label: 'Tablets'
+        size: '≥ 768'
+      md:
+        label: 'Medium'
+        size: '≥ 992'
+      lg:
+        label: 'Large'
+        size: '≥ 1200px'

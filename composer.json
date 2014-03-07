@@ -1,0 +1,28 @@
+{
+    "name": "m12/foundation",
+    "type": "typo3-flow-plugin",
+    "description": "Foundation content elements",
+    "license": ["GPL2"],
+    "authors": [
+        {
+            "name": "Marcin Ryzycki",
+            "email": "marcin@ryzycki.com",
+            "homepage": "http://m12.io",
+            "role": "Developer"
+        },
+        {
+            "name": "Samuel Ryzycki",
+            "email": "samuel@ryzycki.com",
+            "homepage": "http://m12.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/neos-nodetypes": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "M12\\Foundation": "Classes"
+        }
+    }
+}

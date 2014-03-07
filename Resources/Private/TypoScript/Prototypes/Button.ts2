@@ -1,0 +1,8 @@
+prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
+	attributes.class.base = 'button'
+	attributes.class.size = ${q(node).property('classSize') ? q(node).property('classSize') : null}
+	attributes.class.type = ${q(node).property('classType')}
+	attributes.class.state = ${q(node).property('classState') ? q(node).property('classState') : null}
+
+	tag = 'button'
+}
