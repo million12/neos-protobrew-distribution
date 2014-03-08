@@ -194,7 +194,7 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'Orientation detection'
+        label: 'Touch detection'
         reloadIfChanged: TRUE
         inspector:
           group: 'visibilityClasses'
@@ -216,6 +216,14 @@
 'TYPO3.Neos:Content':
   superTypes:
     genericHelpers:     'M12.Foundation:GenericHelpers'
+
+
+
+
+
+
+
+
 
 
 #
