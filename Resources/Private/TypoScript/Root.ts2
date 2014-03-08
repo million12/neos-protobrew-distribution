@@ -1,2 +1,3 @@
 include: Prototypes/Content.ts2
+include: Prototypes/Grid.ts2
 include: Prototypes/Button.ts2

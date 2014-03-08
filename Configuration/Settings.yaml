@@ -6,27 +6,28 @@ TYPO3:
 
     nodeTypes:
       groups:
-        foundation:
-          position: 10
-          label: 'Foundation'
         foundationStructure:
+          position: 10
+          label: 'Foundation - Structure'
+        foundation:
           position: 11
-          label: 'Foundation Structure'
+          label: 'Foundation'
 
 M12:
   Foundation:
+    # Needed by ColumnNodeTypePostprocessor to know in which UI group
+    # put all generated properties
+    uiInspectorGroupName: 'grid'
+
     gridSize: 12
 
     devices:
-      xs:
-        label: 'Phones'
+      small:
+        label: 'Small device'
         size: '< 768'
-      sm:
-        label: 'Tablets'
+      medium:
+        label: 'Medium device'
         size: '≥ 768'
-      md:
-        label: 'Medium'
+      large:
+        label: 'Large device'
         size: '≥ 992'
-      lg:
-        label: 'Large'
-        size: '≥ 1200px'
