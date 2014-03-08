@@ -190,6 +190,25 @@
                 label: 'Show for landscape'
               show-for-portrait:
                 label: 'Show for portrait'
+    touchDetection:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Orientation detection'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'visibilityClasses'
+          position: 40
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              show-for-touch:
+                label: 'Show for touch'
+              hide-for-touch:
+                label: 'Hide for touch'
 
 #
 # Add above extra properties to TYPO3.Neos:Content

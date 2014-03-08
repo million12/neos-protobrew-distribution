@@ -15,6 +15,7 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 			showByScreenSize = ${Array.push(value, q(node).property('showByScreenSize'))}
 			hideByScreenSize = ${Array.push(value, q(node).property('hideByScreenSize'))}
 			orientationDetection = ${Array.push(value, q(node).property('orientationDetection'))}
+			touchDetection = ${Array.push(value, q(node).property('touchDetection'))}
 		}
 
 		# At the end remove extra spaces after many class items were joined
