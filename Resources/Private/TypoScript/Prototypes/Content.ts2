@@ -9,6 +9,7 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 		@process {
 			float = ${Array.push(value, q(node).property('float'))}
 			radiusAndRounded = ${Array.push(value, q(node).property('radiusAndRounded'))}
+			textAlign = ${Array.push(value, q(node).property('textAlign'))}
 			visibilityResponsive = ${Array.push(value, q(node).property('visibilityResponsive'))}
 			clearfix = ${Array.push(value, (q(node).property('clearfix') ? 'clearfix' : null))}
 		}

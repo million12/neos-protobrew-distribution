@@ -48,6 +48,29 @@
                 label: 'radius'
               rounded:
                 label: 'rounded'
+    textAlign:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Text align'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'utilityClasses'
+          position: 40
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              text-left:
+                label: 'left'
+              text-right:
+                label: 'right'
+              text-center:
+                label: 'center'
+              text-justify:
+                label: 'justify'
     visibilityResponsive:
       type: string
       defaultValue: ''
