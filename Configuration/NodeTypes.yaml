@@ -171,25 +171,6 @@
                 label: 'Show for landscape'
               show-for-portrait:
                 label: 'Show for portrait'
-    orientationDetection:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Orientation detection'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'visibilityClasses'
-          position: 30
-          editor: Content/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            placeholder: 'None'
-            values:
-              '':
-                label: ''
-              show-for-landscape:
-                label: 'Show for landscape'
-              show-for-portrait:
-                label: 'Show for portrait'
     touchDetection:
       type: string
       defaultValue: ''
