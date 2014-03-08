@@ -11,9 +11,10 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 			radiusAndRounded = ${Array.push(value, q(node).property('radiusAndRounded'))}
 			textAlign = ${Array.push(value, q(node).property('textAlign'))}
 			hide = ${Array.push(value, (q(node).property('hide') ? 'hide' : null))}
+			clearfix = ${Array.push(value, (q(node).property('clearfix') ? 'clearfix' : null))}
 			showByScreenSize = ${Array.push(value, q(node).property('showByScreenSize'))}
 			hideByScreenSize = ${Array.push(value, q(node).property('hideByScreenSize'))}
-			clearfix = ${Array.push(value, (q(node).property('clearfix') ? 'clearfix' : null))}
+			orientationDetection = ${Array.push(value, q(node).property('orientationDetection'))}
 		}
 
 		# At the end remove extra spaces after many class items were joined

@@ -152,6 +152,44 @@
                 label: 'Hide for xlarge only'
               hide-for-xxlarge-up:
                 label: 'Hide for xxlarge and up'
+    orientationDetection:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Orientation detection'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'visibilityClasses'
+          position: 30
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              show-for-landscape:
+                label: 'Show for landscape'
+              show-for-portrait:
+                label: 'Show for portrait'
+    orientationDetection:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Orientation detection'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'visibilityClasses'
+          position: 30
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              show-for-landscape:
+                label: 'Show for landscape'
+              show-for-portrait:
+                label: 'Show for portrait'
 
 #
 # Add above extra properties to TYPO3.Neos:Content
