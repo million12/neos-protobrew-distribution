@@ -78,38 +78,38 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'utilityClasses'
-          position: 98
-    visibilityResponsive:
+          position: 50
+    showByScreenSize:
       type: string
       defaultValue: ''
       ui:
-        label: 'Responsive visibility'
+        label: 'Show by screen size'
         reloadIfChanged: TRUE
         inspector:
           group: 'utilityClasses'
-          position: 40
+          position: 60
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'None'
             values:
               '':
                 label: ''
-              hidden-xs:
-                label: 'Hidden on phone'
-              hidden-sm:
-                label: 'Hidden on tablet'
-              hidden-md:
-                label: 'Hidden on screen'
-              hidden-lg:
-                label: 'Hidden on large screen'
-              visible-xs:
-                label: 'Visible on phone'
-              visible-sm:
-                label: 'Visible on tablets'
-              visible-md:
-                label: 'Visible on screen'
-              visible-lg:
-                label: 'Visible on large screen'
+              show-for-small-only:
+                label: 'Show for small only'
+              show-for-medium-up:
+                label: 'Show for medium and up'
+              show-for-medium-only:
+                label: 'Show for medium only'
+              show-for-large-up:
+                label: 'Show for large and up'
+              show-for-large-only:
+                label: 'Show for large only'
+              show-for-xlarge-up:
+                label: 'Show for xlarge and up'
+              show-for-xlarge-only:
+                label: 'Show for xlarge only'
+              show-for-xxlarge-up:
+                label: 'Show for xxlarge and up'
     clearfix:
       type: boolean
       ui:
@@ -118,6 +118,7 @@
         inspector:
           group: 'utilityClasses'
           position: 99
+
 
 #
 # Add above extra properties to TYPO3.Neos:Content
