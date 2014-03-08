@@ -7,8 +7,11 @@
     inspector:
       groups:
         utilityClasses:
-          label: 'Foundation utility classes'
-          position: 99
+          label: 'Utility classes'
+          position: 50
+        visibilityClasses:
+          label: 'Visibility classes'
+          position: 60
   properties:
     float:
       type: string
@@ -79,6 +82,14 @@
         inspector:
           group: 'utilityClasses'
           position: 50
+    clearfix:
+      type: boolean
+      ui:
+        label: 'Clearfix'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'utilityClasses'
+          position: 60
     showByScreenSize:
       type: string
       defaultValue: ''
@@ -86,8 +97,8 @@
         label: 'Show by screen size'
         reloadIfChanged: TRUE
         inspector:
-          group: 'utilityClasses'
-          position: 60
+          group: 'visibilityClasses'
+          position: 10
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'None'
@@ -110,15 +121,37 @@
                 label: 'Show for xlarge only'
               show-for-xxlarge-up:
                 label: 'Show for xxlarge and up'
-    clearfix:
-      type: boolean
+    hideByScreenSize:
+      type: string
+      defaultValue: ''
       ui:
-        label: 'Clearfix'
+        label: 'Hide by screen size'
         reloadIfChanged: TRUE
         inspector:
-          group: 'utilityClasses'
-          position: 99
-
+          group: 'visibilityClasses'
+          position: 20
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              hide-for-small-only:
+                label: 'Hide for small only'
+              hide-for-medium-up:
+                label: 'Hide for medium and up'
+              hide-for-medium-only:
+                label: 'Hide for medium only'
+              hide-for-large-up:
+                label: 'Hide for large and up'
+              hide-for-large-only:
+                label: 'Hide for large only'
+              hide-for-xlarge-up:
+                label: 'Hide for xlarge and up'
+              hide-for-xlarge-only:
+                label: 'Hide for xlarge only'
+              hide-for-xxlarge-up:
+                label: 'Hide for xxlarge and up'
 
 #
 # Add above extra properties to TYPO3.Neos:Content

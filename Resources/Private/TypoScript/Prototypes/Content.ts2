@@ -12,6 +12,7 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 			textAlign = ${Array.push(value, q(node).property('textAlign'))}
 			hide = ${Array.push(value, (q(node).property('hide') ? 'hide' : null))}
 			showByScreenSize = ${Array.push(value, q(node).property('showByScreenSize'))}
+			hideByScreenSize = ${Array.push(value, q(node).property('hideByScreenSize'))}
 			clearfix = ${Array.push(value, (q(node).property('clearfix') ? 'clearfix' : null))}
 		}
 
