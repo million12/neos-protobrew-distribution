@@ -71,6 +71,14 @@
                 label: 'center'
               text-justify:
                 label: 'justify'
+    hide:
+      type: boolean
+      ui:
+        label: 'Hide'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'utilityClasses'
+          position: 98
     visibilityResponsive:
       type: string
       defaultValue: ''
