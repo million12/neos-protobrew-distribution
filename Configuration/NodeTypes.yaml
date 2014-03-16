@@ -207,8 +207,6 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Grid Column'
-#    icon: 'icon-sign-blank'
-#    icon: 'icon-ellipsis-horizontal'
     icon: 'icon-th-large'
     inspector:
       groups:
@@ -299,32 +297,6 @@
             'p': FALSE
           'link':
             'a': TRUE
-    classType:
-      type: string
-      defaultValue: 'default'
-      ui:
-        label: 'Button type'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            placeholder: 'Default'
-            values:
-              default:
-                label: 'Default'
-              primary:
-                label: 'Primary'
-              success:
-                label: 'Success'
-              info:
-                label: 'Info'
-              warning:
-                label: 'Warning'
-              danger:
-                label: 'Danger'
-              link:
-                label: 'Link'
     classSize:
       type: string
       defaultValue: ''
@@ -339,17 +311,17 @@
             values:
               '':
                 label: ''
-              large:
-                label: 'Large'
-              small:
-                label: 'Small'
               tiny:
                 label: 'Tiny'
-    classState:
+              small:
+                label: 'Small'
+              large:
+                label: 'Large'
+    classType:
       type: string
       defaultValue: ''
       ui:
-        label: 'State'
+        label: 'Button type'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
@@ -359,14 +331,41 @@
             values:
               '':
                 label: ''
-              active:
-                label: 'Active'
-              disabled:
-                label: 'Disabled'
-    blockType:
+              primary:
+                label: 'Primary'
+              success:
+                label: 'Success'
+              alert:
+                label: 'Alert'
+    classShape:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Button shape'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              radius:
+                label: 'Radius'
+              round:
+                label: 'Round'
+    isDisabled:
       type: boolean
       ui:
-        label: 'Block level button'
+        label: 'Disable'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    isExpanded:
+      type: boolean
+      ui:
+        label: 'Expand'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
