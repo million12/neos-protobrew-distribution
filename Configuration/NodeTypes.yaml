@@ -199,6 +199,7 @@
     genericHelpers:     'M12.Foundation:GenericHelpers'
 
 
+
 #
 # Default child node for M12.Foundation:GridColumnsX
 #
@@ -273,14 +274,6 @@
 
 
 
-
-
-
-
-
-
-
-
 #
 # Button
 #
@@ -289,7 +282,7 @@
   ui:
     label: 'Button'
     icon: 'icon-minus'
-    group: 'foundation'
+    group: 'foundationButtons'
     inspector:
       groups:
         options:
