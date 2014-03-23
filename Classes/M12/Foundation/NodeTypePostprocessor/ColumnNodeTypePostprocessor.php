@@ -61,29 +61,35 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 	 */
 	public function process(NodeType $nodeType, array &$configuration, array $options) {
 		$this->includeParentSettings();
-//		\TYPO3\Flow\var_dump($this->settings);
+		\TYPO3\Flow\var_dump($this->settings);
 
 		if (empty($this->settings['devices']) || !is_array($this->settings['devices']))
 			return;
 
 		foreach ($this->settings['devices'] as $device=>$ds) {
-			// property name in format: classMD, classXS
-			$configuration['properties'][$this->_getPropertyName($device)] = array(
-				'type' => 'string',
-				'defaultValue' => '',
-				'ui' => array(
-					'label' => sprintf('%s (%s device) %s', $ds['label'], $device, $ds['size']),
-					'reloadIfChanged' => true,
-					'inspector' => array(
-						'group' => $this->settings['uiInspectorGroupName'],
-						'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
-						'editorOptions' => $this->getEditorOptions($device),
-					),
-				),
-			);
+			// property name in format: column-small-width, column-small-offset etc
+            foreach ($this->settings['deviceColumnSettings'] as $deviceColumnSetting=>$deviceColumnSettingData) {
+                $configuration['properties'][$this->_getPropertyName($device, $deviceColumnSetting)] = array(
+                    'type' => 'string',
+                    'defaultValue' => '',
+                    'ui' => array(
+                        'label' => sprintf('%s %s', $ds['label'], $deviceColumnSettingData['label']),
+                        'reloadIfChanged' => true,
+                        'inspector' => array(
+                            'group' => $this->settings['uiInspectorGroupName'],
+                            'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
+                            'editorOptions' => $this->getEditorOptions($device),
+                        ),
+                    ),
+                );
+            }
+
+
+
+            \TYPO3\Flow\var_dump($configuration);
 		}
 
-//		\TYPO3\Flow\var_dump($configuration);
+
 	}
 
 
@@ -125,7 +131,7 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 	 * Generates options value (ie class name)
 	 *
 	 * @param int $col: column number (1...x)
-	 * @param string $device: device names (md, xs etc)
+	 * @param string $device: device names (small, medium etc)
 	 * @return string
 	 */
 	protected function _getOptionValue($col, $device) {
@@ -136,11 +142,11 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 	/**
 	 * Generates property name for node
 	 *
-	 * @param string $device: device names (md, xs etc)
-	 * @return string	Property name in format 'classMD', 'classXS' etc.
+	 * @param string $device: device names (small, medium etc)
+	 * @return string	Property name in format 'column-small-width', 'column-small-offset' etc.
 	 */
-	protected function _getPropertyName($device) {
-		// e.g. classMD, classXS
-		return 'class'.strtoupper($device);
+	protected function _getPropertyName($device, $deviceColumnSetting) {
+        // e.g. column-small-width
+		return 'column-' . strtolower($device) . '-' . strtolower($deviceColumnSetting);
 	}
 }

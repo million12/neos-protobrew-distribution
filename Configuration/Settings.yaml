@@ -24,10 +24,23 @@ M12:
     devices:
       small:
         label: 'Small device'
-        size: '< 768'
       medium:
         label: 'Medium device'
-        size: '≥ 768'
       large:
         label: 'Large device'
-        size: '≥ 992'
+
+    deviceColumnSettings:
+      width:
+        label: 'Column width'
+      offset:
+        label: 'Column offset'
+      push:
+        label: 'Column push'
+      pull:
+        label: 'Column pull'
+
+    columnSettings:
+      center:
+        label: 'Column centered'
+      resetOrder:
+        label: 'Column reset order'
