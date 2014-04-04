@@ -1,0 +1,80 @@
+#
+# Default child node for M12.Foundation:GridColumnsX
+#
+'M12.Foundation:Column':
+  superTypes: ['TYPO3.Neos:Content']
+  abstract: TRUE
+  ui:
+    label: 'Grid Column'
+    icon: 'icon-th-large'
+    inspector:
+      groups:
+        gridSize:
+          label: 'Grid size'
+          position: 5
+        gridOffset:
+          label: 'Grid offset'
+          position: 5
+        gridPushPull:
+          label: 'Grid push / pull'
+          position: 5
+        gridAlign:
+          label: 'Grid align'
+          position: 5
+  childNodes:
+    column:
+      type: 'TYPO3.Neos:ContentCollection'
+  postprocessors:
+    ColumnPostprocesor: # adds all grid properties
+      postprocessor: 'M12\Foundation\NodeTypePostprocessor\ColumnNodeTypePostprocessor'
+
+
+#
+# Parent class for all M12.Foundation:GridColumnsX
+#
+'M12.Foundation:GridColumnsAbstract':
+  superTypes: ['TYPO3.Neos:Content']
+  abstract: TRUE
+  ui:
+    icon: 'icon-columns'
+    inlineEditable: TRUE,
+    group: 'foundationStructure'
+
+#
+# GridColumns elements
+#
+'M12.Foundation:GridColumns2':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid: 2 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+
+'M12.Foundation:GridColumns3':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid: 3 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+    col3:
+      type: 'M12.Foundation:Column'
+
+'M12.Foundation:GridColumns4':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid: 4 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+    col3:
+      type: 'M12.Foundation:Column'
+    col4:
+      type: 'M12.Foundation:Column'
