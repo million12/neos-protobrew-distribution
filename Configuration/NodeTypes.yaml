@@ -210,9 +210,18 @@
     icon: 'icon-th-large'
     inspector:
       groups:
-        grid:
-          label: 'Grid'
-          position: 20
+        gridSize:
+          label: 'Grid size'
+          position: 5
+        gridOffset:
+          label: 'Grid offset'
+          position: 5
+        gridPushPull:
+          label: 'Grid push / pull'
+          position: 5
+        gridAlign:
+          label: 'Grid align'
+          position: 5
   childNodes:
     column:
       type: 'TYPO3.Neos:ContentCollection'

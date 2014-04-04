@@ -17,7 +17,6 @@ use TYPO3\TYPO3CR\Domain\Model\NodeType;
 use TYPO3\Flow\Configuration\ConfigurationManager;
 use TYPO3\TYPO3CR\NodeTypePostprocessor\NodeTypePostprocessorInterface;
 
-
 /**
  * This Processor updates ...
  */
@@ -36,6 +35,7 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 
 	/**
 	 * M12.FoundationGrid settings
+	 *
 	 * @param array $settings
 	 */
 	public function injectSettings(array $settings) {
@@ -43,110 +43,95 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 	}
 
 	/**
-	 * Reads settings from M12.Foundation and merges them into current $settings
-	 */
-	protected function includeParentSettings() {
-		$parentSettings = $this->configurationManager->getConfiguration('Settings', 'M12.Foundation');
-		if (is_array($parentSettings))
-			$this->settings = array_merge($this->settings, $parentSettings);
-	}
-
-	/**
-	 * Returns the processed Configuration
+	 * Returns the processed $configuration with grid-related node properties
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeType $nodeType (uninitialized) The node type to process
-	 * @param array $configuration input configuration
-	 * @param array $options The processor options
+	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeType $nodeType      (uninitialized) The node type to process
+	 * @param array                                $configuration input configuration
+	 * @param array                                $options       The processor options
 	 * @return void
 	 */
 	public function process(NodeType $nodeType, array &$configuration, array $options) {
-		$this->includeParentSettings();
-		\TYPO3\Flow\var_dump($this->settings);
+//		\TYPO3\Flow\var_dump($this->settings);
+		$this->validateSettings();
 
-		if (empty($this->settings['devices']) || !is_array($this->settings['devices']))
-			return;
-
-		foreach ($this->settings['devices'] as $device=>$ds) {
-			// property name in format: column-small-width, column-small-offset etc
-            foreach ($this->settings['deviceColumnSettings'] as $deviceColumnSetting=>$deviceColumnSettingData) {
-                $configuration['properties'][$this->_getPropertyName($device, $deviceColumnSetting)] = array(
-                    'type' => 'string',
-                    'defaultValue' => '',
-                    'ui' => array(
-                        'label' => sprintf('%s %s', $ds['label'], $deviceColumnSettingData['label']),
-                        'reloadIfChanged' => true,
-                        'inspector' => array(
-                            'group' => $this->settings['uiInspectorGroupName'],
-                            'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
-                            'editorOptions' => $this->getEditorOptions($device),
-                        ),
-                    ),
-                );
-            }
-
-
-
-            \TYPO3\Flow\var_dump($configuration);
+		/** @var string $device: small, medium, large */
+		foreach ($this->settings['devices'] as $device => $deviceData) {
+			foreach ($this->settings['gridSettings'] as $set => $setData) {
+				$propertyName = sprintf('class%s%s', ucfirst($device), ucfirst($set));
+				$configuration['properties'][$propertyName] = array(
+					'type' => 'string',
+					'defaultValue' => '',
+					'ui' => array(
+//					'label' => $propertyName,
+						'reloadIfChanged' => true,
+						'inspector' => array(
+							'group' => $setData['uiInspectorGroup'],
+							'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
+							'editorOptions' => $this->getEditorOptions($device, $set, $setData),
+						),
+					),
+				);
+			}
 		}
 
-
+//		\TYPO3\Flow\var_dump($configuration);
 	}
-
 
 	/**
 	 * Generates SelectBoxEditor options
-	 * @param string $device
+	 *
+	 * @param string $device  eg: small, medium, large
+	 * @param string $set     eg: size, offset, push, pull
+	 * @param array  $setData settings for the $set
 	 * @return array
 	 */
-	protected function getEditorOptions($device) {
-		$k = $this->settings['gridSize'];
-		$col = 1;
+	protected function getEditorOptions($device, $set, array $setData) {
+		$editorOptions                = array();
 
-		$editorOptions = array();
-		$editorOptions['placeholder'] = '- not set -';
-		$editorOptions['values'][''] = array('label' => '');
+		// empty 1st option
+		$editorOptions['placeholder'] = "- $device $set -";
+		$editorOptions['values']['']  = array('label' => '');
 
-		do {
-			$val = $this->_getOptionValue($col, $device);
-			$editorOptions['values'][$val] = array(
-				'label' => $this->_getOptionLabel($col, $val),
-			);
-			$col++;
-		} while (--$k);
+		$cssSuffixes = $this->settings['gridSettings'][$set]['cssClassSuffixes'];
+		foreach ($cssSuffixes as $cssSuffix) {
+			$cssClass = "$device$cssSuffix";
+
+			//
+			// with column number, eg: small-X, medium-offset-X
+			//
+			if (true === $setData['appliedPerColumn']) {
+				$k   = $this->settings['gridSize'];
+				$col = 1;
+				do {
+					$valueName = $cssClass.$col;
+					$labelName = $valueName;
+					$editorOptions['values'][$valueName] = array(
+						'label' => $labelName,
+					);
+					$col++;
+				} while (--$k);
+			}
+
+			//
+			// without column number, eg: small-reset-order, large-centered
+			//
+			else {
+				$valueName = $cssClass;
+				$labelName = $valueName;
+				$editorOptions['values'][$valueName] = array(
+					'label' => $labelName,
+				);
+			}
+		}
 
 		return $editorOptions;
 	}
 
-	/**
-	 * Generates option label
-	 * @param $col
-	 * @param $cls
-	 * @return string
-	 */
-	protected function _getOptionLabel($col, $cls) {
-		return sprintf('%d/%d (.%s)', $col, $this->settings['gridSize'], $cls);
-	}
+	protected function validateSettings() {
+		if (empty($this->settings['devices']) || !is_array($this->settings['devices']))
+			throw new \TYPO3\Neos\Exception('M12.Foundation.devices settings are missing. Please check Settings.yaml file!', 1396555463);
 
-	/**
-	 * Generates options value (ie class name)
-	 *
-	 * @param int $col: column number (1...x)
-	 * @param string $device: device names (small, medium etc)
-	 * @return string
-	 */
-	protected function _getOptionValue($col, $device) {
-		// e.g. small-6
-		return "$device-$col";
-	}
-
-	/**
-	 * Generates property name for node
-	 *
-	 * @param string $device: device names (small, medium etc)
-	 * @return string	Property name in format 'column-small-width', 'column-small-offset' etc.
-	 */
-	protected function _getPropertyName($device, $deviceColumnSetting) {
-        // e.g. column-small-width
-		return 'column-' . strtolower($device) . '-' . strtolower($deviceColumnSetting);
+		if (empty($this->settings['gridSettings']) || !is_array($this->settings['gridSettings']))
+			throw new \TYPO3\Neos\Exception('M12.Foundation.gridSettings settings are missing. Please check Settings.yaml file!', 1396555464);
 	}
 }

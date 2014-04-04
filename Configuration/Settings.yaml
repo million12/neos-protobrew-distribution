@@ -15,10 +15,6 @@ TYPO3:
 
 M12:
   Foundation:
-    # Needed by ColumnNodeTypePostprocessor to know in which UI group
-    # put all generated properties
-    uiInspectorGroupName: 'grid'
-
     gridSize: 12
 
     devices:
@@ -29,18 +25,35 @@ M12:
       large:
         label: 'Large device'
 
-    deviceColumnSettings:
-      width:
+    # Needed by ColumnNodeTypePostprocessor to know in which UI group
+    # put all generated properties
+    gridUiInspectorGroup:
+      labelPrefix: Grid
+      position: 5
+
+    gridSettings:
+      size:
         label: 'Column width'
+        cssClassSuffixes: [ '-' ]         # DEVICE-X, eg: small-X, medium-Y, large-Z
+        appliedPerColumn: true
+        uiInspectorGroup: gridSize
       offset:
         label: 'Column offset'
-      push:
-        label: 'Column push'
-      pull:
-        label: 'Column pull'
-
-    columnSettings:
-      center:
-        label: 'Column centered'
+        cssClassSuffixes: [ '-offset-' ]  # DEVICE-offset-X, eg: small-offset-X, medium-offset-Y, large-offset-Z
+        appliedPerColumn: true
+        uiInspectorGroup: gridOffset
+      pushPull:
+        label: 'Column push / pull'
+        cssClassSuffixes: [ '-push-', '-pull-' ]    # DEVICE-push-X, eg: small-push-X, medium-push-Y, large-push-Z
+        appliedPerColumn: true
+        uiInspectorGroup: gridPushPull
       resetOrder:
         label: 'Column reset order'
+        cssClassSuffixes: [ '-reset-order' ]  # e.g. small-reset-order
+        appliedPerColumn: false
+        uiInspectorGroup: gridPushPull
+      align:
+        label: 'Centered'
+        cssClassSuffixes: [ '-centered', '-uncentered' ] # e.g. small-centered, large-centered
+        appliedPerColumn: false
+        uiInspectorGroup: gridAlign
