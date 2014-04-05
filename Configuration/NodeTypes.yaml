@@ -6,12 +6,15 @@
   ui:
     inspector:
       groups:
-        utilityClasses:
-          label: 'Utility classes'
-          position: 50
         visibilityClasses:
           label: 'Visibility classes'
           position: 10
+        utilityClasses:
+          label: 'Utility classes'
+          position: 50
+        customClassesOrId:
+          label: 'Custom classes or ID'
+          position: 60
   properties:
     float:
       type: string
@@ -190,6 +193,31 @@
                 label: 'Show for touch'
               hide-for-touch:
                 label: 'Hide for touch'
+    customClass:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Custom class(es)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'customClassesOrId'
+          position: 10
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+    customId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Custom ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'customClassesOrId'
+          position: 10
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+
 
 #
 # Add above extra properties to TYPO3.Neos:Content

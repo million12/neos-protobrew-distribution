@@ -1,0 +1,12 @@
+#
+# Container
+#
+'M12.Foundation:Container':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Container'
+    icon: 'icon-minus'
+    group: 'foundationStructure'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
