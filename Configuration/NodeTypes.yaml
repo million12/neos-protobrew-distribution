@@ -16,7 +16,7 @@
           label: 'Custom classes or ID'
           position: 60
   properties:
-    float:
+    classFloat:
       type: string
       defaultValue: ''
       ui:
@@ -35,7 +35,7 @@
                 label: 'left'
               right:
                 label: 'right'
-    radiusAndRounded:
+    classRadiusAndRounded:
       type: string
       defaultValue: ''
       ui:
@@ -54,7 +54,7 @@
                 label: 'radius'
               rounded:
                 label: 'rounded'
-    textAlign:
+    classTextAlign:
       type: string
       defaultValue: ''
       ui:
@@ -77,7 +77,7 @@
                 label: 'center'
               text-justify:
                 label: 'justify'
-    hide:
+    classHide:
       type: boolean
       ui:
         label: 'Hide'
@@ -85,7 +85,7 @@
         inspector:
           group: 'utilityClasses'
           position: 50
-    clearfix:
+    classClearfix:
       type: boolean
       ui:
         label: 'Clearfix'
@@ -93,7 +93,7 @@
         inspector:
           group: 'utilityClasses'
           position: 60
-    showByScreenSize:
+    classShowByScreenSize:
       type: string
       defaultValue: ''
       ui:
@@ -124,7 +124,7 @@
                 label: 'Show for xlarge only'
               show-for-xxlarge-up:
                 label: 'Show for xxlarge and up'
-    hideByScreenSize:
+    classHideByScreenSize:
       type: string
       defaultValue: ''
       ui:
@@ -155,7 +155,7 @@
                 label: 'Hide for xlarge only'
               hide-for-xxlarge-up:
                 label: 'Hide for xxlarge and up'
-    orientationDetection:
+    classOrientationDetection:
       type: string
       defaultValue: ''
       ui:
@@ -174,7 +174,7 @@
                 label: 'Show for landscape'
               show-for-portrait:
                 label: 'Show for portrait'
-    touchDetection:
+    classTouchDetection:
       type: string
       defaultValue: ''
       ui:
@@ -193,7 +193,7 @@
                 label: 'Show for touch'
               hide-for-touch:
                 label: 'Hide for touch'
-    customClass:
+    classCustomClass:
       type: string
       defaultValue: ''
       ui:
@@ -205,7 +205,7 @@
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
-    customId:
+    htmlCustomId:
       type: string
       defaultValue: ''
       ui:

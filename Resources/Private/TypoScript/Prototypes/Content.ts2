@@ -7,16 +7,16 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 		#nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
 
 		@process {
-			float = ${Array.push(value, q(node).property('float'))}
-			radiusAndRounded = ${Array.push(value, q(node).property('radiusAndRounded'))}
-			textAlign = ${Array.push(value, q(node).property('textAlign'))}
-			hide = ${Array.push(value, (q(node).property('hide') ? 'hide' : null))}
-			clearfix = ${Array.push(value, (q(node).property('clearfix') ? 'clearfix' : null))}
-			showByScreenSize = ${Array.push(value, q(node).property('showByScreenSize'))}
-			hideByScreenSize = ${Array.push(value, q(node).property('hideByScreenSize'))}
-			orientationDetection = ${Array.push(value, q(node).property('orientationDetection'))}
-			touchDetection = ${Array.push(value, q(node).property('touchDetection'))}
-			customClass = ${Array.push(value, q(node).property('customClass'))}
+			float = ${Array.push(value, q(node).property('classFloat'))}
+			radiusAndRounded = ${Array.push(value, q(node).property('classRadiusAndRounded'))}
+			textAlign = ${Array.push(value, q(node).property('classTextAlign'))}
+			hide = ${Array.push(value, (q(node).property('classHide') ? 'hide' : null))}
+			clearfix = ${Array.push(value, (q(node).property('classClearfix') ? 'clearfix' : null))}
+			showByScreenSize = ${Array.push(value, q(node).property('classShowByScreenSize'))}
+			hideByScreenSize = ${Array.push(value, q(node).property('classHideByScreenSize'))}
+			orientationDetection = ${Array.push(value, q(node).property('classOrientationDetection'))}
+			touchDetection = ${Array.push(value, q(node).property('classTouchDetection'))}
+			customClass = ${Array.push(value, q(node).property('classCustomClass'))}
 		}
 
 		# At the end remove extra spaces after many class items were joined
@@ -26,5 +26,5 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 		}
 	}
 
-	attributes.id = ${String.trim(q(node).property('customId'))}
+	attributes.id = ${String.trim(q(node).property('htmlCustomId'))}
 }

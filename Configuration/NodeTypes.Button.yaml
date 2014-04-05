@@ -10,7 +10,7 @@
     inspector:
       groups:
         options:
-          label: 'Button optionsssss'
+          label: 'Button options'
           position: 5
   properties:
     label:
@@ -81,14 +81,14 @@
                 label: 'Radius'
               round:
                 label: 'Round'
-    isDisabled:
+    classIsDisabled:
       type: boolean
       ui:
         label: 'Disable'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
-    isExpanded:
+    classIsExpanded:
       type: boolean
       ui:
         label: 'Expand'
