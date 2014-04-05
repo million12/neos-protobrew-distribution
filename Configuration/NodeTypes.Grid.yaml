@@ -3,7 +3,6 @@
 #
 'M12.Foundation:Column':
   superTypes: ['TYPO3.Neos:Content']
-  abstract: TRUE
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
@@ -25,9 +24,8 @@
     column:
       type: 'TYPO3.Neos:ContentCollection'
   postprocessors:
-    ColumnPostprocesor: # adds all grid properties
+    ColumnPostprocesor:
       postprocessor: 'M12\Foundation\NodeTypePostprocessor\ColumnNodeTypePostprocessor'
-
 
 #
 # Parent class for all M12.Foundation:GridColumnsX
