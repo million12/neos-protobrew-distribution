@@ -1,0 +1,7 @@
+prototype(M12.Foundation:Container) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	containerContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}
