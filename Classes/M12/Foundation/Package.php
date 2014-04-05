@@ -2,7 +2,7 @@
 namespace M12\Foundation;
 
 /*                                                                        *
- * This script belongs to the TYPO3 Flow package "TYPO3CR".               *
+ * This script belongs to the "M12.Foundation" package.                   *
  *                                                                        *
  * It is free software; you can redistribute it and/or modify it under    *
  * the terms of the GNU General Public License, either version 3 of the   *

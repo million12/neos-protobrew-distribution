@@ -62,7 +62,7 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 					'type' => 'string',
 					'defaultValue' => '',
 					'ui' => array(
-//					'label' => $propertyName,
+//						'label' => $propertyName,
 						'reloadIfChanged' => true,
 						'inspector' => array(
 							'group' => $setData['uiInspectorGroup'],
