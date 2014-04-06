@@ -19,10 +19,9 @@
       ui:
         inlineEditable: TRUE
         aloha:
-          'format':
-            'p': FALSE
+          'format': ['b', 'i', 'u', 'sub', 'sup']
           'link':
-            'a': TRUE
+            'a': FALSE
     classSize:
       type: string
       defaultValue: ''
@@ -81,6 +80,33 @@
                 label: 'Radius'
               round:
                 label: 'Round'
+    htmlHref:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'e.g. http://www.example.com'
+    htmlTargetBlank:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Open in new window'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'No'
+            values:
+              '':
+                label: ''
+              _blank:
+                label: 'Yes'
     classIsDisabled:
       type: boolean
       ui:

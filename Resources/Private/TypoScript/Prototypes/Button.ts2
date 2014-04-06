@@ -6,5 +6,8 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	attributes.class.disable = ${q(node).property('classIsDisabled') ? 'disabled' : null}
 	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
 
-	tag = 'button'
+	attributes.href = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
+	link = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
+
+	attributes.target = ${q(node).property('htmlTargetBlank') ? q(node).property('htmlTargetBlank') : null}
 }
