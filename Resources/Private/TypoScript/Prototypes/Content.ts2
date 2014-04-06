@@ -6,18 +6,39 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 		# render class with node type (Neos default) - do we need that?
 		#nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
 
-		@process {
-			float = ${Array.push(value, q(node).property('classFloat'))}
-			radiusAndRounded = ${Array.push(value, q(node).property('classRadiusAndRounded'))}
-			textAlign = ${Array.push(value, q(node).property('classTextAlign'))}
-			hide = ${Array.push(value, (q(node).property('classHide') ? 'hide' : null))}
-			clearfix = ${Array.push(value, (q(node).property('classClearfix') ? 'clearfix' : null))}
-			showByScreenSize = ${Array.push(value, q(node).property('classShowByScreenSize'))}
-			hideByScreenSize = ${Array.push(value, q(node).property('classHideByScreenSize'))}
-			orientationDetection = ${Array.push(value, q(node).property('classOrientationDetection'))}
-			touchDetection = ${Array.push(value, q(node).property('classTouchDetection'))}
-			customClass = ${Array.push(value, q(node).property('classCustomClass'))}
-		}
+		# Copied from original TYPO3.Neos:Content - do we need that?
+		nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
+		nodeType.@position = 'start'
+
+		textAlign = ${q(node).property('classTextAlign')}
+		textAlign.@position = '20'
+
+		clearfix = ${q(node).property('classClearfix') ? 'clearfix' : null}
+		clearfix.@after = '40'
+
+		float = ${q(node).property('classFloat')}
+		float.@after = 'clearfix'
+
+		showByScreenSize = ${q(node).property('classShowByScreenSize')}
+		showByScreenSize.@position = '60'
+
+		hideByScreenSize = ${q(node).property('classHideByScreenSize')}
+		hideByScreenSize.@after = 'showByScreenSize'
+
+		orientationDetection = ${q(node).property('classOrientationDetection')}
+		orientationDetection.@position = '70'
+
+		touchDetection = ${q(node).property('classTouchDetection')}
+		touchDetection.@after = 'orientationDetection'
+
+		radiusAndRounded = ${q(node).property('classRadiusAndRounded')}
+		radiusAndRounded.@position = '80'
+
+		hide = ${q(node).property('classHide') ? 'hide' : null}
+		hide.@position = '100'
+
+		customClass = ${q(node).property('classCustomClass')}
+		customClass.@position = 'end'
 
 		# At the end remove extra spaces after many class items were joined
 		@process.trimThatWitch {
