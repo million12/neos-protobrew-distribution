@@ -2,24 +2,25 @@
 prototype(M12.Foundation:Column) < prototype(M12.Foundation:Content) {
 	node = ${node}
 
-	attributes.class.smallSize = ${q(node).property('classSmallSize') ? q(node).property('classSmallSize') + " columns" : null}
+	attributes.class.smallSize = ${q(node).property('classSmallSize') ? q(node).property('classSmallSize'): null}
 	attributes.class.smallOffset = ${q(node).property('classSmallOffset') ? q(node).property('classSmallOffset') : null}
 	attributes.class.smallPushPull = ${q(node).property('classSmallPushPull') ? q(node).property('classSmallPushPull') : null}
 	attributes.class.smallResetOrder = ${q(node).property('classSmallResetOrder') ? q(node).property('classSmallResetOrder') : null}
 	attributes.class.smallAlign = ${q(node).property('classSmallAlign') ? q(node).property('classSmallAlign') : null}
 
-	attributes.class.mediumSize = ${q(node).property('classMediumSize') ? q(node).property('classMediumSize') + " columns" : null}
+	attributes.class.mediumSize = ${q(node).property('classMediumSize') ? q(node).property('classMediumSize') : null}
 	attributes.class.mediumOffset = ${q(node).property('classMediumOffset') ? q(node).property('classMediumOffset') : null}
 	attributes.class.mediumPushPull = ${q(node).property('classMediumPushPull') ? q(node).property('classMediumPushPull') : null}
 	attributes.class.mediumResetOrder = ${q(node).property('classMediumResetOrder') ? q(node).property('classMediumResetOrder') : null}
 	attributes.class.mediumAlign = ${q(node).property('classMediumAlign') ? q(node).property('classMediumAlign') : null}
 
-	attributes.class.largeSize = ${q(node).property('classLargeSize') ? q(node).property('classLargeSize') + " columns" : null}
+	attributes.class.largeSize = ${q(node).property('classLargeSize') ? q(node).property('classLargeSize') : null}
 	attributes.class.largeOffset = ${q(node).property('classLargeOffset') ? q(node).property('classLargeOffset') : null}
 	attributes.class.largePushPull = ${q(node).property('classLargePushPull') ? q(node).property('classLargePushPull') : null}
 	attributes.class.largeResetOrder = ${q(node).property('classLargeResetOrder') ? q(node).property('classLargeResetOrder') : null}
 	attributes.class.largeAlign = ${q(node).property('classLargeAlign') ? q(node).property('classLargeAlign') : null}
 
+	attributes.class.column = 'columns'
 	attributes.class.endColumn = ${q(node).property('classEndColumn') ? 'end' : null}
 
 	columnContent = TYPO3.Neos:ContentCollection {
