@@ -1,11 +1,8 @@
-prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
+prototype(TYPO3.Neos:Content) {
 	# remove default Neos class processing
 	attributes.class.@process.nodeType >
 
 	attributes.class = TYPO3.TypoScript:RawArray {
-		# render class with node type (Neos default) - do we need that?
-		#nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
-
 		# Copied from original TYPO3.Neos:Content - do we need that?
 		nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
 		nodeType.@position = 'start'
@@ -49,3 +46,11 @@ prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
 
 	attributes.id = ${String.trim(q(node).property('htmlCustomId'))}
 }
+
+#
+# The M12.Foundation:Content object stays here, even if for now it's
+# identical to TYPO3.Neos:Content. It might change in the future,
+# when we need some extra features, but we don't want include them in
+# original Neos object.
+#
+prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content)
