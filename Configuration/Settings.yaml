@@ -25,11 +25,6 @@ M12:
       large:
         label: 'Large device'
 
-    # Needed by ColumnNodeTypePostprocessor to know in which UI group
-    # put all generated properties
-    gridUiInspectorGroup:
-      labelPrefix: Grid
-      position: 5
 
     gridSettings:
       size:
