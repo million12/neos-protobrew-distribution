@@ -1,0 +1,7 @@
+prototype(M12.Foundation:BlockGridItem) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	blockGridItemContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}

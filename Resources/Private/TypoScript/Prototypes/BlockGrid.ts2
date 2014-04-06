@@ -1,0 +1,11 @@
+prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	attributes.class.smallItemsPerRow = ${q(node).property('classSmallItemsPerRow') ? q(node).property('classSmallItemsPerRow') : null}
+	attributes.class.mediumItemsPerRow = ${q(node).property('classMediumItemsPerRow') ? q(node).property('classMediumItemsPerRow') : null}
+	attributes.class.largeItemsPerRow = ${q(node).property('classLargeItemsPerRow') ? q(node).property('classLargeItemsPerRow') : null}
+
+	blockGridContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}

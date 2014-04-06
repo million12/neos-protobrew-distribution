@@ -57,3 +57,12 @@ M12:
         cssClassSuffixes: [ '-centered', '-uncentered' ] # e.g. small-centered, large-centered
         appliedPerColumn: false
         uiInspectorGroup: gridAlign
+
+
+    blockGridSettings:
+      itemsPerRow:
+        label: 'Number of items per row'
+        cssClassSuffixes: [ '-block-grid-' ]    # DEVICE-block-grid-X, eg: small-block-grid-X, medium-block-grid-Y, large-block-grid-Z
+        appliedPerColumn: true
+        uiInspectorGroup: blockGridSettings
+

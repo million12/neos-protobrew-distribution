@@ -1,4 +1,6 @@
 include: Prototypes/Content.ts2
 include: Prototypes/Grid.ts2
+include: Prototypes/BlockGrid.ts2
+include: Prototypes/BlockGridItem.ts2
 include: Prototypes/Container.ts2
 include: Prototypes/Button.ts2
