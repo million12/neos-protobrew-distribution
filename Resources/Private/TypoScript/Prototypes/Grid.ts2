@@ -20,9 +20,10 @@ prototype(M12.Foundation:Column) < prototype(M12.Foundation:Content) {
 	attributes.class.largeResetOrder = ${q(node).property('classLargeResetOrder') ? q(node).property('classLargeResetOrder') : null}
 	attributes.class.largeAlign = ${q(node).property('classLargeAlign') ? q(node).property('classLargeAlign') : null}
 
+	attributes.class.endColumn = ${q(node).property('classEndColumn') ? 'end' : null}
 
 	columnContent = TYPO3.Neos:ContentCollection {
-		nodePath = 'column'
+		nodePath = '.'
 	}
 }
 

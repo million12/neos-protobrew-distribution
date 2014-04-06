@@ -1,11 +1,13 @@
 #
-# Default child node for M12.Foundation:GridColumnsX
+# Grid structure
 #
+# Default child node for M12.Foundation:GridColumnsX
 'M12.Foundation:Column':
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
+    group: 'fakeGroup'
     inspector:
       groups:
         gridSize:
@@ -24,12 +26,23 @@
     column:
       type: 'TYPO3.Neos:ContentCollection'
   postprocessors:
-    ColumnPostprocesor:
-      postprocessor: 'M12\Foundation\NodeTypePostprocessor\ColumnNodeTypePostprocessor'
+    GridColumnPropertiesPostprocesor:
+      postprocessor: 'M12\Foundation\NodeTypePostprocessor\GridColumnNodeTypePostprocessor'
 
-#
-# Parent class for all M12.Foundation:GridColumnsX
-#
+# The last child node for M12.Foundation:GridColumnsX with extra classEndColumn property
+'M12.Foundation:ColumnEnd':
+  superTypes: ['M12.Foundation:Column']
+  properties:
+    classEndColumn:
+      type: boolean
+      ui:
+        label: 'End column (for incomplete row)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridSize'
+          position: 999
+
+# Abstract NodeType for all M12.Foundation:GridColumnsX
 'M12.Foundation:GridColumnsAbstract':
   superTypes: ['TYPO3.Neos:Content']
   abstract: TRUE
@@ -39,7 +52,7 @@
     group: 'foundationStructure'
 
 #
-# GridColumns elements
+# Actual GridColumns elements
 #
 'M12.Foundation:GridColumns2':
   superTypes: ['M12.Foundation:GridColumnsAbstract']
@@ -49,7 +62,7 @@
     col1:
       type: 'M12.Foundation:Column'
     col2:
-      type: 'M12.Foundation:Column'
+      type: 'M12.Foundation:ColumnEnd'
 
 'M12.Foundation:GridColumns3':
   superTypes: ['M12.Foundation:GridColumnsAbstract']
@@ -61,7 +74,7 @@
     col2:
       type: 'M12.Foundation:Column'
     col3:
-      type: 'M12.Foundation:Column'
+      type: 'M12.Foundation:ColumnEnd'
 
 'M12.Foundation:GridColumns4':
   superTypes: ['M12.Foundation:GridColumnsAbstract']
@@ -75,4 +88,4 @@
     col3:
       type: 'M12.Foundation:Column'
     col4:
-      type: 'M12.Foundation:Column'
+      type: 'M12.Foundation:ColumnEnd'

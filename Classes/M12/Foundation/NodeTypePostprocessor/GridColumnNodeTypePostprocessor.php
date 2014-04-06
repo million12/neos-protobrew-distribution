@@ -20,7 +20,7 @@ use TYPO3\TYPO3CR\NodeTypePostprocessor\NodeTypePostprocessorInterface;
 /**
  * This Processor updates ...
  */
-class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
+class GridColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 
 	/**
 	 * @var ConfigurationManager
@@ -66,6 +66,7 @@ class ColumnNodeTypePostprocessor implements NodeTypePostprocessorInterface {
 						'reloadIfChanged' => true,
 						'inspector' => array(
 							'group' => $setData['uiInspectorGroup'],
+							'position' => 1,
 							'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
 							'editorOptions' => $this->getEditorOptions($device, $set, $setData),
 						),
