@@ -1,18 +1,4 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<f:if condition="{link}">
-<f:then>
-<a{attributes -> f:format.raw()}>
-</f:then>
-<f:else>
-<button{attributes -> f:format.raw()}>
-</f:else>
-</f:if>
+<{tag}{attributes -> f:format.raw()}>
 	{neos:contentElement.editable(property: 'label', node: node)}
-<f:if condition="{link}">
-<f:then>
-</a>
-</f:then>
-<f:else>
-</button>
-</f:else>
-</f:if>
+</{tag}>

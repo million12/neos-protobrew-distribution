@@ -7,7 +7,7 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
 
 	attributes.href = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
-	link = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
-
 	attributes.target = ${q(node).property('htmlTargetBlank') ? q(node).property('htmlTargetBlank') : null}
+
+	tag = ${q(node).property('htmlHref') ? 'a' : 'button'}
 }
