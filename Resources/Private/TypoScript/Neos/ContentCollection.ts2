@@ -1,0 +1,3 @@
+prototype(TYPO3.Neos:ContentCollection) < prototype(TYPO3.Neos:Content) {
+	@class = 'M12\\Foundation\\TypoScript\\ContentCollectionImplementation'
+}
