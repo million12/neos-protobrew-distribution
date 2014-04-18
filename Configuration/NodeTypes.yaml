@@ -381,16 +381,6 @@
     ColumnPostprocesor:
       postprocessor: 'M12\Foundation\NodeTypePostprocessor\BlockGridNodeTypePostprocessor'
 
-# BlockGrid item
-'M12.Foundation:BlockGridItem':
-  superTypes: ['TYPO3.Neos:Content']
-  ui:
-    label: 'Block Grid item'
-    icon: 'icon-minus'
-    group: 'foundationStructure'
-  childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
 
 
 

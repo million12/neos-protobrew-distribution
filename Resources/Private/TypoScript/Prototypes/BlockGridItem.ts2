@@ -1,7 +1,10 @@
 prototype(M12.Foundation:BlockGridItem) < prototype(M12.Foundation:Content) {
-	node = ${node}
+	# templatePath is needed as there's no BlockGridItem NodeType defined
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/BlockGridItem.html'
 
-	blockGridItemContent = TYPO3.Neos:ContentCollection {
-		nodePath = 'content'
+	blockGridItemContent = TYPO3.TypoScript:Collection {
+		collection = ${q(gridNodeItem)}
+		itemName = 'node'
+		itemRenderer = TYPO3.Neos:ContentCase
 	}
 }
