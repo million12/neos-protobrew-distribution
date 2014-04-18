@@ -3,7 +3,7 @@ prototype(TYPO3.Neos:Content) {
 	attributes.class.@process.nodeType >
 
 	attributes.class = TYPO3.TypoScript:RawArray {
-		# Copied from original TYPO3.Neos:Content - do we need that?
+		# Copied from original TYPO3.Neos:Content - adds class with Neos node-type
 		nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
 		nodeType.@position = 'start'
 
@@ -44,7 +44,7 @@ prototype(TYPO3.Neos:Content) {
 		}
 	}
 
-	attributes.id = ${String.trim(q(node).property('htmlCustomId'))}
+	attributes.id = ${q(node).property('htmlCustomId') ? String.trim(q(node).property('htmlCustomId')) : null}
 }
 
 #
