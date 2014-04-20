@@ -356,8 +356,6 @@
 
 
 
-
-
 # -----------------------------------------------------------------------------
 #
 # BlockGrid: parent NodeType of BlockGridItem.
@@ -368,7 +366,7 @@
   ui:
     label: 'Block Grid'
     icon: 'icon-th-large'
-    group: foundationStructure
+    group: 'foundationStructure'
     inspector:
       groups:
         blockGridSettings:
@@ -382,6 +380,112 @@
       postprocessor: 'M12\Foundation\NodeTypePostprocessor\BlockGridNodeTypePostprocessor'
 
 
+
+
+
+# -----------------------------------------------------------------------------
+#
+# Side Nav
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:SideNav':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Side Nav'
+    icon: 'icon-minus'
+    group: 'foundationNavigation'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#
+# Sub Nav
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:SubNav':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Sub Nav'
+    icon: 'icon-minus'
+    group: 'foundationNavigation'
+    inspector:
+      groups:
+        options:
+          label: 'Sub Nav options'
+          position: 1
+  properties:
+    title:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Title'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#
+# Nav Item - can be put inside of "Side Nav" or "Sub Nav" NodeTypes
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:NavItem':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Nav Item'
+    icon: 'icon-minus'
+    group: 'foundationNavigation'
+    inspector:
+      groups:
+        options:
+          label: 'Nav Item options'
+          position: 1
+  properties:
+    label:
+      type: string
+      defaultValue: 'nav item'
+      ui:
+        label: 'Label'
+        reloadIfChanged: TRUE
+        inlineEditable: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+    classActive:
+      type: boolean
+      ui:
+        label: 'Active'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    classDivider:
+      type: boolean
+      ui:
+        label: 'Divider'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    htmlHref:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
 
 
 

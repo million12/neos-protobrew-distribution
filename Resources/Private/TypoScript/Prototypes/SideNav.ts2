@@ -1,0 +1,7 @@
+prototype(M12.Foundation:SideNav) < prototype(M12.Foundation:Content) {
+	attributes.class.base = 'side-nav'
+
+	sideNavContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}

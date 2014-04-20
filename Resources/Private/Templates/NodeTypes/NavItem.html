@@ -1,0 +1,23 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:if condition="{isSideNav}">
+<li{attributes -> f:format.raw()}>
+</f:if>
+<f:if condition="{isSubNav}">
+<dd{attributes -> f:format.raw()}>
+</f:if>
+
+	<f:if condition="{isDivider}">
+	<f:else>
+	<a href="{attributesHref -> f:format.raw()}">
+		{neos:contentElement.editable(property: 'label')}
+	</a>
+	</f:else>
+	</f:if>
+
+<f:if condition="{isSideNav}">
+</li>
+</f:if>
+<f:if condition="{isSubNav}">
+</dd>
+</f:if>

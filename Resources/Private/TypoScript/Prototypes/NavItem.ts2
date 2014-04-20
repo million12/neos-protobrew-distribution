@@ -1,0 +1,13 @@
+prototype(M12.Foundation:NavItem) < prototype(M12.Foundation:Content) {
+	isSideNav = ${String.endsWith(q(node).parent().parent().property('_nodeType.name'), 'SideNav')}
+	isSubNav  = ${String.endsWith(q(node).parent().parent().property('_nodeType.name'), 'SubNav')}
+	isDivider = ${q(node).property('classDivider') ? true : false}
+
+	attributes.class.active = ${q(node).property('classActive') ? 'active' : null}
+	attributes.class.divider = ${q(node).property('classDivider') ? 'divider' : null}
+	attributesHref = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
+
+	navItemContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}

@@ -2,10 +2,38 @@
 include: TypoScript.ts2
 include: Neos/ContentCollection.ts2
 
-# M12.Foundation prototypes
+
+# M12.Foundation prototypes - Generic
 include: Prototypes/Content.ts2
+include: Prototypes/Container.ts2
+
+
+# M12.Foundation prototypes - Structure
 include: Prototypes/Grid.ts2
 include: Prototypes/BlockGrid.ts2
 include: Prototypes/BlockGridItem.ts2
-include: Prototypes/Container.ts2
+
+
+# M12.Foundation prototypes - Navigation
+include: Prototypes/SideNav.ts2
+include: Prototypes/SubNav.ts2
+include: Prototypes/NavItem.ts2
+
+
+# M12.Foundation prototypes - Media
+
+
+# M12.Foundation prototypes - Forms
+
+
+# M12.Foundation prototypes - Buttons
 include: Prototypes/Button.ts2
+
+
+# M12.Foundation prototypes - Typography
+
+
+# M12.Foundation prototypes - Callouts & Prompts
+
+
+# M12.Foundation prototypes - Content

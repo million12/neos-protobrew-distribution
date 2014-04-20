@@ -9,9 +9,13 @@ TYPO3:
         foundationStructure:
           position: 10
           label: 'Foundation - Structure'
+        foundationNavigation:
+          position: 20
+          label: 'Foundation - Navigation'
         foundationButtons:
           position: 30
           label: 'Foundation - Buttons'
+
 
 M12:
   Foundation:

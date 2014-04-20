@@ -1,0 +1,7 @@
+prototype(M12.Foundation:SubNav) < prototype(M12.Foundation:Content) {
+	attributes.class.base = 'sub-nav'
+
+	subNavContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}
