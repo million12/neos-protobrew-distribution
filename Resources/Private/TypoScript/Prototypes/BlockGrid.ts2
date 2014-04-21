@@ -5,9 +5,13 @@ prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
 	attributes.class.mediumItemsPerRow = ${q(node).property('classMediumItemsPerRow') ? q(node).property('classMediumItemsPerRow') : null}
 	attributes.class.largeItemsPerRow = ${q(node).property('classLargeItemsPerRow') ? q(node).property('classLargeItemsPerRow') : null}
 
-	blockGridContent = TYPO3.TypoScript:Collection {
-		collection = ${q(node).children('[instanceof TYPO3.Neos:ContentCollection]').children()}
-		itemRenderer = M12.Foundation:BlockGridItem
+	@override.parentAttributes = ${this.attributes}
+
+	blockGridContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+
+		iterationName = 'iterator'
 		itemName = 'gridNodeItem'
+		itemRenderer = M12.Foundation:BlockGridItem
 	}
 }
