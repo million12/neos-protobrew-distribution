@@ -1,5 +1,4 @@
 prototype(M12.Foundation:NavItem) < prototype(M12.Foundation:Content) {
-	isSideNav = ${String.endsWith(q(node).parent().parent().property('_nodeType.name'), 'SideNav')}
 	isSubNav  = ${String.endsWith(q(node).parent().parent().property('_nodeType.name'), 'SubNav')}
 	isDivider = ${q(node).property('classDivider') ? true : false}
 
@@ -10,4 +9,6 @@ prototype(M12.Foundation:NavItem) < prototype(M12.Foundation:Content) {
 	navItemContent = TYPO3.Neos:ContentCollection {
 		nodePath = 'content'
 	}
+
+	tag = ${this.isSubNav ? 'dd' : 'li'}
 }
