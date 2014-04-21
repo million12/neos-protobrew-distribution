@@ -15,6 +15,9 @@ TYPO3:
         foundationButtons:
           position: 30
           label: 'Foundation - Buttons'
+        foundationCalloutsPrompts:
+          position: 70
+          label: 'Foundation - Callouts & Prompts'
 
 
 M12:

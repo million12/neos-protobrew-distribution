@@ -586,6 +586,17 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. http://www.example.com'
+    htmlDataRevealId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Reveal Modal ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'e.g. myModal'
     htmlTargetBlank:
       type: string
       defaultValue: ''
@@ -616,3 +627,37 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#
+# Reveal Modal
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:RevealModal':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Reveal Modal'
+    icon: 'icon-minus'
+    group: 'foundationCalloutsPrompts'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    htmlDataOptions:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Options'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+
+
+
+
+

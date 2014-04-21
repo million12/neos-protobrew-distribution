@@ -1,0 +1,5 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<div{attributes -> f:format.raw()} data-reveal>
+	<ts:render path="revealModalContent" />
+	<a class="close-reveal-modal">×</a>
+</div>

@@ -1,0 +1,9 @@
+prototype(M12.Foundation:RevealModal) < prototype(M12.Foundation:Content) {
+	attributes.class.base = 'reveal-modal'
+
+	#htmlDataOptions =
+
+	revealModalContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}
