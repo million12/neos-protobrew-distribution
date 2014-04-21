@@ -1,7 +1,6 @@
 prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
-	hasHref = ${q(node).property('htmlHref') ? true : false}
-	hasDataRevealId = ${q(node).property('htmlDataRevealId') ? true : false}
-
+	@override.htmlHref = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
+	@override.htmlDataRevealId = ${q(node).property('htmlDataRevealId') ? String.trim(q(node).property('htmlDataRevealId')) : null}
 
 	attributes.class.base = 'button'
 	attributes.class.size = ${q(node).property('classSize') ? q(node).property('classSize') : null}
@@ -10,9 +9,9 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	attributes.class.disable = ${q(node).property('classIsDisabled') ? 'disabled' : null}
 	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
 
-	attributes.href = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : (q(node).property('htmlDataRevealId') ? '#' : null)}
-	attributes.data-reveal-id = ${q(node).property('htmlDataRevealId') ? String.trim(q(node).property('htmlDataRevealId')) : null}
+	attributes.href = ${htmlHref ? htmlHref : (htmlDataRevealId ? '#' : null)}
+	attributes.data-reveal-id = ${htmlDataRevealId}
 	attributes.target = ${q(node).property('htmlTargetBlank') ? q(node).property('htmlTargetBlank') : null}
 
-	tag = ${this.hasHref or this.hasDataRevealId ? 'a' : 'button'}
+	tag = ${htmlHref or htmlDataRevealId ? 'a' : 'button'}
 }
