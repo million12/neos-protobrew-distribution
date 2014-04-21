@@ -4,6 +4,10 @@ TYPO3:
       autoInclude:
         'M12.Foundation': TRUE
 
+    userInterface:
+      requireJsPathMapping:
+        'M12.Foundation/Inspector/Editors': 'resource://M12.Foundation/Public/JavaScript/Neos/Inspector/Editors'
+
     nodeTypes:
       groups:
         foundationStructure:
