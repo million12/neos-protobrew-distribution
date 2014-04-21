@@ -43,7 +43,7 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
 	protected $settings;
 
 	/**
-	 * M12.FoundationGrid settings
+	 * M12.Foundation settings
 	 *
 	 * @param array $settings
 	 */
@@ -66,9 +66,10 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
 		foreach ($this->settings['devices'] as $device => $deviceData) {
 			foreach ($this->settings[static::$SETTINGS_SECTION] as $set => $setData) {
 				$propertyName = sprintf('class%s%s', ucfirst($device), ucfirst($set));
+				$defaultValue = isset($setData['defaults'][$device]) ? $setData['defaults'][$device] : '';
 				$configuration['properties'][$propertyName] = array(
 					'type' => 'string',
-					'defaultValue' => '',
+					'defaultValue' => $defaultValue,
 					'ui' => array(
 //						'label' => $propertyName,
 						'reloadIfChanged' => true,

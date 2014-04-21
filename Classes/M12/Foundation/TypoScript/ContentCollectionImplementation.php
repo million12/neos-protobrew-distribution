@@ -11,6 +11,7 @@ namespace M12\Foundation\TypoScript;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
+use TYPO3\TYPO3CR\Domain\Model\Node;
 use TYPO3\Neos\TypoScript\ContentCollectionImplementation as NeosContentCollectionImplementation;
 use TYPO3\TypoScript\TypoScriptObjects\AbstractCollectionImplementation;
 
@@ -18,6 +19,20 @@ use TYPO3\TypoScript\TypoScriptObjects\AbstractCollectionImplementation;
  * Overrides Neos ContentCollections
  */
 class ContentCollectionImplementation extends NeosContentCollectionImplementation {
+
+	/**
+	 * @var array
+	 */
+	protected $settings;
+
+	/**
+	 * M12.FoundationGrid settings
+	 *
+	 * @param array $settings
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+	}
 
 	/**
 	 * Inside live workspace, it does NOT render extra DIV.content-collection.
@@ -33,6 +48,9 @@ class ContentCollectionImplementation extends NeosContentCollectionImplementatio
 		if ($contentCollectionNode === null) {
 			return parent::evaluate();
 		}
+
+		$this->setDefaultProperties($contentCollectionNode);
+
 		if ($contentCollectionNode->getContext()->getWorkspaceName() !== 'live') {
 			return parent::evaluate();
 		}
@@ -61,4 +79,39 @@ class ContentCollectionImplementation extends NeosContentCollectionImplementatio
 
         return $output;
     }
+
+	/**
+	 * Set essential default properties on some nodes
+	 *
+	 * E.g. when Grid with 2 columns is inserted, it sets default size for each column,
+	 * before user sets its own values.
+	 *
+	 * This is experimental, probably there's a better way to inject these properties.
+	 *
+	 * @param Node $contentCollectionNode
+	 */
+	protected function setDefaultProperties(Node $contentCollectionNode) {
+		$parentNodeType = $contentCollectionNode->getParent()->getNodeType()->getName();
+		$nodeType = $contentCollectionNode->getNodeType()->getName();
+
+		switch ($nodeType) {
+			case 'M12.Foundation:Column':
+			case 'M12.Foundation:ColumnEnd':
+				$gridSize = $this->settings['gridSize'];
+				$columns = (int)str_replace('M12.Foundation:GridColumns', '', $parentNodeType);
+				$defaultColumns = floor($gridSize / $columns);
+
+				$sizeSettings = array();
+				foreach (array_keys($this->settings['devices']) as $device) {
+					$name = 'class'.ucfirst($device).'Size';
+					$sizeSettings[$name] = $contentCollectionNode->getProperty($name);
+				}
+				if (!array_filter($sizeSettings)) {
+					$keys = array_keys($sizeSettings);
+					$property = $keys[0];
+					$contentCollectionNode->setProperty($property, 'small-'.$defaultColumns);
+				}
+				break;
+		}
+	}
 }

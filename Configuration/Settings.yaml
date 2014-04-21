@@ -36,7 +36,8 @@ M12:
       large:
         label: 'Large device'
 
-
+    # @see AbstractGridNodeTypePostprocessor which utilizes these settings
+    # to generate required properties for M12.Foundation:Column node type
     gridSettings:
       size:
         label: 'Column width'
@@ -64,11 +65,15 @@ M12:
         appliedPerColumn: false
         uiInspectorGroup: gridAlign
 
-
+    # @see AbstractGridNodeTypePostprocessor which utilizes these settings
+    # to generate required properties for M12.Foundation:BlockGrid node type
     blockGridSettings:
       itemsPerRow:
         label: 'Number of items per row'
         cssClassSuffixes: [ '-block-grid-' ]    # DEVICE-block-grid-X, eg: small-block-grid-X, medium-block-grid-Y, large-block-grid-Z
         appliedPerColumn: true
         uiInspectorGroup: blockGridSettings
-
+        defaults: # default values per-device
+          small: small-block-grid-1
+          medium: medium-block-grid-2
+          large: large-block-grid-3
