@@ -1,6 +1,7 @@
 # TypoScript, Neos extensions
 include: TypoScript.ts2
 include: Neos/ContentCollection.ts2
+include: Neos/Menu.ts2
 
 
 # M12.Foundation prototypes - Generic
