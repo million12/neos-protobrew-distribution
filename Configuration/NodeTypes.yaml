@@ -53,9 +53,9 @@
               '':
                 label: ''
               radius:
-                label: 'radius'
-              rounded:
-                label: 'rounded'
+                label: 'Radius'
+              round:
+                label: 'Round'
     classTextAlign:
       type: string
       defaultValue: ''
@@ -659,9 +659,11 @@
 
 # -----------------------------------------------------------------------------
 #
-# Reveal Modal
+# Callouts & Prompts
 #
 # -----------------------------------------------------------------------------
+
+# Reveal Modal
 'M12.Foundation:RevealModal':
   superTypes: ['TYPO3.Neos:Content']
   ui:
@@ -694,6 +696,48 @@
                 label: 'Medium'
               large:
                 label: 'Large'
+
+
+
+
+
+# Reveal Modal
+'M12.Foundation:Alert':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Alert'
+    icon: 'icon-warning-sign'
+    group: 'foundationCalloutsPrompts'
+    inspector:
+      groups:
+        options:
+          label: 'Alert box options'
+          position: 1
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    classAppearance:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Appearance'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: ''
+              success:
+                label: 'Success'
+              warning:
+                label: 'Warning'
+              info:
+                label: 'Info'
+
+
 
 
 
