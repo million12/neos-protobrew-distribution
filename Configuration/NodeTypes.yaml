@@ -697,11 +697,7 @@
               large:
                 label: 'Large'
 
-
-
-
-
-# Reveal Modal
+# Alert box
 'M12.Foundation:Alert':
   superTypes: ['TYPO3.Neos:Content']
   ui:
@@ -737,6 +733,29 @@
               info:
                 label: 'Info'
 
+# Panel
+'M12.Foundation:Panel':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Panel'
+    icon: 'icon-check-empty'
+    group: 'foundationCalloutsPrompts'
+    inspector:
+      groups:
+        options:
+          label: 'Panel options'
+          position: 1
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    classCallout:
+      type: boolean
+      ui:
+        label: 'Callout'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
 
 
 
