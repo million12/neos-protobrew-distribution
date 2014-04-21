@@ -1,0 +1,22 @@
+'TYPO3.Neos.NodeTypes:Page':
+  ui:
+    inspector:
+      groups:
+        developer:
+          label: 'Advanced'
+          position: 151 # after 'Layout' section (with position=150)
+  properties:
+    customJsCode:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'developer'
+          editor: 'M12.Foundation/Inspector/Editors/JsEditor'
+    customCssCode:
+      type: string
+      ui:
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'developer'
+          editor: 'M12.Foundation/Inspector/Editors/CssEditor'
