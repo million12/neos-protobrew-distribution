@@ -1,0 +1,23 @@
+prototype(M12.Foundation:TopBar) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/TopBar.html'
+
+	entryLevel = 1
+	maximumLevels = 3
+	isDocumentContext = ${q(node).is('[instanceof TYPO3.Neos:Document]')}
+
+	attributes.class.base = 'top-bar'
+
+	wrapperClasses = TYPO3.TypoScript:RawArray {
+		isGridContained = ${q(node).property('topBarGridContained') ? 'contain-to-grid' : null}
+		isFixed = ${q(node).property('topBarFixed') ? 'fixed' : null}
+		isSticky = ${q(node).property('topBarSticky') ? 'sticky' : null}
+
+		# At the end remove extra spaces after many class items were joined
+		@process.trimThatWitch {
+			expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
+			@position = 'end'
+		}
+	}
+
+	topBarTitle = ${this.isDocumentContext ? q(site).property('title') : q(node).property('topBarTitle')}
+}

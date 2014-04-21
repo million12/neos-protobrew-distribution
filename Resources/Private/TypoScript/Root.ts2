@@ -16,6 +16,7 @@ include: Prototypes/BlockGridItem.ts2
 
 
 # M12.Foundation prototypes - Navigation
+include: Prototypes/TopBar.ts2
 include: Prototypes/SideNav.ts2
 include: Prototypes/SubNav.ts2
 include: Prototypes/NavItem.ts2

@@ -1,0 +1,53 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<f:if condition="{wrapperClasses}">
+<div class="{wrapperClasses}">
+</f:if>
+
+	<nav{attributes -> f:format.raw()} data-topbar>
+	<ul class="title-area">
+		<f:if condition="{topBarTitle}">
+			<li class="name">
+				<h1>
+					<a href="/">{topBarTitle}</a>
+				</h1>
+			</li>
+		</f:if>
+
+		<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+	</ul>
+
+	<section class="top-bar-section">
+		<ul class="left">
+			<f:render section="itemsList" arguments="{items: items}" />
+		</ul>
+	</section>
+	</nav>
+
+<f:if condition="{wrapperClasses}">
+</div>
+</f:if>
+
+
+
+<f:section name="itemsList">
+	<f:for each="{items}" as="item">
+		<f:if condition="{item.subItems}">
+			<f:then>
+				<li class="has-dropdown {item.state}">
+			</f:then>
+			<f:else>
+				<li class="{item.state}">
+			</f:else>
+		</f:if>
+		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+
+		<f:if condition="{item.subItems}">
+			<ul class="dropdown">
+				<f:render section="itemsList" arguments="{items: item.subItems}" />
+			</ul>
+		</f:if>
+		</li>
+	</f:for>
+</f:section>

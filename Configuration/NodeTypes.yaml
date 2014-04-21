@@ -10,7 +10,7 @@
       groups:
         visibilityClasses:
           label: 'Visibility classes'
-          position: 10
+          position: 40
         utilityClasses:
           label: 'Utility classes'
           position: 50
@@ -385,9 +385,48 @@
 
 # -----------------------------------------------------------------------------
 #
-# Nav: Side Nav, Sub Nav
+# Navigation: Top Bar, Side Nav, Sub Nav
 #
 # -----------------------------------------------------------------------------
+
+# Top Bar
+'M12.Foundation:TopBar':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    label: 'Top Bar'
+    icon: 'icon-sitemap'
+    group: 'foundationNavigation'
+  properties:
+    topBarTitle:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Top Bar title'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+    topBarGridContained:
+      type: boolean
+      ui:
+        label: 'Contain to grid'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    topBarFixed:
+      type: boolean
+      ui:
+        label: 'Fixed'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    topBarSticky:
+      type: boolean
+      ui:
+        label: 'Sticky'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
 
 # Side Nav
 'M12.Foundation:SideNav':
