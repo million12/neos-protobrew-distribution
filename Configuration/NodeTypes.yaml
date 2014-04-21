@@ -394,7 +394,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Side Nav'
-    icon: 'icon-reorder'
+    icon: 'icon-th-list'
     group: 'foundationNavigation'
   childNodes:
     content:
@@ -405,7 +405,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Sub Nav'
-    icon: 'icon-ellipsis-horizontal'
+    icon: 'icon-barcode'
     group: 'foundationNavigation'
     inspector:
       groups:
@@ -627,7 +627,7 @@
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'Reveal Modal'
-    icon: 'icon-minus'
+    icon: 'icon-fullscreen'
     group: 'foundationCalloutsPrompts'
   childNodes:
     content:
