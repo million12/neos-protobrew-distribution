@@ -1,7 +1,6 @@
 prototype(M12.Foundation:RevealModal) < prototype(M12.Foundation:Content) {
 	attributes.class.base = 'reveal-modal'
-
-	#htmlDataOptions =
+	attributes.class.size = ${q(node).property('classRevealSize') ? q(node).property('classRevealSize') : null}
 
 	revealModalContent = TYPO3.Neos:ContentCollection {
 		nodePath = 'content'

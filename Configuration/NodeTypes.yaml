@@ -629,20 +629,32 @@
     label: 'Reveal Modal'
     icon: 'icon-fullscreen'
     group: 'foundationCalloutsPrompts'
+    inspector:
+      groups:
+        options:
+          label: 'Reveal Modal options'
+          position: 1
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    htmlDataOptions:
+    classRevealSize:
       type: string
-      defaultValue: ''
+      defaultValue: 'small'
       ui:
-        label: 'Options'
+        label: 'Size'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
-
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              small:
+                label: 'Small'
+              medium:
+                label: 'Medium'
+              large:
+                label: 'Large'
 
 
 
