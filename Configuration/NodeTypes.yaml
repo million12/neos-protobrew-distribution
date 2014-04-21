@@ -389,7 +389,7 @@
 #
 # -----------------------------------------------------------------------------
 
-# SideNav
+# Side Nav
 'M12.Foundation:SideNav':
   superTypes: ['TYPO3.Neos:Content']
   ui:
