@@ -1,4 +1,10 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<li>
-<ts:render path="blockGridItemContent" />
-</li>
+<f:if condition="{iterator.isFirst}">
+	<ul{parentAttributes -> f:format.raw()}>
+</f:if>
+
+	<li><ts:render path="blockGridItemContent" /></li>
+
+<f:if condition="{iterator.isLast}">
+	</ul>
+</f:if>
