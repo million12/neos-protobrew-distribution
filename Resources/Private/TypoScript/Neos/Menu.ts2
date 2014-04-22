@@ -1,6 +1,0 @@
-# Override TYPO3.Neos:Menu
-prototype(TYPO3.Neos.NodeTypes:Menu) {
-	templatePath = 'resource://M12.Foundation/Private/Templates/Neos/Menu.html'
-
-	attributes.class.base = 'side-nav'
-}

@@ -1,7 +1,6 @@
 # TypoScript, Neos extensions
 include: TypoScript.ts2
 include: Neos/ContentCollection.ts2
-include: Neos/Menu.ts2
 
 
 # M12.Foundation prototypes - Generic
@@ -18,6 +17,7 @@ include: Prototypes/BlockGridItem.ts2
 # M12.Foundation prototypes - Navigation
 include: Prototypes/TopBar.ts2
 include: Prototypes/SideNav.ts2
+include: Prototypes/SideNavLive.ts2
 include: Prototypes/SubNav.ts2
 include: Prototypes/NavItem.ts2
 

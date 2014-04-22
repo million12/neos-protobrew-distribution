@@ -439,6 +439,13 @@
     content:
       type: 'TYPO3.Neos:ContentCollection'
 
+# Extend default TYPO3.Neos.NodeTypes:Menu so it's available in M12.Foundation family
+'M12.Foundation:SideNavLive':
+  superTypes: ['TYPO3.Neos.NodeTypes:Menu']
+  ui:
+    label: 'Side Nav (live)'
+    group: 'foundationNavigation'
+
 # Sub Nav
 'M12.Foundation:SubNav':
   superTypes: ['TYPO3.Neos:Content']

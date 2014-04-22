@@ -1,0 +1,4 @@
+# Override TYPO3.Neos:Menu
+prototype(M12.Foundation:SideNavLive) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+	attributes.class.base = 'side-nav'
+}
