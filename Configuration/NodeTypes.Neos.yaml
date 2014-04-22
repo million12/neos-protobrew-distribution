@@ -1,0 +1,37 @@
+# Move some Neos NodeTypes to non-existing group
+# so they're not visible by default.
+'TYPO3.Neos.NodeTypes:Menu':
+  ui:
+    group: 'na'
+'TYPO3.Neos.NodeTypes:TwoColumn':
+  ui:
+    group: 'na'
+'TYPO3.Neos.NodeTypes:ThreeColumn':
+  ui:
+    group: 'na'
+'TYPO3.Neos.NodeTypes:FourColumn':
+  ui:
+    group: 'na'
+
+
+'TYPO3.Neos.NodeTypes:Headline':
+  properties:
+    'title':
+      ui:
+        aloha:
+          'format':
+            'p': FALSE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+
+'TYPO3.Neos.NodeTypes:Text':
+  properties:
+    'text':
+      ui:
+        aloha:
+          'format':
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
+            'div': TRUE
