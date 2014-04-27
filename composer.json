@@ -17,8 +17,12 @@
             "role": "Developer"
         }
     ],
+    "repositories": [
+        { "type": "git", "url": "https://github.com/million12/M12.Utils.git" }
+    ],
     "require": {
-        "typo3/neos-nodetypes": "*"
+        "typo3/neos-nodetypes": "*",
+        "m12/utils": "*"
     },
     "autoload": {
         "psr-0": {

@@ -1,0 +1,24 @@
+prototype(TYPO3.Neos.NodeTypes:Headline) {
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'typo3-neos-nodetypes-headline'
+}
+
+prototype(TYPO3.Neos.NodeTypes:Text) {
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'typo3-neos-nodetypes-text'
+}
+
+prototype(TYPO3.Neos.NodeTypes:Image) {
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'typo3-neos-nodetypes-image'
+}
+
+prototype(TYPO3.Neos.NodeTypes:TextWithImage) {
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'typo3-neos-nodetypes-textwithimage'
+}
+
+prototype(TYPO3.Neos.NodeTypes:Html) {
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'typo3-neos-nodetypes-html'
+}

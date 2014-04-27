@@ -14,4 +14,7 @@ prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
 		itemName = 'gridNodeItem'
 		itemRenderer = M12.Foundation:BlockGridItem
 	}
+
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
 }

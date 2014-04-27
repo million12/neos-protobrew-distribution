@@ -1,3 +1,6 @@
-prototype(TYPO3.Neos:ContentCollection) < prototype(TYPO3.Neos:Content) {
+prototype(TYPO3.Neos:ContentCollection) {
 	@class = 'M12\\Foundation\\TypoScript\\ContentCollectionImplementation'
+
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'neos-contentcollection'
 }

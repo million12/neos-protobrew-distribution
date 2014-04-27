@@ -19,7 +19,7 @@ use TYPO3\Flow\Annotations as Flow;
 class ContentElementEditableViewHelperAspect {
 
 	/**
-	 * Strip off wrapping <div></div> from all inline properties
+	 * Strip off <div>...</div> inside Neos inline editable properties
 	 * when not in back-end editing workspace.
 	 *
 	 * @param \TYPO3\Flow\AOP\JoinPointInterface $joinPoint
