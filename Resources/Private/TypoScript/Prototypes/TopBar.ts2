@@ -5,6 +5,9 @@ prototype(M12.Foundation:TopBar) < prototype(TYPO3.Neos.NodeTypes:Menu) {
 	maximumLevels = 3
 	isDocumentContext = ${q(node).is('[instanceof TYPO3.Neos:Document]')}
 
+	# When isDocumentContext=TRUE, it inserts document's NodeType class here.
+	# Override it manually, so it's always correct and the same.
+	attributes.class.nodeType = 'm12-foundation-topbar'
 	attributes.class.base = 'top-bar'
 
 	wrapperClasses = TYPO3.TypoScript:RawArray {
@@ -20,4 +23,5 @@ prototype(M12.Foundation:TopBar) < prototype(TYPO3.Neos.NodeTypes:Menu) {
 	}
 
 	topBarTitle = ${this.isDocumentContext ? q(site).property('title') : q(node).property('topBarTitle')}
+	sectionAlign = ${q(node).property('classSectionAlign') ? q(node).property('classSectionAlign') : 'left'}
 }

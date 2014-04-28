@@ -441,6 +441,22 @@
         inspector:
           group: 'options'
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+    classSectionAlign:
+      type: string
+      defaultValue: 'left'
+      ui:
+        label: 'TopBar section align'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              left:
+                label: 'left'
+              right:
+                label: 'right'
     topBarGridContained:
       type: boolean
       ui:
