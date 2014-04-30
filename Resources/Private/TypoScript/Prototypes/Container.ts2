@@ -2,7 +2,7 @@ prototype(M12.Foundation:Container) < prototype(M12.Foundation:Content) {
 	node = ${node}
 	tag = ${q(node).property('tagName') ? q(node).property('tagName') : 'div'}
 
-	containerContent = TYPO3.Neos:ContentCollection {
+	content = TYPO3.Neos:ContentCollection {
 		nodePath = 'content'
 	}
 }
