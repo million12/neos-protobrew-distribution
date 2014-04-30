@@ -6,23 +6,21 @@
 </f:if>
 
 	<nav{attributes -> f:format.raw()} data-topbar>
-	<ul class="title-area">
-		<f:if condition="{topBarTitle}">
-			<li class="name">
-				<h1>
-					<a href="/">{topBarTitle}</a>
-				</h1>
-			</li>
-		</f:if>
+		<ul class="title-area">
+			<f:if condition="{topBarTitle}">
+				<li class="name">
+					<h1><a href="/"><span>{topBarTitle -> f:format.raw()}</span></a></h1>
+				</li>
+			</f:if>
 
-		<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-	</ul>
-
-	<section class="top-bar-section">
-		<ul class="{sectionAlign}">
-			<f:render section="itemsList" arguments="{items: items}" />
+			<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
 		</ul>
-	</section>
+
+		<section class="top-bar-section">
+			<ul class="{sectionAlign}">
+				<f:render section="itemsList" arguments="{items: items}" />
+			</ul>
+		</section>
 	</nav>
 
 <f:if condition="{wrapperClasses}">
