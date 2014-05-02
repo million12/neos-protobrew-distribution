@@ -32,6 +32,18 @@ class MenuImplementation extends NeosMenuImplementation {
 			// Initialize new variable with css classes
 			$item['cssClasses'] = '';
 
+			/** @var NodeInterface $node */
+			$node = $item['originalNode'];
+
+			//
+			// [FEATURE]
+			// Resolve #fragment part of url (set in node property 'fragment')
+			// and store it in $item, so it's easily available in the template.
+			//
+			$item['fragment'] = null;
+			if (($fragment = $node->getProperty('fragment')))
+				$item['fragment'] = $fragment;
+
 			//
 			// [IMPROVEMENT]
 			// Allow *only one* STATE_CURRENT on given menu level.

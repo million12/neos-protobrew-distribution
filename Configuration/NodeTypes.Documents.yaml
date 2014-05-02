@@ -1,3 +1,13 @@
+'TYPO3.Neos:Document':
+  properties:
+    fragment:
+      type: string
+      ui:
+        label: '#Fragment (URL)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+
 'TYPO3.Neos.NodeTypes:Page':
   ui:
     inspector:

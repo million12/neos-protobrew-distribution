@@ -6,9 +6,16 @@
 </ul>
 
 <f:section name="itemsList">
-		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
 <f:for each="{items}" as="item">
 	<li class="{item.cssClasses}">
+		<f:if condition="{item.fragment}">
+			<f:then>
+				<neos:link.node node="{item.node}" section="{item.fragment}">{item.label}</neos:link.node>
+			</f:then>
+			<f:else>
+				<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+			</f:else>
+		</f:if>
 
 		<f:if condition="{item.subItems}">
 		<ul>

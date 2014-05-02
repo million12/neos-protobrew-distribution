@@ -32,7 +32,14 @@
 <f:section name="itemsList">
 <f:for each="{items}" as="item">
 	<li class="{item.cssClasses}">
-		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+		<f:if condition="{item.fragment}">
+			<f:then>
+				<neos:link.node node="{item.node}" section="{item.fragment}">{item.label}</neos:link.node>
+			</f:then>
+			<f:else>
+				<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+			</f:else>
+		</f:if>
 
 		<f:if condition="{item.subItems}">
 			<ul class="dropdown">
