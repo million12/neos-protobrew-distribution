@@ -1,0 +1,181 @@
+# -----------------------------------------------------------------------------
+#
+# Custom Foundation Container
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:Container':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Container'
+    icon: 'icon-minus'
+    group: 'foundationStructure'
+    inspector:
+      groups:
+        containerOptions:
+          label: 'Container options'
+          position: 1
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    tagName:
+      type: string
+      defaultValue: 'div'
+      ui:
+        label: 'Semantic type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'containerOptions'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              div:
+                label: 'DIV (default)'
+              header:
+                label: 'HEADER'
+              nav:
+                label: 'NAV'
+              main:
+                label: 'MAIN'
+              section:
+                label: 'SECTION'
+              aside:
+                label: 'ASIDE'
+              artile:
+                label: 'ARTICLE'
+              footer:
+                label: 'FOOTER'
+
+
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#
+# Grid structure
+#
+# -----------------------------------------------------------------------------
+
+# Default child node for M12.Foundation:GridColumnsX
+'M12.Foundation:Column':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Grid Column'
+    icon: 'icon-th-large'
+    group: 'fakeGroup'
+    inspector:
+      groups:
+        gridSize:
+          label: 'Grid size'
+          position: 5
+        gridOffset:
+          label: 'Grid offset'
+          position: 5
+        gridPushPull:
+          label: 'Grid push / pull'
+          position: 5
+        gridAlign:
+          label: 'Grid align'
+          position: 5
+  childNodes:
+    column:
+      type: 'TYPO3.Neos:ContentCollection'
+  postprocessors:
+    GridColumnPropertiesPostprocesor:
+      postprocessor: 'M12\Foundation\NodeTypePostprocessor\GridColumnNodeTypePostprocessor'
+
+
+# The last child node for M12.Foundation:GridColumnsX with extra classEndColumn property
+'M12.Foundation:ColumnEnd':
+  superTypes: ['M12.Foundation:Column']
+  properties:
+    classEndColumn:
+      type: boolean
+      ui:
+        label: 'End column (for incomplete row)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'gridSize'
+          position: 999
+
+
+# Abstract NodeType for all M12.Foundation:GridColumnsX
+'M12.Foundation:GridColumnsAbstract':
+  superTypes: ['TYPO3.Neos:Content']
+  abstract: TRUE
+  ui:
+    icon: 'icon-columns'
+    inlineEditable: TRUE,
+    group: 'foundationStructure'
+
+
+
+#
+# Actual GridColumns elements
+#
+'M12.Foundation:GridColumns2':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid: 2 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:ColumnEnd'
+
+'M12.Foundation:GridColumns3':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid: 3 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+    col3:
+      type: 'M12.Foundation:ColumnEnd'
+
+'M12.Foundation:GridColumns4':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid: 4 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+    col3:
+      type: 'M12.Foundation:Column'
+    col4:
+      type: 'M12.Foundation:ColumnEnd'
+
+
+
+
+
+
+# -----------------------------------------------------------------------------
+#
+# BlockGrid: parent NodeType of BlockGridItem.
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:BlockGrid':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Block Grid'
+    icon: 'icon-th-large'
+    group: 'foundationStructure'
+    inspector:
+      groups:
+        blockGridSettings:
+          label: 'Block Grid settings'
+          position: 5
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  postprocessors:
+    ColumnPostprocesor:
+      postprocessor: 'M12\Foundation\NodeTypePostprocessor\BlockGridNodeTypePostprocessor'

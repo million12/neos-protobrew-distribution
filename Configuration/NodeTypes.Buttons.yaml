@@ -1,0 +1,136 @@
+# -----------------------------------------------------------------------------
+#
+# Button
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:Button':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Button'
+    icon: 'icon-minus'
+    group: 'foundationButtons'
+    inspector:
+      groups:
+        options:
+          label: 'Button options'
+          position: 5
+  properties:
+    label:
+      type: string
+      defaultValue: 'Button'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format': ['b', 'i', 'u', 'sub', 'sup']
+          'link':
+            'a': FALSE
+    classSize:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Button size'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              tiny:
+                label: 'Tiny'
+              small:
+                label: 'Small'
+              large:
+                label: 'Large'
+    classType:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Button type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              primary:
+                label: 'Primary'
+              success:
+                label: 'Success'
+              alert:
+                label: 'Alert'
+    classShape:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Button shape'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              radius:
+                label: 'Radius'
+              round:
+                label: 'Round'
+    htmlHref:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Link'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'e.g. http://www.example.com'
+    htmlDataRevealId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Reveal Modal ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'e.g. myModal'
+    htmlTargetBlank:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Open in new window'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'No'
+            values:
+              '':
+                label: ''
+              _blank:
+                label: 'Yes'
+    classIsDisabled:
+      type: boolean
+      ui:
+        label: 'Disable'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    classIsExpanded:
+      type: boolean
+      ui:
+        label: 'Expand'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'

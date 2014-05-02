@@ -1,0 +1,99 @@
+# -----------------------------------------------------------------------------
+#
+# Callouts & Prompts
+#
+# -----------------------------------------------------------------------------
+
+# Reveal Modal
+'M12.Foundation:RevealModal':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Reveal Modal'
+    icon: 'icon-fullscreen'
+    group: 'foundationCalloutsPrompts'
+    inspector:
+      groups:
+        options:
+          label: 'Reveal Modal options'
+          position: 1
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    classRevealSize:
+      type: string
+      defaultValue: 'small'
+      ui:
+        label: 'Size'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              small:
+                label: 'Small'
+              medium:
+                label: 'Medium'
+              large:
+                label: 'Large'
+
+# Alert box
+'M12.Foundation:Alert':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Alert'
+    icon: 'icon-warning-sign'
+    group: 'foundationCalloutsPrompts'
+    inspector:
+      groups:
+        options:
+          label: 'Alert box options'
+          position: 1
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    classAppearance:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Appearance'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: ''
+              success:
+                label: 'Success'
+              warning:
+                label: 'Warning'
+              info:
+                label: 'Info'
+
+# Panel
+'M12.Foundation:Panel':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Panel'
+    icon: 'icon-check-empty'
+    group: 'foundationCalloutsPrompts'
+    inspector:
+      groups:
+        options:
+          label: 'Panel options'
+          position: 1
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    classCallout:
+      type: boolean
+      ui:
+        label: 'Callout'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
