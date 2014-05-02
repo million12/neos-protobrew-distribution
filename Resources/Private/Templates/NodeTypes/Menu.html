@@ -1,0 +1,45 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+<{tag}{attributes -> f:format.raw()}>
+	<f:if condition="{title}">
+		<f:comment><!--
+			Note: Officially title is only supported in SubNav component (DL).
+			Experiment: make unofficial support for UL as well and render
+			title inside extra LI.title.
+		--></f:comment>
+		<f:if condition="{tag == 'dt'}">
+			<f:then><dt>{title}</dt></f:then>
+			<f:else><li class="title">{title}</li></f:else>
+		</f:if>
+	</f:if>
+
+	<f:render section="itemsList" arguments="{items: items, itemTag: itemTag}" />
+</{tag}>
+
+<f:section name="itemsList">
+	<f:for each="{items}" as="item">
+		<{itemTag} class="{item.cssClasses}">
+			<f:if condition="{item.fragment}">
+				<f:then>
+					<neos:link.node node="{item.node}" section="{item.fragment}">{item.label}</neos:link.node>
+				</f:then>
+				<f:else>
+					<neos:link.node node="{item.node}">{item.label}</neos:link.node>
+				</f:else>
+			</f:if>
+
+			<f:if condition="{item.subItems}">
+				<f:comment><!--
+					Note: SubNav doesn't support sub-items... but for now we render it anyway.
+					Somebody might want to style it by himself or it might be supported
+					in the future versions of Foundation.
+				--></f:comment>
+
+				<ul>
+					<f:render section="itemsList" arguments="{items: item.subItems, itemTag: 'li'}" />
+				</ul>
+			</f:if>
+		</{itemTag}>
+	</f:for>
+</f:section>

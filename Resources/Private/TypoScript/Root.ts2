@@ -21,6 +21,7 @@ include: Prototypes/TopBar.ts2
 include: Prototypes/SideNav.ts2
 include: Prototypes/SideNavLive.ts2
 include: Prototypes/SubNav.ts2
+include: Prototypes/SubNavLive.ts2
 include: Prototypes/NavItem.ts2
 
 
