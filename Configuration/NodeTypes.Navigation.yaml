@@ -99,7 +99,7 @@
       groups:
         options:
           label: 'Sub Nav options'
-          position: 1
+          position: 9
   properties:
     title:
       type: string
@@ -148,7 +148,7 @@
       groups:
         options:
           label: 'Nav Item options'
-          position: 1
+          position: 9
   properties:
     label:
       type: string

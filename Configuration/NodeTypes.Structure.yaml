@@ -13,7 +13,7 @@
       groups:
         containerOptions:
           label: 'Container options'
-          position: 1
+          position: 9
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -70,16 +70,16 @@
       groups:
         gridSize:
           label: 'Grid size'
-          position: 5
+          position: 9
         gridOffset:
           label: 'Grid offset'
-          position: 5
+          position: 9
         gridPushPull:
           label: 'Grid push / pull'
-          position: 5
+          position: 9
         gridAlign:
           label: 'Grid align'
-          position: 5
+          position: 9
   childNodes:
     column:
       type: 'TYPO3.Neos:ContentCollection'
@@ -172,7 +172,7 @@
       groups:
         blockGridSettings:
           label: 'Block Grid settings'
-          position: 5
+          position: 9
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'

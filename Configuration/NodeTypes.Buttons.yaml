@@ -13,7 +13,7 @@
       groups:
         options:
           label: 'Button options'
-          position: 5
+          position: 9
   properties:
     label:
       type: string

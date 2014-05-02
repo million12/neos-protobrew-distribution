@@ -15,7 +15,7 @@
       groups:
         options:
           label: 'Reveal Modal options'
-          position: 1
+          position: 9
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -49,7 +49,7 @@
       groups:
         options:
           label: 'Alert box options'
-          position: 1
+          position: 9
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -85,7 +85,7 @@
       groups:
         options:
           label: 'Panel options'
-          position: 1
+          position: 9
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'

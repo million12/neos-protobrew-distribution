@@ -8,16 +8,32 @@
   ui:
     inspector:
       groups:
-        visibilityClasses:
-          label: 'Visibility classes'
-          position: 40
         utilityClasses:
           label: 'Utility classes'
-          position: 50
+          position: 93
+        visibilityClasses:
+          label: 'Show/hide classes'
+          position: 94
         customClassesOrId:
           label: 'Custom classes or ID'
-          position: 60
+          position: 95 # Before
   properties:
+    classHide:
+      type: boolean
+      ui:
+        label: 'Hide'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'utilityClasses'
+          position: 10
+    classClearfix:
+      type: boolean
+      ui:
+        label: 'Clearfix'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'utilityClasses'
+          position: 20
     classFloat:
       type: string
       defaultValue: ''
@@ -37,25 +53,6 @@
                 label: 'left'
               right:
                 label: 'right'
-    classRadiusAndRounded:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Radius and Rounded'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'utilityClasses'
-          position: 30
-          editor: Content/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            placeholder: 'None'
-            values:
-              '':
-                label: ''
-              radius:
-                label: 'Radius'
-              round:
-                label: 'Round'
     classTextAlign:
       type: string
       defaultValue: ''
@@ -79,22 +76,25 @@
                 label: 'center'
               text-justify:
                 label: 'justify'
-    classHide:
-      type: boolean
+    classRadiusAndRounded:
+      type: string
+      defaultValue: ''
       ui:
-        label: 'Hide'
+        label: 'Radius and Rounded'
         reloadIfChanged: TRUE
         inspector:
           group: 'utilityClasses'
           position: 50
-    classClearfix:
-      type: boolean
-      ui:
-        label: 'Clearfix'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'utilityClasses'
-          position: 60
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              radius:
+                label: 'Radius'
+              round:
+                label: 'Round'
     classShowByScreenSize:
       type: string
       defaultValue: ''
