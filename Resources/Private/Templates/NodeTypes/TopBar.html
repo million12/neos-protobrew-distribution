@@ -30,15 +30,8 @@
 
 
 <f:section name="itemsList">
-	<f:for each="{items}" as="item">
-		<f:if condition="{item.subItems}">
-			<f:then>
-				<li class="{ts:render(path:'{item.state}.class') -> f:format.raw()} has-dropdown">
-			</f:then>
-			<f:else>
-				<li class="{ts:render(path:'{item.state}.class') -> f:format.raw()}">
-			</f:else>
-		</f:if>
+<f:for each="{items}" as="item">
+	<li class="{item.cssClasses}">
 		<neos:link.node node="{item.node}">{item.label}</neos:link.node>
 
 		<f:if condition="{item.subItems}">
@@ -46,6 +39,6 @@
 				<f:render section="itemsList" arguments="{items: item.subItems}" />
 			</ul>
 		</f:if>
-		</li>
-	</f:for>
+	</li>
+</f:for>
 </f:section>

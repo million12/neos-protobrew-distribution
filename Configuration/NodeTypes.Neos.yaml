@@ -3,6 +3,11 @@
 'TYPO3.Neos.NodeTypes:Menu':
   ui:
     group: 'na'
+  properties:
+    # Start level: default 1st level of the site
+    startLevel:
+      defaultValue: '1'
+
 'TYPO3.Neos.NodeTypes:TwoColumn':
   ui:
     group: 'na'

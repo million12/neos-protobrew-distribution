@@ -1,8 +1,5 @@
 # TYPO3.Neos:Menu provides basic menu rendering
 #
 prototype(TYPO3.Neos.NodeTypes:Menu) {
-	# Classes compatible with Foundation
-	normal.class = ''
-	active.class = ''
-	current.class = 'active'
+	@class = 'M12\\Foundation\\TypoScript\\MenuImplementation'
 }
