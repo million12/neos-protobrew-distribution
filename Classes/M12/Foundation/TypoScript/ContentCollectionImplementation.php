@@ -72,7 +72,10 @@ class ContentCollectionImplementation extends NeosContentCollectionImplementatio
 			case 'M12.Foundation:ColumnEnd':
 				$gridSize = $this->settings['gridSize'];
 				$columns = (int)str_replace('M12.Foundation:GridColumns', '', $parentNodeType);
-				$defaultColumns = floor($gridSize / $columns);
+
+				// In case M12.Foundation:Column has been placed as a child of element
+				// different than M12.Foundation:GridColumnsX, make sure we do not divide by 0!
+				$defaultColumns = $columns ? floor($gridSize / $columns) : $gridSize;
 
 				$sizeSettings = array();
 				foreach (array_keys($this->settings['devices']) as $device) {
