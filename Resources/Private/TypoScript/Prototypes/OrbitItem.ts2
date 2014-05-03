@@ -1,0 +1,17 @@
+prototype(M12.Foundation:OrbitItem) < prototype(M12.Foundation:Content) {
+	# templatePath is needed as there's no OrbitItem NodeType defined
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/OrbitItem.html'
+
+	iterator = ${iterator}
+	parentAttributes = ${parentAttributes}
+
+	orbitItemContent = TYPO3.TypoScript:Collection {
+		collection = ${q(orbitNodeItem)}
+		itemName = 'node'
+		itemRenderer = TYPO3.Neos:ContentCase
+	}
+
+	prototype(TYPO3.Neos.NodeTypes:Image) {
+    	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/OrbitItemImage.html'
+    }
+}

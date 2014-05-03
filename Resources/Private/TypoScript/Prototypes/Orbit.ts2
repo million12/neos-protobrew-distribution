@@ -1,0 +1,27 @@
+prototype(M12.Foundation:Orbit) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	attributes.data-orbit = ''
+	attributes.data-options = TYPO3.TypoScript:RawArray {
+		animation = ${q(node).property('classAnimation') ? 'animation: ' + q(node).property('classAnimation') + ';' : null}
+		nextOnClick = ${q(node).property('classNextOnClick') ? 'next_on_click: true;' : 'next_on_click: false;'}
+		navigationArrows = ${q(node).property('classNavigationArrows') ? 'navigation_arrows: true;' : 'navigation_arrows: false;'}
+		slideNumber = ${q(node).property('classSlideNumber') ? 'slide_number: true;' : 'slide_number: false;'}
+		bullets = ${q(node).property('classBullets') ? 'bullets: true;' : 'bullets: false;'}
+		timer = ${q(node).property('classTimer') ? 'timer: true;' : 'timer: false;'}
+		variableHeight = ${q(node).property('classVariableHeight') ? 'variable_height: true;' : 'variable_height: false;'}
+	}
+
+	@override.parentAttributes = ${this.attributes}
+
+	orbitContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+
+		iterationName = 'iterator'
+		itemName = 'orbitNodeItem'
+		itemRenderer = M12.Foundation:OrbitItem
+	}
+
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}

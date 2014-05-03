@@ -16,8 +16,11 @@ TYPO3:
         foundationNavigation:
           position: 20
           label: 'Foundation - Navigation'
-        foundationButtons:
+        foundationMedia:
           position: 30
+          label: 'Foundation - Media'
+        foundationButtons:
+          position: 50
           label: 'Foundation - Buttons'
         foundationCalloutsPrompts:
           position: 70

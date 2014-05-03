@@ -1,0 +1,84 @@
+# -----------------------------------------------------------------------------
+#
+# Orbit: parent NodeType of OrbitItem.
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:Orbit':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Orbit'
+    icon: 'icon-picture'
+    group: 'foundationMedia'
+    inspector:
+      groups:
+        orbitSettings:
+          label: 'Orbit settings'
+          position: 9
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    classAnimation:
+      type: string
+      defaultValue: 'slide'
+      ui:
+        label: 'Animation effect'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              slide:
+                label: 'Slide'
+              fade:
+                label: 'Fade'
+    classNextOnClick:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Advance to next on click'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+    classNavigationArrows:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Show navigation arrows'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+    classSlideNumber:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Show slide number'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+    classBullets:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Show bullets (pager)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+    classTimer:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Activate timer'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+    classVariableHeight:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Allow viarable height content'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+
