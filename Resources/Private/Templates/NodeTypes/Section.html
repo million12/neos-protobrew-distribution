@@ -1,0 +1,13 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:if condition="{anchorName}"><a name="{anchorName}"></a></f:if>
+
+<{tag}{attributes -> f:format.raw()}>
+	<div class="row">
+		<f:if condition="{enableHeader}">
+			{neos:contentElement.editable(property: 'header', tag: 'header')}
+		</f:if>
+		<ts:render path="content" />
+	</div>
+</{tag}>
