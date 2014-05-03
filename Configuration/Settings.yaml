@@ -19,6 +19,9 @@ TYPO3:
         foundationMedia:
           position: 30
           label: 'Foundation - Media'
+        foundationForms:
+          position: 40
+          label: 'Foundation - Forms'
         foundationButtons:
           position: 50
           label: 'Foundation - Buttons'

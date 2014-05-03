@@ -1,0 +1,137 @@
+# -----------------------------------------------------------------------------
+#
+# Form
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:Form':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Form'
+    icon: 'icon-th-list'
+    group: 'foundationForms'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+
+
+# Abstract NodeType for all Form elements
+'M12.Foundation:FormElementAbstract':
+  superTypes: ['TYPO3.Neos:Content']
+  abstract: TRUE
+  ui:
+    group: 'foundationForms'
+    inspector:
+      groups:
+        formInputSettings:
+          label: 'Form input settings'
+          position: 9
+  properties:
+    inputName:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Name attribute'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+    inputValue:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Value attribute'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+    inputDisabled:
+      type: boolean
+      ui:
+        label: 'Disabled'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+    inputRequired:
+      type: boolean
+      ui:
+        label: 'Required'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+    inputReadOnly:
+      type: boolean
+      ui:
+        label: 'Read only'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+
+
+'M12.Foundation:FormInput':
+  superTypes: ['M12.Foundation:FormElementAbstract']
+  ui:
+    label: 'Form Input'
+    icon: 'icon-pencil'
+  properties:
+    inputLabelEnable:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Enable input label'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+    inputLabel:
+      type: string
+      defaultValue: ''
+      ui:
+        defaultValue: 'Label'
+        inlineEditable: TRUE
+        aloha:
+          'format': []
+    inputType:
+      type: string
+      defaultValue: 'text'
+      ui:
+        label: 'Choose input type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              text:
+                label: 'Text'
+              number:
+                label: 'Number'
+              password:
+                label: 'Password'
+              email:
+                label: 'Email'
+              tel:
+                label: 'Telephone'
+              url:
+                label: 'Url'
+              search:
+                label: 'Search'
+              range:
+                label: 'Range'
+              date:
+                label: 'Date'
+              time:
+                label: 'Time'
+              color:
+                label: 'Color'
+    inputPlaceholder:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Placeholder'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'Input placeholder...'
+
+
