@@ -4,7 +4,8 @@
 #
 # -----------------------------------------------------------------------------
 'M12.Foundation:Container':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Container'
     icon: 'icon-minus'
@@ -56,7 +57,8 @@
 #
 # -----------------------------------------------------------------------------
 'M12.Foundation:Section':
-  superTypes: ['M12.Foundation:Container']
+  superTypes:
+    - 'M12.Foundation:Container'
   ui:
     label: 'Section'
     icon: 'icon-laptop'
@@ -133,12 +135,17 @@
 # -----------------------------------------------------------------------------
 
 # Default child node for M12.Foundation:GridColumnsX
+#
+# Note: This NodeType should be only created as a child nodes
+# of M12.Foundation:GridColumnsX. Therefore it is attached to not available UI group.
+#
 'M12.Foundation:Column':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
-    group: 'fakeGroup'
+    group: 'na'
     inspector:
       groups:
         gridSize:
@@ -189,10 +196,19 @@
 #
 # Actual GridColumns elements
 #
+'M12.Foundation:GridColumns1':
+  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  ui:
+    label: 'Grid row: 1 column'
+    icon: 'icon-laptop'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+
 'M12.Foundation:GridColumns2':
   superTypes: ['M12.Foundation:GridColumnsAbstract']
   ui:
-    label: 'Grid: 2 columns'
+    label: 'Grid row: 2 columns'
   childNodes:
     col1:
       type: 'M12.Foundation:Column'
@@ -202,7 +218,7 @@
 'M12.Foundation:GridColumns3':
   superTypes: ['M12.Foundation:GridColumnsAbstract']
   ui:
-    label: 'Grid: 3 columns'
+    label: 'Grid row: 3 columns'
   childNodes:
     col1:
       type: 'M12.Foundation:Column'
@@ -214,7 +230,7 @@
 'M12.Foundation:GridColumns4':
   superTypes: ['M12.Foundation:GridColumnsAbstract']
   ui:
-    label: 'Grid: 4 columns'
+    label: 'Grid row: 4 columns'
   childNodes:
     col1:
       type: 'M12.Foundation:Column'
@@ -236,7 +252,8 @@
 #
 # -----------------------------------------------------------------------------
 'M12.Foundation:BlockGrid':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Block Grid'
     icon: 'icon-th-large'

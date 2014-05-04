@@ -43,6 +43,9 @@ prototype(M12.Foundation:GridColumns) < prototype(M12.Foundation:Content) {
 	}
 }
 
+prototype(M12.Foundation:GridColumns1) >
+prototype(M12.Foundation:GridColumns1) < prototype(M12.Foundation:GridColumns)
+
 prototype(M12.Foundation:GridColumns2) >
 prototype(M12.Foundation:GridColumns2) < prototype(M12.Foundation:GridColumns)
 
