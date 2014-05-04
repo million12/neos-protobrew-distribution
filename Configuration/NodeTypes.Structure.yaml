@@ -1,23 +1,15 @@
-# -----------------------------------------------------------------------------
 #
-# Custom Foundation Container
+# Mixin:
+# Semantic markup, choosing tag name for wrapper element
 #
-# -----------------------------------------------------------------------------
-'M12.Foundation:Container':
-  superTypes:
-    - 'TYPO3.Neos:Content'
+'M12.Foundation:SemanticType':
+  abstract: TRUE
   ui:
-    label: 'Container'
-    icon: 'icon-minus'
-    group: 'foundationStructure'
     inspector:
       groups:
-        containerOptions:
-          label: 'Container options'
-          position: 9
-  childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
+        semanticOptions:
+          label: 'Semantic HTML'
+          position: 96
   properties:
     tagName:
       type: string
@@ -26,7 +18,7 @@
         label: 'Semantic type'
         reloadIfChanged: TRUE
         inspector:
-          group: 'containerOptions'
+          group: 'semanticOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default'
@@ -47,6 +39,28 @@
                 label: 'ARTICLE'
               footer:
                 label: 'FOOTER'
+
+# -----------------------------------------------------------------------------
+#
+# Custom Foundation Container
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:Container':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:SemanticType'
+  ui:
+    label: 'Container'
+    icon: 'icon-minus'
+    group: 'foundationStructure'
+    inspector:
+      groups:
+        containerOptions:
+          label: 'Container options'
+          position: 9
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
 
 
 
@@ -142,6 +156,7 @@
 'M12.Foundation:Column':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:SemanticType'
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
@@ -184,7 +199,9 @@
 
 # Abstract NodeType for all M12.Foundation:GridColumnsX
 'M12.Foundation:GridColumnsAbstract':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:SemanticType'
   abstract: TRUE
   ui:
     icon: 'icon-columns'

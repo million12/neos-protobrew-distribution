@@ -76,7 +76,9 @@
 
 # Panel
 'M12.Foundation:Panel':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - TYPO3.Neos:Content
+    - 'M12.Foundation:SemanticType'
   ui:
     label: 'Panel'
     icon: 'icon-check-empty'

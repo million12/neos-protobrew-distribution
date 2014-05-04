@@ -48,9 +48,13 @@ prototype(TYPO3.Neos:Content) {
 }
 
 #
-# The M12.Foundation:Content object stays here, even if for now it's
-# identical to TYPO3.Neos:Content. It might change in the future,
-# when we need some extra features, but we don't want include them in
-# original Neos object.
+# M12.Foundation:Content is a base for all M12.Foundation:* components.
+# Add here properties/functionality which you don't want to add
+# to default TYPO3.Neos:Content.
 #
-prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content)
+prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content) {
+	# Plenty of Foundation-based node types inherits after M12.Foundation:SemanticType,
+	# which adds a property 'tagName', which can be used in the template to render
+	# different than default tag (usually DIV).
+	tagName = ${q(node).property('tagName') ? q(node).property('tagName') : 'div'}
+}
