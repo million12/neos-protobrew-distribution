@@ -207,6 +207,18 @@
     icon: 'icon-columns'
     inlineEditable: TRUE,
     group: 'foundationStructure'
+    inspector:
+      groups:
+        gridOptions:
+          label: 'Grid options'
+          position: 9
+  properties:
+    classCollapse:
+      type: boolean
+      ui:
+        label: 'Collapse columns'
+        inspector:
+          group: 'gridOptions'
 
 
 
