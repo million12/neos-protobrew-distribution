@@ -3,6 +3,8 @@
 # Form
 #
 # -----------------------------------------------------------------------------
+
+# <form> element.
 'M12.Foundation:Form':
   superTypes: ['TYPO3.Neos:Content']
   ui:
@@ -14,7 +16,7 @@
       type: 'TYPO3.Neos:ContentCollection'
 
 
-# Abstract NodeType for all Form elements
+# Abstract NodeType for all form inputs (including buttons).
 'M12.Foundation:FormElementAbstract':
   superTypes: ['TYPO3.Neos:Content']
   abstract: TRUE
@@ -28,7 +30,7 @@
   properties:
     inputName:
       type: string
-      defaultValue: ''
+      defaultValue: 'input-name'
       ui:
         label: 'Name attribute'
         reloadIfChanged: TRUE
@@ -44,13 +46,6 @@
         inspector:
           group: 'formInputSettings'
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
-    inputDisabled:
-      type: boolean
-      ui:
-        label: 'Disabled'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'formInputSettings'
     inputRequired:
       type: boolean
       ui:
@@ -65,13 +60,18 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+    inputDisabled:
+      type: boolean
+      ui:
+        label: 'Disabled'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
 
 
-'M12.Foundation:FormInput':
-  superTypes: ['M12.Foundation:FormElementAbstract']
-  ui:
-    label: 'Form Input'
-    icon: 'icon-pencil'
+# Abstract for all form elements that need <label> element.
+'M12.Foundation:FormInputLabelAbstract':
+  abstract: TRUE
   properties:
     inputLabelEnable:
       type: boolean
@@ -83,12 +83,54 @@
           group: 'formInputSettings'
     inputLabel:
       type: string
-      defaultValue: ''
+      defaultValue: 'Label'
       ui:
         defaultValue: 'Label'
         inlineEditable: TRUE
         aloha:
           'format': []
+
+
+# Abstract for all form elements that need placeholder property.
+'M12.Foundation:FormInputPropertyAbstract':
+  abstract: TRUE
+  properties:
+    inputPlaceholder:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Placeholder'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'Input placeholder...'
+
+
+# Abstract for form elements that need "checked" property.
+'M12.Foundation:FormInputCheckedAbstract':
+  abstract: TRUE
+  properties:
+    inputChecked:
+      type: boolean
+      ui:
+        label: 'Checked state'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+
+
+# NodeType for text based <input> fields, e.g. text, password, email, number etc.
+'M12.Foundation:FormInput':
+  superTypes:
+    - 'M12.Foundation:FormElementAbstract'
+    - 'M12.Foundation:FormInputLabelAbstract'
+    - 'M12.Foundation:FormInputPropertyAbstract'
+  ui:
+    label: 'Form Input'
+    icon: 'icon-pencil'
+  properties:
     inputType:
       type: string
       defaultValue: 'text'
@@ -122,16 +164,5 @@
                 label: 'Time'
               color:
                 label: 'Color'
-    inputPlaceholder:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Placeholder'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'formInputSettings'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
-          editorOptions:
-            placeholder: 'Input placeholder...'
 
 

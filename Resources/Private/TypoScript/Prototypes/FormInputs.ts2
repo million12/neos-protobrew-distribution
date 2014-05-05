@@ -1,0 +1,22 @@
+# Abstract prototype for all form elements.
+prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	inputId = ${q(node).property('htmlCustomId') ? q(node).property('htmlCustomId') : q(node).property('_nodeData.identifier')}
+	inputName = ${q(node).property('inputName') ? q(node).property('inputName') : null}
+	inputType = ${q(node).property('inputType')}
+	inputValue = ${q(node).property('inputValue') ? q(node).property('inputValue') : null}
+	inputLabelEnable = ${q(node).property('inputLabelEnable') ? TRUE : null}
+
+	inputAttributes = TYPO3.TypoScript:RawArray {
+		placeholder = ${q(node).property('inputPlaceholder') ? q(node).property('inputPlaceholder') : null}
+		checked = ${q(node).property('inputChecked') ? '' : null}
+		required = ${q(node).property('inputRequired') ? '' : null}
+		readonly = ${q(node).property('inputReadOnly') ? '' : null}
+		disabled = ${q(node).property('inputDisabled') ? '' : null}
+	}
+}
+
+# Text based form input.
+prototype(M12.Foundation:FormInput) < prototype(M12.Foundation:FormElementAbstract)
+
