@@ -71,6 +71,20 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+    errorTxt:
+      type: string
+      defaultValue: 'Invalid entry'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format': []
+    errorState:
+      type: boolean
+      ui:
+        label: 'Mark as an error state'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
 
 
 # Abstract for all form elements that need <label> element.

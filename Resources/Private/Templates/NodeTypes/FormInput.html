@@ -2,10 +2,13 @@
 
 <f:if condition="{inputLabelEnable}">
 	<f:then>
-		<label for="{inputId}">
+		<label for="{inputId}" {attributes -> f:format.raw()}>
 			{neos:contentElement.editable(property: 'inputLabel')}
 			<f:render section="formElement" arguments="{_all}"/>
 		</label>
+		<f:if condition="{errorState}">
+			<small class="error">{neos:contentElement.editable(property: 'errorTxt')}</small>
+		</f:if>
 	</f:then>
 	<f:else>
 		<f:render section="formElement" arguments="{_all}" />

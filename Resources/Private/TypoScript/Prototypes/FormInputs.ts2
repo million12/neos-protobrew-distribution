@@ -1,5 +1,7 @@
 # Abstract prototype for all form elements.
 prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content) {
+	attributes.class.error = ${q(node).property('errorState') ? 'error' : null}
+
 	inputId = ${q(node).property('htmlCustomId') ? q(node).property('htmlCustomId') : q(node).property('_nodeData.identifier')}
 
 	inputAttributes = TYPO3.TypoScript:RawArray {
