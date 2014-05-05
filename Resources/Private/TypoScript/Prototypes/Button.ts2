@@ -4,12 +4,13 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 
 	attributes.class.base = 'button'
 	attributes.class.size = ${q(node).property('classSize') ? q(node).property('classSize') : null}
-	attributes.class.type = ${q(node).property('classType') ? q(node).property('classType') : null}
+	attributes.class.appearance = ${q(node).property('classAppearance') ? q(node).property('classAppearance') : null}
 	attributes.class.shape = ${q(node).property('classShape') ? q(node).property('classShape') : null}
 	attributes.class.disable = ${q(node).property('classIsDisabled') ? 'disabled' : null}
 	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
 
 	attributes.href = ${htmlHref ? htmlHref : (htmlDataRevealId ? '#' : null)}
+	attributes.type = ${q(node).property('buttonType') ? q(node).property('buttonType') : null}
 	attributes.data-reveal-id = ${htmlDataRevealId}
 	attributes.target = ${q(node).property('htmlTargetBlank') ? q(node).property('htmlTargetBlank') : null}
 

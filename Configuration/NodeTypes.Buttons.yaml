@@ -24,6 +24,26 @@
           'format': ['b', 'i', 'u', 'sub', 'sup']
           'link':
             'a': FALSE
+    buttonType:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Button type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              submit:
+                label: 'Submit'
+              reset:
+                label: 'Reset'
+              button:
+                label: 'Button'
     classSize:
       type: string
       defaultValue: ''
@@ -44,11 +64,11 @@
                 label: 'Small'
               large:
                 label: 'Large'
-    classType:
+    classAppearance:
       type: string
       defaultValue: ''
       ui:
-        label: 'Button type'
+        label: 'Button appearance'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
