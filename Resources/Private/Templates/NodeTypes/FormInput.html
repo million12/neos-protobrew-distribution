@@ -2,16 +2,16 @@
 
 <f:if condition="{inputLabelEnable}">
 	<f:then>
-		<label>
+		<label for="{inputId}">
 			{neos:contentElement.editable(property: 'inputLabel')}
-			<f:render section="formTextfield" arguments="{_all}"/>
+			<f:render section="formElement" arguments="{_all}"/>
 		</label>
 	</f:then>
 	<f:else>
-		<f:render section="formTextfield" arguments="{_all}" />
+		<f:render section="formElement" arguments="{_all}" />
 	</f:else>
 </f:if>
 
-<f:section name="formTextfield">
-	<f:form.textfield name="{inputName}" type="{inputType}" value="{inputValue}" additionalAttributes="{inputAttributes}" />
+<f:section name="formElement">
+	<f:form.textfield id="{inputId}" name="{inputName}" type="{inputType}" value="{inputValue}" additionalAttributes="{inputAttributes}" />
 </f:section>
