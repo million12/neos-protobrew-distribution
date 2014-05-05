@@ -20,3 +20,5 @@ prototype(M12.Foundation:FormInputRadio) < prototype(M12.Foundation:FormElementA
 # Checkbox input.
 prototype(M12.Foundation:FormInputCheckbox) < prototype(M12.Foundation:FormElementAbstract)
 
+# Textarea input.
+prototype(M12.Foundation:FormInputTextarea) < prototype(M12.Foundation:FormElementAbstract)

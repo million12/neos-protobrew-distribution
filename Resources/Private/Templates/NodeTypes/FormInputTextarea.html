@@ -1,0 +1,17 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<f:if condition="{inputLabelEnable}">
+	<f:then>
+		<label>
+			{neos:contentElement.editable(property: 'inputLabel')}
+			<f:render section="formTextfield" arguments="{_all}"/>
+		</label>
+	</f:then>
+	<f:else>
+		<f:render section="formTextfield" arguments="{_all}" />
+	</f:else>
+</f:if>
+
+<f:section name="formTextfield">
+	<f:form.textarea name="{inputName}" value="{inputValue}" additionalAttributes="{inputAttributes}" />
+</f:section>

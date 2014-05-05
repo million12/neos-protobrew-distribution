@@ -187,3 +187,13 @@
     label: 'Radio input'
     icon: 'icon-circle-blank'
 
+
+# NodeType for textarea.
+'M12.Foundation:FormInputTextarea':
+  superTypes:
+    - 'M12.Foundation:FormElementAbstract'
+    - 'M12.Foundation:FormInputLabelAbstract'
+  ui:
+    label: 'Textarea'
+    icon: 'icon-align-left'
+
