@@ -19,6 +19,13 @@ prototype(M12.Foundation:FormLabel) < prototype(M12.Foundation:Content) {
 # Text based form input.
 prototype(M12.Foundation:FormInput) < prototype(M12.Foundation:FormElementAbstract)
 
+# Pre/postfix.
+prototype(M12.Foundation:FormInputFix) < prototype(M12.Foundation:Content) {
+	attributes.class.fix = ${q(node).property('fixType')}
+
+	tagName = ${q(node).property('isButton') ? 'button' : 'span'}
+}
+
 # Radio input.
 prototype(M12.Foundation:FormInputRadio) < prototype(M12.Foundation:FormElementAbstract)
 

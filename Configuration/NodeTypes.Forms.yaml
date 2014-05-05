@@ -89,7 +89,6 @@
       type: string
       defaultValue: 'Label'
       ui:
-        defaultValue: 'Label'
         inlineEditable: TRUE
         aloha:
           'format': []
@@ -143,7 +142,6 @@
       type: string
       defaultValue: 'Standalone label'
       ui:
-        defaultValue: 'Label'
         inlineEditable: TRUE
         aloha:
           'format': []
@@ -209,6 +207,51 @@
                 label: 'Time'
               color:
                 label: 'Color'
+
+
+# Pre/postfix element.
+'M12.Foundation:FormInputFix':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Input Pre/Postfix'
+    icon: 'icon-check-empty'
+    group: 'foundationForms'
+    inspector:
+      groups:
+        formInputSettings:
+          label: 'Form input settings'
+          position: 9
+  properties:
+    text:
+      type: string
+      defaultValue: 'Pre/postfix'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format': []
+    fixType:
+      type: string
+      defaultValue: 'prefix'
+      ui:
+        label: 'Choose fix type'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              prefix:
+                label: 'Prefix'
+              postfix:
+                label: 'Postfix'
+    isButton:
+      type: boolean
+      ui:
+        label: 'Make it a button'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
 
 
 # NodeType for checkbox input.
