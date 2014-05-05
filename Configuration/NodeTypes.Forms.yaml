@@ -12,6 +12,7 @@
     label: 'Form'
     icon: 'icon-th-list'
     group: 'foundationForms'
+    inlineEditable: TRUE
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -118,6 +119,47 @@
       type: boolean
       ui:
         label: 'Checked state'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+
+
+# <label> element.
+'M12.Foundation:FormLabel':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Label'
+    icon: 'icon-paperclip'
+    group: 'foundationForms'
+    inspector:
+      groups:
+        formInputSettings:
+          label: 'Form input settings'
+          position: 9
+  properties:
+    labelTxt:
+      type: string
+      defaultValue: 'Standalone label'
+      ui:
+        defaultValue: 'Label'
+        inlineEditable: TRUE
+        aloha:
+          'format': []
+    htmlFor:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'For attribute'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editorOptions:
+            placeholder: 'Type in an ID of relevant input field.'
+    labelInlined:
+      type: boolean
+      ui:
+        label: 'Inline (vertical centering)'
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'

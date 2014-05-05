@@ -11,6 +11,11 @@ prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content
 	}
 }
 
+# Label.
+prototype(M12.Foundation:FormLabel) < prototype(M12.Foundation:Content) {
+	attributes.class.inline = ${q(node).property('labelInlined') ? 'inline' : null}
+}
+
 # Text based form input.
 prototype(M12.Foundation:FormInput) < prototype(M12.Foundation:FormElementAbstract)
 
