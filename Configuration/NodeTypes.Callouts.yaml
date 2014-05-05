@@ -81,6 +81,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:SemanticType'
+    - 'M12.Foundation:SailingType'
   ui:
     label: 'Panel'
     icon: 'icon-check-empty'

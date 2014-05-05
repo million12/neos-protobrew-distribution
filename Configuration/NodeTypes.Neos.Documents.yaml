@@ -7,6 +7,12 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'document'
+      validation:
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 32
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
 
 'TYPO3.Neos.NodeTypes:Page':
   ui:

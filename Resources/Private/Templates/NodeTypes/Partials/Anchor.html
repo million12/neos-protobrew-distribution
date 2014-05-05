@@ -1,0 +1,7 @@
+<f:comment>
+	It renders <a name="{fragmentId}"></a> based on properties
+	defined in M12.Foundation:SailingType.
+</f:comment>
+<f:if condition="{fragmentId}">
+	<a <f:if condition="{activateMagellan}">data-magellan-destination="{fragmentId}" </f:if>name="{fragmentId}"></a>
+</f:if>

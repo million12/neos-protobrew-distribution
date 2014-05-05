@@ -7,15 +7,11 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:SemanticType'
+    - 'M12.Foundation:SailingType'
   ui:
     label: 'Container'
-    icon: 'icon-minus'
+    icon: 'icon-coffee'
     group: 'foundationStructure'
-    inspector:
-      groups:
-        containerOptions:
-          label: 'Container options'
-          position: 9
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -60,17 +56,6 @@
           'format': ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
           'link':
             'a': TRUE
-    anchorName:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Anchor / section name'
-        reloadIfChanged: FALSE
-        inspector:
-          group: 'options'
-          editor: Content/Inspector/Editors/TextFieldEditor
-          editorOptions:
-            placeholder: 'None'
     classSectionStyle:
       type: string
       defaultValue: ''
@@ -115,6 +100,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:SemanticType'
+    - 'M12.Foundation:SailingType'
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
@@ -161,6 +147,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:SemanticType'
+    - 'M12.Foundation:SailingType'
   abstract: TRUE
   ui:
     icon: 'icon-columns'
@@ -281,6 +268,7 @@
 'M12.Foundation:BlockGrid':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:SailingType'
   ui:
     label: 'Block Grid'
     icon: 'icon-th-large'

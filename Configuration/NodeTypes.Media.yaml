@@ -6,6 +6,7 @@
 'M12.Foundation:Orbit':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:SailingType'
   ui:
     label: 'Orbit'
     icon: 'icon-picture'
