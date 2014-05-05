@@ -1,12 +1,6 @@
 # Abstract prototype for all form elements.
 prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content) {
-	node = ${node}
-
 	inputId = ${q(node).property('htmlCustomId') ? q(node).property('htmlCustomId') : q(node).property('_nodeData.identifier')}
-	inputName = ${q(node).property('inputName') ? q(node).property('inputName') : null}
-	inputType = ${q(node).property('inputType')}
-	inputValue = ${q(node).property('inputValue') ? q(node).property('inputValue') : null}
-	inputLabelEnable = ${q(node).property('inputLabelEnable') ? TRUE : null}
 
 	inputAttributes = TYPO3.TypoScript:RawArray {
 		placeholder = ${q(node).property('inputPlaceholder') ? q(node).property('inputPlaceholder') : null}
@@ -25,3 +19,4 @@ prototype(M12.Foundation:FormInputRadio) < prototype(M12.Foundation:FormElementA
 
 # Checkbox input.
 prototype(M12.Foundation:FormInputCheckbox) < prototype(M12.Foundation:FormElementAbstract)
+
