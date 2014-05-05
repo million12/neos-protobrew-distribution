@@ -1,8 +1,8 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-<f:if condition="{wrapperClasses}">
-<div class="{wrapperClasses}">
+<f:if condition="{wrapperAttributes}">
+<div{wrapperAttributes -> f:format.raw()}>
 </f:if>
 
 	<nav{attributes -> f:format.raw()} data-topbar>
@@ -23,7 +23,7 @@
 		</section>
 	</nav>
 
-<f:if condition="{wrapperClasses}">
+<f:if condition="{wrapperAttributes}">
 </div>
 </f:if>
 
