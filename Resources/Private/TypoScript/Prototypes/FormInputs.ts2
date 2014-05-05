@@ -11,6 +11,13 @@ prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content
 	}
 }
 
+# Fieldset with legend.
+prototype(M12.Foundation:FormFieldset) < prototype(M12.Foundation:Content) {
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}
+
 # Label.
 prototype(M12.Foundation:FormLabel) < prototype(M12.Foundation:Content) {
 	attributes.class.inline = ${q(node).property('labelInlined') ? 'inline' : null}

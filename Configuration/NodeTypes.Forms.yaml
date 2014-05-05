@@ -124,6 +124,40 @@
           group: 'formInputSettings'
 
 
+# Fieldset.
+'M12.Foundation:FormFieldset':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Fieldset'
+    icon: 'icon-columns'
+    group: 'foundationForms'
+    inspector:
+      groups:
+        formInputSettings:
+          label: 'Form input settings'
+          position: 9
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    legendTxt:
+      type: string
+      defaultValue: 'Legend'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format': []
+    showLegend:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Show legend'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+
+
 # <label> element.
 'M12.Foundation:FormLabel':
   superTypes:
