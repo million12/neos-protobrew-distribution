@@ -33,7 +33,7 @@ include: Prototypes/OrbitItem.ts2
 
 # M12.Foundation prototypes - Forms
 include: Prototypes/Form.ts2
-include: Prototypes/FormInput.ts2
+include: Prototypes/FormInputs.ts2
 
 
 # M12.Foundation prototypes - Buttons

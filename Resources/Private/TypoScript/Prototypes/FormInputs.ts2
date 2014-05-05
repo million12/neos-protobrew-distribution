@@ -20,3 +20,5 @@ prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content
 # Text based form input.
 prototype(M12.Foundation:FormInput) < prototype(M12.Foundation:FormElementAbstract)
 
+# Radio input.
+prototype(M12.Foundation:FormInputRadio) < prototype(M12.Foundation:FormElementAbstract)
