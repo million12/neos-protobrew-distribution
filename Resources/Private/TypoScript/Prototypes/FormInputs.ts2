@@ -20,5 +20,13 @@ prototype(M12.Foundation:FormInputRadio) < prototype(M12.Foundation:FormElementA
 # Checkbox input.
 prototype(M12.Foundation:FormInputCheckbox) < prototype(M12.Foundation:FormElementAbstract)
 
+# Select input.
+prototype(M12.Foundation:FormInputSelect) < prototype(M12.Foundation:FormElementAbstract) {
+	selectOptions = TYPO3.TypoScript:RawArray {
+		data = ${q(node).property('selectOptions')}
+		data2 = ${q(node).property('selectOptions')}
+	}
+}
+
 # Textarea input.
 prototype(M12.Foundation:FormInputTextarea) < prototype(M12.Foundation:FormElementAbstract)

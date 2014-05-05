@@ -190,6 +190,25 @@
     icon: 'icon-circle-blank'
 
 
+# NodeType for select.
+'M12.Foundation:FormInputSelect':
+  superTypes:
+    - 'M12.Foundation:FormElementAbstract'
+    - 'M12.Foundation:FormInputLabelAbstract'
+  ui:
+    label: 'Select input'
+    icon: 'icon-chevron-down'
+  properties:
+    selectOptions:
+      type: string
+      ui:
+        label: 'List select options'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formInputSettings'
+          editor: 'M12.Foundation/Inspector/Editors/TextAreaEditor'
+
+
 # NodeType for textarea.
 'M12.Foundation:FormInputTextarea':
   superTypes:
