@@ -157,7 +157,7 @@
 
 
 # Abstract NodeType for all M12.Foundation:GridColumnsX
-'M12.Foundation:GridColumnsAbstract':
+'M12.Foundation:GridRowAbstract':
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:SemanticType'
@@ -184,7 +184,7 @@
 #
 # Actual GridColumns elements
 #
-'M12.Foundation:GridColumns1':
+'M12.Foundation:GridRow1Column':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
@@ -194,8 +194,9 @@
     col1:
       type: 'M12.Foundation:Column'
 
-'M12.Foundation:GridColumns2':
-  superTypes: ['M12.Foundation:GridColumnsAbstract']
+'M12.Foundation:GridRow2Columns':
+  superTypes:
+    - 'M12.Foundation:GridRowAbstract'
   ui:
     label: 'Grid row: 2 columns'
   childNodes:
@@ -204,8 +205,9 @@
     col2:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridColumns3':
-  superTypes: ['M12.Foundation:GridColumnsAbstract']
+'M12.Foundation:GridRow3Columns':
+  superTypes:
+    - 'M12.Foundation:GridRowAbstract'
   ui:
     label: 'Grid row: 3 columns'
   childNodes:
@@ -216,8 +218,9 @@
     col3:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridColumns4':
-  superTypes: ['M12.Foundation:GridColumnsAbstract']
+'M12.Foundation:GridRow4Columns':
+  superTypes:
+    - 'M12.Foundation:GridRowAbstract'
   ui:
     label: 'Grid row: 4 columns'
   childNodes:
@@ -230,6 +233,41 @@
     col4:
       type: 'M12.Foundation:ColumnEnd'
 
+'M12.Foundation:GridRow5Columns':
+  superTypes:
+    - 'M12.Foundation:GridRowAbstract'
+  ui:
+    label: 'Grid row: 5 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+    col3:
+      type: 'M12.Foundation:Column'
+    col4:
+      type: 'M12.Foundation:Column'
+    col5:
+      type: 'M12.Foundation:ColumnEnd'
+
+'M12.Foundation:GridRow6Columns':
+  superTypes:
+    - 'M12.Foundation:GridRowAbstract'
+  ui:
+    label: 'Grid row: 6 columns'
+  childNodes:
+    col1:
+      type: 'M12.Foundation:Column'
+    col2:
+      type: 'M12.Foundation:Column'
+    col3:
+      type: 'M12.Foundation:Column'
+    col4:
+      type: 'M12.Foundation:Column'
+    col5:
+      type: 'M12.Foundation:Column'
+    col6:
+      type: 'M12.Foundation:ColumnEnd'
 
 
 

@@ -24,10 +24,6 @@ prototype(M12.Foundation:Column) < prototype(M12.Foundation:Content) {
 	attributes.class.column = 'columns'
 	attributes.class.endColumn = ${q(node).property('classEndColumn') ? 'end' : null}
 
-	# Somehow it's not inherited from 'M12.Foundation:Content'...
-	# For now we just repeat it here too.
-	tagName = ${q(node).property('tagName') ? q(node).property('tagName') : 'div'}
-
 	columnContent = TYPO3.Neos:ContentCollection {
 		nodePath = '.'
 	}
@@ -35,10 +31,7 @@ prototype(M12.Foundation:Column) < prototype(M12.Foundation:Content) {
 
 # Basic implementation of a flexible GridColumns element,
 # not exposed directly but inherited by all specific M12.Foundation:GridColumns* content elements
-prototype(M12.Foundation:GridColumns) >
-prototype(M12.Foundation:GridColumns) < prototype(M12.Foundation:Content) {
-	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
-
+prototype(M12.Foundation:GridRowAbstract) < prototype(M12.Foundation:Content) {
 	attributes.class.row = 'row'
 	attributes.class.collapse = ${q(node).property('classCollapse') ? 'collapse' : null}
 
@@ -49,14 +42,21 @@ prototype(M12.Foundation:GridColumns) < prototype(M12.Foundation:Content) {
 	}
 }
 
-prototype(M12.Foundation:GridColumns1) >
-prototype(M12.Foundation:GridColumns1) < prototype(M12.Foundation:GridColumns)
-
-prototype(M12.Foundation:GridColumns2) >
-prototype(M12.Foundation:GridColumns2) < prototype(M12.Foundation:GridColumns)
-
-prototype(M12.Foundation:GridColumns3) >
-prototype(M12.Foundation:GridColumns3) < prototype(M12.Foundation:GridColumns)
-
-prototype(M12.Foundation:GridColumns4) >
-prototype(M12.Foundation:GridColumns4) < prototype(M12.Foundation:GridColumns)
+prototype(M12.Foundation:GridRow1Column) < prototype(M12.Foundation:GridRowAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+}
+prototype(M12.Foundation:GridRow2Columns) < prototype(M12.Foundation:GridRowAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+}
+prototype(M12.Foundation:GridRow3Columns) < prototype(M12.Foundation:GridRowAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+}
+prototype(M12.Foundation:GridRow4Columns) < prototype(M12.Foundation:GridRowAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+}
+prototype(M12.Foundation:GridRow5Columns) < prototype(M12.Foundation:GridRowAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+}
+prototype(M12.Foundation:GridRow6Columns) < prototype(M12.Foundation:GridRowAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+}
