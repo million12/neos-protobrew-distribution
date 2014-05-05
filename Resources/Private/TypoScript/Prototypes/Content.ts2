@@ -43,8 +43,17 @@ prototype(TYPO3.Neos:Content) {
 		 	@position = 'end'
 		}
 	}
-
 	attributes.id = ${q(node).property('htmlCustomId') ? String.trim(q(node).property('htmlCustomId')) : null}
+
+	# Prepare container for another set of attributes - can be used for
+	# additional outer wrapper etc. Not harmful when not used / empty.
+	extraAttributes = TYPO3.TypoScript:Attributes {
+		class = TYPO3.TypoScript:RawArray
+		class.@process.trimThatWitch {
+			expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
+			@position = 'end'
+		}
+	}
 }
 
 #

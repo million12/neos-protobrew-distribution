@@ -8,19 +8,9 @@ prototype(M12.Foundation:TopBar) < prototype(TYPO3.Neos.NodeTypes:Menu) {
 	attributes.class.nodeType = 'm12-foundation-topbar'
 	attributes.class.base = 'top-bar'
 
-	wrapperAttributes = TYPO3.TypoScript:Attributes {
-		class = TYPO3.TypoScript:RawArray {
-			gridContained = ${q(node).property('topBarGridContained') ? 'contain-to-grid' : null}
-			fixed = ${q(node).property('topBarFixed') ? 'fixed' : null}
-			sticky = ${q(node).property('topBarSticky') ? 'sticky' : null}
-
-			# At the end remove extra spaces after many class items were joined
-			@process.trimThatWitch {
-				expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
-				@position = 'end'
-			}
-		}
-	}
+	extraAttributes.class.gridContained = ${q(node).property('topBarGridContained') ? 'contain-to-grid' : null}
+	extraAttributes.class.fixed = ${q(node).property('topBarFixed') ? 'fixed' : null}
+	extraAttributes.class.sticky = ${q(node).property('topBarSticky') ? 'sticky' : null}
 
 	topBarTitle = ${isDocumentContext ? q(site).property('title') : q(node).property('topBarTitle')}
 	sectionAlign = ${q(node).property('classSectionAlign') ? q(node).property('classSectionAlign') : 'left'}
