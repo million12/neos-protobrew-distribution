@@ -6,7 +6,8 @@
 
 # Reveal Modal
 'M12.Foundation:RevealModal':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Reveal Modal'
     icon: 'icon-fullscreen'
@@ -40,7 +41,8 @@
 
 # Alert box
 'M12.Foundation:Alert':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Alert'
     icon: 'icon-warning-sign'
@@ -77,7 +79,7 @@
 # Panel
 'M12.Foundation:Panel':
   superTypes:
-    - TYPO3.Neos:Content
+    - 'TYPO3.Neos:Content'
     - 'M12.Foundation:SemanticType'
   ui:
     label: 'Panel'

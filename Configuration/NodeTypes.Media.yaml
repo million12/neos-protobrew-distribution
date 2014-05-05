@@ -4,7 +4,8 @@
 #
 # -----------------------------------------------------------------------------
 'M12.Foundation:Orbit':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Orbit'
     icon: 'icon-picture'

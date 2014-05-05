@@ -231,4 +231,4 @@
 # -----------------------------------------------------------------------------
 'TYPO3.Neos:Content':
   superTypes:
-    genericHelpers:     'M12.Foundation:GenericHelpers'
+    genericHelpers: 'M12.Foundation:GenericHelpers'

@@ -4,7 +4,8 @@
 #
 # -----------------------------------------------------------------------------
 'M12.Foundation:Button':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Button'
     icon: 'icon-minus'

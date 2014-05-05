@@ -6,7 +6,8 @@
 
 # <form> element.
 'M12.Foundation:Form':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Form'
     icon: 'icon-th-list'
@@ -18,7 +19,8 @@
 
 # Abstract NodeType for all form inputs (including buttons).
 'M12.Foundation:FormElementAbstract':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    - 'TYPO3.Neos:Content'
   abstract: TRUE
   ui:
     group: 'foundationForms'

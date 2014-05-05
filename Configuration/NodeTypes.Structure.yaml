@@ -143,7 +143,8 @@
 
 # The last child node for M12.Foundation:GridColumnsX with extra classEndColumn property
 'M12.Foundation:ColumnEnd':
-  superTypes: ['M12.Foundation:Column']
+  superTypes:
+    - 'M12.Foundation:Column'
   properties:
     classEndColumn:
       type: boolean
@@ -184,7 +185,8 @@
 # Actual GridColumns elements
 #
 'M12.Foundation:GridColumns1':
-  superTypes: ['M12.Foundation:GridColumnsAbstract']
+  superTypes:
+    - 'M12.Foundation:GridRowAbstract'
   ui:
     label: 'Grid row: 1 column'
     icon: 'icon-laptop'
