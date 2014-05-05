@@ -166,6 +166,17 @@
                 label: 'Color'
 
 
+# NodeType for checkbox input.
+'M12.Foundation:FormInputCheckbox':
+  superTypes:
+    - 'M12.Foundation:FormElementAbstract'
+    - 'M12.Foundation:FormInputLabelAbstract'
+    - 'M12.Foundation:FormInputCheckedAbstract'
+  ui:
+    label: 'Checkbox input'
+    icon: 'icon-check'
+
+
 # NodeType for radio input.
 'M12.Foundation:FormInputRadio':
   superTypes:
