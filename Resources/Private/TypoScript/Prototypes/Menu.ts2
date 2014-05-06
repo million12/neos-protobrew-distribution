@@ -1,0 +1,44 @@
+# Override TYPO3.Neos:Menu
+prototype(M12.Foundation:Menu) < prototype(TYPO3.Neos.NodeTypes:Menu) {
+	@override.isDocumentContext = ${q(node).is('[instanceof TYPO3.Neos:Document]')}
+
+	extraAttributes.class.fixed  = ${q(node).property('classNavFixed')  ? 'fixed' : null}
+	extraAttributes.class.sticky = ${q(node).property('classNavSticky') ? 'sticky' : null}
+}
+
+prototype(M12.Foundation:TopBar) < prototype(M12.Foundation:Menu) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/TopBar.html'
+	node = ${node}
+
+	# Set nodeType class manually - othwerise it inherits page class when inserted from TS
+	attributes.class.nodeType = 'm12-foundation-topbar'
+	attributes.class.base = 'top-bar'
+
+	extraAttributes.class.gridContained = ${q(node).property('topBarGridContained') ? 'contain-to-grid' : null}
+
+	topBarTitle = ${isDocumentContext ? q(site).property('title') : q(node).property('topBarTitle')}
+	sectionAlign = ${q(node).property('classSectionAlign') ? q(node).property('classSectionAlign') : 'left'}
+}
+
+prototype(M12.Foundation:SubNavLive) < prototype(M12.Foundation:Menu) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Menu.html'
+	node = ${node}
+
+	# Set nodeType class manually - othwerise it inherits page class when inserted from TS
+	attributes.class.nodeType = 'm12-foundation-subnav'
+	attributes.class.base = 'sub-nav'
+	tag = 'dl'
+	itemTag = 'dd'
+}
+
+prototype(M12.Foundation:SideNavLive) < prototype(M12.Foundation:Menu) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Menu.html'
+	node = ${node}
+
+	# Set nodeType class manually - othwerise it inherits page class when inserted from TS
+	attributes.class.nodeType = 'm12-foundation-sidenav'
+	attributes.class.base = 'side-nav'
+
+	tag = 'ul'
+	itemTag = 'li'
+}

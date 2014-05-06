@@ -10,10 +10,16 @@
 'M12.Foundation:TopBar':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
+    - 'M12.Foundation:NavFixedStickyAbstract'
   ui:
     label: 'Top Bar'
     icon: 'icon-sitemap'
     group: 'foundationNavigation'
+    inspector:
+      groups:
+        navOptions:
+          label: 'Top Bar options'
+          position: 9
   properties:
     topBarTitle:
       type: string
@@ -22,7 +28,7 @@
         label: 'Top Bar title'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
+          group: 'navOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
     classSectionAlign:
       type: string
@@ -31,7 +37,7 @@
         label: 'TopBar section align'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
+          group: 'navOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default'
@@ -46,21 +52,8 @@
         label: 'Contain to grid'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
-    topBarFixed:
-      type: boolean
-      ui:
-        label: 'Fixed'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-    topBarSticky:
-      type: boolean
-      ui:
-        label: 'Sticky'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
+          group: 'navOptions'
+
 
 
 #
@@ -84,6 +77,7 @@
 'M12.Foundation:SideNavLive':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
+    - 'M12.Foundation:NavFixedStickyAbstract'
   ui:
     label: 'Side Nav (live)'
     group: 'foundationNavigation'
@@ -125,9 +119,15 @@
 'M12.Foundation:SubNavLive':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
+    - 'M12.Foundation:NavFixedStickyAbstract'
   ui:
     label: 'Sub Nav (live)'
     group: 'foundationNavigation'
+    inspector:
+      groups:
+        navOptions:
+          label: 'Sub Nav options'
+          position: 9
   properties:
     title:
       type: string
@@ -136,7 +136,7 @@
         label: 'Title'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
+          group: 'navOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
 
 

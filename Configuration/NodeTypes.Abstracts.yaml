@@ -41,6 +41,26 @@
                 label: 'FOOTER'
 
 #
+
+'M12.Foundation:NavFixedStickyAbstract':
+  abstract: TRUE
+  properties:
+    classNavFixed:
+      type: boolean
+      ui:
+        label: 'Fixed'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    classNavSticky:
+      type: boolean
+      ui:
+        label: 'Sticky'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+
+#
 # Mixin:
 # Navigation: #fragment, magellan support
 #

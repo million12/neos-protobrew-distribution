@@ -42,6 +42,11 @@ prototype(TYPO3.Neos:Content) {
 		 	expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
 		 	@position = 'end'
 		}
+		# Nullify class if it's empty - so then it's not rendered at all
+		class.@process.nullify {
+			expression = ${value ? value : null}
+			@position = 'after trimThatWitch'
+		}
 	}
 	attributes.id = ${q(node).property('htmlCustomId') ? String.trim(q(node).property('htmlCustomId')) : null}
 
@@ -52,6 +57,11 @@ prototype(TYPO3.Neos:Content) {
 		class.@process.trimThatWitch {
 			expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
 			@position = 'end'
+		}
+		# Nullify class if it's empty - so then it's not rendered at all
+		class.@process.nullify {
+			expression = ${value ? value : null}
+			@position = 'after trimThatWitch'
 		}
 	}
 }

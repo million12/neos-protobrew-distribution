@@ -1,6 +1,8 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
+<f:if condition="{extraAttributes}"><div{extraAttributes -> f:format.raw()}></f:if>
+
 <{tag}{attributes -> f:format.raw()}>
 	<f:if condition="{title}">
 		<f:comment><!--
@@ -16,6 +18,8 @@
 
 	<f:render section="itemsList" arguments="{items: items, itemTag: itemTag}" />
 </{tag}>
+
+<f:if condition="{extraAttributes}"></div></f:if>
 
 <f:section name="itemsList">
 	<f:for each="{items}" as="item">
