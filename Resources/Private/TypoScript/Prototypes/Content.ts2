@@ -2,6 +2,8 @@ prototype(TYPO3.Neos:Content) {
 	# remove default Neos class processing
 	attributes.class.@process.nodeType >
 
+	@override.nodeTypeShort = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
+
 	attributes.class = TYPO3.TypoScript:RawArray {
 		# Copied from original TYPO3.Neos:Content - adds class with Neos node-type
 		nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
@@ -34,8 +36,12 @@ prototype(TYPO3.Neos:Content) {
 		hide = ${q(node).property('classHide') ? 'hide' : null}
 		hide.@position = '100'
 
-		customClass = ${q(node).property('classCustomClass')}
-		customClass.@position = 'end'
+		# Add extra class 'style-x [nodeTypeShort]-style-x
+		customStyle = ${q(node).property('customStyle') ? q(node).property('customStyle')+' '+nodeTypeShort+'-'+q(node).property('customStyle') : null}
+		customStyle.@position = 'end 10'
+
+		customClass = ${q(node).property('customCssClass')}
+		customClass.@position = 'end 20'
 
 		# At the end remove extra spaces after many class items were joined
 		@process.trimThatWitch {
@@ -48,7 +54,8 @@ prototype(TYPO3.Neos:Content) {
 			@position = 'after trimThatWitch'
 		}
 	}
-	attributes.id = ${q(node).property('htmlCustomId') ? String.trim(q(node).property('htmlCustomId')) : null}
+	attributes.id = ${q(node).property('customHtmlId') ? String.trim(q(node).property('customHtmlId')) : null}
+	attributes.style = ${q(node).property('customInlineCss') ? String.trim(q(node).property('customInlineCss')) : null}
 
 	# Prepare container for another set of attributes - can be used for
 	# additional outer wrapper etc. Not harmful when not used / empty.

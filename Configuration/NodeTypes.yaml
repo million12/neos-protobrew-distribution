@@ -14,9 +14,6 @@
         visibilityClasses:
           label: 'Show/hide classes'
           position: 94
-        customClassesOrId:
-          label: 'Custom classes or ID'
-          position: 95 # Before
   properties:
     classHide:
       type: boolean
@@ -195,31 +192,6 @@
                 label: 'Show for touch'
               hide-for-touch:
                 label: 'Hide for touch'
-    classCustomClass:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Custom class(es)'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'customClassesOrId'
-          position: 10
-          editor: Content/Inspector/Editors/TextFieldEditor
-          editorOptions:
-            placeholder: 'None'
-    htmlCustomId:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Custom ID'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'customClassesOrId'
-          position: 10
-          editor: Content/Inspector/Editors/TextFieldEditor
-          editorOptions:
-            placeholder: 'None'
-
 
 
 
@@ -232,3 +204,4 @@
 'TYPO3.Neos:Content':
   superTypes:
     genericHelpers: 'M12.Foundation:GenericHelpers'
+    devAbstract: 'M12.Foundation:DeveloperAbstract'

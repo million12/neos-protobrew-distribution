@@ -1,4 +1,74 @@
 #
+# Mixin with custom css / id / predefined style / inline css
+#
+'M12.Foundation:DeveloperAbstract':
+  abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        dev:
+          label: 'Advanced'
+          position: 95
+  properties:
+    customHtmlId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Custom ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'dev'
+          position: 10
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+    customCssClass:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Custom class(es)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'dev'
+          position: 20
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+    customStyle:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Predefined style'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'dev'
+          position: 30
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'None'
+            values:
+              '':
+                label: ''
+              style-1:
+                label: 'Style 1'
+              style-2:
+                label: 'Style 2'
+              style-3:
+                label: 'Style 3'
+    customInlineCss:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Inline CSS'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'dev'
+          position: 40
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+
+#
 # Mixin:
 # Semantic markup, choosing tag name for wrapper element
 #

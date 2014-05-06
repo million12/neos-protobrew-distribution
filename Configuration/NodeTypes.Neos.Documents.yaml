@@ -15,10 +15,12 @@
           regularExpression: '/^[a-z0-9\-]+$/i'
 
 'TYPO3.Neos.NodeTypes:Page':
+  superTypes:
+    devAbstract: 'M12.Foundation:DeveloperAbstract'
   ui:
     inspector:
       groups:
-        developer:
+        dev:
           label: 'Advanced'
           position: 151 # after 'Layout' section (with position=150)
   properties:
@@ -27,12 +29,29 @@
       ui:
         reloadIfChanged: TRUE
         inspector:
-          group: 'developer'
+          group: 'dev'
+          position: 5
           editor: 'M12.Foundation/Inspector/Editors/JsEditor'
-    customCssCode:
+    # Inherited from M12.Foundation:DeveloperAbstract
+    # Replace it with CssEditor
+    customInlineCss:
       type: string
       ui:
+        label: null
         reloadIfChanged: TRUE
         inspector:
-          group: 'developer'
+          group: 'dev'
+          position: 6
           editor: 'M12.Foundation/Inspector/Editors/CssEditor'
+    # Inherited from M12.Foundation:DeveloperAbstract
+    customHtmlId:
+      ui:
+        label: 'Custom body ID'
+    # Inherited from M12.Foundation:DeveloperAbstract
+    customCssClass:
+      ui:
+        label: 'Custom body class(es)'
+    # Inherited from M12.Foundation:DeveloperAbstract
+    customStyle:
+      ui:
+        label: 'Predefined body style'
