@@ -16,14 +16,14 @@
 		</f:if>
 	</f:if>
 
-	<f:render section="itemsList" arguments="{items: items, itemTag: itemTag}" />
+	<f:render section="itemsList" arguments="{items: items, itemTag: itemTag, magellanSupport: magellanSupport}" />
 </{tag}>
 
 <f:if condition="{extraAttributes}"></div></f:if>
 
 <f:section name="itemsList">
 	<f:for each="{items}" as="item">
-		<{itemTag} class="{item.cssClasses}">
+		<{itemTag} class="{item.cssClasses}"<f:if condition="{magellanSupport}"><f:if condition="{item.fragment}">data-magellan-arrival="{item.fragment}"</f:if></f:if>>
 			<f:if condition="{item.fragment}">
 				<f:then>
 					<neos:link.node node="{item.node}" section="{item.fragment}">{item.label}</neos:link.node>

@@ -10,6 +10,7 @@
 'M12.Foundation:TopBar':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
+    - 'M12.Foundation:MagellanSupport'
     - 'M12.Foundation:NavFixedStickyAbstract'
   ui:
     label: 'Top Bar'
@@ -77,6 +78,7 @@
 'M12.Foundation:SideNavLive':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
+    - 'M12.Foundation:MagellanSupport'
     - 'M12.Foundation:NavFixedStickyAbstract'
   ui:
     label: 'Side Nav (live)'
@@ -119,6 +121,7 @@
 'M12.Foundation:SubNavLive':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
+    - 'M12.Foundation:MagellanSupport'
     - 'M12.Foundation:NavFixedStickyAbstract'
   ui:
     label: 'Sub Nav (live)'

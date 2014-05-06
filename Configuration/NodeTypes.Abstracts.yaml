@@ -41,6 +41,18 @@
                 label: 'FOOTER'
 
 #
+# Mixin for nodes where 'magellanSupport' property is needed
+#
+'M12.Foundation:MagellanSupport':
+  abstract: TRUE
+  properties:
+    magellanSupport:
+      type: boolean
+      ui:
+        label: 'Magellan Sticky Nav support'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
 
 'M12.Foundation:NavFixedStickyAbstract':
   abstract: TRUE
@@ -65,6 +77,8 @@
 # Navigation: #fragment, magellan support
 #
 'M12.Foundation:SailingType':
+  superTypes:
+    - 'M12.Foundation:MagellanSupport'
   abstract: TRUE
   ui:
     inspector:
@@ -81,6 +95,7 @@
         reloadIfChanged: FALSE
         inspector:
           group: 'sailingOptions'
+          position: 10
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
@@ -90,9 +105,8 @@
           maximum: 32
         regularExpression:
           regularExpression: '/^[a-z0-9\-]+$/i'
-    activateMagellan:
-      type: boolean
+    magellanSupport:
       ui:
-        label: 'Activate Magellan Sticky Nav'
         inspector:
           group: 'sailingOptions'
+          position: 20

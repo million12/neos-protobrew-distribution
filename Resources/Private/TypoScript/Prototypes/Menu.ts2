@@ -2,8 +2,14 @@
 prototype(M12.Foundation:Menu) < prototype(TYPO3.Neos.NodeTypes:Menu) {
 	@override.isDocumentContext = ${q(node).is('[instanceof TYPO3.Neos:Document]')}
 
+	# magellanSupport is set via @override in the parent scope.
+	# When in document context, use that variable - otherwise read node property.
+	magellanSupport = ${isDocumentContext ? magellanSupport : q(node).property('magellanSupport')}
+	@override.magellanSupport = ${this.magellanSupport}
+
 	extraAttributes.class.fixed  = ${q(node).property('classNavFixed')  ? 'fixed' : null}
 	extraAttributes.class.sticky = ${q(node).property('classNavSticky') ? 'sticky' : null}
+	extraAttributes.data-magellan-expedition = ${magellanSupport ? 'fixed' : null}
 }
 
 prototype(M12.Foundation:TopBar) < prototype(M12.Foundation:Menu) {
