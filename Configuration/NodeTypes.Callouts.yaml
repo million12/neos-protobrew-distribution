@@ -8,6 +8,7 @@
 'M12.Foundation:RevealModal':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractDevCustomTag'
   ui:
     label: 'Reveal Modal'
     icon: 'icon-fullscreen'
@@ -38,11 +39,25 @@
                 label: 'Medium'
               large:
                 label: 'Large'
+    # Override some properties of 'customHtmlId':
+    # - make it required
+    # - move it to 'options' group
+    customHtmlId:
+      ui:
+        label: 'Reveal Modal ID'
+        inspector:
+          group: 'options'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
 
 # Alert box
 'M12.Foundation:Alert':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractDevCustomTag'
   ui:
     label: 'Alert'
     icon: 'icon-warning-sign'
@@ -80,8 +95,8 @@
 'M12.Foundation:Panel':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SemanticType'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractDevCustomTag'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Panel'
     icon: 'icon-check-empty'

@@ -37,8 +37,8 @@ prototype(TYPO3.Neos:Content) {
 		hide.@position = '100'
 
 		# Add extra class 'style-x [nodeTypeShort]-style-x
-		customStyle = ${q(node).property('customStyle') ? q(node).property('customStyle')+' '+nodeTypeShort+'-'+q(node).property('customStyle') : null}
-		customStyle.@position = 'end 10'
+		customLook = ${q(node).property('customLook') ? q(node).property('customLook')+' '+nodeTypeShort+'-'+q(node).property('customLook') : null}
+		customLook.@position = 'end 10'
 
 		customClass = ${q(node).property('customCssClass')}
 		customClass.@position = 'end 20'
@@ -48,14 +48,9 @@ prototype(TYPO3.Neos:Content) {
 		 	expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
 		 	@position = 'end'
 		}
-		# Nullify class if it's empty - so then it's not rendered at all
-		class.@process.nullify {
-			expression = ${value ? value : null}
-			@position = 'after trimThatWitch'
-		}
 	}
 	attributes.id = ${q(node).property('customHtmlId') ? String.trim(q(node).property('customHtmlId')) : null}
-	attributes.style = ${q(node).property('customInlineCss') ? String.trim(q(node).property('customInlineCss')) : null}
+	attributes.style = ${q(node).property('customCssCode') ? String.trim(q(node).property('customCssCode')) : null}
 
 	# Prepare container for another set of attributes - can be used for
 	# additional outer wrapper etc. Not harmful when not used / empty.
@@ -65,16 +60,16 @@ prototype(TYPO3.Neos:Content) {
 			expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
 			@position = 'end'
 		}
-		# Nullify class if it's empty - so then it's not rendered at all
+		# Nullify class if it's empty - so then it's not rendered *at all*.
+		# It's important to have it as NULL as we might check in the template if
+		# extraAttributes exists and if so, extra wrapper might be rendered.
 		class.@process.nullify {
 			expression = ${value ? value : null}
 			@position = 'after trimThatWitch'
 		}
 	}
 
-	# Plenty of Foundation-based node types inherits after M12.Foundation:SemanticType,
-    # which adds a property 'tagName', which can be used in the template to render
-    # different than default tag (usually DIV).
-    tagName = ${q(node).property('tagName')}
-    tagName.@process.default = ${value ? value : 'div'}
+	# Support for custom semantic wrapper tag from M12.Foundation:AbstractDevCustomTag
+	tagName = ${q(node).property('customTagName')}
+	tagName.@process.default = ${value ? value : 'div'}
 }

@@ -6,7 +6,7 @@
 'M12.Foundation:Button':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Button'
     icon: 'icon-minus'

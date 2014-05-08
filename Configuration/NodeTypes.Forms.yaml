@@ -8,7 +8,7 @@
 'M12.Foundation:Form':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Form'
     icon: 'icon-th-list'

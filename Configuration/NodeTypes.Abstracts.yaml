@@ -1,7 +1,7 @@
 #
-# Mixin with custom css / id / predefined style / inline css
+# Mixin with custom id / css class / inline css
 #
-'M12.Foundation:DeveloperAbstract':
+'M12.Foundation:AbstractDevBase':
   abstract: TRUE
   ui:
     inspector:
@@ -14,7 +14,7 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'Custom ID'
+        label: 'Wrapper custom HTML ID'
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
@@ -22,11 +22,14 @@
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
+      validation:
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
     customCssClass:
       type: string
       defaultValue: ''
       ui:
-        label: 'Custom class(es)'
+        label: 'Wrapper custom class(es)'
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
@@ -34,15 +37,41 @@
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
-    customStyle:
+      validation:
+        regularExpression:
+          regularExpression: '/^[a-z0-9\- ]+$/i'
+    customCssCode:
       type: string
       defaultValue: ''
       ui:
-        label: 'Predefined style'
+        label: 'Wrapper inline CSS'
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
           position: 30
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+
+
+'M12.Foundation:AbstractDevCustomLook':
+  abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        dev:
+          label: 'Advanced'
+          position: 95
+  properties:
+    customLook:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Predefined style / look'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'dev'
+          position: 40
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'None'
@@ -55,65 +84,54 @@
                 label: 'Style 2'
               style-3:
                 label: 'Style 3'
-    customInlineCss:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Inline CSS'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'dev'
-          position: 40
-          editor: Content/Inspector/Editors/TextFieldEditor
-          editorOptions:
-            placeholder: 'None'
 
 #
 # Mixin:
 # Semantic markup, choosing tag name for wrapper element
 #
-'M12.Foundation:SemanticType':
+'M12.Foundation:AbstractDevCustomTag':
   abstract: TRUE
   ui:
     inspector:
       groups:
-        semanticOptions:
-          label: 'Semantic HTML'
-          position: 96
+        dev:
+          label: 'Advanced'
+          position: 95
   properties:
-    tagName:
+    customTagName:
       type: string
       defaultValue: 'div'
       ui:
-        label: 'Semantic type'
+        label: 'Wrapper semantic tag type'
         reloadIfChanged: TRUE
         inspector:
-          group: 'semanticOptions'
+          group: 'dev'
+          position: 50
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            placeholder: 'Default'
+            placeholder: 'Default / None'
             values:
-              div:
-                label: 'DIV (default)'
+              '':
+                label: ''
+              main:
+                label: 'MAIN'
               header:
                 label: 'HEADER'
               nav:
                 label: 'NAV'
-              main:
-                label: 'MAIN'
               section:
                 label: 'SECTION'
-              aside:
-                label: 'ASIDE'
               artile:
                 label: 'ARTICLE'
+              aside:
+                label: 'ASIDE'
               footer:
                 label: 'FOOTER'
 
 #
-# Mixin for nodes where 'magellanSupport' property is needed
+# Mixin for content nodes where 'magellanSupport' property is needed
 #
-'M12.Foundation:MagellanSupport':
+'M12.Foundation:AbstractNavMagellanSupport':
   abstract: TRUE
   properties:
     magellanSupport:
@@ -122,9 +140,39 @@
         label: 'Magellan Sticky Nav support'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
+          group: 'sailingOptions'
 
-'M12.Foundation:NavFixedStickyAbstract':
+#
+# Mixin for document/content nodes with 'fragmentId' property
+# which can be rendered as #fragmentId (document links)
+# or anchor <a name"fragmentId"></a>
+#
+'M12.Foundation:AbstractNavFragmentId':
+  abstract: TRUE
+  properties:
+    fragmentId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Fragment / section #name'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'sailingOptions'
+          position: 10
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+      validation:
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 32
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
+
+#
+# Mixin for nav content elements, to add support for fixed/sticky
+#
+'M12.Foundation:AbstractNavFixedSticky':
   abstract: TRUE
   properties:
     classNavFixed:
@@ -146,9 +194,10 @@
 # Mixin:
 # Navigation: #fragment, magellan support
 #
-'M12.Foundation:SailingType':
+'M12.Foundation:AbstractNavSailingType':
   superTypes:
-    - 'M12.Foundation:MagellanSupport'
+    - 'M12.Foundation:AbstractNavFragmentId'
+    - 'M12.Foundation:AbstractNavMagellanSupport'
   abstract: TRUE
   ui:
     inspector:
@@ -156,27 +205,3 @@
         sailingOptions:
           label: 'Sailing options'
           position: 96
-  properties:
-    fragmentId:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Fragment / section #name'
-        reloadIfChanged: FALSE
-        inspector:
-          group: 'sailingOptions'
-          position: 10
-          editor: Content/Inspector/Editors/TextFieldEditor
-          editorOptions:
-            placeholder: 'None'
-      validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
-          minimum: 1
-          maximum: 32
-        regularExpression:
-          regularExpression: '/^[a-z0-9\-]+$/i'
-    magellanSupport:
-      ui:
-        inspector:
-          group: 'sailingOptions'
-          position: 20

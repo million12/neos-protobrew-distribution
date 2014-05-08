@@ -16,7 +16,7 @@
   properties:
     # Start level: default 1st level of the site
     startLevel:
-      defaultValue: '1'
+      defaultValue: 1
 
 'TYPO3.Neos.NodeTypes:TwoColumn':
   ui:
@@ -30,6 +30,8 @@
 
 
 'TYPO3.Neos.NodeTypes:Headline':
+  superTypes:
+    abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
   properties:
     'title':
       ui:
@@ -41,6 +43,8 @@
             'h6': TRUE
 
 'TYPO3.Neos.NodeTypes:Text':
+  superTypes:
+    abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
   properties:
     'text':
       ui:
@@ -50,3 +54,7 @@
             'h5': TRUE
             'h6': TRUE
             'div': TRUE
+
+'TYPO3.Neos.NodeTypes:Html':
+  superTypes:
+    abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'

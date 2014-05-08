@@ -10,8 +10,8 @@
 'M12.Foundation:TopBar':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
-    - 'M12.Foundation:MagellanSupport'
-    - 'M12.Foundation:NavFixedStickyAbstract'
+    - 'M12.Foundation:AbstractNavFixedSticky'
+    - 'M12.Foundation:AbstractNavMagellanSupport'
   ui:
     label: 'Top Bar'
     icon: 'icon-sitemap'
@@ -78,8 +78,8 @@
 'M12.Foundation:SideNavLive':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
-    - 'M12.Foundation:MagellanSupport'
-    - 'M12.Foundation:NavFixedStickyAbstract'
+    - 'M12.Foundation:AbstractNavFixedSticky'
+    - 'M12.Foundation:AbstractNavMagellanSupport'
   ui:
     label: 'Side Nav (live)'
     group: 'foundationNavigation'
@@ -121,8 +121,8 @@
 'M12.Foundation:SubNavLive':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
-    - 'M12.Foundation:MagellanSupport'
-    - 'M12.Foundation:NavFixedStickyAbstract'
+    - 'M12.Foundation:AbstractNavFixedSticky'
+    - 'M12.Foundation:AbstractNavMagellanSupport'
   ui:
     label: 'Sub Nav (live)'
     group: 'foundationNavigation'

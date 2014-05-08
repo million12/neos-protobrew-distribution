@@ -1,5 +1,5 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<div{attributes -> f:format.raw()} data-alert>
+<{tagName}{attributes -> f:format.raw()} data-alert>
 	<ts:render path="alertContent" />
 	<a href="#" class="close">&times;</a>
-</div>
+</{tagName}>

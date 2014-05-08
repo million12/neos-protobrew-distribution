@@ -6,8 +6,8 @@
 'M12.Foundation:Container':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SemanticType'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractDevCustomTag'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Container'
     icon: 'icon-coffee'
@@ -99,8 +99,8 @@
 'M12.Foundation:Column':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SemanticType'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractDevCustomTag'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
@@ -146,8 +146,8 @@
 'M12.Foundation:GridRowAbstract':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SemanticType'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractDevCustomTag'
+    - 'M12.Foundation:AbstractNavSailingType'
   abstract: TRUE
   ui:
     icon: 'icon-columns'
@@ -268,7 +268,7 @@
 'M12.Foundation:BlockGrid':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:SailingType'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Block Grid'
     icon: 'icon-th-large'

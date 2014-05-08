@@ -1,28 +1,18 @@
 'TYPO3.Neos:Document':
+  superTypes:
+    fragmentId: 'M12.Foundation:AbstractNavFragmentId'
   properties:
-    fragment:
-      type: string
+    fragmentId:
       ui:
         label: '#Fragment (URL)'
-        reloadIfChanged: TRUE
         inspector:
           group: 'document'
-      validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
-          minimum: 1
-          maximum: 32
-        regularExpression:
-          regularExpression: '/^[a-z0-9\-]+$/i'
+
 
 'TYPO3.Neos.NodeTypes:Page':
   superTypes:
-    devAbstract: 'M12.Foundation:DeveloperAbstract'
-  ui:
-    inspector:
-      groups:
-        dev:
-          label: 'Advanced'
-          position: 151 # after 'Layout' section (with position=150)
+    abstractDev: 'M12.Foundation:AbstractDevBase'
+    abstractCustomLook: 'M12.Foundation:AbstractDevCustomLook'
   properties:
     customJsCode:
       type: string
@@ -30,18 +20,14 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
-          position: 5
+          position: 31 # after 'customCssCode'
           editor: 'M12.Foundation/Inspector/Editors/JsEditor'
-    # Inherited from M12.Foundation:DeveloperAbstract
+    # Inherited from M12.Foundation:AbstractDevBase
     # Replace it with CssEditor
-    customInlineCss:
-      type: string
+    customCssCode:
       ui:
         label: null
-        reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
-          position: 6
           editor: 'M12.Foundation/Inspector/Editors/CssEditor'
     # Inherited from M12.Foundation:DeveloperAbstract
     customHtmlId:
@@ -52,6 +38,6 @@
       ui:
         label: 'Custom body class(es)'
     # Inherited from M12.Foundation:DeveloperAbstract
-    customStyle:
+    customLook:
       ui:
         label: 'Predefined body style'

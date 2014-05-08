@@ -27,7 +27,7 @@ prototype(M12.Foundation:TopBar) < prototype(M12.Foundation:Menu) {
 }
 
 prototype(M12.Foundation:SubNavLive) < prototype(M12.Foundation:Menu) {
-	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Menu.html'
+	templatePath = 'resource://M12.Foundation/Private/Templates/Neos/Menu.html'
 	node = ${node}
 
 	# Set nodeType class manually - othwerise it inherits page class when inserted from TS
@@ -38,7 +38,7 @@ prototype(M12.Foundation:SubNavLive) < prototype(M12.Foundation:Menu) {
 }
 
 prototype(M12.Foundation:SideNavLive) < prototype(M12.Foundation:Menu) {
-	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Menu.html'
+	templatePath = 'resource://M12.Foundation/Private/Templates/Neos/Menu.html'
 	node = ${node}
 
 	# Set nodeType class manually - othwerise it inherits page class when inserted from TS

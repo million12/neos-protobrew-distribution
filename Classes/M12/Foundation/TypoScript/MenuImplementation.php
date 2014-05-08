@@ -37,18 +37,18 @@ class MenuImplementation extends NeosMenuImplementation {
 
 			//
 			// [FEATURE]
-			// Resolve #fragment part of url (set in node property 'fragment')
+			// Resolve #fragmentId part of url (set in node property 'fragmentId')
 			// and store it in $item, so it's easily available in the template.
 			//
-			$item['fragment'] = null;
-			if (($fragment = $node->getProperty('fragment')))
-				$item['fragment'] = $fragment;
+			$item['fragmentId'] = null;
+			if (($fragmentId = $node->getProperty('fragmentId')))
+				$item['fragmentId'] = $fragmentId;
 
 			//
 			// [IMPROVEMENT]
 			// Allow *only one* STATE_CURRENT on given menu level.
 			// This is useful when there's more then one URL on the same level pointing to the
-			// current page (and eg. #fragment is used to point different section on the page).
+			// current page (and eg. #fragmentId is used to point different section on the page).
 			//
 			if (static::STATE_CURRENT === $item['state']) {
 				if ($currentStateAlreadySet)

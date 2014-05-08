@@ -3,7 +3,7 @@
 # Abstract: foundation helper classes
 #
 # -----------------------------------------------------------------------------
-'M12.Foundation:GenericHelpers':
+'M12.Foundation:AbstractGenericHelpers':
   abstract: TRUE
   ui:
     inspector:
@@ -203,5 +203,6 @@
 # -----------------------------------------------------------------------------
 'TYPO3.Neos:Content':
   superTypes:
-    genericHelpers: 'M12.Foundation:GenericHelpers'
-    devAbstract: 'M12.Foundation:DeveloperAbstract'
+    abstractGenericHelpers: 'M12.Foundation:AbstractGenericHelpers'
+    abstractDevBase:        'M12.Foundation:AbstractDevBase'
+    abstractDevCustomLook:  'M12.Foundation:AbstractDevCustomLook'
