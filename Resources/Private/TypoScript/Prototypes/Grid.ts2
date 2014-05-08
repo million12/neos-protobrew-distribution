@@ -42,21 +42,21 @@ prototype(M12.Foundation:GridRowAbstract) < prototype(M12.Foundation:Content) {
 	}
 }
 
-prototype(M12.Foundation:GridRow1Column) < prototype(M12.Foundation:GridRowAbstract) {
+prototype(M12.Foundation:GridRow1Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
 }
-prototype(M12.Foundation:GridRow2Columns) < prototype(M12.Foundation:GridRowAbstract) {
+prototype(M12.Foundation:GridRow2Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
 }
-prototype(M12.Foundation:GridRow3Columns) < prototype(M12.Foundation:GridRowAbstract) {
+prototype(M12.Foundation:GridRow3Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
 }
-prototype(M12.Foundation:GridRow4Columns) < prototype(M12.Foundation:GridRowAbstract) {
+prototype(M12.Foundation:GridRow4Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
 }
-prototype(M12.Foundation:GridRow5Columns) < prototype(M12.Foundation:GridRowAbstract) {
+prototype(M12.Foundation:GridRow5Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
 }
-prototype(M12.Foundation:GridRow6Columns) < prototype(M12.Foundation:GridRowAbstract) {
+prototype(M12.Foundation:GridRow6Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
 }

@@ -171,7 +171,7 @@
 #
 # Actual GridColumns elements
 #
-'M12.Foundation:GridRow1Column':
+'M12.Foundation:GridRow1Col':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
@@ -181,7 +181,7 @@
     col1:
       type: 'M12.Foundation:Column'
 
-'M12.Foundation:GridRow2Columns':
+'M12.Foundation:GridRow2Col':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
@@ -192,7 +192,7 @@
     col2:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridRow3Columns':
+'M12.Foundation:GridRow3Col':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
@@ -205,7 +205,7 @@
     col3:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridRow4Columns':
+'M12.Foundation:GridRow4Col':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
@@ -220,7 +220,7 @@
     col4:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridRow5Columns':
+'M12.Foundation:GridRow5Col':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
@@ -237,7 +237,7 @@
     col5:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridRow6Columns':
+'M12.Foundation:GridRow6Col':
   superTypes:
     - 'M12.Foundation:GridRowAbstract'
   ui:
