@@ -1,6 +1,14 @@
 prototype(TYPO3.Neos:ContentCollection) {
 	@class = 'M12\\Foundation\\TypoScript\\ContentCollectionImplementation'
 
+	# Due to (unknown?) reasons ContentCollection inherits 'attributes' properties
+	# set in the parent node (incl. tagName). Re-set those values
+	# so it renders default <div class="neos-contentcollection"></div> container,
+	# which will be removed in the @live workspace by wrapRemover.
+	tagName = 'div'
+	attributes.id = null
+	attributes.style = null
+
 	@process.wrapRemover = M12.Utils:WrapRemover
 	@process.wrapRemover.wrapperClass = 'neos-contentcollection'
 }
