@@ -109,13 +109,13 @@
       groups:
         gridSize:
           label: 'Grid size'
-          position: 9
+          position: 6
         gridOffset:
           label: 'Grid offset'
-          position: 9
+          position: 7
         gridPushPull:
           label: 'Grid push / pull'
-          position: 9
+          position: 8
         gridAlign:
           label: 'Grid align'
           position: 9
