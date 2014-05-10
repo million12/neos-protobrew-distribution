@@ -21,15 +21,18 @@
 
 # Abstract NodeType for all form inputs (including buttons).
 'M12.Foundation:FormElementAbstract':
+  abstract: TRUE
   superTypes:
     - 'TYPO3.Neos:Content'
-  abstract: TRUE
   ui:
     group: 'foundationForms'
     inspector:
       groups:
         formInputSettings:
-          label: 'Form input settings'
+          label: 'Form element settings'
+          position: 5
+        dev:
+          label: 'Advanced form element settings'
           position: 9
   properties:
     inputName:
@@ -40,6 +43,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 10
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
     inputValue:
       type: string
@@ -49,6 +53,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 20
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
     inputRequired:
       type: boolean
@@ -57,6 +62,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 50
     inputReadOnly:
       type: boolean
       ui:
@@ -64,6 +70,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 60
     inputDisabled:
       type: boolean
       ui:
@@ -71,6 +78,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 70
     errorTxt:
       type: string
       defaultValue: 'Invalid entry'
@@ -85,11 +93,31 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 80
+    # Override inherited properties from M12.Foundation:AbstractDevBase
+    customHtmlId:
+      ui:
+        label: 'Element custom ID'
+    customCssClass:
+      ui:
+        label: 'Element extra CSS class(es)'
+    customCssCode:
+      ui:
+        label: 'Element inline CSS'
+    customLook:
+      ui:
+        label: 'Element predefined style / look'
 
 
 # Abstract for all form elements that need <label> element.
 'M12.Foundation:FormInputLabelAbstract':
   abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        formLabelSettings:
+          label: 'Form label settings'
+          position: 6
   properties:
     inputLabelEnable:
       type: boolean
@@ -98,7 +126,8 @@
         label: 'Enable input label'
         reloadIfChanged: TRUE
         inspector:
-          group: 'formInputSettings'
+          group: 'formLabelSettings'
+          position: 10
     inputLabel:
       type: string
       defaultValue: 'Label'
@@ -106,10 +135,37 @@
         inlineEditable: TRUE
         aloha:
           'format': []
+    labelCssClass:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Label custom class(es)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formLabelSettings'
+          position: 20
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
+      validation:
+        regularExpression:
+          regularExpression: '/^[a-z0-9\- ]+$/i'
+    labelCssCode:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Label inline CSS'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formLabelSettings'
+          position: 30
+          editor: Content/Inspector/Editors/TextFieldEditor
+          editorOptions:
+            placeholder: 'None'
 
 
 # Abstract for all form elements that need placeholder property.
-'M12.Foundation:FormInputPropertyAbstract':
+'M12.Foundation:FormInputPlaceholderAbstract':
   abstract: TRUE
   properties:
     inputPlaceholder:
@@ -120,9 +176,10 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 25
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
-            placeholder: 'Input placeholder...'
+            placeholder: 'Input placeholder'
 
 
 # Abstract for form elements that need "checked" property.
@@ -176,23 +233,17 @@
 'M12.Foundation:FormLabel':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:FormInputLabelAbstract'
   ui:
     label: 'Label'
     icon: 'icon-paperclip'
     group: 'foundationForms'
     inspector:
       groups:
-        formInputSettings:
-          label: 'Form input settings'
+        dev:
+          label: 'Advanced label settings'
           position: 9
   properties:
-    labelTxt:
-      type: string
-      defaultValue: 'Standalone label'
-      ui:
-        inlineEditable: TRUE
-        aloha:
-          'format': []
     htmlFor:
       type: string
       defaultValue: ''
@@ -200,7 +251,7 @@
         label: 'For attribute'
         reloadIfChanged: TRUE
         inspector:
-          group: 'formInputSettings'
+          group: 'formLabelSettings'
           editorOptions:
             placeholder: 'Type in an ID of relevant input field.'
     labelInlined:
@@ -209,7 +260,36 @@
         label: 'Inline (vertical centering)'
         reloadIfChanged: TRUE
         inspector:
-          group: 'formInputSettings'
+          group: 'formLabelSettings'
+    # Hide inherited 'inputLabelEnable' property as it's not relevant here
+    inputLabelEnable:
+      ui:
+        inspector:
+          group: 'na'
+    # Hide custom css class / inline code - this is main LABEL element, therefore
+    # properties available in TYPO3.Neos:Content (inherited from M12.Foundation:AbstractDevBase)
+    # should be used.
+    labelCssClass:
+      ui:
+        inspector:
+          group: 'na'
+    labelCssCode:
+      ui:
+        inspector:
+          group: 'na'
+    # Override labels in inherited properties from M12.Foundation:AbstractDevBase
+    customHtmlId:
+      ui:
+        label: 'Label custom ID'
+    customCssClass:
+      ui:
+        label: 'Label extra CSS class(es)'
+    customCssCode:
+      ui:
+        label: 'Label inline CSS'
+    customLook:
+      ui:
+        label: 'Label predefined style / look'
 
 
 # NodeType for text based <input> fields, e.g. text, password, email, number etc.
@@ -217,7 +297,7 @@
   superTypes:
     - 'M12.Foundation:FormElementAbstract'
     - 'M12.Foundation:FormInputLabelAbstract'
-    - 'M12.Foundation:FormInputPropertyAbstract'
+    - 'M12.Foundation:FormInputPlaceholderAbstract'
   ui:
     label: 'Form Input'
     icon: 'icon-pencil'
@@ -230,6 +310,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
+          position: 5
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
