@@ -159,6 +159,12 @@
           label: 'Grid options'
           position: 9
   properties:
+    gridExtraWrapper:
+      type: boolean
+      ui:
+        label: 'Add extra wrapper'
+        inspector:
+          group: 'gridOptions'
     classCollapse:
       type: boolean
       ui:

@@ -1,5 +1,18 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
+
 <f:render partial="Anchor" arguments="{_all}" />
-<{tagName}{attributes -> f:format.raw()}>
-	<ts:render path="columns" />
-</{tagName}>
+
+<f:if condition="{gridExtraWrapper}">
+<f:then>
+	<{tagName}{attributes -> f:format.raw()}>
+	<div class="row">
+		<ts:render path="columns" />
+	</div>
+	</{tagName}>
+</f:then>
+<f:else>
+	<{tagName}{attributes -> f:format.raw()}>
+		<ts:render path="columns" />
+	</{tagName}>
+</f:else>
+</f:if>
