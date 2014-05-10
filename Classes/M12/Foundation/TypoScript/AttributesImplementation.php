@@ -30,28 +30,57 @@ use TYPO3\Flow\Annotations as Flow;
 class AttributesImplementation extends NeosAttributesImplementation {
 
 	/**
+	 * @var array
+	 */
+	protected $attributes;
+
+	/**
+	 * @var string
+	 */
+	protected $renderedAttributes;
+
+	/**
 	 * @return string
 	 */
 	public function evaluate() {
+		$attributes = array();
 		$renderedAttributes = '';
 		foreach (array_keys($this->properties) as $attributeName) {
 			$encodedAttributeName = htmlspecialchars($attributeName, ENT_COMPAT, 'UTF-8', FALSE);
 			$attributeValue = $this->tsValue($attributeName);
 
 			// M12: added following 2 line to skip rendering attribute if the value === NULL
-			if (null === $attributeValue)
+			if (null === $attributeValue) {
 				continue;
-
-			if ($attributeValue === NULL) {
+			} else if (0 === strlen($attributeValue)) {
+				$attributes[$attributeName] = $attributeValue;
 				$renderedAttributes .= ' ' . $encodedAttributeName;
 			} else {
 				if (is_array($attributeValue)) {
 					$attributeValue = implode(' ', $attributeValue);
 				}
 				$encodedAttributeValue = htmlspecialchars($attributeValue, ENT_COMPAT, 'UTF-8', FALSE);
+
+				$attributes[$attributeName] = $attributeValue;
 				$renderedAttributes .= ' ' . $encodedAttributeName . '="' . $encodedAttributeValue . '"';
 			}
 		}
-		return $renderedAttributes;
+
+		$this->attributes = $attributes;
+		$this->renderedAttributes = $renderedAttributes;
+
+		return $this;
+	}
+
+	public function getAsString() {
+		return $this->renderedAttributes;
+	}
+
+	public function getAsArray() {
+		return $this->attributes;
+	}
+
+	public function __toString() {
+		return $this->renderedAttributes;
 	}
 }
