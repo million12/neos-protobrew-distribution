@@ -1,5 +1,83 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<f:render partial="Anchor" arguments="{_all}" />
-<f:form actionUri="" additionalAttributes="{attributes.asArray}">
-	<ts:render path="content" />
-</f:form>
+{namespace neos=TYPO3\Neos\ViewHelpers}
+
+<!-- FORM element -->
+<f:section name="form">
+	<f:render partial="Anchor" arguments="{_all}" />
+	<f:form actionUri="" additionalAttributes="{attributes.asArray}">
+		<ts:render path="content" />
+	</f:form>
+</f:section>
+
+
+<!-- Form: FIELDSET element -->
+<f:section name="formFieldset">
+	<fieldset{attributes -> f:format.raw()}>
+		<f:if condition="{showLegend}">
+			<legend>{neos:contentElement.editable(property: 'legendTxt')}</legend>
+		</f:if>
+		<ts:render path="content" />
+	</fieldset>
+</f:section>
+
+
+<!-- Form: LABEL element -->
+<f:section name="formLabel">
+	<label{attributes -> f:format.raw()} for="{htmlFor}">{neos:contentElement.editable(property: 'inputLabel')}</label>
+</f:section>
+
+
+<!-- Form: error state partial -->
+<f:section name="errorState">
+	<f:if condition="{errorState}">
+		<small class="error">{neos:contentElement.editable(property: 'errorTxt')}</small>
+	</f:if>
+</f:section>
+
+
+<!-- Form: INPUT, SELECT, TEXTAREA with or without LABEL element -->
+<f:section name="formInput">
+	<f:if condition="{inputLabelEnable}">
+		<f:then>
+			<label{extraAttributes -> f:format.raw()}>
+			{neos:contentElement.editable(property: 'inputLabel')}
+			<f:render section="formInput-nature" arguments="{_all}"/>
+			</label>
+		</f:then>
+		<f:else>
+			<f:render section="formInput-nature" arguments="{_all}" />
+		</f:else>
+	</f:if>
+	<f:render section="errorState" arguments="{_all}" />
+</f:section>
+
+
+<!-- Form: INPUT, SELECT, TEXTAREA switch functionality -->
+<f:section name="formInput-nature"><f:switch expression="{inputNature}">
+	<f:case value="textfield">
+		<f:form.textfield name="{inputName}" type="{inputType}" value="{inputValue}" additionalAttributes="{attributes.asArray}" />
+	</f:case>
+	<f:case value="select">
+		<f:form.select name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" options="{selectOptions}" />
+	</f:case>
+	<f:case value="textarea">
+		<f:form.textarea name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" />
+	</f:case>
+	<f:case value="checkbox"><f:form.checkbox name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" /></f:case>
+	<f:case value="radio"><f:form.radio name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" /></f:case>
+</f:switch></f:section>
+
+
+<!-- Form: INPUT prefix/postfix element -->
+<f:section name="formInput-fix">
+	<{tagName}{attributes -> f:format.raw()}>
+		{neos:contentElement.editable(property: 'text')}
+	</{tagName}>
+</f:section>
+
+
+<!-- Form: INPUT type="checkbox" element -->
+<f:section name="formInput-checkbox-radio">
+	<f:render section="formInput-nature" arguments="{_all}" /><label{extraAttributes -> f:format.raw()}>{neos:contentElement.editable(property: 'inputLabel')}</label>
+	<f:render section="errorState" arguments="{_all}" />
+</f:section>

@@ -1,7 +1,123 @@
 prototype(M12.Foundation:Form) < prototype(M12.Foundation:Content) {
-	node = ${node}
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'form'
 
 	content = TYPO3.Neos:ContentCollection {
 		nodePath = 'content'
 	}
+}
+
+
+# Abstract prototype for all form elements.
+prototype(M12.Foundation:FormElementAbstract) < prototype(M12.Foundation:Content) {
+	@override.inputId = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : q(node).property('_nodeData.identifier')}
+	@override.errorState = ${q(node).property('errorState')}
+
+	# These attributes are added to input, select, textarea elements.
+	attributes {
+		id = ${inputId}
+		placeholder = ${q(node).property('inputPlaceholder') ? q(node).property('inputPlaceholder') : null}
+		checked = ${q(node).property('inputChecked') ? '' : null}
+		required = ${q(node).property('inputRequired') ? '' : null}
+		readonly = ${q(node).property('inputReadOnly') ? '' : null}
+		disabled = ${q(node).property('inputDisabled') ? '' : null}
+
+		class {
+			error = ${errorState ? 'error' : null}
+		}
+	}
+
+	# These attributes are added to label element.
+	extraAttributes {
+		class {
+			error = ${errorState ? 'error' : null}
+			labelCssClass = ${q(node).property('labelCssClass')}
+		}
+		for = ${inputId}
+		style = ${q(node).property('labelCssCode') ? q(node).property('labelCssCode') : null}
+	}
+}
+
+
+# Fieldset with legend.
+prototype(M12.Foundation:FormFieldset) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formFieldset'
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
+}
+
+
+# Label.
+prototype(M12.Foundation:FormLabel) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formLabel'
+
+	attributes {
+		class {
+			inline = ${q(node).property('labelInlined') ? 'inline' : null}
+		}
+	}
+}
+
+
+# Text based form input.
+prototype(M12.Foundation:FormInput) < prototype(M12.Foundation:FormElementAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formInput'
+	inputNature = 'textfield'
+}
+
+
+# Pre/postfix.
+prototype(M12.Foundation:FormInputFix) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formInput-fix'
+
+	attributes {
+		class {
+			fix = ${q(node).property('fixType')}
+		}
+	}
+
+	tagName = ${q(node).property('isButton') ? 'button' : 'span'}
+}
+
+
+# Checkbox input.
+prototype(M12.Foundation:FormInputCheckbox) < prototype(M12.Foundation:FormElementAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formInput-checkbox-radio'
+	inputNature = 'checkbox'
+}
+
+
+# Radio input.
+prototype(M12.Foundation:FormInputRadio) < prototype(M12.Foundation:FormElementAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formInput-checkbox-radio'
+	inputNature = 'radio'
+}
+
+
+# Select input.
+prototype(M12.Foundation:FormInputSelect) < prototype(M12.Foundation:FormElementAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formInput'
+	inputNature = 'select'
+
+	selectOptions = TYPO3.TypoScript:RawArray {
+		data = ${q(node).property('selectOptions')}
+		data2 = ${q(node).property('selectOptions')}
+	}
+}
+
+
+# Textarea input.
+prototype(M12.Foundation:FormInputTextarea) < prototype(M12.Foundation:FormElementAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
+	sectionName = 'formInput'
+	inputNature = 'textarea'
 }

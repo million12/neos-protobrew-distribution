@@ -1,9 +1,0 @@
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace neos=TYPO3\Neos\ViewHelpers}
-
-<fieldset{attributes -> f:format.raw()}>
-	<f:if condition="{showLegend}">
-		<legend>{neos:contentElement.editable(property: 'legendTxt')}</legend>
-	</f:if>
-	<ts:render path="content" />
-</fieldset>
