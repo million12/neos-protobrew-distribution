@@ -42,7 +42,7 @@
   ui:
     label: 'Tabs Item'
     icon: 'icon-angle-right'
-    group: 'foundationContent'
+    group: 'na'
     inspector:
       groups:
         tabSettings:
@@ -93,6 +93,18 @@
           group: 'tabSettings'
           position: 10
 
+
+'M12.Foundation:Tabs2':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 2'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+
 'M12.Foundation:Tabs3':
   superTypes:
     - 'M12.Foundation:TabsAbstract'
@@ -104,4 +116,55 @@
     tab2:
       type: 'M12.Foundation:TabContentItem'
     tab3:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs4':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 4'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+    tab4:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs5':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 5'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+    tab4:
+      type: 'M12.Foundation:TabContentItem'
+    tab5:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs6':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 6'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+    tab4:
+      type: 'M12.Foundation:TabContentItem'
+    tab5:
+      type: 'M12.Foundation:TabContentItem'
+    tab6:
       type: 'M12.Foundation:TabContentItem'

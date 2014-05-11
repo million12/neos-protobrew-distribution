@@ -1,22 +1,24 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
+<!-- Main tabs element -->
 <f:section name="tabs">
 	<f:render partial="Anchor" arguments="{_all}" />
 
-	<dl{extraAttributes -> f:format.raw()}>
-		<f:for each="{tabsItems}" as="tabNode">
-			<dd{f:if(condition: tabNode.properties.activeTab, then: ' class="active"', else: null )}>
-				<a href="#tab-{f:if(condition: tabNode.properties.customHtmlId, then: tabNode.properties.customHtmlId, else: tabNode.nodeData.identifier)}">{tabNode.properties.title}</a>
-			</dd>
-		</f:for>
-	</dl>
-
+	<ts:render path="tabsNavContent" />
 	<{tagName}{attributes -> f:format.raw()}>
 		<ts:render path="tabsContent" />
 	</{tagName}>
 </f:section>
 
+<!-- Tabs navigation -->
+<f:section name="tabNavItem">
+	<f:if condition="{iterator.isFirst}"><dl{extraAttributes -> f:format.raw()}></f:if>
+		<dd{attributes -> f:format.raw()}><a href="#{href}">{title}</a></dd>
+	<f:if condition="{iterator.isLast}"></dl></f:if>
+</f:section>
+
+<!-- Tabs content item -->
 <f:section name="tabContentItem">
 	<{tagName}{attributes -> f:format.raw()}>
 		<ts:render path="content" />
