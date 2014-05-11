@@ -8,13 +8,19 @@
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:AbstractNavSailingType'
   ui:
-    label: 'Button'
+    label: 'Button & Link'
     icon: 'icon-minus'
     group: 'foundationButtons'
     inspector:
       groups:
         options:
           label: 'Button options'
+          position: 7
+        dev:
+          label: 'Button advanced options'
+          position: 8
+        extraOptions:
+          label: 'Reveal & Dropdown options'
           position: 9
   properties:
     label:
@@ -26,6 +32,13 @@
           'format': ['b', 'i', 'u', 'sub', 'sup']
           'link':
             'a': FALSE
+    renderAnchor:
+      type: boolean
+      ui:
+        label: 'Render as an anchor (link)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
     buttonType:
       type: string
       defaultValue: ''
@@ -115,17 +128,6 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. http://www.example.com'
-    htmlDataRevealId:
-      type: string
-      defaultValue: ''
-      ui:
-        label: 'Reveal Modal ID'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
-          editorOptions:
-            placeholder: 'e.g. myModal'
     htmlTargetBlank:
       type: string
       defaultValue: ''
@@ -156,3 +158,24 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
+    htmlDataRevealId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Reveal Modal ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'e.g. myModal'
+    # Override inherited properties from M12.Foundation:AbstractDevBase
+    customHtmlId:
+      ui:
+        label: 'Element custom ID'
+    customCssClass:
+      ui:
+        label: 'Element extra CSS class(es)'
+    customCssCode:
+      ui:
+        label: 'Element inline CSS'
