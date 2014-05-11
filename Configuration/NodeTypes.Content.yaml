@@ -108,3 +108,140 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
+
+
+# -----------------------------------------------------------------------------
+# Tabs
+# -----------------------------------------------------------------------------
+'M12.Foundation:TabContentItem':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Tabs Item'
+    icon: 'icon-angle-right'
+    group: 'na'
+    inspector:
+      groups:
+        tabSettings:
+          label: 'Tab item options'
+          position: 9
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    title:
+      type: string
+      defaultValue: 'Tab'
+      ui:
+        inspector:
+          group: 'tabSettings'
+          position: 10
+    activeTab:
+      type: boolean
+      ui:
+        label: 'Active tab'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'tabSettings'
+          position: 20
+
+
+'M12.Foundation:TabsAbstract':
+  abstract: TRUE
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractNavSailingType'
+  ui:
+    label: 'Tabs'
+    icon: 'icon-double-angle-right'
+    group: 'foundationContent'
+    inspector:
+      groups:
+        tabSettings:
+          label: 'Tab item options'
+          position: 9
+  properties:
+    vertical:
+      type: boolean
+      ui:
+        label: 'Vertical tabs'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'tabSettings'
+          position: 10
+
+
+'M12.Foundation:Tabs2':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 2'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs3':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 3'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs4':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 4'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+    tab4:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs5':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 5'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+    tab4:
+      type: 'M12.Foundation:TabContentItem'
+    tab5:
+      type: 'M12.Foundation:TabContentItem'
+
+'M12.Foundation:Tabs6':
+  superTypes:
+    - 'M12.Foundation:TabsAbstract'
+  ui:
+    label: 'Tabs 6'
+  childNodes:
+    tab1:
+      type: 'M12.Foundation:TabContentItem'
+    tab2:
+      type: 'M12.Foundation:TabContentItem'
+    tab3:
+      type: 'M12.Foundation:TabContentItem'
+    tab4:
+      type: 'M12.Foundation:TabContentItem'
+    tab5:
+      type: 'M12.Foundation:TabContentItem'
+    tab6:
+      type: 'M12.Foundation:TabContentItem'
