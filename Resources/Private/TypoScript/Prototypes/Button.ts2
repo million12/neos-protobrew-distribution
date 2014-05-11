@@ -16,6 +16,7 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 
 	# Extra button options
 	attributes.data-reveal-id = ${htmlDataRevealId}
+	attributes.data-dropdown = ${q(node).property('htmlDataDropdownId') ? String.trim(q(node).property('htmlDataDropdownId')) : null}
 
 	tag = ${renderAnchor or htmlHref ? 'a' : 'button'}
 }

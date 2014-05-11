@@ -169,6 +169,17 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. myModal'
+    htmlDataDropdownId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Dropdown ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
+          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
+          editorOptions:
+            placeholder: 'e.g. myDropdown'
     # Override inherited properties from M12.Foundation:AbstractDevBase
     customHtmlId:
       ui:

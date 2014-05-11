@@ -1,0 +1,18 @@
+prototype(M12.Foundation:Dropdown) < prototype(TYPO3.Neos.NodeTypes:Text) {
+	#templatePath = 'resource://M12.Foundation/Private/Templates/Neos/Text.html'
+
+	attributes {
+		id = ${q(node).property('customHtmlId')}
+		class {
+			base = 'f-dropdown'
+		}
+		data-dropdown-content = ''
+	}
+
+	workspace = ${node.context.workspace.name}
+	text = ${String.replace(q(node).property('text'), '<ul>', '<ul' + this.attributes + '>')}
+
+
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}

@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------------
+#
+# Content
+#
+# -----------------------------------------------------------------------------
+
+# Dropdown
+'M12.Foundation:Dropdown':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Text'
+  ui:
+    label: 'Dropdown'
+    icon: 'icon-minus'
+    group: 'foundationContent'
+    inspector:
+      groups:
+        dev:
+          label: 'Dropdown options'
+          position: 9
+  properties:
+    text:
+      defaultValue: '<ul><li><a href="#">Link 1</a></li><li><a href="#">Link 2</a></li><li><a href="#">Link 3</a></li></ul>'
+    # Override inherited properties from M12.Foundation:AbstractDevBase
+    customHtmlId:
+      ui:
+        label: 'Element custom ID'
+    customCssClass:
+      ui:
+        label: 'Element extra CSS class(es)'
+    customCssCode:
+      ui:
+        label: 'Element inline CSS'
