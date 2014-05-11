@@ -49,10 +49,9 @@ class AttributesImplementation extends NeosAttributesImplementation {
 			$encodedAttributeName = htmlspecialchars($attributeName, ENT_COMPAT, 'UTF-8', FALSE);
 			$attributeValue = $this->tsValue($attributeName);
 
-			// M12: added following 2 line to skip rendering attribute if the value === NULL
 			if (null === $attributeValue) {
 				continue;
-			} else if (0 === strlen($attributeValue)) {
+			} else if (is_string($attributeValue) && 0 === strlen($attributeValue)) {
 				$attributes[$attributeName] = $attributeValue;
 				$renderedAttributes .= ' ' . $encodedAttributeName;
 			} else {
