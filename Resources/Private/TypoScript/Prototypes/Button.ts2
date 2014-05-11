@@ -17,6 +17,10 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	# Extra button options
 	attributes.data-reveal-id = ${htmlDataRevealId}
 	attributes.data-dropdown = ${q(node).property('htmlDataDropdownId') ? String.trim(q(node).property('htmlDataDropdownId')) : null}
+	attributes.data-options = TYPO3.TypoScript:RawArray {
+		dropdownDirection = ${q(node).property('dropdownDirection') ? 'align: ' + q(node).property('dropdownDirection') + ';' : null}
+		dropdownHoverable = ${q(node).property('dropdownHoverable') ? 'is_hover: true;' : null}
+	}
 
 	tag = ${renderAnchor or htmlHref ? 'a' : 'button'}
 }

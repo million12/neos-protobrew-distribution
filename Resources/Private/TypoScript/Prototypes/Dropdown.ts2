@@ -1,18 +1,34 @@
-prototype(M12.Foundation:Dropdown) < prototype(TYPO3.Neos.NodeTypes:Text) {
-	#templatePath = 'resource://M12.Foundation/Private/Templates/Neos/Text.html'
-
+prototype(M12.Foundation:DropdownAbstract) < prototype(M12.Foundation:Content) {
 	attributes {
 		id = ${q(node).property('customHtmlId')}
 		class {
 			base = 'f-dropdown'
+			size = ${q(node).property('dropdownSize')}
 		}
 		data-dropdown-content = ''
 	}
+}
+
+
+prototype(M12.Foundation:Dropdown) < prototype(M12.Foundation:DropdownAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Dropdown.html'
+	sectionName = 'dropdown'
 
 	workspace = ${node.context.workspace.name}
 	text = ${String.replace(q(node).property('text'), '<ul>', '<ul' + this.attributes + '>')}
 
-
 	@process.wrapRemover = M12.Utils:WrapRemover
 	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}
+
+
+prototype(M12.Foundation:DropdownContent) < prototype(M12.Foundation:DropdownAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Dropdown.html'
+	sectionName = 'dropdownContent'
+
+	attributes.class.content = ${q(node).property('dropdownPadding') ? 'content' : null}
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+	}
 }

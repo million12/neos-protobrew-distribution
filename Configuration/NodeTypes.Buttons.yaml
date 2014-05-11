@@ -158,6 +158,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
+    # Reveal Modal related properties.
     htmlDataRevealId:
       type: string
       defaultValue: ''
@@ -169,6 +170,7 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. myModal'
+    # Dropdown related properties.
     htmlDataDropdownId:
       type: string
       defaultValue: ''
@@ -180,6 +182,35 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. myDropdown'
+    dropdownDirection:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Dropdown direction'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default / Bottom'
+            values:
+              '':
+                label: ''
+              'top':
+                label: 'Top'
+              'right':
+                label: 'Right'
+              'bottom':
+                label: 'Bottom'
+              'left':
+                label: 'Left'
+    dropdownHoverable:
+      type: boolean
+      ui:
+        label: 'Dropdown hoverable'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
     # Override inherited properties from M12.Foundation:AbstractDevBase
     customHtmlId:
       ui:

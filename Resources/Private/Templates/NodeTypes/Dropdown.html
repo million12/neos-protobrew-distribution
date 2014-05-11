@@ -1,15 +1,24 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace neos=TYPO3\Neos\ViewHelpers}
 
-<div class="extra-wrapper-required-by-neos-backend">
-	<f:if condition="{workspace} == 'live'">
-		<f:then>
-			{text -> f:format.raw()}
-		</f:then>
-		<f:else>
-			<div{attributes -> f:format.raw()}>
-				{neos:contentElement.editable(property: 'text')}
-			</div>
-		</f:else>
-	</f:if>
-</div>
+<f:section name="dropdown">
+	<div class="extra-wrapper-required-by-neos-backend">
+		<f:if condition="{workspace} == 'live'">
+			<f:then>
+				{text -> f:format.raw()}
+			</f:then>
+			<f:else>
+				<div{attributes -> f:format.raw()}>
+					{neos:contentElement.editable(property: 'text')}
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+</f:section>
+
+
+<f:section name="dropdownContent">
+	<div{attributes -> f:format.raw()}>
+		<ts:render path="content" />
+	</div>
+</f:section>
