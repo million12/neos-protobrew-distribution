@@ -1,0 +1,41 @@
+# Basic implementation of a flexible Tabs element,
+# not exposed directly but inherited by all specific M12.Foundation:TabsX content elements
+prototype(M12.Foundation:TabsAbstract) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	# Attributes around div.tabs-content
+	attributes.class.base = 'tabs-content'
+	attributes.class.vertical = ${q(node).property('vertical') ? 'vertical' : null}
+
+	# Attributes for dl.tabs (before div.tabs-content)
+	extraAttributes.class.base = 'tabs'
+	extraAttributes.class.vertical = ${q(node).property('vertical') ? 'vertical' : null}
+	extraAttributes.data-tab = ''
+
+	tabsItems = ${q(node).children('[instanceof M12.Foundation:TabContentItem]').get()}
+	tabsContent = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children('[instanceof M12.Foundation:TabContentItem]')}
+		itemRenderer = M12.Foundation:TabContentItem
+		itemName = 'node'
+	}
+}
+
+# Abstract render definition for a grid column
+prototype(M12.Foundation:TabContentItem) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
+	sectionName = 'tabContentItem'
+	node = ${node}
+
+	attributes.class.base = 'content'
+	attributes.class.active = ${q(node).property('activeTab') ? 'active' : null}
+	attributes.id = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : 'tab-'+q(node).property('_nodeData.identifier')}
+
+	content = TYPO3.Neos:ContentCollection {
+		nodePath = '.'
+	}
+}
+
+prototype(M12.Foundation:Tabs3) < prototype(M12.Foundation:TabsAbstract) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
+	sectionName = 'tabs'
+}

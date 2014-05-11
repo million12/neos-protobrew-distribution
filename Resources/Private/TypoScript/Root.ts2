@@ -49,3 +49,4 @@ include: Prototypes/Panel.ts2
 
 # M12.Foundation prototypes - Content
 include: Prototypes/Dropdown.ts2
+include: Prototypes/Tabs.ts2
