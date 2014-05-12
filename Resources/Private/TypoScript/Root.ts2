@@ -9,7 +9,6 @@ include: Neos/ContentCollection.ts2
 # M12.Foundation prototypes - Generic
 include: Prototypes/Content.ts2
 include: Prototypes/Container.ts2
-include: Prototypes/Section.ts2
 
 
 # M12.Foundation prototypes - Structure

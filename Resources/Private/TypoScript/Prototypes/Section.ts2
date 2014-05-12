@@ -1,5 +1,0 @@
-prototype(M12.Foundation:Section) < prototype(M12.Foundation:Container) {
-	node = ${node}
-
-	attributes.class.classSectionStyle = ${q(node).property('classSectionStyle') ? 'section-'+q(node).property('classSectionStyle') : 'section-style-default'}
-}
