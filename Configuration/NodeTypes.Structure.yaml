@@ -10,7 +10,7 @@
     - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Container'
-    icon: 'icon-coffee'
+    icon: 'icon-hdd'
     group: 'foundationStructure'
   childNodes:
     content:

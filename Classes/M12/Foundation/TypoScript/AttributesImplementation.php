@@ -15,17 +15,10 @@ use TYPO3\TypoScript\TypoScriptObjects\AttributesImplementation as NeosAttribute
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * Renders a string of xml attributes from the properties of this TypoScript object.
- * So a configuration like:
+ * {@inheritdoc}
  *
- * attributes = TYPO3.TypoScript:Attributes
- * attributes.class = TYPO3.TypoScript:RawArray {
- *  class1: 'class1'
- *  class2: 'class2'
- * }
- * attributes.id = 'my-id'
- *
- * will result in the string: class="class1 class2" id="my-id"
+ * Additionally, we change the behaviour slightly so attributes
+ * with NULL values are not printed at all.
  */
 class AttributesImplementation extends NeosAttributesImplementation {
 

@@ -14,15 +14,22 @@ namespace M12\Foundation\Fluid\Core\ViewHelper;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * @Flow\Aspect
+ * Modifies globally how TagBuilder behaves for NULL attributes.
+ * We're taking here the same strategy as with AttributesImplementation
+ * - we don't want any attributes to render at all if the value
+ * was set to NULL.
  *
  * @see \TYPO3\Fluid\Core\ViewHelper\TagBuilder
+ * @see \M12\Foundation\TypoScript\AttributesImplementation
+ *
+ * @Flow\Aspect
  */
 class TagBuilderAspect {
 
 	/**
-	 * Prevent TagBuilder->addAttribute() method from executing at all,
-	 * if passed attribute value is NULL.
+	 * This changes how TagBuilder->addAttribute() method works.
+	 * When attribute's value is NULL, it does *unset* the value.
+	 * Otherwise addAttribute() method is called as usually.
 	 *
 	 * @param \TYPO3\Flow\AOP\JoinPointInterface $joinPoint
 	 * @Flow\Around("method(TYPO3\Fluid\Core\ViewHelper\TagBuilder->addAttribute())")
