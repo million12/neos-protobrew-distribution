@@ -2,11 +2,20 @@
   superTypes:
     fragmentId: 'M12.Foundation:AbstractNavFragmentId'
   properties:
+    title:
+      ui:
+        inspector:
+          position: 10
+    _name:
+      ui:
+        inspector:
+          position: 20
     fragmentId:
       ui:
         label: '#Fragment (URL)'
         inspector:
           group: 'document'
+          position: 30
 
 
 'TYPO3.Neos.NodeTypes:Page':
