@@ -8,6 +8,7 @@ prototype(TYPO3.Neos:ContentCollection) {
 	tagName = 'div'
 	attributes.id = null
 	attributes.style = null
+	attributes.customUserAttributes = null
 
 	@process.wrapRemover = M12.Utils:WrapRemover
 	@process.wrapRemover.wrapperClass = 'neos-contentcollection'

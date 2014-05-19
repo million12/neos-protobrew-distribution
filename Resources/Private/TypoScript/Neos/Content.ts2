@@ -51,6 +51,7 @@ prototype(TYPO3.Neos:Content) {
 	}
 	attributes.id = ${q(node).property('customHtmlId') ? String.trim(q(node).property('customHtmlId')) : null}
 	attributes.style = ${q(node).property('customCssCode') ? String.trim(q(node).property('customCssCode')) : null}
+	attributes.customUserAttributes = ${q(node).property('customUserAttributes') ? q(node).property('customUserAttributes') : null}
 
 	# Prepare container for another set of attributes - can be used for
 	# additional outer wrapper etc. Not harmful when not used / empty.

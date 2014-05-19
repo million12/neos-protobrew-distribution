@@ -52,6 +52,17 @@
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
+    customUserAttributes:
+      type: string
+      ui:
+        label: 'Custom attributes (one per line)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'dev'
+          position: 40
+          editor: 'M12.Foundation/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            placeholder: 'e.g. custom-data-attribute=value'
 
 
 'M12.Foundation:AbstractDevCustomLook':
