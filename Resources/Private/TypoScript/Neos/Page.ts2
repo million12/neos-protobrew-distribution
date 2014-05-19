@@ -1,0 +1,16 @@
+prototype(TYPO3.Neos:Page) {
+
+	foundationBackendEndpoints = TYPO3.TypoScript:Template {
+		templatePath = 'resource://M12.Foundation/Private/Templates/TypoScriptObjects/FoundationBackendEndpoints.html'
+		@position = 'after neosBackendFooter'
+
+		node = ${node}
+
+		@cache {
+			mode = 'uncached'
+			context {
+				1 = 'node'
+			}
+		}
+	}
+}

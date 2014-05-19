@@ -1,0 +1,7 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
+	<f:if condition="{0: 'live'} != {0: node.context.workspace.name}">
+		<script src="{f:uri.resource(path: 'JavaScript/Neos/m12-foundation.js', package: 'M12.Foundation')}"></script>
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Neos/m12-foundation.css', package: 'M12.Foundation')}" type="text/css" media="all" />
+	</f:if>
+</f:security.ifAccess>

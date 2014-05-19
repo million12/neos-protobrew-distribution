@@ -1,5 +1,7 @@
 # TypoScript, Neos extensions
 include: TypoScript.ts2
+
+include: Neos/Page.ts2
 include: Neos/Content.ts2
 include: Neos/Menu.ts2
 include: Neos/NodeTypes.ts2
