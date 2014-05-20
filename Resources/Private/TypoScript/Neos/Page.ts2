@@ -39,4 +39,22 @@ prototype(TYPO3.Neos:Page) {
 			customUserAttributes = ${q(node).property('customUserAttributes') ? q(node).property('customUserAttributes') : null}
 		}
 	}
+
+	body {
+		# Append custom CSS, inline, to stylesheets section
+		@override.customCssCode = TYPO3.TypoScript:Array {
+			1 = ${q(site).property('customCssCode')}
+			2 = ${q(site).property('_nodeData.path')!=q(node).property('_nodeData.path') ? q(node).property('customCssCode') : null}
+			@process.wrap = ${value ? '<style type="text/css">' + value + '</style>' : null}
+		}
+		javascripts.@process.appendCustomCssCode = ${value + customCssCode}
+
+		# Append custom JS, inline, to scripts section
+		@override.customJsCode = TYPO3.TypoScript:Array {
+			1 = ${q(site).property('customJsCode')}
+			2 = ${q(site).property('_nodeData.path')!=q(node).property('_nodeData.path') ? q(node).property('customJsCode') : null}
+			@process.wrap = ${value ? '<script type="text/javascript">' + value + '</script>' : null}
+		}
+		javascripts.@process.appendCustomJsCode = ${value + customJsCode}
+	}
 }
