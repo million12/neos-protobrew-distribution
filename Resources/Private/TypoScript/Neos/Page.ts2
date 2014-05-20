@@ -1,4 +1,6 @@
 prototype(TYPO3.Neos:Page) {
+	# Define short nodeType name (without package prefix)
+	@override.nodeTypeShort = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
 
 	foundationBackendEndpoints = TYPO3.TypoScript:Template {
 		templatePath = 'resource://M12.Foundation/Private/Templates/TypoScriptObjects/FoundationBackendEndpoints.html'
@@ -11,6 +13,30 @@ prototype(TYPO3.Neos:Page) {
 			context {
 				1 = 'node'
 			}
+		}
+	}
+
+	bodyTag {
+		# Add custom properties/attributes from M12.Foundation:AbstractDevBase
+		attributes {
+			class = TYPO3.TypoScript:RawArray {
+				customLook = ${q(node).property('customLook') ? q(node).property('customLook')+' '+nodeTypeShort+'-'+q(node).property('customLook') : null}
+				customClass = ${q(node).property('customCssClass') ? q(node).property('customCssClass') : null}
+
+				# At the end remove extra spaces after many class items were joined
+				@process.trimThatWitch {
+					expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
+					@position = 'end'
+				}
+				# Only add default nodeTypeShort class if some other classes are defined
+				# Note: TBD if it should be added always...
+				@process.nodeTypeShort {
+					expression = ${value ? nodeTypeShort + ' ' + value : null}
+					@position = 'after trimThatWitch'
+				}
+			}
+			id = ${q(node).property('customHtmlId') ? String.trim(q(node).property('customHtmlId')) : null}
+			customUserAttributes = ${q(node).property('customUserAttributes') ? q(node).property('customUserAttributes') : null}
 		}
 	}
 }

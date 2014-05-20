@@ -2,6 +2,7 @@ prototype(TYPO3.Neos:Content) {
 	# remove default Neos class processing
 	attributes.class.@process.nodeType >
 
+	# Define short nodeType name (without package prefix)
 	@override.nodeTypeShort = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
 
 	attributes.class = TYPO3.TypoScript:RawArray {
