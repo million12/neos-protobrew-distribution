@@ -330,4 +330,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:AbstractFontAwesomeIcon'
+  properties:
+    faName:
+      defaultValue: 'circle-o-notch'
 

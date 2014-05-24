@@ -235,7 +235,6 @@
   properties:
     faName:
       type: string
-      defaultValue: 'circle-o-notch'
       ui:
         label: 'Font Awesome icon name'
         reloadIfChanged: TRUE
