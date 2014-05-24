@@ -4,6 +4,7 @@
       ui:
         label: 'Hide (don''t render at all)'
 
+
 # Move some Neos NodeTypes to non-existing group
 # so they're not visible by default.
 'TYPO3.Neos.NodeTypes:Menu':
@@ -17,6 +18,15 @@
     # Start level: default 1st level of the site
     startLevel:
       defaultValue: 1
+    # Property 'startingPoint' exists in MenuImplementation and works OK when set, but it's never exposed.
+    # Caveat: it only works as intended when startLevel = 0 (Same level as current page)
+    startingPoint:
+      type: reference
+      ui:
+        label: 'Starting point'
+        inspector:
+          group: 'options'
+
 
 'TYPO3.Neos.NodeTypes:TwoColumn':
   ui:
