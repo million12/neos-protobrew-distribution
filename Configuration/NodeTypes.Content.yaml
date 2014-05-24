@@ -110,6 +110,72 @@
           group: 'dev'
 
 
+
+# -----------------------------------------------------------------------------
+# Accordion: parent NodeType of AccordionItem.
+# -----------------------------------------------------------------------------
+'M12.Foundation:Accordion':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Accordion'
+    icon: 'icon-minus'
+    group: 'foundationContent'
+    inspector:
+      groups:
+        accordionSettings:
+          label: 'Accordion settings'
+          position: 9
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+
+
+'M12.Foundation:AccordionItem':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Accordion Item'
+    icon: 'icon-minus'
+    group: 'foundationContent'
+    inspector:
+      groups:
+        accordionSettings:
+          label: 'Accordion settings'
+          position: 9
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    accordionItemLabel:
+      type: string
+      defaultValue: 'Accordion item label'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          'format': ['b', 'i', 'u', 'sub', 'sup']
+          'link':
+            'a': FALSE
+    accordionItemId:
+      type: string
+      ui:
+        label: 'Accordion item ID'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'accordionSettings'
+      validation:
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
+    isAccordionItemActive:
+      type: boolean
+      ui:
+        label: 'Make this accordion item active'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'accordionSettings'
+
+
+
 # -----------------------------------------------------------------------------
 # Tabs
 # -----------------------------------------------------------------------------
