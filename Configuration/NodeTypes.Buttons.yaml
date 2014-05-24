@@ -236,3 +236,22 @@
     customCssCode:
       ui:
         label: 'Element inline CSS'
+    # Override inherited properties from M12.Foundation:AbstractDevBase
+
+
+# -----------------------------------------------------------------------------
+#
+# BlockGrid: parent NodeType of BlockGridItem.
+#
+# -----------------------------------------------------------------------------
+'M12.Foundation:ButtonGroup':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Button Group'
+    icon: 'icon-minus'
+    group: 'foundationButtons'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+

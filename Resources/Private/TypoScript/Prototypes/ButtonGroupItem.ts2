@@ -1,0 +1,14 @@
+prototype(M12.Foundation:ButtonGroupItem) < prototype(M12.Foundation:Content) {
+	# templatePath is needed as there's no BlockGridItem NodeType defined
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/ButtonGroup.html'
+	sectionName = 'buttonGroupItem'
+
+	iterator = ${iterator}
+	parentAttributes = ${parentAttributes}
+
+	buttonGroupItemContent = TYPO3.TypoScript:Collection {
+		collection = ${q(buttonGroupNodeItem)}
+		itemName = 'node'
+		itemRenderer = TYPO3.Neos:ContentCase
+	}
+}

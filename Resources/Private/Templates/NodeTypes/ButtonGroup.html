@@ -1,0 +1,16 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<div class="extra-wrapper-required-by-neos-backend">
+	<ts:render path="buttonGroupContent" />
+</div>
+
+<f:section name="buttonGroupItem">
+	<f:if condition="{iterator.isFirst}">
+		<ul{parentAttributes -> f:format.raw()}>
+	</f:if>
+
+	<li><ts:render path="buttonGroupItemContent" /></li>
+
+	<f:if condition="{iterator.isLast}">
+		</ul>
+	</f:if>
+</f:section>

@@ -1,0 +1,18 @@
+prototype(M12.Foundation:ButtonGroup) < prototype(M12.Foundation:Content) {
+	node = ${node}
+
+	attributes.class.base = 'button-group'
+
+	@override.parentAttributes = ${this.attributes}
+
+	buttonGroupContent = TYPO3.Neos:ContentCollection {
+		nodePath = 'content'
+
+		iterationName = 'iterator'
+		itemName = 'buttonGroupNodeItem'
+		itemRenderer = M12.Foundation:ButtonGroupItem
+	}
+
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}

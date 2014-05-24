@@ -38,6 +38,8 @@ include: Prototypes/Form.ts2
 
 # M12.Foundation prototypes - Buttons
 include: Prototypes/Button.ts2
+include: Prototypes/ButtonGroup.ts2
+include: Prototypes/ButtonGroupItem.ts2
 
 
 # M12.Foundation prototypes - Typography
