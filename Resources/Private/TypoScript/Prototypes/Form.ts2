@@ -108,9 +108,8 @@ prototype(M12.Foundation:FormInputSelect) < prototype(M12.Foundation:FormElement
 	sectionName = 'formInput'
 	inputNature = 'select'
 
-	selectOptions = TYPO3.TypoScript:RawArray {
-		data = ${q(node).property('selectOptions')}
-		data2 = ${q(node).property('selectOptions')}
+	selectOptions = M12.Foundation:ValueOptionsList {
+		value = ${q(node).property('selectOptions')}
 	}
 }
 
