@@ -2,7 +2,7 @@ prototype(M12.Foundation:Accordion) < prototype(M12.Foundation:Content) {
 	node = ${node}
 
 	attributes.class.accordion = 'accordion'
-	attributes.data-accordion = ''
+	attributes.data-accordion = ${q(node).property('accordionGroupName') ? q(node).property('accordionGroupName') : ''}
 
 	accordionContent = TYPO3.Neos:ContentCollection {
 		nodePath = 'content'

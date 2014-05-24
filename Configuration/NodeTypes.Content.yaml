@@ -112,15 +112,13 @@
 
 
 # -----------------------------------------------------------------------------
-# Accordion: parent NodeType of AccordionItem.
+# Accordion
 # -----------------------------------------------------------------------------
-'M12.Foundation:Accordion':
+'M12.Foundation:AccordionAbstract':
+  abstract: TRUE
   superTypes:
-    - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractDevBase'
   ui:
-    label: 'Accordion'
-    icon: 'icon-minus'
-    group: 'foundationContent'
     inspector:
       groups:
         accordionSettings:
@@ -129,23 +127,36 @@
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
+
+'M12.Foundation:Accordion':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AccordionAbstract'
+  ui:
+    label: 'Accordion'
+    icon: 'icon-minus'
+    group: 'foundationContent'
+  properties:
+    accordionGroupName:
+      type: string
+      ui:
+        label: 'Accordion group name'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'accordionSettings'
+      validation:
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
 
 
 'M12.Foundation:AccordionItem':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AccordionAbstract'
   ui:
     label: 'Accordion Item'
     icon: 'icon-minus'
     group: 'foundationContent'
-    inspector:
-      groups:
-        accordionSettings:
-          label: 'Accordion settings'
-          position: 9
-  childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
   properties:
     accordionItemLabel:
       type: string
