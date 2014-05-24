@@ -21,6 +21,9 @@
         "typo3/neos-nodetypes": "*",
         "m12/neos-utils": "*"
     },
+    "conflict": {
+        "typo3/neosdemotypo3org": "*"
+    },
     "autoload": {
         "psr-0": {
             "M12\\Foundation": "Classes"
