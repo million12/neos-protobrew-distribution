@@ -186,7 +186,6 @@
           group: 'accordionSettings'
 
 
-
 # -----------------------------------------------------------------------------
 # Tabs
 # -----------------------------------------------------------------------------
@@ -322,3 +321,13 @@
       type: 'M12.Foundation:TabContentItem'
     tab6:
       type: 'M12.Foundation:TabContentItem'
+
+
+# -----------------------------------------------------------------------------
+# Font Awesome Icon
+# -----------------------------------------------------------------------------
+'M12.Foundation:FontAwesomeIcon':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractFontAwesomeIcon'
+

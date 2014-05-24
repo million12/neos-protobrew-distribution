@@ -216,3 +216,102 @@
         sailingOptions:
           label: 'Sailing options'
           position: 96
+
+
+#
+# Mixin: Font Awesome icon
+#
+'M12.Foundation:AbstractFontAwesomeIcon':
+  abstract: TRUE
+  ui:
+    label: 'Font Awesome icon'
+    icon: 'icon-minus'
+    group: 'foundationContent'
+    inspector:
+      groups:
+        fontAwesomeOptions:
+          label: 'Font Awesome icon options'
+          position: 9
+  properties:
+    faName:
+      type: string
+      defaultValue: 'circle-o-notch'
+      ui:
+        label: 'Font Awesome icon name'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'
+    faSize:
+      type: string
+      ui:
+        label: 'Font Awesome icon size'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+              label: ''
+              fa-lg:
+                label: 'Large'
+              fa-2x:
+                label: 'x2'
+              fa-3x:
+                label: 'x3'
+              fa-4x:
+                label: 'x4'
+              fa-5x:
+                label: 'x5'
+    faRotation:
+      type: string
+      ui:
+        label: 'Font Awesome icon rotation'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              '':
+                label: 'Choose rotation...'
+              fa-rotate-90:
+                label: 'Rotate 90 degree'
+              fa-rotate-180:
+                label: 'Rotate 180 degree'
+              fa-rotate-270:
+                label: 'Rotate 270 degree'
+              fa-flip-horizontal:
+                label: 'Flip horizontal'
+              fa-flip-vertical:
+                label: 'Flip vertical'
+    faCustomCss:
+      type: string
+      ui:
+        label: 'Font Awesome icon custom css'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'
+          editorOptions:
+            placeholder: 'e.g. padding-right: 5px;'
+    faSpin:
+      type: boolean
+      ui:
+        label: 'Make it a spinner'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'
+    faFixedWidth:
+      type: boolean
+      ui:
+        label: 'Make it have a fixed with'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'
+    faRightAlign:
+      type: boolean
+      ui:
+        label: 'Make it right aligned'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'fontAwesomeOptions'

@@ -2,18 +2,8 @@ prototype(TYPO3.Neos:Page) {
 	# Define short nodeType name (without package prefix)
 	@override.nodeTypeShort = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
 
-	foundationBackendEndpoints = TYPO3.TypoScript:Template {
-		templatePath = 'resource://M12.Foundation/Private/Templates/TypoScriptObjects/FoundationBackendEndpoints.html'
-		@position = 'after neosBackendFooter'
-
-		node = ${node}
-
-		@cache {
-			mode = 'uncached'
-			context {
-				1 = 'node'
-			}
-		}
+	head {
+		stylesheets.@process.fontAwesome = ${value + '<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">'}
 	}
 
 	bodyTag {
@@ -56,5 +46,19 @@ prototype(TYPO3.Neos:Page) {
 			@process.wrap = ${value ? '<script type="text/javascript">' + value + '</script>' : null}
 		}
 		javascripts.@process.appendCustomJsCode = ${value + customJsCode}
+	}
+
+	foundationBackendEndpoints = TYPO3.TypoScript:Template {
+		templatePath = 'resource://M12.Foundation/Private/Templates/TypoScriptObjects/FoundationBackendEndpoints.html'
+		@position = 'after neosBackendFooter'
+
+		node = ${node}
+
+		@cache {
+			mode = 'uncached'
+			context {
+				1 = 'node'
+			}
+		}
 	}
 }

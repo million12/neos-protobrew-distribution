@@ -7,6 +7,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:AbstractNavSailingType'
+    - 'M12.Foundation:AbstractFontAwesomeIcon'
   ui:
     label: 'Button & Link'
     icon: 'icon-minus'
@@ -15,13 +16,13 @@
       groups:
         options:
           label: 'Button options'
-          position: 7
+          position: 6
         dev:
           label: 'Button advanced options'
-          position: 8
+          position: 7
         extraOptions:
           label: 'Reveal & Dropdown options'
-          position: 9
+          position: 8
   properties:
     label:
       type: string

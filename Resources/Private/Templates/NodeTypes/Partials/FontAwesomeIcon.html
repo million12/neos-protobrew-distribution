@@ -1,0 +1,3 @@
+<f:if condition="{faName}">
+	<i class="fa fa-{faName} {f:if(condition:faSize, then: faSize)}{f:if(condition:faSpin, then: ' fa-spin')}{f:if(condition:faFixedWidth, then: ' fa-fw')}{f:if(condition:faRightAlign, then: ' right')} {f:if(condition:faRotation, then: faRotation)}"<f:if condition="{faCustomCss}"> style="{faCustomCss}"</f:if>></i>
+</f:if>
