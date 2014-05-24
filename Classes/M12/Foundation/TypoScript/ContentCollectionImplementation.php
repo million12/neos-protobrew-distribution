@@ -94,11 +94,11 @@ class ContentCollectionImplementation extends NeosContentCollectionImplementatio
 				// otherwise check if any child has it set
 				/** @var Node[] $children */
 				if (!($children = $parentNode->getChildNodes()))
-					break;
+					return;
 
 				foreach ($children as $node) {
 					if ($node->getProperty('activeTab'))
-						break;
+						return;
 				}
 
 				// pick up the 1st tab and mark it as active
