@@ -2,4 +2,7 @@
 <f:render partial="Anchor" arguments="{_all}" />
 <{tag}{attributes -> f:format.raw()}>
 	{neos:contentElement.editable(property: 'label')}
+	<f:if condition="{isButtonSplit}">
+		<span data-dropdown="{htmlDataDropdownId}"></span>
+	</f:if>
 </{tag}>

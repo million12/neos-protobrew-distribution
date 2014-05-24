@@ -211,6 +211,13 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'extraOptions'
+    isButtonSplit:
+      type: boolean
+      ui:
+        label: 'Render as split button'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
     # Override inherited properties from M12.Foundation:AbstractDevBase
     customHtmlId:
       ui:

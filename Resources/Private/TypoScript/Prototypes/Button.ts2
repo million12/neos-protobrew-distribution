@@ -1,7 +1,7 @@
 prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	@override.renderAnchor = ${q(node).property('renderAnchor')}
 	@override.htmlHref = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
-	@override.htmlDataRevealId = ${q(node).property('htmlDataRevealId') ? String.trim(q(node).property('htmlDataRevealId')) : null}
+	@override.isButtonSplit = ${q(node).property('isButtonSplit')}
 
 	attributes.class.base = ${renderAnchor ? null : 'button'}
 	attributes.class.size = ${q(node).property('classSize') ? q(node).property('classSize') : null}
@@ -9,14 +9,15 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	attributes.class.shape = ${q(node).property('classShape') ? q(node).property('classShape') : null}
 	attributes.class.disable = ${q(node).property('classIsDisabled') ? 'disabled' : null}
 	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
+	attributes.class.split = ${q(node).property('isButtonSplit') ? 'split' : null}
 
 	attributes.href = ${htmlHref}
 	attributes.type = ${q(node).property('buttonType') ? q(node).property('buttonType') : null}
 	attributes.target = ${q(node).property('htmlTargetBlank') ? q(node).property('htmlTargetBlank') : null}
 
 	# Extra button options
-	attributes.data-reveal-id = ${htmlDataRevealId}
-	attributes.data-dropdown = ${q(node).property('htmlDataDropdownId') ? String.trim(q(node).property('htmlDataDropdownId')) : null}
+	attributes.data-reveal-id = ${q(node).property('htmlDataRevealId') ? String.trim(q(node).property('htmlDataRevealId')) : null}
+	attributes.data-dropdown = ${q(node).property('htmlDataDropdownId') and !isButtonSplit ? String.trim(q(node).property('htmlDataDropdownId')) : null}
 	attributes.data-options = TYPO3.TypoScript:RawArray {
 		dropdownDirection = ${q(node).property('dropdownDirection') ? 'align: ' + q(node).property('dropdownDirection') + ';' : null}
 		dropdownHoverable = ${q(node).property('dropdownHoverable') ? 'is_hover: true;' : null}
