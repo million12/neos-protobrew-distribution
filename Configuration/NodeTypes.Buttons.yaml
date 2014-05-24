@@ -239,16 +239,25 @@
     # Override inherited properties from M12.Foundation:AbstractDevBase
 
 
-# -----------------------------------------------------------------------------
-#
-# BlockGrid: parent NodeType of BlockGridItem.
-#
-# -----------------------------------------------------------------------------
+# Button Group
 'M12.Foundation:ButtonGroup':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
     label: 'Button Group'
+    icon: 'icon-minus'
+    group: 'foundationButtons'
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+
+
+# Button Bar
+'M12.Foundation:ButtonBar':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Button Bar'
     icon: 'icon-minus'
     group: 'foundationButtons'
   childNodes:

@@ -1,5 +1,6 @@
 prototype(M12.Foundation:ButtonGroup) < prototype(M12.Foundation:Content) {
-	node = ${node}
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Button.html'
+	sectionName = 'buttonGroup'
 
 	attributes.class.base = 'button-group'
 

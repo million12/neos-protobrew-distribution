@@ -1,4 +1,6 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
 <f:render partial="Anchor" arguments="{_all}" />
 <{tag}{attributes -> f:format.raw()}>
 	<f:render partial="FontAwesomeIcon" arguments="{_all}" />
@@ -7,3 +9,30 @@
 		<span data-dropdown="{htmlDataDropdownId}"></span>
 	</f:if>
 </{tag}>
+
+<!-- Buttons: Button Group -->
+<f:section name="buttonGroup">
+	<div class="extra-wrapper-required-by-neos-backend">
+		<ts:render path="buttonGroupContent" />
+	</div>
+</f:section>
+
+<!-- Buttons: Button Group Item -->
+<f:section name="buttonGroupItem">
+	<f:if condition="{iterator.isFirst}">
+		<ul{parentAttributes -> f:format.raw()}>
+	</f:if>
+
+	<li><ts:render path="buttonGroupItemContent" /></li>
+
+	<f:if condition="{iterator.isLast}">
+		</ul>
+	</f:if>
+</f:section>
+
+<!-- Buttons: Button Bar -->
+<f:section name="buttonBar">
+	<div{attributes -> f:format.raw()}>
+		<ts:render path="buttonBarContent" />
+	</div>
+</f:section>

@@ -1,6 +1,6 @@
 prototype(M12.Foundation:ButtonGroupItem) < prototype(M12.Foundation:Content) {
 	# templatePath is needed as there's no BlockGridItem NodeType defined
-	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/ButtonGroup.html'
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Button.html'
 	sectionName = 'buttonGroupItem'
 
 	iterator = ${iterator}
