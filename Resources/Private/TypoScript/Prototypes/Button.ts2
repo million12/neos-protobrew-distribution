@@ -10,6 +10,7 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	attributes.class.disable = ${q(node).property('classIsDisabled') ? 'disabled' : null}
 	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
 	attributes.class.split = ${q(node).property('isButtonSplit') ? 'split' : null}
+	attributes.class.dropdown = ${q(node).property('isButtonDropdown') ? 'dropdown' : null}
 
 	attributes.href = ${htmlHref}
 	attributes.type = ${q(node).property('buttonType') ? q(node).property('buttonType') : null}

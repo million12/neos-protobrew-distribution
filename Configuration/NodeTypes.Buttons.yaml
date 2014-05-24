@@ -218,6 +218,13 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'extraOptions'
+    isButtonDropdown:
+      type: boolean
+      ui:
+        label: 'Render as dropdown button'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
     # Override inherited properties from M12.Foundation:AbstractDevBase
     customHtmlId:
       ui:
