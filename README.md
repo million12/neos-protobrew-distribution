@@ -17,3 +17,7 @@ From command line (from Neos root directory) type:
     },
 ```
 and then execute `composer install`.
+
+After all call:
+
+```./flow flow:cache:flush --force && ./flow cache:warmup```
