@@ -29,6 +29,8 @@
       defaultValue: 'Button'
       ui:
         inlineEditable: TRUE
+        inspector:
+          group: 'options'
         aloha:
           'format': ['b', 'i', 'u', 'sub', 'sup']
           'link':
