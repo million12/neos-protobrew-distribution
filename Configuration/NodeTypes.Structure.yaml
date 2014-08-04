@@ -12,6 +12,7 @@
     label: 'Container'
     icon: 'icon-hdd'
     group: 'foundationStructure'
+    inlineEditable: TRUE
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -85,7 +86,7 @@
   abstract: TRUE
   ui:
     icon: 'icon-columns'
-    inlineEditable: TRUE,
+    inlineEditable: TRUE
     group: 'foundationStructure'
     inspector:
       groups:
