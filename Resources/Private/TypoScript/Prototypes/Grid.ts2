@@ -1,6 +1,7 @@
 # Abstract render definition for a grid column
 prototype(M12.Foundation:Column) < prototype(M12.Foundation:Content) {
-	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/GridColumn.html'
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'gridColumn'
 	node = ${node}
 
 	attributes.class.nodeType.@process.columns = ${value + ' columns'}
@@ -46,19 +47,25 @@ prototype(M12.Foundation:GridRowAbstract) < prototype(M12.Foundation:Content) {
 
 prototype(M12.Foundation:GridRow1Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'grid'
 }
 prototype(M12.Foundation:GridRow2Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'grid'
 }
 prototype(M12.Foundation:GridRow3Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'grid'
 }
 prototype(M12.Foundation:GridRow4Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'grid'
 }
 prototype(M12.Foundation:GridRow5Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'grid'
 }
 prototype(M12.Foundation:GridRow6Col) < prototype(M12.Foundation:GridRowAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Grid.html'
+	sectionName = 'grid'
 }

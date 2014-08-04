@@ -1,18 +1,31 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-<f:render partial="Anchor" arguments="{_all}" />
+<!-- Grid element -->
+<f:section name="grid">
+	<f:render partial="Anchor" arguments="{_all}" />
 
-<f:if condition="{gridExtraWrapper}">
-<f:then>
+	<f:if condition="{gridExtraWrapper}">
+	<f:then>
+		<{tagName}{attributes -> f:format.raw()}>
+		<div class="row">
+			<ts:render path="columns" />
+		</div>
+		</{tagName}>
+	</f:then>
+	<f:else>
+		<{tagName}{attributes -> f:format.raw()}>
+			<ts:render path="columns" />
+		</{tagName}>
+	</f:else>
+	</f:if>
+</f:section>
+
+
+
+<!-- Grid Column element -->
+<f:section name="gridColumn">
+	<f:render partial="Anchor" arguments="{_all}" />
 	<{tagName}{attributes -> f:format.raw()}>
-	<div class="row">
-		<ts:render path="columns" />
-	</div>
+		<ts:render path="columnContent" />
 	</{tagName}>
-</f:then>
-<f:else>
-	<{tagName}{attributes -> f:format.raw()}>
-		<ts:render path="columns" />
-	</{tagName}>
-</f:else>
-</f:if>
+</f:section>
