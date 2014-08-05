@@ -19,22 +19,51 @@
     content:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
-    classAnimation:
+    animation:
       type: string
-      defaultValue: 'slide'
+      defaultValue: ''
       ui:
         label: 'Animation effect'
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
+          position: 10
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             values:
-              slide:
+              '':
                 label: 'Slide'
               fade:
                 label: 'Fade'
-    classNextOnClick:
+    animationSpeed:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Animation speed (ms)'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'orbitSettings'
+          position: 12
+          editorOptions:
+            placeholder: '500'
+      validation:
+        regularExpression:
+          regularExpression: '/^[0-9]{1,5}$/'
+    timerSpeed:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Timer speed (ms)'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'orbitSettings'
+          position: 14
+          editorOptions:
+            placeholder: '10000'
+      validation:
+        regularExpression:
+          regularExpression: '/^[0-9]{2,6}$/'
+    nextOnClick:
       type: boolean
       defaultValue: TRUE
       ui:
@@ -42,7 +71,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
-    classNavigationArrows:
+    navigationArrows:
       type: boolean
       defaultValue: TRUE
       ui:
@@ -50,7 +79,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
-    classSlideNumber:
+    slideNumber:
       type: boolean
       defaultValue: TRUE
       ui:
@@ -58,7 +87,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
-    classBullets:
+    bullets:
       type: boolean
       defaultValue: TRUE
       ui:
@@ -66,7 +95,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
-    classTimer:
+    timer:
       type: boolean
       defaultValue: TRUE
       ui:
@@ -74,7 +103,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
-    classVariableHeight:
+    variableHeight:
       type: boolean
       defaultValue: TRUE
       ui:
@@ -82,4 +111,29 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'orbitSettings'
-
+    swipe:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Swipe active'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+    pauseOnHover:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: 'Pauses on hover'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+          position: 70
+    resumeOnMouseout:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Resume on mouse out'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'orbitSettings'
+          position: 72
