@@ -230,16 +230,18 @@
     inspector:
       groups:
         fontAwesomeOptions:
-          label: 'Font Awesome icon options'
+          label: 'Font Awesome icon'
           position: 9
   properties:
     faName:
       type: string
       ui:
-        label: 'Font Awesome icon name'
+        label: 'Icon name (without fa- prefix)'
         reloadIfChanged: TRUE
         inspector:
           group: 'fontAwesomeOptions'
+          editorOptions:
+            placeholder: '...as listed on fontawesome.io'
     faSize:
       type: string
       ui:
