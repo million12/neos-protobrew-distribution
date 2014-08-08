@@ -3,11 +3,13 @@
 
 <!-- Main tabs element -->
 <f:section name="tabs">
-	<f:render partial="Anchor" arguments="{_all}" />
-
-	<ts:render path="tabsNavContent" />
 	<{tagName}{attributes -> f:format.raw()}>
-		<ts:render path="tabsContent" />
+		<f:render partial="Anchor" arguments="{_all}" />
+
+		<ts:render path="tabsNavContent" />
+		<div{extraAttributes -> f:format.raw()}>
+			<ts:render path="tabsContent" />
+		</div>
 	</{tagName}>
 </f:section>
 

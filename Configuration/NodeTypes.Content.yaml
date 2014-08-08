@@ -226,11 +226,13 @@
   abstract: TRUE
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractDevCustomTag'
     - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Tabs'
     icon: 'icon-double-angle-right'
     group: 'foundationContent'
+    inlineEditable: TRUE
     inspector:
       groups:
         tabSettings:

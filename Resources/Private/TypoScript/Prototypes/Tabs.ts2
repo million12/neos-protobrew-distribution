@@ -4,9 +4,17 @@ prototype(M12.Foundation:TabsAbstract) < prototype(M12.Foundation:Content) {
 	node = ${node}
 	@override.parentNode = ${node}
 
+	# Extract just 'tabsX' from nodeType name (e.g. m12-foundation-tabsX)
+	@override.tabsNodeCount = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
+
+	# Attributes for outer div
+	# Override default nodeType class to have one more generic class for all tabs (tabs1, tabs2, tabs3...)
+	attributes.class.nodeType = ${'m12-foundation-tabs ' + tabsNodeCount}
+
 	# Attributes around div.tabs-content
-	attributes.class.base = 'tabs-content'
-	attributes.class.vertical = ${q(node).property('vertical') ? 'vertical' : null}
+	extraAttributes.class.base = 'tabs-content'
+	extraAttributes.class.tabsCount = ${'tabs-content-' + tabsNodeCount}
+	extraAttributes.class.vertical = ${q(node).property('vertical') ? 'vertical' : null}
 
 	tabsNavContent = TYPO3.TypoScript:Collection {
 		collection = ${q(node).children('[instanceof M12.Foundation:TabContentItem]')}
@@ -31,6 +39,7 @@ prototype(M12.Foundation:TabNavItem) < prototype(M12.Foundation:Content) {
 
 	# Attributes for DL.tabs
 	extraAttributes.class.base = 'tabs'
+	extraAttributes.class.tabsCount = ${tabsNodeCount}
 	extraAttributes.class.vertical = ${q(parentNode).property('vertical') ? 'vertical' : null}
 	extraAttributes.data-tab = ''
 
@@ -56,23 +65,37 @@ prototype(M12.Foundation:TabContentItem) < prototype(M12.Foundation:Content) {
 	}
 }
 
+#
+# Configure each TabsX object
+# + remove default wrapper, if not modified
+#
 prototype(M12.Foundation:Tabs2) < prototype(M12.Foundation:TabsAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
 	sectionName = 'tabs'
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'm12-foundation-tabs tabs2'
 }
 prototype(M12.Foundation:Tabs3) < prototype(M12.Foundation:TabsAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
 	sectionName = 'tabs'
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'm12-foundation-tabs tabs3'
 }
 prototype(M12.Foundation:Tabs4) < prototype(M12.Foundation:TabsAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
 	sectionName = 'tabs'
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'm12-foundation-tabs tabs4'
 }
 prototype(M12.Foundation:Tabs5) < prototype(M12.Foundation:TabsAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
 	sectionName = 'tabs'
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'm12-foundation-tabs tabs5'
 }
 prototype(M12.Foundation:Tabs6) < prototype(M12.Foundation:TabsAbstract) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
 	sectionName = 'tabs'
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'm12-foundation-tabs tabs6'
 }
