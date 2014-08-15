@@ -214,6 +214,7 @@
     label: 'Block Grid'
     icon: 'icon-th-large'
     group: 'foundationStructure'
+    inlineEditable: TRUE
     inspector:
       groups:
         blockGridSettings:
