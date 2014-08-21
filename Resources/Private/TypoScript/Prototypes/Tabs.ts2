@@ -37,14 +37,15 @@ prototype(M12.Foundation:TabNavItem) < prototype(M12.Foundation:Content) {
 	parentNode = ${parentNode}
 	iterator = ${iterator}
 
-	# Attributes for DL.tabs
+	# Attributes for each LI element
+	attributes.class.tabTitle = 'tab-title'
+	attributes.class.active = ${q(node).property('activeTab') ? 'active' : null}
+
+	# Attributes for UL.tabs
 	extraAttributes.class.base = 'tabs'
 	extraAttributes.class.tabsCount = ${tabsNodeCount}
 	extraAttributes.class.vertical = ${q(parentNode).property('vertical') ? 'vertical' : null}
 	extraAttributes.data-tab = ''
-
-	# Attributes for each DD element
-	attributes.class.active = ${q(node).property('activeTab') ? 'active' : null}
 
 	title = ${q(node).property('title')}
 	href = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : ('tab-'+q(node).property('_nodeData.identifier'))}

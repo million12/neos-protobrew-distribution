@@ -15,9 +15,9 @@
 
 <!-- Tabs navigation -->
 <f:section name="tabNavItem">
-	<f:if condition="{iterator.isFirst}"><dl{extraAttributes -> f:format.raw()}></f:if>
-		<dd{attributes -> f:format.raw()}><a href="#{href}">{title}</a></dd>
-	<f:if condition="{iterator.isLast}"></dl></f:if>
+	<f:if condition="{iterator.isFirst}"><ul{extraAttributes -> f:format.raw()}></f:if>
+		<li{attributes -> f:format.raw()}><a href="#{href}">{title}</a></li>
+	<f:if condition="{iterator.isLast}"></ul></f:if>
 </f:section>
 
 <!-- Tabs content item -->
