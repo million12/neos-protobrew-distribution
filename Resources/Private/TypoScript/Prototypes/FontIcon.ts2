@@ -1,0 +1,20 @@
+prototype(M12.Foundation:FontIcon) < prototype(M12.Foundation:Content) {
+	node = ${node}
+}
+
+# Create separate TypoScript object which will be rendered inside another NodeType.
+# It's done this way to avoid default TYPO3.Neos:Content behaviour in Neos backend
+# (ie. we don't want there toolbar with add/remove icons etc as it's misleading).
+prototype(M12.Foundation:FontIconSimple) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/FontIcon.html'
+	node = ${node}
+
+	faName          = ${q(node).property('faName')}
+	faSize          = ${q(node).property('faSize')}
+	faRotation      = ${q(node).property('faRotation')}
+	faSpin          = ${q(node).property('faSpin')}
+	faFixedWidth    = ${q(node).property('faFixedWidth')}
+	faRightAlign    = ${q(node).property('faRightAlign')}
+
+	faCustomCss     = ${q(node).property('faCustomCss')}
+}

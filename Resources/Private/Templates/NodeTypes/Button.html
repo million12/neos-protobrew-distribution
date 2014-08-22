@@ -3,7 +3,7 @@
 
 <f:render partial="Anchor" arguments="{_all}" />
 <{tag}{attributes -> f:format.raw()}>
-	<f:render partial="FontAwesomeIcon" arguments="{_all}" />
+	<ts:render path="fontIcon" />
 	{neos:contentElement.editable(property: 'label')}
 	<f:if condition="{isButtonSplit}">
 		<span data-dropdown="{htmlDataDropdownId}"></span>

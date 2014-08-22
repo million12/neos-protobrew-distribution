@@ -74,4 +74,8 @@ prototype(TYPO3.Neos:Content) {
 	# Support for custom semantic wrapper tag from M12.Foundation:AbstractDevCustomTag
 	tagName = ${q(node).property('customTagName')}
 	tagName.@process.default = ${value ? value : 'div'}
+
+	# Support for font icon in all content types
+	# Or shall it be included on per-content basis, only where necessary?
+	fontIcon = M12.Foundation:FontIconSimple
 }

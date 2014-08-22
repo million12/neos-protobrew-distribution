@@ -1,4 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
 <{tagName}{attributes -> f:format.raw()}>
+	<ts:render path="fontIcon" />
 	{neos:contentElement.editable(property: 'text')}
 </{tagName}>
