@@ -18,7 +18,6 @@ include: Prototypes/FontIcon.ts2
 # M12.Foundation prototypes - Structure
 include: Prototypes/Grid.ts2
 include: Prototypes/BlockGrid.ts2
-include: Prototypes/BlockGridItem.ts2
 
 
 # M12.Foundation prototypes - Navigation

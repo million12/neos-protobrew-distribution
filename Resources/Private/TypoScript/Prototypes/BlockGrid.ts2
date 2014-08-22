@@ -1,4 +1,7 @@
 prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/BlockGrid.html'
+	sectionName = 'blockGrid'
+
 	node = ${node}
 
 	attributes.class.smallItemsPerRow = ${q(node).property('classSmallItemsPerRow') ? q(node).property('classSmallItemsPerRow') : null}
@@ -11,10 +14,20 @@ prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
 		nodePath = 'content'
 
 		iterationName = 'iterator'
-		itemName = 'gridNodeItem'
+		itemName = 'node'
 		itemRenderer = M12.Foundation:BlockGridItem
 	}
 
 	@process.wrapRemover = M12.Utils:WrapRemover
 	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}
+
+prototype(M12.Foundation:BlockGridItem) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/BlockGrid.html'
+	sectionName = 'blockGridItem'
+
+	iterator = ${iterator}
+	parentAttributes = ${parentAttributes}
+
+	blockGridItemContent = TYPO3.Neos:ContentCase
 }

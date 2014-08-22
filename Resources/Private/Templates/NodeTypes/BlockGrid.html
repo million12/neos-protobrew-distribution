@@ -1,5 +1,22 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<div class="extra-wrapper-required-by-neos-backend">
-	<f:render partial="Anchor" arguments="{_all}" />
-	<ts:render path="blockGridContent" />
-</div>
+
+
+<f:section name="blockGrid">
+	<div class="extra-wrapper-required-by-neos-backend">
+		<f:render partial="Anchor" arguments="{_all}" />
+		<ts:render path="blockGridContent" />
+	</div>
+</f:section>
+
+
+<f:section name="blockGridItem">
+	<f:if condition="{iterator.isFirst}">
+		<ul{parentAttributes -> f:format.raw()}>
+	</f:if>
+
+	<li><ts:render path="blockGridItemContent" /></li>
+
+	<f:if condition="{iterator.isLast}">
+		</ul>
+	</f:if>
+</f:section>
