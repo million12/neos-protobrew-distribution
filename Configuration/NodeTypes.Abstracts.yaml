@@ -221,17 +221,15 @@
 #
 # Mixin: Font Awesome icon
 #
-'M12.Foundation:AbstractFontAwesomeIcon':
+'M12.Foundation:AbstractFontIcon':
   abstract: TRUE
   ui:
-    label: 'Font Awesome icon'
-    icon: 'icon-minus'
-    group: 'foundationContent'
     inspector:
       groups:
-        fontAwesomeOptions:
+        fontIconOptions:
           label: 'Font Awesome icon'
-          position: 9
+          # Put this group somewhere in the middle...
+          position: 96
   properties:
     faName:
       type: string
@@ -239,43 +237,43 @@
         label: 'Icon name (without fa- prefix)'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'
           editorOptions:
             placeholder: '...as listed on fontawesome.io'
     faSize:
       type: string
       ui:
-        label: 'Font Awesome icon size'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
+            placeholder: 'Icon size'
             values:
               '':
-              label: ''
+                label: ''
               fa-lg:
-                label: 'Large'
+                label: 'Size: large'
               fa-2x:
-                label: 'x2'
+                label: 'Size: x2'
               fa-3x:
-                label: 'x3'
+                label: 'Size: x3'
               fa-4x:
-                label: 'x4'
+                label: 'Size: x4'
               fa-5x:
-                label: 'x5'
+                label: 'Size: x5'
     faRotation:
       type: string
       ui:
-        label: 'Font Awesome icon rotation'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
+            placeholder: 'Icon rotation'
             values:
               '':
-                label: 'Choose rotation...'
+                label: ''
               fa-rotate-90:
                 label: 'Rotate 90 degree'
               fa-rotate-180:
@@ -292,7 +290,7 @@
         label: 'Font Awesome icon custom css'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'
           editorOptions:
             placeholder: 'e.g. padding-right: 5px;'
     faSpin:
@@ -301,18 +299,18 @@
         label: 'Make it a spinner'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'
     faFixedWidth:
       type: boolean
       ui:
         label: 'Make it have a fixed with'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'
     faRightAlign:
       type: boolean
       ui:
         label: 'Make it right aligned'
         reloadIfChanged: TRUE
         inspector:
-          group: 'fontAwesomeOptions'
+          group: 'fontIconOptions'

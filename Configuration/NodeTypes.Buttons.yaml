@@ -7,7 +7,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:AbstractNavSailingType'
-    - 'M12.Foundation:AbstractFontAwesomeIcon'
+    - 'M12.Foundation:AbstractFontIcon'
   ui:
     label: 'Button & Link'
     icon: 'icon-minus'

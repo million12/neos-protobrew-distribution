@@ -42,6 +42,7 @@
 'TYPO3.Neos.NodeTypes:Headline':
   superTypes:
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
+    abstractFontIcon: 'M12.Foundation:AbstractFontIcon'
   properties:
     'title':
       ui:
@@ -55,6 +56,7 @@
 'TYPO3.Neos.NodeTypes:Text':
   superTypes:
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
+    abstractFontIcon: 'M12.Foundation:AbstractFontIcon'
   properties:
     'text':
       ui:

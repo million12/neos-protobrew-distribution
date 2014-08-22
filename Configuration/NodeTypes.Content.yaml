@@ -328,11 +328,19 @@
 # -----------------------------------------------------------------------------
 # Font Awesome Icon
 # -----------------------------------------------------------------------------
-'M12.Foundation:FontAwesomeIcon':
+'M12.Foundation:FontIcon':
   superTypes:
     - 'TYPO3.Neos:Content'
-    - 'M12.Foundation:AbstractFontAwesomeIcon'
+    - 'M12.Foundation:AbstractFontIcon'
+  ui:
+    label: 'Font Awesome icon'
+    icon: 'icon-minus'
+    group: 'foundationContent'
+    inspector:
+      groups:
+        fontIconOptions:
+          # Put this group at the very beginning for this content element
+          position: 10
   properties:
     faName:
       defaultValue: 'circle-o-notch'
-
