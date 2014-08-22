@@ -1,5 +1,5 @@
-# TypoScript, Neos extensions
-include: TypoScript.ts2
+# Custom TypoScript objects
+include: TypoScriptObjects/ValueOptionsList.ts2
 
 include: Neos/Attributes.ts2
 include: Neos/Page.ts2
