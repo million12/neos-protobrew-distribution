@@ -2,6 +2,9 @@ prototype(M12.Foundation:Form) < prototype(M12.Foundation:Content) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Form.html'
 	sectionName = 'form'
 
+	actionUri = ${q(node).property('actionUri') ? q(node).property('actionUri') : '#'}
+	methodType = ${q(node).property('methodType') == 'get' ? 'get' : 'post'}
+
 	content = TYPO3.Neos:ContentCollection {
 		nodePath = 'content'
 	}

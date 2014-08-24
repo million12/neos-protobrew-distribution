@@ -4,7 +4,7 @@
 <!-- FORM element -->
 <f:section name="form">
 	<f:render partial="Anchor" arguments="{_all}" />
-	<f:form actionUri="#" additionalAttributes="{attributes.asArray}">
+	<f:form actionUri="{actionUri}" method="{methodType}" additionalAttributes="{attributes.asArray}">
 		<ts:render path="content" />
 	</f:form>
 </f:section>

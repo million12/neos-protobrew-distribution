@@ -14,10 +14,36 @@
     icon: 'icon-th-list'
     group: 'foundationForms'
     inlineEditable: TRUE
+    inspector:
+      groups:
+        formSettings:
+          label: 'Form settings'
+          position: 5
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
-
+  properties:
+    actionUri:
+      type: string
+      ui:
+        label: 'Action URL'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'formSettings'
+    methodType:
+      type: string
+      ui:
+        label: 'Submit method'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'formSettings'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              post:
+                label: 'POST'
+              get:
+                label: 'GET'
 
 # Abstract NodeType for all form inputs (including buttons).
 'M12.Foundation:FormElementAbstract':
@@ -44,7 +70,6 @@
         inspector:
           group: 'formInputSettings'
           position: 10
-          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
     inputValue:
       type: string
       defaultValue: ''
@@ -54,7 +79,6 @@
         inspector:
           group: 'formInputSettings'
           position: 20
-          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
     inputRequired:
       type: boolean
       ui:
@@ -144,7 +168,6 @@
         inspector:
           group: 'formLabelSettings'
           position: 20
-          editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
       validation:
@@ -159,7 +182,6 @@
         inspector:
           group: 'formLabelSettings'
           position: 30
-          editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
 
@@ -177,7 +199,6 @@
         inspector:
           group: 'formInputSettings'
           position: 25
-          editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'Input placeholder'
 
