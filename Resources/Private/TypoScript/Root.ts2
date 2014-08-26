@@ -2,11 +2,12 @@
 include: TypoScriptObjects/ValueOptionsList.ts2
 
 include: Neos/Attributes.ts2
-include: Neos/Page.ts2
 include: Neos/Content.ts2
+include: Neos/ContentCollection.ts2
+include: Neos/Form.ts2
 include: Neos/Menu.ts2
 include: Neos/NodeTypes.ts2
-include: Neos/ContentCollection.ts2
+include: Neos/Page.ts2
 
 
 # M12.Foundation prototypes - Generic

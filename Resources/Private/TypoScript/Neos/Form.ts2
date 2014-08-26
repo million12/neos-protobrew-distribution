@@ -1,0 +1,3 @@
+prototype(TYPO3.Neos.NodeTypes:Form) {
+	attributes.class.identifier = ${q(node).property('formIdentifier') + '-wrapper'}
+}
