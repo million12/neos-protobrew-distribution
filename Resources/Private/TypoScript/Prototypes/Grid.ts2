@@ -26,7 +26,7 @@ prototype(M12.Foundation:Column) < prototype(M12.Foundation:Content) {
 	attributes.class.largeAlign = ${q(node).property('classLargeAlign') ? q(node).property('classLargeAlign') : null}
 
 	columnContent = TYPO3.Neos:ContentCollection {
-		nodePath = '.'
+		nodePath = 'column'
 	}
 }
 

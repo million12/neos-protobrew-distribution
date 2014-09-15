@@ -62,7 +62,7 @@ prototype(M12.Foundation:TabContentItem) < prototype(M12.Foundation:Content) {
 	attributes.id = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : ('tab-'+q(node).property('_nodeData.identifier'))}
 
 	content = TYPO3.Neos:ContentCollection {
-		nodePath = '.'
+		nodePath = 'content'
 	}
 }
 
