@@ -11,7 +11,7 @@ namespace M12\Foundation\TypoScript;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\TYPO3CR\Domain\Model\Node;
+use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 use TYPO3\Neos\TypoScript\ContentCollectionImplementation as NeosContentCollectionImplementation;
 use TYPO3\Flow\Annotations as Flow;
 
@@ -73,9 +73,9 @@ class ContentCollectionImplementation extends NeosContentCollectionImplementatio
 	 *
 	 * This is experimental, probably there's a better way to inject these properties.
 	 *
-	 * @param Node $contentCollectionNode
+	 * @param NodeInterface $contentCollectionNode
 	 */
-	protected function setDefaultProperties(Node $contentCollectionNode) {
+	protected function setDefaultProperties(NodeInterface $contentCollectionNode) {
 		$parentNode = $contentCollectionNode->getParent();
 		$parentNodeType = $parentNode->getNodeType()->getName();
 		$nodeType = $contentCollectionNode->getNodeType()->getName();
@@ -92,7 +92,7 @@ class ContentCollectionImplementation extends NeosContentCollectionImplementatio
 					break;
 
 				// otherwise check if any child has it set
-				/** @var Node[] $children */
+				/** @var NodeInterface[] $children */
 				if (!($children = $parentNode->getChildNodes()))
 					return;
 
