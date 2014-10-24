@@ -1,0 +1,4 @@
+prototype(M12.Foundation:Video) < prototype(M12.Foundation:Content) {
+	attributes.class.base = 'flex-video'
+	attributes.class.vimeo = ${q(node).property('videoSource') == 'vimeo' ? 'widescreen vimeo' : null}
+}

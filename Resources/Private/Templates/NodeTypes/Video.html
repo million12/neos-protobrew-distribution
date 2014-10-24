@@ -1,0 +1,18 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<figure{attributes -> f:format.raw()}>
+	<f:if condition="{videoId}">
+	<f:then>
+		<f:if condition="{videoSource} == 'vimeo'">
+			<f:then>
+				<iframe src="//player.vimeo.com/video/{videoId}" width="{width}" height="{height}" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</f:then>
+			<f:else>
+				<iframe src="//www.youtube.com/embed/{videoId}?wmode=transparent" width="{width}" height="{height}" allowfullscreen></iframe>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<p>Please specify video ID</p>
+	</f:else>
+	</f:if>
+</figure>

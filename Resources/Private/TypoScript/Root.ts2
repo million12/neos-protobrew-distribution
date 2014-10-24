@@ -30,6 +30,7 @@ include: Prototypes/NavItem.ts2
 
 # M12.Foundation prototypes - Media
 include: Prototypes/Orbit.ts2
+include: Prototypes/Video.ts2
 
 
 # M12.Foundation prototypes - Forms
