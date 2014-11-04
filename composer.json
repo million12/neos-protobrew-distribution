@@ -1,0 +1,35 @@
+{
+    "name": "m12/neos-typostrap-distribution",
+    "description": "TYPO3 Neos - Typostrap Distribution",
+    "license": "GPL-3.0+",
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "repositories": [
+        { "type": "git", "url": "https://github.com/million12/M12.FoundationSite" }
+    ],
+    "require": {
+        "typo3/neos": "1.1.*",
+        "typo3/neos-nodetypes": "1.1.*",
+        "typo3/neos-kickstarter": "1.1.*",
+        "m12/neos-foundation": "dev-master",
+        "m12/neos-foundation-site": "dev-master"
+    },
+    "require-dev": {
+        "typo3/buildessentials": "2.2.*",
+        "mikey179/vfsstream": "1.2.*",
+        "phpunit/phpunit": "4.0.*",
+        "flowpack/behat": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "suggest": {
+        "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
+    },
+    "scripts": {
+        "post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    }
+}

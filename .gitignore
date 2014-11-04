@@ -1,0 +1,27 @@
+/Build/Behat/*
+/Build/BuildEssentials
+/Build/Reports
+/Build/Resources
+/Configuration/**/*.example
+/Configuration/PackageStates.php
+/Configuration/README
+/Configuration/Production/IncludeCachedConfigurations.php
+/Data/
+/Packages/
+/Web/.htaccess
+/Web/index.php
+/Web/_Resources/
+/bin/
+/Readme.txt
+/Upgrading.txt
+/flow
+/flow.bat
+
+# ignore the downloaded selenium server, config and the selenium
+# temporary directory (which starts with a quote, do not ask why...)
+/Tests/Selenium/settings.xml
+Build/Resources/Java/selenium-server-standalone*
+/"
+
+.idea/
+.vagrant/
