@@ -1,0 +1,34 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+
+  pre:
+    - docker info && docker version
+    # Cache some Docker images to make builds faster
+    - mkdir -p ~/docker
+    - if [[ -e ~/docker/tutum-mariadb.tar ]]; then docker load -i ~/docker/tutum-mariadb.tar; else docker pull tutum/mariadb:latest && docker save tutum/mariadb > ~/docker/tutum-mariadb.tar; fi
+    - if [[ -e ~/docker/million12-behat-selenium.tar ]]; then docker load -i ~/docker/million12-behat-selenium.tar; else docker pull million12/behat-selenium && docker save million12/behat-selenium > ~/docker/million12-behat-selenium.tar; fi
+    
+  override:
+    - docker pull tutum/mariadb:latest
+    - docker pull million12/behat-selenium:latest
+    - docker pull million12/typo3-neos-abstract:latest
+
+# Run tests
+test:
+  pre:
+    - docker build -t million12/neos-typostrap-distribution docker/
+
+  override:
+    - docker run -d --name=db --env="MARIADB_PASS=my-pass" tutum/mariadb
+    - |
+      docker run -d --name=neos -p=8080:80 --link=db:db \
+        --env="NEOS_APP_DO_INIT=true" \
+        --env="NEOS_APP_DO_INIT_TESTS=true" \
+        million12/neos-typostrap-distribution
+    - sleep 60
+    - docker logs neos
