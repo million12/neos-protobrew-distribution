@@ -1,0 +1,54 @@
+dbdata:
+  image: busybox:latest
+  command: echo dbdata
+  volumes:
+    - /var/lib/mysql
+
+db:
+  image: tutum/mariadb:latest
+  ports:
+    - 3306
+  volumes_from:
+    - dbdata
+  environment:
+    MARIADB_PASS: LJHoihuqo3i4href
+
+webdata:
+  image: busybox:latest
+  command: echo webdata
+  volumes:
+    - /data
+
+web:
+  image: million12/neos-typostrap-distribution
+  ports:
+    - '8899:80'
+  links:
+    - db:db
+  volumes_from:
+    - webdata
+  environment:
+    NEOS_APP_DO_INIT: true
+    NEOS_APP_DO_INIT_TESTS: true
+    NEOS_APP_NAME: 'neos-typostrap'
+    NEOS_APP_VHOST_NAMES: 'neos-typostrap dev.neos-typostrap behat.dev.neos-typostrap'
+    NEOS_APP_DB_NAME: 'neos_typostrap'
+    NEOS_APP_USER_NAME: 'admin'
+    NEOS_APP_USER_PASS: 'password'
+    NEOS_APP_USER_FNAME: 'Typostrap'
+    NEOS_APP_USER_LNAME: 'Demo'
+    NEOS_APP_SITE_PACKAGE: 'M12.FoundationSite'
+    NEOS_APP_FORCE_SITE_REIMPORT: false
+    NEOS_APP_FORCE_PULL: false
+
+ssh:
+  image: million12/php-app-ssh
+  ports:
+    - '5555:22'
+  links:
+    - db:db
+    - web:web
+  volumes_from:
+    - webdata
+  environment:
+    IMPORT_GITHUB_PUB_KEYS: some,github,user,names
