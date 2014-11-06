@@ -3,8 +3,12 @@ TYPO3:
     persistence:
       backendOptions:
         driver:   pdo_mysql
-        dbname:   %NEOS_DB_NAME%
-        user:     %NEOS_DB_USER%
-        password: %NEOS_DB_PASS%
-        host:     %NEOS_DB_HOST%
-        port:     %NEOS_DB_PORT%
+        dbname:   NEOS_DB_NAME
+        user:     NEOS_DB_USER
+        password: NEOS_DB_PASS
+        host:     NEOS_DB_HOST
+        port:     NEOS_DB_PORT
+
+  TypoScript:
+    # Due to random issues with content cache (not always cleaned) switch it of for now...
+    enableContentCache: FALSE

@@ -28,8 +28,6 @@ web:
   volumes_from:
     - webdata
   environment:
-    NEOS_APP_DO_INIT: true
-    NEOS_APP_DO_INIT_TESTS: true
     NEOS_APP_NAME: 'neos-typostrap'
     NEOS_APP_VHOST_NAMES: 'neos-typostrap dev.neos-typostrap behat.dev.neos-typostrap'
     NEOS_APP_DB_NAME: 'neos_typostrap'
@@ -40,6 +38,7 @@ web:
     NEOS_APP_SITE_PACKAGE: 'M12.FoundationSite'
     NEOS_APP_FORCE_SITE_REIMPORT: false
     NEOS_APP_FORCE_PULL: false
+    NEOS_APP_DO_INIT_TESTS: false
 
 ssh:
   image: million12/php-app-ssh
