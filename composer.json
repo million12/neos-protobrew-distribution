@@ -1,5 +1,5 @@
 {
-    "name": "m12/neos-typostrap-distribution",
+    "name": "million12/neos-typostrap-distribution",
     "description": "TYPO3 Neos - Typostrap Distribution",
     "license": "GPL-3.0+",
     "config": {
