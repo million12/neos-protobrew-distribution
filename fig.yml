@@ -28,17 +28,16 @@ web:
   volumes_from:
     - webdata
   environment:
-    NEOS_APP_NAME: 'neos-typostrap'
-    NEOS_APP_VHOST_NAMES: 'neos-typostrap dev.neos-typostrap behat.dev.neos-typostrap'
-    NEOS_APP_DB_NAME: 'neos_typostrap'
-    NEOS_APP_USER_NAME: 'admin'
-    NEOS_APP_USER_PASS: 'password'
-    NEOS_APP_USER_FNAME: 'Typostrap'
-    NEOS_APP_USER_LNAME: 'Demo'
-    NEOS_APP_SITE_PACKAGE: 'M12.FoundationSite'
-    NEOS_APP_FORCE_SITE_REIMPORT: false
-    NEOS_APP_FORCE_PULL: false
-    NEOS_APP_DO_INIT_TESTS: false
+    T3APP_NAME: 'neos-typostrap'
+    T3APP_VHOST_NAMES: 'neos-typostrap dev.neos-typostrap behat.dev.neos-typostrap'
+    T3APP_DB_NAME: 'neos_typostrap'
+    T3APP_USER_NAME: 'admin'
+    T3APP_USER_PASS: 'password'
+    T3APP_USER_FNAME: 'Typostrap'
+    T3APP_USER_LNAME: 'Demo'
+    T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: true
+    T3APP_ALWAYS_DO_PULL: false
+    T3APP_DO_INIT_TESTS: false
 
 ssh:
   image: million12/php-app-ssh
