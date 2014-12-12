@@ -10,19 +10,21 @@
         { "type": "git", "url": "https://github.com/million12/M12.FoundationSite" }
     ],
     "require": {
-        "typo3/neos": "1.1.*",
-        "typo3/neos-nodetypes": "1.1.*",
-        "typo3/neos-kickstarter": "1.1.*",
-        "m12/neos-foundation": "dev-master",
+        "typo3/neos": "1.2.0",
+        "typo3/neos-nodetypes": "1.2.0",
+        "typo3/neos-kickstarter": "1.2.0",
+        "doctrine/migrations": "@dev",
+        "typo3/flow": "2.3.0",
+        "m12/neos-foundation": "0.2.x-dev",
         "m12/neos-foundation-site": "dev-master"
     },
     "require-dev": {
-        "typo3/buildessentials": "2.2.*",
-        "mikey179/vfsstream": "1.2.*",
-        "phpunit/phpunit": "4.0.*",
-        "flowpack/behat": "dev-master"
+        "typo3/buildessentials": "2.3.*",
+        "mikey179/vfsstream": "1.4.*",
+        "phpunit/phpunit": "4.3.*",
+        "flowpack/behat": "dev-master",
+        "typo3-ci/typo3flow": "dev-master"
     },
-    "minimum-stability": "dev",
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required"
     },
