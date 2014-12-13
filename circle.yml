@@ -1,34 +1,54 @@
 machine:
   services:
     - docker
+  hosts:
+    neos-typostrap: 127.0.0.1
 
 dependencies:
-  cache_directories:
-    - "~/docker"
-
   pre:
     - docker info && docker version
-    # Cache some Docker images to make builds faster
-    - mkdir -p ~/docker
-    - if [[ -e ~/docker/tutum-mariadb.tar ]]; then docker load -i ~/docker/tutum-mariadb.tar; else docker pull tutum/mariadb:latest && docker save tutum/mariadb > ~/docker/tutum-mariadb.tar; fi
-    - if [[ -e ~/docker/million12-behat-selenium.tar ]]; then docker load -i ~/docker/million12-behat-selenium.tar; else docker pull million12/behat-selenium && docker save million12/behat-selenium > ~/docker/million12-behat-selenium.tar; fi
-    
+
   override:
     - docker pull tutum/mariadb:latest
     - docker pull million12/behat-selenium:latest
-    - docker pull million12/typo3-neos-abstract:latest
+    - docker pull million12/typo3-flow-neos-abstract:latest
+
+  post:
+    # Launch DB backend
+    - docker run -d --name=db --env="MARIADB_PASS=my-pass" tutum/mariadb
+    - docker logs -f db | tee -a ${CIRCLE_ARTIFACTS}/docker-db.log:
+        background: true
 
 # Run tests
 test:
-  pre:
-    - docker build -t million12/neos-typostrap-distribution docker/
-
   override:
-    - docker run -d --name=db --env="MARIADB_PASS=my-pass" tutum/mariadb
+    - docker build --tag=million12/neos-typostrap-distribution docker/
+  
+    # ######################################################
+    # Run Typostrap Neos container, which includes
+    # M12.Foundation / M12.FoundationSite packages
+    # and do some basics checks.
+    # ######################################################
+    - docker run -d --name=neos-typostrap -p=8080:80 --link=db:db --env="T3APP_DO_INIT=true" --env="T3APP_DO_INIT_TESTS=true" million12/neos-typostrap-distribution
+    - docker logs -f neos-typostrap > ${CIRCLE_ARTIFACTS}/docker-neos-typostrap.log:
+        background: true
+    # Wait till TYPO3 Neos is fully configured
+    - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos-typostrap.log; then break; else sleep 1; fi done
+    
+    # Test: do basic front-end tests 
+    - curl -L --head http://neos-typostrap:8080 && curl -s -L http://neos-typostrap:8080
+    - curl -s --head http://neos-typostrap:8080 | grep "HTTP/1.1 200 OK" && curl -s --head http://neos-typostrap:8080 | grep "X-Flow-Powered"
+    - curl -s -L http://neos-typostrap:8080/neos | grep "TYPO3 Neos Login"
+    
+    # Run Neos tests (unit, functional), but do not fail the build in case of any problems there. These are vendor tests and errors there do not indicate that this Docker image is faulty.
     - |
-      docker run -d --name=neos -p=8080:80 --link=db:db \
-        --env="NEOS_APP_DO_INIT=true" \
-        --env="NEOS_APP_DO_INIT_TESTS=true" \
-        million12/neos-typostrap-distribution
-    - sleep 60
-    - docker logs neos
+      docker run -ti --volumes-from=neos-typostrap --link=neos-typostrap:web --link=db:db million12/behat-selenium "
+        env && \
+        echo \$WEB_PORT_80_TCP_ADDR \$WEB_ENV_T3APP_VHOST_NAMES >> /etc/hosts && cat /etc/hosts && \
+        su www -c \"
+          cd ~/typo3-app && \
+          echo -e '\n\n======== RUNNING TYPO3 NEOS TESTS =======\n\n' && \
+          bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml && \
+          bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml
+        \"
+      " || true

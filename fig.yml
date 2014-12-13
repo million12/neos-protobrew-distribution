@@ -35,9 +35,9 @@ web:
     T3APP_USER_PASS: 'password'
     T3APP_USER_FNAME: 'Typostrap'
     T3APP_USER_LNAME: 'Demo'
-    T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: true
+    T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: false
     T3APP_ALWAYS_DO_PULL: false
-    T3APP_DO_INIT_TESTS: false
+    T3APP_DO_INIT_TESTS: true
 
 ssh:
   image: million12/php-app-ssh

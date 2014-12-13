@@ -1,5 +1,5 @@
 # Typostrap.io distribution of TYPO3 Neos
-[![Circle CI](https://circleci.com/gh/million12/neos-typostrap-distribution.png?style=badge)](https://circleci.com/gh/million12/neos-typostrap-distribution)
+[![Circle CI](https://circleci.com/gh/million12/neos-typostrap-distribution.svg?style=svg)](https://circleci.com/gh/million12/neos-typostrap-distribution)
 
 Open-source version of [Typostrap.io](http://typostrap.io/) project, the prototyping tool built on top of [TYPO3 Neos](http://neos.typo3.org/) CMS and [Zurb Foundation](http://foundation.zurb.com/) framework.
 

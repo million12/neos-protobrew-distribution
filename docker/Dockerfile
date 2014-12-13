@@ -3,7 +3,6 @@ MAINTAINER Marcin Ryzycki marcin@m12.io
 
 # ENV: Repository for installed TYPO3 Neos distribution 
 ENV T3APP_BUILD_REPO_URL https://github.com/million12/neos-typostrap-distribution.git
-ENV T3APP_BUILD_BRANCH dev
 ENV T3APP_NEOS_SITE_PACKAGE M12.FoundationSite
 ENV T3APP_VHOST_NAMES neos-typostrap dev.neos-typostrap behat.dev.neos-typostrap
 
