@@ -1,5 +1,5 @@
 # Override original TypoScript Attributes implementation
 # to filter out out attributes with NULL values
 prototype(TYPO3.TypoScript:Attributes) {
-	@class = 'M12\\Foundation\\TypoScript\\AttributesImplementation'
+	@class = 'M12\\Foundation\\TypoScriptObjects\\AttributesImplementation'
 }
