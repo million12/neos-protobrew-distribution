@@ -1,7 +1,6 @@
 /** Custom M12.Foundation code for Neos backend **/
 
-.neos .neos-modal.neos-modal-wide {
-	height: 75%;
-	overflow-y: scroll;
-}
+/** Restore Neos colors after they were overridden by Foundation **/ 
+.neos label {
+	color: inherit;
 }
