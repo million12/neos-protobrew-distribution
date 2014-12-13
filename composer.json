@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "typo3/neos-nodetypes": "*",
+        "typo3/neos-nodetypes": "1.2.*",
         "m12/neos-utils": "*"
     },
     "autoload": {
