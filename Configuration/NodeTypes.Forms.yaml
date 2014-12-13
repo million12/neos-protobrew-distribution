@@ -438,11 +438,16 @@
     selectOptions:
       type: string
       ui:
-        label: 'List select options'
+        label: 'Select options (one per line)'
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
-          editor: 'M12.Foundation/Inspector/Editors/TextAreaEditor'
+          editor: Content/Inspector/Editors/TextAreaEditor
+          editorOptions:
+            placeholder: |
+              e.g.: value = Label
+              or: Just Label
+            rows: 10
 
 
 # NodeType for textarea.
@@ -453,4 +458,3 @@
   ui:
     label: 'Textarea'
     icon: 'icon-align-left'
-

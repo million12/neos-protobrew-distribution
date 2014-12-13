@@ -30,14 +30,20 @@
         inspector:
           group: 'dev'
           position: 31 # after 'customCssCode'
-          editor: 'M12.Foundation/Inspector/Editors/JsEditor'
+          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'Add custom JS code'
+            highlightingMode: 'text/javascript'
     # Inherited from M12.Foundation:AbstractDevBase
     # Replace it with CssEditor
     customCssCode:
       ui:
         label: null
         inspector:
-          editor: 'M12.Foundation/Inspector/Editors/CssEditor'
+          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'Add custom CSS styles'
+            highlightingMode: 'text/css'
     # Inherited from M12.Foundation:DeveloperAbstract
     customHtmlId:
       ui:

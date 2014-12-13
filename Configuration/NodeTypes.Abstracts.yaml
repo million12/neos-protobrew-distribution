@@ -60,7 +60,7 @@
         inspector:
           group: 'dev'
           position: 40
-          editor: 'M12.Foundation/Inspector/Editors/TextAreaEditor'
+          editor: 'Content/Inspector/Editors/TextAreaEditor'
           editorOptions:
             placeholder: 'e.g. custom-data-attribute=value'
 
