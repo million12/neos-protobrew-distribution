@@ -41,6 +41,7 @@
 
 'TYPO3.Neos.NodeTypes:Headline':
   superTypes:
+    abstractNavSailingType: 'M12.Foundation:AbstractNavSailingType'
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
     abstractFontIcon: 'M12.Foundation:AbstractFontIcon'
   properties:

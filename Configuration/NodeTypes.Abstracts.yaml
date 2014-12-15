@@ -140,9 +140,12 @@
                 label: 'FOOTER'
 
 #
-# Mixin for content nodes where 'magellanSupport' property is needed
+# Mixin:
+# Navigation: #fragment, magellan support
 #
-'M12.Foundation:AbstractNavMagellanSupport':
+'M12.Foundation:AbstractNavSailingType':
+  superTypes:
+    - 'M12.Foundation:AbstractNavFragmentId'
   abstract: TRUE
   properties:
     magellanSupport:
@@ -152,6 +155,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'sailingOptions'
+          position: 9
 
 #
 # Mixin for document/content nodes with 'fragmentId' property
@@ -160,6 +164,13 @@
 #
 'M12.Foundation:AbstractNavFragmentId':
   abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        sailingOptions:
+          label: 'Sailing options'
+          position: 96
+          tab: meta
   properties:
     fragmentId:
       type: string
@@ -185,6 +196,12 @@
 #
 'M12.Foundation:AbstractNavFixedSticky':
   abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        menuPosition:
+          label: 'Menu positioning'
+          position: 31 # After Neos menu 'options' group
   properties:
     classNavFixed:
       type: boolean
@@ -192,31 +209,14 @@
         label: 'Fixed'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
+          group: 'menuPosition'
     classNavSticky:
       type: boolean
       ui:
         label: 'Sticky'
         reloadIfChanged: TRUE
         inspector:
-          group: 'options'
-
-#
-# Mixin:
-# Navigation: #fragment, magellan support
-#
-'M12.Foundation:AbstractNavSailingType':
-  superTypes:
-    - 'M12.Foundation:AbstractNavFragmentId'
-    - 'M12.Foundation:AbstractNavMagellanSupport'
-  abstract: TRUE
-  ui:
-    inspector:
-      groups:
-        sailingOptions:
-          label: 'Sailing options'
-          position: 96
-
+          group: 'menuPosition'
 
 #
 # Mixin: Font Awesome icon

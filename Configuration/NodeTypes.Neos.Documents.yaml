@@ -10,12 +10,16 @@
       ui:
         inspector:
           position: 20
+    uriPathSegment:
+      ui:
+        inspector:
+          position: 30
     fragmentId:
       ui:
-        label: '#Fragment (URL)'
+        label: 'URL #fragment id'
         inspector:
           group: 'document'
-          position: 30
+          position: 40
 
 
 'TYPO3.Neos.NodeTypes:Page':
