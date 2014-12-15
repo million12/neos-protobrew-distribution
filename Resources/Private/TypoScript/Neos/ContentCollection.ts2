@@ -1,6 +1,4 @@
 prototype(TYPO3.Neos:ContentCollection) {
-	@class = 'M12\\Foundation\\TypoScript\\ContentCollectionImplementation'
-
 	# Due to (unknown?) reasons ContentCollection inherits 'attributes' properties
 	# set in the parent node (incl. tagName). Re-set those values
 	# so it renders default <div class="neos-contentcollection"></div> container,
