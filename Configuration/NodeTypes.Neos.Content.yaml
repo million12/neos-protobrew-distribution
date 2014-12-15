@@ -70,3 +70,11 @@
 'TYPO3.Neos.NodeTypes:Html':
   superTypes:
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
+
+
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      # @see M12.Foundation:Column.ui.group description to see why we deny it here... 
+      'M12.Foundation:Column': FALSE
+      '*': TRUE

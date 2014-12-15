@@ -39,21 +39,26 @@
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
-    group: 'na'
+    
+    # 2014-12-13: Temporary workaround:
+    # 
+    # There's some weird behaviour (since Neos 1.2) with node types in fake group.
+    # Before 1.2 you could assign node type to fake, non-existing group
+    # which made that node type available, but not via UI.
+    #
+    # Since 1.2 it results with problems TYPO3.Neos:Content.properties._nodeType
+    # which is a property with 'select' type. When that 'select' cannot find
+    # given node type (i.e. 'M12.Foundation:Column') because it's not "listed",
+    # it seems to try to invalidate the value and set the _nodeType to the
+    # 1st available value (usually: Headline). It makes editing 'M12.Foundation:Column'
+    # impossible as it would switch the _nodeType after any save.
+#    group: 'foundationStructure'
+
     inspector:
       groups:
-        gridSize:
-          label: 'Grid size'
+        grid:
+          label: 'Grid options'
           position: 6
-        gridOffset:
-          label: 'Grid offset'
-          position: 7
-        gridPushPull:
-          label: 'Grid push / pull'
-          position: 8
-        gridAlign:
-          label: 'Grid align'
-          position: 9
   childNodes:
     column:
       type: 'TYPO3.Neos:ContentCollection'
@@ -73,8 +78,8 @@
         label: 'End column (for incomplete row)'
         reloadIfChanged: TRUE
         inspector:
-          group: 'gridSize'
-          position: 999
+          group: 'grid'
+          position: 11
 
 
 # Abstract NodeType for all M12.Foundation:GridColumnsX
@@ -217,7 +222,7 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        blockGridSettings:
+        grid:
           label: 'Block Grid settings'
           position: 9
   childNodes:
