@@ -227,9 +227,9 @@
     inspector:
       groups:
         fontIconOptions:
-          label: 'Font Awesome icon'
-          # Put this group somewhere in the middle...
-          position: 96
+          label: 'FontAwesome.io icon'
+          position: 90
+          tab: view
   properties:
     faName:
       type: string
@@ -240,77 +240,67 @@
           group: 'fontIconOptions'
           editorOptions:
             placeholder: '...as listed on fontawesome.io'
-    faSize:
-      type: string
+    faOptions:
+      type: array
+      defaultValue: ['']
       ui:
+        label: 'Icon options'
         reloadIfChanged: TRUE
         inspector:
           group: 'fontIconOptions'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            placeholder: 'Icon size'
+            placeholder: 'Icon options'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
+              # Icon size
               fa-lg:
                 label: 'Size: large'
+                group: 'Icon size'
               fa-2x:
                 label: 'Size: x2'
+                group: 'Icon size'
               fa-3x:
                 label: 'Size: x3'
+                group: 'Icon size'
               fa-4x:
                 label: 'Size: x4'
+                group: 'Icon size'
               fa-5x:
                 label: 'Size: x5'
-    faRotation:
-      type: string
-      ui:
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'fontIconOptions'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            placeholder: 'Icon rotation'
-            values:
-              '':
-                label: ''
+                group: 'Icon size'
+              # Icon rotation:
               fa-rotate-90:
                 label: 'Rotate 90 degree'
+                group: 'Icon rotation'
               fa-rotate-180:
                 label: 'Rotate 180 degree'
+                group: 'Icon rotation'
               fa-rotate-270:
                 label: 'Rotate 270 degree'
+                group: 'Icon rotation'
               fa-flip-horizontal:
                 label: 'Flip horizontal'
+                group: 'Icon rotation'
               fa-flip-vertical:
                 label: 'Flip vertical'
+                group: 'Icon rotation'
+              # Make it...
+              fa-spin:
+                label: 'a spinner'
+                group: 'Make it...'
+              fa-fw:
+                label: 'have a fixed width'
+                group: 'Make it...'
+              right:
+                label: 'right aligned'
+                group: 'Make it...'
     faCustomCss:
       type: string
       ui:
-        label: 'Font Awesome icon custom css'
+        label: 'Icon custom inline CSS'
         reloadIfChanged: TRUE
         inspector:
           group: 'fontIconOptions'
           editorOptions:
             placeholder: 'e.g. padding-right: 5px;'
-    faSpin:
-      type: boolean
-      ui:
-        label: 'Make it a spinner'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'fontIconOptions'
-    faFixedWidth:
-      type: boolean
-      ui:
-        label: 'Make it have a fixed with'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'fontIconOptions'
-    faRightAlign:
-      type: boolean
-      ui:
-        label: 'Make it right aligned'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'fontIconOptions'

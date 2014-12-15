@@ -340,7 +340,9 @@
       groups:
         fontIconOptions:
           # Put this group at the very beginning for this content element
+          # Also move it to the very 1st, default tab
           position: 10
+          tab: default
   properties:
     faName:
       defaultValue: 'circle-o-notch'
