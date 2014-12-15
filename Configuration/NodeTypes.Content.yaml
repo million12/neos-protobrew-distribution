@@ -96,6 +96,7 @@
     label: 'Dropdown Content'
     icon: 'icon-minus'
     group: 'foundationContent'
+    inlineEditable: TRUE
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'

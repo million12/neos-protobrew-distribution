@@ -7,14 +7,19 @@
     inspector:
       groups:
         dev:
-          label: 'Advanced'
+          label: 'Advanced settings'
           position: 95
+          tab: dev
+        devCode:
+          label: 'Custom code'
+          position: 95
+          tab: dev
   properties:
-    customHtmlId:
+    customCssClass:
       type: string
       defaultValue: ''
       ui:
-        label: 'Wrapper custom HTML ID'
+        label: 'Wrapper custom class(es)'
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
@@ -24,22 +29,22 @@
             placeholder: 'None'
       validation:
         regularExpression:
-          regularExpression: '/^[a-z0-9\-]+$/i'
-    customCssClass:
+          regularExpression: '/^[a-z0-9\- ]+$/i'
+    customHtmlId:
       type: string
       defaultValue: ''
       ui:
-        label: 'Wrapper custom class(es)'
+        label: 'Wrapper custom HTML ID'
         reloadIfChanged: TRUE
         inspector:
           group: 'dev'
-          position: 20
+          position: 11
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
             placeholder: 'None'
       validation:
         regularExpression:
-          regularExpression: '/^[a-z0-9\- ]+$/i'
+          regularExpression: '/^[a-z0-9\-]+$/i'
     customCssCode:
       type: string
       defaultValue: ''
@@ -47,18 +52,18 @@
         label: 'Wrapper inline CSS'
         reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
+          group: 'devCode'
           position: 30
           editor: Content/Inspector/Editors/TextFieldEditor
           editorOptions:
-            placeholder: 'None'
+            placeholder: 'e.g. margin-top: 3rem'
     customUserAttributes:
       type: string
       ui:
         label: 'Custom attributes (one per line)'
         reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
+          group: 'devCode'
           position: 40
           editor: 'Content/Inspector/Editors/TextAreaEditor'
           editorOptions:
@@ -70,25 +75,24 @@
   ui:
     inspector:
       groups:
-        dev:
-          label: 'Advanced'
-          position: 95
+        devView:
+          position: 10
+          tab: view
+          label: 'Custom look'
   properties:
     customLook:
       type: string
-      defaultValue: ''
       ui:
         label: 'Predefined style / look'
         reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
+          group: 'devView'
           position: 40
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'None'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               style-1:
                 label: 'Style 1'
               style-2:
@@ -105,25 +109,24 @@
   ui:
     inspector:
       groups:
-        dev:
-          label: 'Advanced'
-          position: 95
+        devSemantic:
+          label: 'Semantic Web'
+          position: 96
+          tab: dev
   properties:
     customTagName:
       type: string
-      defaultValue: 'div'
       ui:
         label: 'Wrapper semantic tag type'
         reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
+          group: 'devSemantic'
           position: 50
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default / None'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               main:
                 label: 'MAIN'
               header:

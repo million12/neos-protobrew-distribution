@@ -32,7 +32,7 @@
       ui:
         reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
+          group: 'devCode'
           position: 31 # after 'customCssCode'
           editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
@@ -42,21 +42,26 @@
     # Replace it with CssEditor
     customCssCode:
       ui:
-        label: null
+        label: ''
         inspector:
           editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
           editorOptions:
             buttonLabel: 'Add custom CSS styles'
             highlightingMode: 'text/css'
-    # Inherited from M12.Foundation:DeveloperAbstract
+    # Inherited from M12.Foundation:AbstractDevBase
     customHtmlId:
       ui:
         label: 'Custom body ID'
-    # Inherited from M12.Foundation:DeveloperAbstract
+    # Inherited from M12.Foundation:AbstractDevBase
     customCssClass:
       ui:
         label: 'Custom body class(es)'
-    # Inherited from M12.Foundation:DeveloperAbstract
+    # Inherited from M12.Foundation:AbstractDevBase
     customLook:
       ui:
         label: 'Predefined body style'
+    # Inherited from M12.Foundation:AbstractDevBase
+    customUserAttributes:
+      type: string
+      ui:
+        label: 'Custom body attributes (one per line)'

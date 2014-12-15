@@ -10,6 +10,7 @@
     label: 'Orbit'
     icon: 'icon-picture'
     group: 'foundationMedia'
+    inlineEditable: TRUE
     inspector:
       groups:
         orbitSettings:

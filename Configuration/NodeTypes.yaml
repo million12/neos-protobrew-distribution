@@ -1,3 +1,23 @@
+# Base node: define extra inspector tabs
+'TYPO3.Neos:Node':
+  ui:
+    inspector:
+      tabs:
+        view:
+          label: 'Visual options'
+          position: 30
+          icon: 'icon-tint'
+        device:
+          label: 'Device settings'
+          position: 50
+          icon: 'icon-desktop'
+        dev:
+          label: 'Developer options'
+          position: 80
+          icon: 'icon-code'
+
+
+
 # -----------------------------------------------------------------------------
 #
 # Abstract: foundation helper classes
@@ -11,9 +31,11 @@
         utilityClasses:
           label: 'Utility classes'
           position: 93
+          tab: meta
         visibilityClasses:
-          label: 'Show/hide classes'
+          label: 'Show/hide content'
           position: 94
+          tab: device
   properties:
     classHide:
       type: boolean
@@ -58,7 +80,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'utilityClasses'
-          position: 40
+          position: 25
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'None'

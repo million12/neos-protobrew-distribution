@@ -29,14 +29,11 @@
 
 
 'TYPO3.Neos.NodeTypes:TwoColumn':
-  ui:
-    group: 'na'
+  abstract: true
 'TYPO3.Neos.NodeTypes:ThreeColumn':
-  ui:
-    group: 'na'
+  abstract: true
 'TYPO3.Neos.NodeTypes:FourColumn':
-  ui:
-    group: 'na'
+  abstract: true
 
 
 'TYPO3.Neos.NodeTypes:Headline':
