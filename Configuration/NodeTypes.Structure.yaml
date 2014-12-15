@@ -13,6 +13,9 @@
     icon: 'icon-hdd'
     group: 'foundationStructure'
     inlineEditable: TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE # Disallow everything, all content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -39,26 +42,14 @@
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
-    
-    # 2014-12-13: Temporary workaround:
-    # 
-    # There's some weird behaviour (since Neos 1.2) with node types in fake group.
-    # Before 1.2 you could assign node type to fake, non-existing group
-    # which made that node type available, but not via UI.
-    #
-    # Since 1.2 it results with problems TYPO3.Neos:Content.properties._nodeType
-    # which is a property with 'select' type. When that 'select' cannot find
-    # given node type (i.e. 'M12.Foundation:Column') because it's not "listed",
-    # it seems to try to invalidate the value and set the _nodeType to the
-    # 1st available value (usually: Headline). It makes editing 'M12.Foundation:Column'
-    # impossible as it would switch the _nodeType after any save.
-#    group: 'foundationStructure'
-
     inspector:
       groups:
         grid:
           label: 'Grid options'
           position: 6
+  constraints:
+    nodeTypes:
+      '*': FALSE # Disallow everything, all content must go into child ContentCollection
   childNodes:
     column:
       type: 'TYPO3.Neos:ContentCollection'
@@ -71,6 +62,8 @@
 'M12.Foundation:ColumnEnd':
   superTypes:
     - 'M12.Foundation:Column'
+  ui:
+    label: 'Grid Column (end)'
   properties:
     classEndColumn:
       type: boolean
@@ -98,6 +91,10 @@
         gridOptions:
           label: 'Grid options'
           position: 9
+  constraints:
+    nodeTypes:
+      'M12.Foundation:Column': TRUE
+      '*': FALSE
   properties:
     gridExtraWrapper:
       type: boolean
@@ -151,57 +148,6 @@
     col3:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridRow4Col':
-  superTypes:
-    - 'M12.Foundation:GridRowAbstract'
-  ui:
-    label: 'Grid row: 4 columns'
-  childNodes:
-    col1:
-      type: 'M12.Foundation:Column'
-    col2:
-      type: 'M12.Foundation:Column'
-    col3:
-      type: 'M12.Foundation:Column'
-    col4:
-      type: 'M12.Foundation:ColumnEnd'
-
-'M12.Foundation:GridRow5Col':
-  superTypes:
-    - 'M12.Foundation:GridRowAbstract'
-  ui:
-    label: 'Grid row: 5 columns'
-  childNodes:
-    col1:
-      type: 'M12.Foundation:Column'
-    col2:
-      type: 'M12.Foundation:Column'
-    col3:
-      type: 'M12.Foundation:Column'
-    col4:
-      type: 'M12.Foundation:Column'
-    col5:
-      type: 'M12.Foundation:ColumnEnd'
-
-'M12.Foundation:GridRow6Col':
-  superTypes:
-    - 'M12.Foundation:GridRowAbstract'
-  ui:
-    label: 'Grid row: 6 columns'
-  childNodes:
-    col1:
-      type: 'M12.Foundation:Column'
-    col2:
-      type: 'M12.Foundation:Column'
-    col3:
-      type: 'M12.Foundation:Column'
-    col4:
-      type: 'M12.Foundation:Column'
-    col5:
-      type: 'M12.Foundation:Column'
-    col6:
-      type: 'M12.Foundation:ColumnEnd'
-
 
 
 
@@ -225,6 +171,9 @@
         grid:
           label: 'Block Grid settings'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # Disallow everything, all content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'

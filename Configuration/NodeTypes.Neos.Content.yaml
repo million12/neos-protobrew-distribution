@@ -72,6 +72,5 @@
 'TYPO3.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      # @see M12.Foundation:Column.ui.group description to see why we deny it here... 
-      'M12.Foundation:Column': FALSE
+      'M12.Foundation:Column': FALSE # M12.Foundation:Column makes sense only inside M12.Foundation:GridRow*
       '*': TRUE
