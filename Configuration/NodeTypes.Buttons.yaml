@@ -32,9 +32,29 @@
         inspector:
           group: 'options'
         aloha:
-          'format': ['b', 'i', 'u', 'sub', 'sup']
-          'link':
-            'a': FALSE
+          format:
+            strong: TRUE
+            em: TRUE
+            u: TRUE
+            sub: TRUE
+            sup: TRUE
+            p: FALSE
+            h1: FALSE
+            h2: FALSE
+            h3: FALSE
+            h4: FALSE
+            h5: FALSE
+          link:
+            a: FALSE
+          alignment:
+            left: FALSE
+            center: FALSE
+            right: FALSE
+            justify: FALSE
+          formatlesspaste:
+            button: FALSE
+            formatlessPasteOption: TRUE
+            autoparagraph: FALSE
     renderAnchor:
       type: boolean
       ui:
