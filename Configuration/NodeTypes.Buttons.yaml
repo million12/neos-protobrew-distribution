@@ -9,20 +9,20 @@
     - 'M12.Foundation:AbstractNavSailingType'
     - 'M12.Foundation:AbstractFontIcon'
   ui:
-    label: 'Button & Link'
-    icon: 'icon-minus'
+    label: 'Button / Link'
+    icon: 'icon-sign-blank'
     group: 'foundationButtons'
     inspector:
       groups:
         options:
           label: 'Button options'
           position: 6
-        dev:
-          label: 'Button advanced options'
-          position: 7
         extraOptions:
           label: 'Reveal & Dropdown options'
           position: 8
+  constraints:
+    nodeTypes:
+      '*': FALSE # No children items allowed
   properties:
     label:
       type: string
@@ -64,7 +64,6 @@
           group: 'options'
     buttonType:
       type: string
-      defaultValue: ''
       ui:
         label: 'Button type'
         reloadIfChanged: TRUE
@@ -73,9 +72,8 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               submit:
                 label: 'Submit'
               reset:
@@ -84,7 +82,6 @@
                 label: 'Button'
     classSize:
       type: string
-      defaultValue: ''
       ui:
         label: 'Button size'
         reloadIfChanged: TRUE
@@ -93,9 +90,8 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               tiny:
                 label: 'Tiny'
               small:
@@ -104,7 +100,6 @@
                 label: 'Large'
     classAppearance:
       type: string
-      defaultValue: ''
       ui:
         label: 'Button appearance'
         reloadIfChanged: TRUE
@@ -113,9 +108,8 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               primary:
                 label: 'Primary'
               success:
@@ -124,7 +118,6 @@
                 label: 'Alert'
     classShape:
       type: string
-      defaultValue: ''
       ui:
         label: 'Button shape'
         reloadIfChanged: TRUE
@@ -133,27 +126,25 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               radius:
                 label: 'Radius'
               round:
                 label: 'Round'
     htmlHref:
       type: string
-      defaultValue: ''
       ui:
         label: 'Link'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
+          # TODO: Replace with LinkEditor when it is fixed (Neos 1.2.0: seems to be buggy, does not allow external URLs)
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. http://www.example.com'
     htmlTargetBlank:
       type: string
-      defaultValue: ''
       ui:
         label: 'Open in new window'
         reloadIfChanged: TRUE
@@ -162,22 +153,21 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'No'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               _blank:
                 label: 'Yes'
     classIsDisabled:
       type: boolean
       ui:
-        label: 'Disable'
+        label: 'Disabled state'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
     classIsExpanded:
       type: boolean
       ui:
-        label: 'Expand'
+        label: 'Expanded button'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
@@ -207,7 +197,6 @@
             placeholder: 'e.g. myDropdown'
     dropdownDirection:
       type: string
-      defaultValue: ''
       ui:
         label: 'Dropdown direction'
         reloadIfChanged: TRUE
@@ -216,9 +205,8 @@
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
             placeholder: 'Default / Bottom'
+            allowEmpty: TRUE
             values:
-              '':
-                label: ''
               'top':
                 label: 'Top'
               'right':
@@ -248,20 +236,9 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'extraOptions'
-    # Override inherited properties from M12.Foundation:AbstractDevBase
-    customHtmlId:
-      ui:
-        label: 'Element custom ID'
-    customCssClass:
-      ui:
-        label: 'Element extra CSS class(es)'
-    customCssCode:
-      ui:
-        label: 'Element inline CSS'
-    # Override inherited properties from M12.Foundation:AbstractDevBase
 
 
-# Button Group
+# Button Group (list of buttons)
 'M12.Foundation:ButtonGroup':
   superTypes:
     - 'TYPO3.Neos:Content'
@@ -269,12 +246,16 @@
     label: 'Button Group'
     icon: 'icon-minus'
     group: 'foundationButtons'
+    inlineEditable: TRUE
+  constraints:
+    nodeTypes:
+      'M12.Foundation:Button': TRUE
+      '*': FALSE
   childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
+    btn1:
+      type: 'M12.Foundation:Button'
 
-
-# Button Bar
+# Button Bar (group of button groups)
 'M12.Foundation:ButtonBar':
   superTypes:
     - 'TYPO3.Neos:Content'
@@ -282,7 +263,13 @@
     label: 'Button Bar'
     icon: 'icon-minus'
     group: 'foundationButtons'
+    inlineEditable: TRUE
+  constraints:
+    nodeTypes:
+      'M12.Foundation:ButtonGroup': TRUE
+      '*': FALSE
   childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
-
+    group1:
+      type: 'M12.Foundation:ButtonGroup'
+    group2:
+      type: 'M12.Foundation:ButtonGroup'

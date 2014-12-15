@@ -13,7 +13,7 @@
 <!-- Buttons: Button Group -->
 <f:section name="buttonGroup">
 	<div class="extra-wrapper-required-by-neos-backend">
-		<ts:render path="buttonGroupContent" />
+		<ts:render path="buttons" />
 	</div>
 </f:section>
 
@@ -23,7 +23,7 @@
 		<ul{parentAttributes -> f:format.raw()}>
 	</f:if>
 
-	<li><ts:render path="buttonGroupItemContent" /></li>
+	<li><ts:render path="button" /></li>
 
 	<f:if condition="{iterator.isLast}">
 		</ul>
@@ -33,6 +33,6 @@
 <!-- Buttons: Button Bar -->
 <f:section name="buttonBar">
 	<div{attributes -> f:format.raw()}>
-		<ts:render path="buttonBarContent" />
+		<ts:render path="buttonGroups" />
 	</div>
 </f:section>

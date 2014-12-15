@@ -26,3 +26,46 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 
 	tag = ${renderAnchor or htmlHref ? 'a' : 'button'}
 }
+
+prototype(M12.Foundation:ButtonGroup) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Button.html'
+	sectionName = 'buttonGroup'
+	
+	attributes.class.base = 'button-group'
+	
+	@override.parentAttributes = ${this.attributes}
+
+	buttons = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children('[instanceof M12.Foundation:Button]')}
+		itemRenderer = M12.Foundation:ButtonGroupItem
+		itemName = 'node'
+		iterationName = 'iterator'
+	}
+	
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}
+
+prototype(M12.Foundation:ButtonGroupItem) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Button.html'
+	sectionName = 'buttonGroupItem'
+	
+	iterator = ${iterator}
+	parentAttributes = ${parentAttributes}
+
+	button = TYPO3.Neos:ContentCase
+}
+
+# ButtonBar: group of button group(s)
+prototype(M12.Foundation:ButtonBar) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Button.html'
+	sectionName = 'buttonBar'
+	
+	attributes.class.base = 'button-bar'
+
+	buttonGroups = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children('[instanceof M12.Foundation:ButtonGroup]')}
+		itemRenderer = M12.Foundation:ButtonGroup
+		itemName = 'node'
+	}
+}
