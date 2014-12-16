@@ -3,14 +3,8 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	@override.htmlHref = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
 	@override.isButtonSplit = ${q(node).property('isButtonSplit')}
 
-	attributes.class.base = ${renderAnchor ? null : 'button'}
-	attributes.class.size = ${q(node).property('classSize') ? q(node).property('classSize') : null}
-	attributes.class.appearance = ${q(node).property('classAppearance') ? q(node).property('classAppearance') : null}
-	attributes.class.shape = ${q(node).property('classShape') ? q(node).property('classShape') : null}
-	attributes.class.disable = ${q(node).property('classIsDisabled') ? 'disabled' : null}
-	attributes.class.expand = ${q(node).property('classIsExpanded') ? 'expand' : null}
-	attributes.class.split = ${q(node).property('isButtonSplit') ? 'split' : null}
-	attributes.class.dropdown = ${q(node).property('isButtonDropdown') ? 'dropdown' : null}
+	attributes.class.base = ${renderAnchor ? 'button' : null}
+	attributes.class.buttonOptions = ${q(node).property('classOptions') ? String.trim(Array.join(q(node).property('classOptions'), ' ')) : null}
 
 	attributes.href = ${htmlHref}
 	attributes.type = ${q(node).property('buttonType') ? q(node).property('buttonType') : null}
@@ -22,6 +16,14 @@ prototype(M12.Foundation:Button) < prototype(M12.Foundation:Content) {
 	attributes.data-options = TYPO3.TypoScript:RawArray {
 		dropdownDirection = ${q(node).property('dropdownDirection') ? 'align: ' + q(node).property('dropdownDirection') + ';' : null}
 		dropdownHoverable = ${q(node).property('dropdownHoverable') ? 'is_hover: true;' : null}
+		@process.stringify {
+			expression = ${String.trim(String.pregReplace(Array.join(value,' '),'/\s+/',' '))}
+			@position = '1'
+		}
+		@process.nullify {
+			expression = ${value ? value : null}
+			@position = 'end'
+		}
 	}
 
 	tag = ${renderAnchor or htmlHref ? 'a' : 'button'}

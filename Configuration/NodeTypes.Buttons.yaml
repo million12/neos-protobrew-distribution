@@ -55,6 +55,24 @@
             button: FALSE
             formatlessPasteOption: TRUE
             autoparagraph: FALSE
+    buttonType:
+      type: string
+      ui:
+        label: ''
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Button type'
+            allowEmpty: TRUE
+            values:
+              button:
+                label: 'Type: Button'
+              submit:
+                label: 'Type: Submit'
+              reset:
+                label: 'Type: Reset'
     renderAnchor:
       type: boolean
       ui:
@@ -62,76 +80,58 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
-    buttonType:
-      type: string
+    classOptions:
+      type: array
+      defaultValue: ['']
       ui:
-        label: 'Button type'
+        label: ''
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
           editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            placeholder: 'Default'
-            allowEmpty: TRUE
-            values:
-              submit:
-                label: 'Submit'
-              reset:
-                label: 'Reset'
-              button:
-                label: 'Button'
-    classSize:
-      type: string
-      ui:
-        label: 'Button size'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            placeholder: 'Default'
+            placeholder: 'Button options'
             allowEmpty: TRUE
             values:
               tiny:
-                label: 'Tiny'
+                label: 'Size: Tiny'
+                group: 'Size'
               small:
-                label: 'Small'
+                label: 'Size: Small'
+                group: 'Size'
               large:
-                label: 'Large'
-    classAppearance:
-      type: string
-      ui:
-        label: 'Button appearance'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            placeholder: 'Default'
-            allowEmpty: TRUE
-            values:
-              primary:
-                label: 'Primary'
+                label: 'Size: Large'
+                group: 'Size'
               success:
-                label: 'Success'
+                label: 'Appearance: Success'
+                group: 'Appearance'
+              secondary:
+                label: 'Appearance: Secondary'
+                group: 'Appearance'
               alert:
-                label: 'Alert'
-    classShape:
-      type: string
-      ui:
-        label: 'Button shape'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
-          editorOptions:
-            placeholder: 'Default'
-            allowEmpty: TRUE
-            values:
+                label: 'Appearance: Alert'
+                group: 'Appearance'
+              info:
+                label: 'Appearance: Info'
+                group: 'Appearance'
+              disabled:
+                label: 'Appearance: Disabled'
+                group: 'Appearance'
               radius:
-                label: 'Radius'
+                label: 'Shape: Radius'
+                group: 'Shape'
               round:
-                label: 'Round'
+                label: 'Shape: Round'
+                group: 'Shape'
+              dropdown:
+                label: 'Render as dropdown button'
+                group: 'Dropdown options'
+              split:
+                label: 'Render as split button'
+                group: 'Dropdown options'
+              expand:
+                label: 'Expanded button'
+                group: 'Misc'
     htmlHref:
       type: string
       ui:
@@ -157,20 +157,6 @@
             values:
               _blank:
                 label: 'Yes'
-    classIsDisabled:
-      type: boolean
-      ui:
-        label: 'Disabled state'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
-    classIsExpanded:
-      type: boolean
-      ui:
-        label: 'Expanded button'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'options'
     # Reveal Modal related properties.
     htmlDataRevealId:
       type: string
@@ -195,6 +181,13 @@
           editor: 'TYPO3.Neos/Inspector/Editors/TextFieldEditor'
           editorOptions:
             placeholder: 'e.g. myDropdown'
+    dropdownHoverable:
+      type: boolean
+      ui:
+        label: 'Dropdown hoverable'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'extraOptions'
     dropdownDirection:
       type: string
       ui:
@@ -215,27 +208,6 @@
                 label: 'Bottom'
               'left':
                 label: 'Left'
-    dropdownHoverable:
-      type: boolean
-      ui:
-        label: 'Dropdown hoverable'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'extraOptions'
-    isButtonSplit:
-      type: boolean
-      ui:
-        label: 'Render as split button'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'extraOptions'
-    isButtonDropdown:
-      type: boolean
-      ui:
-        label: 'Render as dropdown button'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'extraOptions'
 
 
 # Button Group (list of buttons)
