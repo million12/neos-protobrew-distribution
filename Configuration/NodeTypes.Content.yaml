@@ -130,9 +130,6 @@
         accordionSettings:
           label: 'Accordion settings'
           position: 9
-  childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
 
 'M12.Foundation:Accordion':
   superTypes:
@@ -140,8 +137,16 @@
     - 'M12.Foundation:AccordionAbstract'
   ui:
     label: 'Accordion'
-    icon: 'icon-minus'
+    icon: 'icon-reorder'
     group: 'foundationContent'
+    inlineEditable: TRUE
+  constraints:
+    nodeTypes:
+      'M12.Foundation:AccordionItem': TRUE
+      '*': FALSE # No children items allowed
+  childNodes:
+    content:
+      type: 'M12.Foundation:AccordionItem'
   properties:
     accordionGroupName:
       type: string
@@ -150,6 +155,8 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'accordionSettings'
+          editorOptions:
+            placeholder: '...for distributed accordion groups only'
       validation:
         regularExpression:
           regularExpression: '/^[a-z0-9\-]+$/i'
@@ -161,14 +168,21 @@
     - 'M12.Foundation:AccordionAbstract'
   ui:
     label: 'Accordion Item'
-    icon: 'icon-minus'
+    icon: 'icon-reorder'
     group: 'foundationContent'
+  constraints:
+    nodeTypes:
+      '*': FALSE # No children items allowed apart of child ContentCollection
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
   properties:
     accordionItemLabel:
       type: string
       defaultValue: 'Accordion item label'
       ui:
-        inlineEditable: TRUE
+        inspector:
+          group: 'accordionSettings'
         aloha:
           format:
             strong: TRUE
@@ -205,6 +219,7 @@
           regularExpression: '/^[a-z0-9\-]+$/i'
     isAccordionItemActive:
       type: boolean
+      defaultValue: TRUE
       ui:
         label: 'Make this accordion item active'
         reloadIfChanged: TRUE
@@ -294,7 +309,7 @@
     - 'M12.Foundation:AbstractFontIcon'
   ui:
     label: 'Font Awesome icon'
-    icon: 'icon-minus'
+    icon: 'icon-flag'
     group: 'foundationContent'
     inspector:
       groups:

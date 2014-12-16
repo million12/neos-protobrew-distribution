@@ -74,4 +74,5 @@
     nodeTypes:
       'M12.Foundation:Column': FALSE # M12.Foundation:Column makes sense only inside M12.Foundation:GridRow*
       'M12.Foundation:TabItem': FALSE # M12.Foundation:TabItem makes sense only inside M12.Foundation:Tabs*
+      'M12.Foundation:AccordionItem': FALSE # M12.Foundation:AccordionItem makes sense only inside M12.Foundation:Accordion
       '*': TRUE
