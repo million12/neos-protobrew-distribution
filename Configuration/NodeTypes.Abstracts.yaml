@@ -77,7 +77,7 @@
       groups:
         devView:
           position: 10
-          tab: view
+          tab: dev
           label: 'Custom look'
   properties:
     customLook:
