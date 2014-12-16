@@ -123,6 +123,13 @@
               round:
                 label: 'Shape: Round'
                 group: 'Shape'
+              # Form options: prefix/postfix when used together with form fields
+              prefix:
+                label: 'Form: Prefix button'
+                group: 'Form options'
+              postfix:
+                label: 'Form: Postfix button'
+                group: 'Form options'
               dropdown:
                 label: 'Render as dropdown button'
                 group: 'Dropdown options'
