@@ -19,6 +19,9 @@
         formSettings:
           label: 'Form settings'
           position: 5
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -32,6 +35,7 @@
           group: 'formSettings'
     methodType:
       type: string
+      defaultValue: 'get'
       ui:
         label: 'Submit method'
         reloadIfChanged: TRUE
@@ -60,21 +64,24 @@
         dev:
           label: 'Advanced form element settings'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   properties:
     inputName:
       type: string
-      defaultValue: 'input-name'
       ui:
-        label: 'Name attribute'
+        label: 'Element name attribute'
         reloadIfChanged: TRUE
         inspector:
-          group: 'formInputSettings'
+          group: 'dev'
           position: 10
+          editorOptions:
+            placeholder: 'None'
     inputValue:
       type: string
-      defaultValue: ''
       ui:
-        label: 'Value attribute'
+        label: 'Field value'
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
@@ -118,19 +125,6 @@
         inspector:
           group: 'formInputSettings'
           position: 80
-    # Override inherited properties from M12.Foundation:AbstractDevBase
-    customHtmlId:
-      ui:
-        label: 'Element custom ID'
-    customCssClass:
-      ui:
-        label: 'Element extra CSS class(es)'
-    customCssCode:
-      ui:
-        label: 'Element inline CSS'
-    customLook:
-      ui:
-        label: 'Element predefined style / look'
 
 
 # Abstract for all form elements that need <label> element.
@@ -142,7 +136,42 @@
         formLabelSettings:
           label: 'Form label settings'
           position: 6
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   properties:
+    inputLabel:
+      type: string
+      defaultValue: 'Label'
+      ui:
+        inlineEditable: TRUE
+        inspector:
+          group: 'formLabelSettings'
+          position: 5
+        aloha:
+          format:
+            strong: TRUE
+            em: TRUE
+            u: TRUE
+            sub: TRUE
+            sup: TRUE
+            p: FALSE
+            h1: FALSE
+            h2: FALSE
+            h3: FALSE
+            h4: FALSE
+            h5: FALSE
+          link:
+            a: FALSE
+          alignment:
+            left: FALSE
+            center: FALSE
+            right: FALSE
+            justify: FALSE
+          formatlesspaste:
+            button: FALSE
+            formatlessPasteOption: TRUE
+            autoparagraph: FALSE
     inputLabelEnable:
       type: boolean
       defaultValue: TRUE
@@ -152,13 +181,6 @@
         inspector:
           group: 'formLabelSettings'
           position: 10
-    inputLabel:
-      type: string
-      defaultValue: 'Label'
-      ui:
-        inlineEditable: TRUE
-        aloha:
-          'format': []
     labelCssClass:
       type: string
       defaultValue: ''
@@ -221,14 +243,17 @@
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
-    label: 'Fieldset'
-    icon: 'icon-columns'
+    label: 'Form fieldset'
+    icon: 'icon-check-empty'
     group: 'foundationForms'
     inspector:
       groups:
         formInputSettings:
           label: 'Form input settings'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -256,7 +281,7 @@
     - 'TYPO3.Neos:Content'
     - 'M12.Foundation:FormInputLabelAbstract'
   ui:
-    label: 'Label'
+    label: 'Form label'
     icon: 'icon-paperclip'
     group: 'foundationForms'
     inspector:
@@ -320,7 +345,7 @@
     - 'M12.Foundation:FormInputLabelAbstract'
     - 'M12.Foundation:FormInputPlaceholderAbstract'
   ui:
-    label: 'Form Input'
+    label: 'Text field'
     icon: 'icon-pencil'
   properties:
     inputType:
@@ -360,9 +385,10 @@
 
 
 # Pre/postfix element.
-'M12.Foundation:FormInputFix':
+'M12.Foundation:FormInputPrePostfix':
   superTypes:
     - 'TYPO3.Neos:Content'
+    - 'M12.Foundation:AbstractDevCustomTag'
   ui:
     label: 'Input Pre/Postfix'
     icon: 'icon-check-empty'
@@ -375,14 +401,12 @@
   properties:
     text:
       type: string
-      defaultValue: 'Pre/postfix'
+      defaultValue: 'XYZ'
       ui:
         inlineEditable: TRUE
-        aloha:
-          'format': []
     fixType:
       type: string
-      defaultValue: 'prefix'
+      defaultValue: 'postfix'
       ui:
         label: 'Choose fix type'
         reloadIfChanged: TRUE
@@ -395,14 +419,19 @@
                 label: 'Prefix'
               postfix:
                 label: 'Postfix'
-    isButton:
-      type: boolean
+    # Allow overridding tagName - just to have an ability to quickly switch it to BUTTON.
+    # Otherwise we should advise users to use feature-rich button/link element.
+    customTagName:
       ui:
-        label: 'Make it a button'
-        reloadIfChanged: TRUE
         inspector:
-          group: 'formInputSettings'
-
+          editorOptions:
+            placeholder: 'Default / SPAN'
+            allowEmpty: TRUE
+            values:
+              span:
+                label: 'SPAN'
+              button:
+                label: 'BUTTON'
 
 # NodeType for checkbox input.
 'M12.Foundation:FormInputCheckbox':
@@ -411,7 +440,7 @@
     - 'M12.Foundation:FormInputLabelAbstract'
     - 'M12.Foundation:FormInputCheckedAbstract'
   ui:
-    label: 'Checkbox input'
+    label: 'Checkbox field'
     icon: 'icon-check'
 
 
@@ -422,7 +451,7 @@
     - 'M12.Foundation:FormInputLabelAbstract'
     - 'M12.Foundation:FormInputCheckedAbstract'
   ui:
-    label: 'Radio input'
+    label: 'Radio field'
     icon: 'icon-circle-blank'
 
 
@@ -432,17 +461,22 @@
     - 'M12.Foundation:FormElementAbstract'
     - 'M12.Foundation:FormInputLabelAbstract'
   ui:
-    label: 'Select input'
+    label: 'Select field'
     icon: 'icon-chevron-down'
   properties:
     selectOptions:
       type: string
       ui:
-        label: 'List select options'
+        label: 'Select options (one per line)'
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
-          editor: 'M12.Foundation/Inspector/Editors/TextAreaEditor'
+          editor: Content/Inspector/Editors/TextAreaEditor
+          editorOptions:
+            placeholder: |
+              e.g.: value = Label
+              or: Just Label
+            rows: 10
 
 
 # NodeType for textarea.
@@ -453,4 +487,13 @@
   ui:
     label: 'Textarea'
     icon: 'icon-align-left'
-
+  properties:
+    rows:
+      type: integer
+      defaultValue: 2
+      ui:
+        label: 'Rows'
+        inspector:
+          group: 'formLabelSettings'
+          editorOptions:
+            placeholder: 'Number of rows in textarea'

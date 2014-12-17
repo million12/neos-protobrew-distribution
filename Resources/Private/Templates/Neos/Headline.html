@@ -2,6 +2,7 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
 <{tagName}{attributes -> f:format.raw()}>
+	<f:render partial="Anchor" arguments="{_all}" />
 	<ts:render path="fontIcon" />
 	{neos:contentElement.editable(property: 'title')}
 </{tagName}>

@@ -18,29 +18,19 @@
     # Start level: default 1st level of the site
     startLevel:
       defaultValue: 1
-    # Property 'startingPoint' exists in MenuImplementation and works OK when set, but it's never exposed.
-    # Caveat: it only works as intended when startLevel = 0 (Same level as current page)
-    startingPoint:
-      type: reference
-      ui:
-        label: 'Starting point'
-        inspector:
-          group: 'options'
 
 
 'TYPO3.Neos.NodeTypes:TwoColumn':
-  ui:
-    group: 'na'
+  abstract: true
 'TYPO3.Neos.NodeTypes:ThreeColumn':
-  ui:
-    group: 'na'
+  abstract: true
 'TYPO3.Neos.NodeTypes:FourColumn':
-  ui:
-    group: 'na'
+  abstract: true
 
 
 'TYPO3.Neos.NodeTypes:Headline':
   superTypes:
+    abstractNavSailingType: 'M12.Foundation:AbstractNavSailingType'
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
     abstractFontIcon: 'M12.Foundation:AbstractFontIcon'
   properties:
@@ -58,15 +48,24 @@
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
     abstractFontIcon: 'M12.Foundation:AbstractFontIcon'
   properties:
-    'text':
+    text:
       ui:
         aloha:
-          'format':
-            'h4': TRUE
-            'h5': TRUE
-            'h6': TRUE
-            'div': TRUE
+          format:
+            h4: TRUE
+            h5: TRUE
+            h6: TRUE
 
 'TYPO3.Neos.NodeTypes:Html':
   superTypes:
+    abstractNavSailingType: 'M12.Foundation:AbstractNavSailingType'
     abstractDevCustomTag: 'M12.Foundation:AbstractDevCustomTag'
+
+
+'TYPO3.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'M12.Foundation:Column': FALSE # M12.Foundation:Column makes sense only inside M12.Foundation:GridRow*
+      'M12.Foundation:TabItem': FALSE # M12.Foundation:TabItem makes sense only inside M12.Foundation:Tabs*
+      'M12.Foundation:AccordionItem': FALSE # M12.Foundation:AccordionItem makes sense only inside M12.Foundation:Accordion
+      '*': TRUE

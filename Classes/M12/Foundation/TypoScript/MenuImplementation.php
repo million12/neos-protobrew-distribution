@@ -33,7 +33,7 @@ class MenuImplementation extends NeosMenuImplementation {
 			$item['cssClasses'] = '';
 
 			/** @var NodeInterface $node */
-			$node = $item['originalNode'];
+			$node = $item['node'];
 
 			//
 			// [FEATURE]

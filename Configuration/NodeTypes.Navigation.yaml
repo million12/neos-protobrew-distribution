@@ -11,7 +11,7 @@
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
     - 'M12.Foundation:AbstractNavFixedSticky'
-    - 'M12.Foundation:AbstractNavMagellanSupport'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Top Bar'
     icon: 'icon-sitemap'
@@ -21,6 +21,8 @@
         navOptions:
           label: 'Top Bar options'
           position: 9
+        sailingOptions:
+          tab: default
   properties:
     topBarTitle:
       type: string
@@ -67,6 +69,7 @@
     label: 'Side Nav'
     icon: 'icon-th-list'
     group: 'foundationNavigation'
+    inlineEditable: TRUE
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -79,10 +82,14 @@
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
     - 'M12.Foundation:AbstractNavFixedSticky'
-    - 'M12.Foundation:AbstractNavMagellanSupport'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Side Nav (live)'
     group: 'foundationNavigation'
+    inspector:
+      groups:
+        sailingOptions:
+          tab: default
 
 
 #
@@ -95,6 +102,7 @@
     label: 'Sub Nav'
     icon: 'icon-barcode'
     group: 'foundationNavigation'
+    inlineEditable: TRUE
     inspector:
       groups:
         options:
@@ -122,7 +130,7 @@
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Menu'
     - 'M12.Foundation:AbstractNavFixedSticky'
-    - 'M12.Foundation:AbstractNavMagellanSupport'
+    - 'M12.Foundation:AbstractNavSailingType'
   ui:
     label: 'Sub Nav (live)'
     group: 'foundationNavigation'
@@ -131,6 +139,8 @@
         navOptions:
           label: 'Sub Nav options'
           position: 9
+        sailingOptions:
+          tab: default
   properties:
     title:
       type: string

@@ -1,5 +1,5 @@
 <?php
-namespace M12\Foundation\TypoScript;
+namespace M12\Foundation\TypoScriptObjects;
 
 /*                                                                        *
  * This script belongs to the "M12.Foundation" package.                   *
@@ -11,16 +11,22 @@ namespace M12\Foundation\TypoScript;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\TypoScript\TypoScriptObjects\AttributesImplementation as NeosAttributesImplementation;
+use TYPO3\TypoScript\TypoScriptObjects\AttributesImplementation as TypoScriptAttributesImplementation;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
  * {@inheritdoc}
  *
- * Additionally, we change the behaviour slightly so attributes
- * with NULL values are not printed at all.
+ * Additionally, we change the behaviour slightly: evaluate() return
+ * object (itself), which with __toString method ensures that
+ * {attributes} inside Flow views are rendered as usually.
+ * 
+ * In addition, we have a possibility to call {attributes.asString}
+ * or {attributes.asArray} explicitly, when needed. This might be
+ * needed when you want to pass arbitrary attributes to some view helpers
+ * additionalAttributes param (e.g. f:form).
  */
-class AttributesImplementation extends NeosAttributesImplementation {
+class AttributesImplementation extends TypoScriptAttributesImplementation {
 
 	/**
 	 * Key name under which custom user attributes might be available
@@ -38,28 +44,37 @@ class AttributesImplementation extends NeosAttributesImplementation {
 	protected $renderedAttributes;
 
 	/**
-	 * @return string
+	 * @return $this
 	 */
 	public function evaluate() {
 		$this->parseCustomUserAttributes();
 
+		$allowEmpty = $this->getAllowEmpty();
 		$attributes = array();
 		$renderedAttributes = '';
 		foreach (array_keys($this->properties) as $attributeName) {
+			if ($attributeName === '__meta') continue;
+
 			$encodedAttributeName = htmlspecialchars($attributeName, ENT_COMPAT, 'UTF-8', FALSE);
 			$attributeValue = $this->tsValue($attributeName);
 
-			if (null === $attributeValue) {
-				continue;
-			} else if (is_string($attributeValue) && 0 === strlen($attributeValue)) {
+			if ($attributeValue === NULL || $attributeValue === FALSE) {
+				// No op
+			} elseif ($attributeValue === TRUE || $attributeValue === '') {
 				$attributes[$attributeName] = $attributeValue;
-				$renderedAttributes .= ' ' . $encodedAttributeName;
+				$renderedAttributes .= ' ' . $encodedAttributeName . ($allowEmpty ? '' : '=""');
 			} else {
 				if (is_array($attributeValue)) {
-					$attributeValue = implode(' ', $attributeValue);
+					$joinedAttributeValue = '';
+					foreach ($attributeValue as $attributeValuePart) {
+						if ((string)$attributeValuePart !== '') {
+							$joinedAttributeValue .= ' ' . trim($attributeValuePart);
+						}
+					}
+					$attributeValue = trim($joinedAttributeValue);
 				}
 				$encodedAttributeValue = htmlspecialchars($attributeValue, ENT_COMPAT, 'UTF-8', FALSE);
-
+				
 				$attributes[$attributeName] = $attributeValue;
 				$renderedAttributes .= ' ' . $encodedAttributeName . '="' . $encodedAttributeValue . '"';
 			}

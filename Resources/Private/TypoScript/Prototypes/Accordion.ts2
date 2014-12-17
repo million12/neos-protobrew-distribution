@@ -4,8 +4,10 @@ prototype(M12.Foundation:Accordion) < prototype(M12.Foundation:Content) {
 	attributes.class.accordion = 'accordion'
 	attributes.data-accordion = ${q(node).property('accordionGroupName') ? q(node).property('accordionGroupName') : ''}
 
-	accordionContent = TYPO3.Neos:ContentCollection {
-		nodePath = 'content'
+	accordionItems = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children('[instanceof M12.Foundation:AccordionItem]')}
+		itemRenderer = M12.Foundation:AccordionItem
+		itemName = 'node'
 	}
 }
 
@@ -16,6 +18,8 @@ prototype(M12.Foundation:AccordionItem) < prototype(M12.Foundation:Content) {
 
 	@override.accordionItemId = ${q(node).property('accordionItemId') ? q(node).property('accordionItemId') : ( 'acc-' + q(node).property('_nodeData.identifier') )}
 	accordionItemLabelHref = ${'#' + accordionItemId}
+
+	attributes.class.base = 'accordion-navigation'
 
 	# These attributes are added to DIV content container.
 	extraAttributes {

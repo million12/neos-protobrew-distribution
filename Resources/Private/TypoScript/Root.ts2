@@ -1,60 +1,8 @@
 # Custom TypoScript objects
-include: TypoScriptObjects/ValueOptionsList.ts2
+include: TypoScriptObjects/*
 
-include: Neos/Attributes.ts2
-include: Neos/Content.ts2
-include: Neos/ContentCollection.ts2
-include: Neos/Form.ts2
-include: Neos/Menu.ts2
-include: Neos/NodeTypes.ts2
-include: Neos/Page.ts2
+# TYPO3 Neos objects amends
+include: Neos/*
 
-
-# M12.Foundation prototypes - Generic
-include: Prototypes/Content.ts2
-include: Prototypes/Container.ts2
-include: Prototypes/FontIcon.ts2
-
-
-# M12.Foundation prototypes - Structure
-include: Prototypes/Grid.ts2
-include: Prototypes/BlockGrid.ts2
-
-
-# M12.Foundation prototypes - Navigation
-include: Prototypes/Menu.ts2
-include: Prototypes/SideNav.ts2
-include: Prototypes/SubNav.ts2
-include: Prototypes/NavItem.ts2
-
-
-# M12.Foundation prototypes - Media
-include: Prototypes/Orbit.ts2
-include: Prototypes/Video.ts2
-
-
-# M12.Foundation prototypes - Forms
-include: Prototypes/Form.ts2
-
-
-# M12.Foundation prototypes - Buttons
-include: Prototypes/Button.ts2
-include: Prototypes/ButtonGroup.ts2
-include: Prototypes/ButtonGroupItem.ts2
-include: Prototypes/ButtonBar.ts2
-
-
-# M12.Foundation prototypes - Typography
-
-
-# M12.Foundation prototypes - Callouts & Prompts
-include: Prototypes/RevealModal.ts2
-include: Prototypes/Alert.ts2
-include: Prototypes/Panel.ts2
-
-
-# M12.Foundation prototypes - Content
-include: Prototypes/Dropdown.ts2
-include: Prototypes/Accordion.ts2
-include: Prototypes/Tabs.ts2
-
+# M12.Foundation prototypes
+include: Prototypes/*

@@ -4,9 +4,9 @@ TYPO3:
       autoInclude:
         'M12.Foundation': TRUE
 
-    userInterface:
-      requireJsPathMapping:
-        'M12.Foundation/Inspector/Editors': 'resource://M12.Foundation/Public/JavaScript/Neos/Inspector/Editors'
+#    userInterface:
+#      requireJsPathMapping:
+#        'M12.Foundation/Inspector/Editors': 'resource://M12.Foundation/Public/JavaScript/Neos/Inspector/Editors'
 
     nodeTypes:
       groups:
@@ -49,30 +49,30 @@ M12:
     # to generate required properties for M12.Foundation:Column node type
     gridSettings:
       size:
-        label: 'Column width'
+        label: 'Grid column width'
         cssClassSuffixes: [ '-' ]         # DEVICE-X, eg: small-X, medium-Y, large-Z
         appliedPerColumn: true
-        uiInspectorGroup: gridSize
+        uiInspectorGroup: grid
       offset:
-        label: 'Column offset'
+        label: 'Grid column offset'
         cssClassSuffixes: [ '-offset-' ]  # DEVICE-offset-X, eg: small-offset-X, medium-offset-Y, large-offset-Z
         appliedPerColumn: true
-        uiInspectorGroup: gridOffset
+        uiInspectorGroup: grid
       pushPull:
-        label: 'Column push / pull'
+        label: 'Grid column push / pull'
         cssClassSuffixes: [ '-push-', '-pull-' ]    # DEVICE-push-X, eg: small-push-X, medium-push-Y, large-push-Z
         appliedPerColumn: true
-        uiInspectorGroup: gridPushPull
-      resetOrder:
-        label: 'Column reset order'
-        cssClassSuffixes: [ '-reset-order' ]  # e.g. small-reset-order
-        appliedPerColumn: false
-        uiInspectorGroup: gridPushPull
+        uiInspectorGroup: grid
       align:
-        label: 'Centered'
+        label: 'Grid column align'
         cssClassSuffixes: [ '-centered', '-uncentered' ] # e.g. small-centered, large-centered
         appliedPerColumn: false
-        uiInspectorGroup: gridAlign
+        uiInspectorGroup: grid
+      resetOrder:
+        label: 'Grid column reset order'
+        cssClassSuffixes: [ '-reset-order' ]  # e.g. small-reset-order
+        appliedPerColumn: false
+        uiInspectorGroup: grid
 
     # @see AbstractGridNodeTypePostprocessor which utilizes these settings
     # to generate required properties for M12.Foundation:BlockGrid node type
@@ -81,8 +81,8 @@ M12:
         label: 'Number of items per row'
         cssClassSuffixes: [ '-block-grid-' ]    # DEVICE-block-grid-X, eg: small-block-grid-X, medium-block-grid-Y, large-block-grid-Z
         appliedPerColumn: true
-        uiInspectorGroup: blockGridSettings
+        uiInspectorGroup: grid
         defaults: # default values per-device
-          small: small-block-grid-1
-          medium: medium-block-grid-2
-          large: large-block-grid-3
+          - small-block-grid-1
+          - medium-block-grid-2
+          - large-block-grid-3

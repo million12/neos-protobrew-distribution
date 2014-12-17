@@ -13,11 +13,15 @@
     label: 'Reveal Modal'
     icon: 'icon-fullscreen'
     group: 'foundationCalloutsPrompts'
+    inlineEditable: TRUE
     inspector:
       groups:
         options:
           label: 'Reveal Modal options'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -62,11 +66,15 @@
     label: 'Alert'
     icon: 'icon-warning-sign'
     group: 'foundationCalloutsPrompts'
+    inlineEditable: TRUE
     inspector:
       groups:
         options:
           label: 'Alert box options'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -101,11 +109,15 @@
     label: 'Panel'
     icon: 'icon-check-empty'
     group: 'foundationCalloutsPrompts'
+    inlineEditable: TRUE
     inspector:
       groups:
         options:
           label: 'Panel options'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # All content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -113,7 +125,7 @@
     classCallout:
       type: boolean
       ui:
-        label: 'Callout'
+        label: 'Style: callout'
         reloadIfChanged: TRUE
         inspector:
           group: 'options'

@@ -10,12 +10,16 @@
       ui:
         inspector:
           position: 20
+    uriPathSegment:
+      ui:
+        inspector:
+          position: 30
     fragmentId:
       ui:
-        label: '#Fragment (URL)'
+        label: 'URL #fragment id'
         inspector:
           group: 'document'
-          position: 30
+          position: 40
 
 
 'TYPO3.Neos.NodeTypes:Page':
@@ -28,25 +32,36 @@
       ui:
         reloadIfChanged: TRUE
         inspector:
-          group: 'dev'
+          group: 'devCode'
           position: 31 # after 'customCssCode'
-          editor: 'M12.Foundation/Inspector/Editors/JsEditor'
+          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'Add custom JS code'
+            highlightingMode: 'text/javascript'
     # Inherited from M12.Foundation:AbstractDevBase
     # Replace it with CssEditor
     customCssCode:
       ui:
-        label: null
+        label: ''
         inspector:
-          editor: 'M12.Foundation/Inspector/Editors/CssEditor'
-    # Inherited from M12.Foundation:DeveloperAbstract
+          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: 'Add custom CSS styles'
+            highlightingMode: 'text/css'
+    # Inherited from M12.Foundation:AbstractDevBase
     customHtmlId:
       ui:
         label: 'Custom body ID'
-    # Inherited from M12.Foundation:DeveloperAbstract
+    # Inherited from M12.Foundation:AbstractDevBase
     customCssClass:
       ui:
         label: 'Custom body class(es)'
-    # Inherited from M12.Foundation:DeveloperAbstract
+    # Inherited from M12.Foundation:AbstractDevBase
     customLook:
       ui:
         label: 'Predefined body style'
+    # Inherited from M12.Foundation:AbstractDevBase
+    customUserAttributes:
+      type: string
+      ui:
+        label: 'Custom body attributes (one per line)'

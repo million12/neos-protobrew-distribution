@@ -62,28 +62,42 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
 	public function process(NodeType $nodeType, array &$configuration, array $options) {
 		$this->validateSettings();
 
-		/** @var string $device: small, medium, large */
-		foreach ($this->settings['devices'] as $device => $deviceData) {
-			foreach ($this->settings[static::$SETTINGS_SECTION] as $set => $setData) {
-				$propertyName = sprintf('class%s%s', ucfirst($device), ucfirst($set));
-				$defaultValue = isset($setData['defaults'][$device]) ? $setData['defaults'][$device] : '';
-				$configuration['properties'][$propertyName] = array(
-					'type' => 'string',
-					'defaultValue' => $defaultValue,
-					'ui' => array(
-//						'label' => $propertyName,
-						'reloadIfChanged' => true,
-						'inspector' => array(
-							'group' => $setData['uiInspectorGroup'],
-							'position' => 1,
-							'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
-							'editorOptions' => $this->getEditorOptions($device, $set, $setData),
-						),
-					),
-				);
-			}
-		}
+		$k = 0;
+		foreach ($this->settings[static::$SETTINGS_SECTION] as $set => $setData) {
+			$propertyName = sprintf('classGrid%s', ucfirst($set));
 
+			$editorValues = [];
+			$defaultValue = isset($setData['defaults']) ? $setData['defaults'] : [''];
+			
+			/** @var string $device: small, medium, large */
+			foreach ($this->settings['devices'] as $device => $deviceData) {
+				$groupLabel = $deviceData['label'];
+				$editorValues += $this->getEditorValues($set, $setData, $device, $groupLabel);
+			}
+
+			$configuration['properties'][$propertyName] = [
+				'type' => 'array',
+				'defaultValue' => $defaultValue,
+				'ui' => [
+					'label' => $setData['label'],
+					'reloadIfChanged' => true,
+					'inspector' => [
+						'group' => $setData['uiInspectorGroup'],
+						'position' => ($k+1)*10,
+						'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
+						'editorOptions' => [
+							'multiple' => TRUE,
+							'allowEmpty' => TRUE,
+							'placeholder' => 'placeholder text...',
+							'values' => $editorValues,
+						],
+					],
+				],
+			];
+			
+			$k++;
+		}
+		
 //		\TYPO3\Flow\var_dump($configuration);
 	}
 
@@ -95,12 +109,9 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
 	 * @param array  $setData settings for the $set
 	 * @return array
 	 */
-	protected function getEditorOptions($device, $set, array $setData) {
-		$editorOptions                = array();
-
-		// empty 1st option
-		$editorOptions['placeholder'] = "- $device $set -";
-		$editorOptions['values']['']  = array('label' => '');
+	protected function getEditorValues($set, array $setData, $device, $groupLabel) {
+		$groupLabel = $groupLabel ? $groupLabel : $device;
+		$editorValues = [];
 
 		$cssSuffixes = $this->settings[static::$SETTINGS_SECTION][$set]['cssClassSuffixes'];
 		foreach ($cssSuffixes as $cssSuffix) {
@@ -115,8 +126,9 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
 				do {
 					$valueName = $cssClass.$col;
 					$labelName = $valueName;
-					$editorOptions['values'][$valueName] = array(
+					$editorValues[$valueName] = array(
 						'label' => $labelName,
+						'group' => $groupLabel,
 					);
 					$col++;
 				} while (--$k);
@@ -128,13 +140,14 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
 			else {
 				$valueName = $cssClass;
 				$labelName = $valueName;
-				$editorOptions['values'][$valueName] = array(
+				$editorValues[$valueName] = array(
 					'label' => $labelName,
+					'group' => $groupLabel,
 				);
 			}
 		}
 
-		return $editorOptions;
+		return $editorValues;
 	}
 
 	protected function validateSettings() {

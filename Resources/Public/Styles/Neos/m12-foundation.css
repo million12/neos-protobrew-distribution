@@ -1,19 +1,6 @@
 /** Custom M12.Foundation code for Neos backend **/
 
-.neos .neos-modal.neos-modal-wide {
-	height: 75%;
-	overflow-y: scroll;
-}
-
-.neos #neos-inspector .neos-inspector-form textarea {
-	width: 91%;
-	margin: 0;
-	padding: 5px 14px;
-	color: #fff;
-	font-family: 'Noto Sans', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	border: 2px solid #323232;
-	background-color: #323232;
-}
-.neos #neos-inspector .neos-inspector-form textarea:focus {
+/** Restore Neos colors after they were overridden by Foundation **/ 
+.neos label {
+	color: inherit;
 }

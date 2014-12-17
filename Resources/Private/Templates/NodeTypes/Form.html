@@ -55,23 +55,23 @@
 <!-- Form: INPUT, SELECT, TEXTAREA switch functionality -->
 <f:section name="formInput-nature"><f:switch expression="{inputNature}">
 	<f:case value="textfield">
-		<f:form.textfield name="{inputName}" type="{inputType}" value="{inputValue}" additionalAttributes="{attributes.asArray}" />
+		<f:form.textfield name="{inputNameAttr}" type="{inputType}" value="{inputValue}" additionalAttributes="{attributes.asArray}" />
 	</f:case>
 	<f:case value="select">
-		<f:form.select name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" options="{selectOptions}" />
+		<f:form.select name="{inputNameAttr}" value="{inputValue}" additionalAttributes="{attributes.asArray}" options="{selectOptions}" />
 	</f:case>
 	<f:case value="textarea">
-		<f:form.textarea name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" />
+		<f:form.textarea name="{inputNameAttr}" value="{inputValue}" additionalAttributes="{attributes.asArray}" />
 	</f:case>
-	<f:case value="checkbox"><f:form.checkbox name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" /></f:case>
-	<f:case value="radio"><f:form.radio name="{inputName}" value="{inputValue}" additionalAttributes="{attributes.asArray}" /></f:case>
+	<f:case value="checkbox"><f:form.checkbox name="{inputNameAttr}" value="{inputValue}" additionalAttributes="{attributes.asArray}" /></f:case>
+	<f:case value="radio"><f:form.radio name="{inputNameAttr}" value="{inputValue}" additionalAttributes="{attributes.asArray}" /></f:case>
 </f:switch></f:section>
 
 
 <!-- Form: INPUT prefix/postfix element -->
-<f:section name="formInput-fix">
+<f:section name="formInputPrePostfix">
 	<{tagName}{attributes -> f:format.raw()}>
-		{neos:contentElement.editable(property: 'text')}
+		{neos:contentElement.editable(property:'text')}
 	</{tagName}>
 </f:section>
 

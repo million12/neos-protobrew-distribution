@@ -13,6 +13,9 @@
     icon: 'icon-hdd'
     group: 'foundationStructure'
     inlineEditable: TRUE
+  constraints:
+    nodeTypes:
+      '*': FALSE # Disallow everything, all content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'
@@ -39,21 +42,14 @@
   ui:
     label: 'Grid Column'
     icon: 'icon-th-large'
-    group: 'na'
     inspector:
       groups:
-        gridSize:
-          label: 'Grid size'
+        grid:
+          label: 'Grid options'
           position: 6
-        gridOffset:
-          label: 'Grid offset'
-          position: 7
-        gridPushPull:
-          label: 'Grid push / pull'
-          position: 8
-        gridAlign:
-          label: 'Grid align'
-          position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # Disallow everything, all content must go into child ContentCollection
   childNodes:
     column:
       type: 'TYPO3.Neos:ContentCollection'
@@ -66,6 +62,8 @@
 'M12.Foundation:ColumnEnd':
   superTypes:
     - 'M12.Foundation:Column'
+  ui:
+    label: 'Grid Column (end)'
   properties:
     classEndColumn:
       type: boolean
@@ -73,8 +71,8 @@
         label: 'End column (for incomplete row)'
         reloadIfChanged: TRUE
         inspector:
-          group: 'gridSize'
-          position: 999
+          group: 'grid'
+          position: 11
 
 
 # Abstract NodeType for all M12.Foundation:GridColumnsX
@@ -93,6 +91,10 @@
         gridOptions:
           label: 'Grid options'
           position: 9
+  constraints:
+    nodeTypes:
+      'M12.Foundation:Column': TRUE
+      '*': FALSE
   properties:
     gridExtraWrapper:
       type: boolean
@@ -146,57 +148,6 @@
     col3:
       type: 'M12.Foundation:ColumnEnd'
 
-'M12.Foundation:GridRow4Col':
-  superTypes:
-    - 'M12.Foundation:GridRowAbstract'
-  ui:
-    label: 'Grid row: 4 columns'
-  childNodes:
-    col1:
-      type: 'M12.Foundation:Column'
-    col2:
-      type: 'M12.Foundation:Column'
-    col3:
-      type: 'M12.Foundation:Column'
-    col4:
-      type: 'M12.Foundation:ColumnEnd'
-
-'M12.Foundation:GridRow5Col':
-  superTypes:
-    - 'M12.Foundation:GridRowAbstract'
-  ui:
-    label: 'Grid row: 5 columns'
-  childNodes:
-    col1:
-      type: 'M12.Foundation:Column'
-    col2:
-      type: 'M12.Foundation:Column'
-    col3:
-      type: 'M12.Foundation:Column'
-    col4:
-      type: 'M12.Foundation:Column'
-    col5:
-      type: 'M12.Foundation:ColumnEnd'
-
-'M12.Foundation:GridRow6Col':
-  superTypes:
-    - 'M12.Foundation:GridRowAbstract'
-  ui:
-    label: 'Grid row: 6 columns'
-  childNodes:
-    col1:
-      type: 'M12.Foundation:Column'
-    col2:
-      type: 'M12.Foundation:Column'
-    col3:
-      type: 'M12.Foundation:Column'
-    col4:
-      type: 'M12.Foundation:Column'
-    col5:
-      type: 'M12.Foundation:Column'
-    col6:
-      type: 'M12.Foundation:ColumnEnd'
-
 
 
 
@@ -217,9 +168,12 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        blockGridSettings:
+        grid:
           label: 'Block Grid settings'
           position: 9
+  constraints:
+    nodeTypes:
+      '*': FALSE # Disallow everything, all content must go into child ContentCollection
   childNodes:
     content:
       type: 'TYPO3.Neos:ContentCollection'

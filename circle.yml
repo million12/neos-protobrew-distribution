@@ -1,0 +1,52 @@
+machine:
+  services:
+    - docker
+  hosts:
+    neos: 127.0.0.1
+    dev.neos: 127.0.0.1
+
+dependencies:
+  pre:
+    - docker info && docker version
+
+  override:
+    - docker pull tutum/mariadb:latest
+    - docker pull million12/behat-selenium:latest
+    - docker pull million12/neos-typostrap-distribution:latest
+
+  post:
+    # Launch DB backend
+    - docker run -d --name=db --env="MARIADB_PASS=my-pass" tutum/mariadb
+    - docker logs -f db | tee -a ${CIRCLE_ARTIFACTS}/docker-db.log:
+        background: true
+
+# Run tests
+test:
+  override:
+    # ######################################################
+    # Run Typostrap Neos container, which includes
+    # M12.Foundation / M12.FoundationSite packages
+    # and do some basics checks.
+    # ######################################################
+    - docker run -d --name=neos -p=8080:80 --link=db:db --env="T3APP_NAME=neos" --env="T3APP_VHOST_NAMES=neos dev.neos behat.dev.neos" --env="T3APP_DO_INIT_TESTS=true" --env="T3APP_ALWAYS_DO_PULL=true" million12/neos-typostrap-distribution
+    - docker logs -f neos > ${CIRCLE_ARTIFACTS}/docker-neos.log:
+        background: true
+    # Wait till TYPO3 Neos is fully configured
+    - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos.log; then break; else sleep 1; fi done
+    
+    # Test: do basic front-end tests 
+    - curl -L --head http://neos:8080 && curl -s -L http://neos:8080
+    - curl -s --head http://neos:8080 | grep "HTTP/1.1 200 OK" && curl -s --head http://neos:8080 | grep "X-Flow-Powered"
+    - curl -s -L http://neos:8080/neos | grep "TYPO3 Neos Login"
+    
+    # Run Neos unit tests.
+    - |
+      docker run -ti --volumes-from=neos --link=neos:web --link=db:db million12/behat-selenium "
+        env && \
+        echo \$WEB_PORT_80_TCP_ADDR \$WEB_ENV_T3APP_VHOST_NAMES >> /etc/hosts && cat /etc/hosts && \
+        su www -c \"
+          cd ~/neos && \
+          echo -e '\n\n======== RUNNING UNIT TESTS =======\n\n' && \
+          bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml --colors
+        \"
+      "
