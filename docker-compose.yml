@@ -38,6 +38,7 @@ web:
     T3APP_ALWAYS_DO_PULL: false
     T3APP_DO_INIT_TESTS: false
     T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: false
+    RUN_BEARD: true
 
 ssh:
   image: million12/php-app-ssh

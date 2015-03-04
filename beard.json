@@ -1,0 +1,14 @@
+{
+    "defaults": {
+        "gerrit_api_endpoint": "https://review.typo3.org/",
+        "gerrit_git": "git.typo3.org"
+    },
+    "changes": [
+        {
+            "name": "[FEATURE] Make inline editing handles behave the same as tree controls",
+            "type": "gerrit",
+            "path": "Packages/Application/TYPO3.Neos",
+            "change_id": "36926"
+        }
+    ]
+}
