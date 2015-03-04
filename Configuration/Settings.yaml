@@ -12,3 +12,7 @@ TYPO3:
   TypoScript:
     # Due to random issues with content cache (not always cleaned) switch it of for now...
     enableContentCache: FALSE
+  
+  Neos:
+    userInterface:
+      loadMinifiedJavascript: FALSE
