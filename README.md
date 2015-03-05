@@ -12,13 +12,25 @@ This work uses [Docker](https://docker.com/) containers. It will launch one cont
 
 ## Usage
 
+#### Short version
+
+* map `DOCKER_IP neos-typostrap dev.neos-typostrap` in your `/etc/hosts` file
+* clone this repository and run:  
+```
+docker-compose pull
+docker-compose up
+```
+* Once you see `success: nginx entered RUNNING state` in the console, go to [http://neos-typostrap:8899/](http://neos-typostrap:8899) in your browser. Your Neos Typostrap edition is ready!
+
+#### Long version
+
 + You will need a machine with Docker daemon to run Docker containers. The easiest way to start with Docker is using [Boot2Docker](http://boot2docker.io/). Follow the documentation from there. 
 + Run `boot2docker ip` to get Docker host IP (we will refer to it as a DOCKER_IP).
 + Add line with `DOCKER_IP neos-typostrap dev.neos-typostrap` to `/etc/hosts` file on your machine. 
-+ You will need [fig](http://www.fig.sh/) installed on your machine, arguably the simplest tool to orchestrate running multiple Docker containers. Follow the documentation there.
-+ Clone this repository (optionally: just grab `fig.yml` file from it).
-+ Run `fig pull` to pull the necessary containers from [hub.docker.com](https://hub.docker.com/). Note: this might take a little while (~1.4GB).
-+ Run `fig up`.  
++ You will need [Docker Compose](https://docs.docker.com/compose/) installed on your machine, arguably the simplest tool to orchestrate running multiple Docker containers. Follow the documentation there.
++ Clone this repository (optionally: just grab [docker-compose.yml](docker-compose.yml) file from here).
++ Run `docker-compose pull` to pull the necessary containers from [hub.docker.com](https://hub.docker.com/). Note: this might take a little while (~1.4GB).
++ Run `docker-compose up`.  
   Wait till all containers are running. You will see messages about setting up TYPO3 Neos and at the end you will see something like `success: nginx entered RUNNING state` and `success: php-fpm entered RUNNING state`.
 + Go to [http://neos-typostrap:8899/neos](http://neos-typostrap:8899/neos) to login to the back-end. 
   Use username: `admin`, password: `password` to sign in.
