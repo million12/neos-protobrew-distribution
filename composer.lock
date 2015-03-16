@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "12aba0e4cb772a52819bbf806060a7fc",
+    "hash": "4773f480622f64505f94e877c67c97d0",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -889,12 +889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.Foundation.git",
-                "reference": "5dd1b5e93cde3bd37cf112065962c1756f24743d"
+                "reference": "f688ca506d91421f08562ab249e3470bfe65bdc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/5dd1b5e93cde3bd37cf112065962c1756f24743d",
-                "reference": "5dd1b5e93cde3bd37cf112065962c1756f24743d",
+                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/f688ca506d91421f08562ab249e3470bfe65bdc7",
+                "reference": "f688ca506d91421f08562ab249e3470bfe65bdc7",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +929,7 @@
                 }
             ],
             "description": "Foundation content elements",
-            "time": "2015-03-03 20:39:06"
+            "time": "2015-03-14 13:12:57"
         },
         {
             "name": "m12/neos-foundation-site",

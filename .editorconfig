@@ -23,6 +23,7 @@ indent_size = 4
 indent_style = space
 indent_size = 2
 
-[*.vcl]
+# Sites.xml is formatted with 1-space indentation...
+[*.xml]
 indent_style = space
-indent_size = 4
+indent_size = 1

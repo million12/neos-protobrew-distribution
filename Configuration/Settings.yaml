@@ -13,6 +13,8 @@ TYPO3:
     # Due to random issues with content cache (not always cleaned) switch it of for now...
     enableContentCache: FALSE
   
-  Neos:
-    userInterface:
-      loadMinifiedJavascript: FALSE
+  # We don't really need it now, as scripts are re-compiled after applying Beard patches
+#  Neos:
+#    userInterface:
+#      loadMinifiedJavascript: FALSE
+#
