@@ -5,10 +5,13 @@
     },
     "changes": [
         {
-            "name": "[FEATURE] Make inline editing handles behave the same as tree controls",
+            "name": "Pull in an extendable-contentcollections topic",
             "type": "gerrit",
-            "path": "Packages/Application/TYPO3.Neos",
-            "change_id": "36926"
+            "topic": "extendable-contentcollections",
+            "branch": "master",
+            "paths": {
+                "Packages/TYPO3.Neos": "Packages/Application/TYPO3.Neos"
+            }
         }
     ]
 }
