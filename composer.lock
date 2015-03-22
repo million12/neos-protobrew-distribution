@@ -889,12 +889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.Foundation.git",
-                "reference": "f688ca506d91421f08562ab249e3470bfe65bdc7"
+                "reference": "ff846adf20816f675b2e0d7475dc53e49aa97924"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/f688ca506d91421f08562ab249e3470bfe65bdc7",
-                "reference": "f688ca506d91421f08562ab249e3470bfe65bdc7",
+                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/ff846adf20816f675b2e0d7475dc53e49aa97924",
+                "reference": "ff846adf20816f675b2e0d7475dc53e49aa97924",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +929,7 @@
                 }
             ],
             "description": "Foundation content elements",
-            "time": "2015-03-14 13:12:57"
+            "time": "2015-03-16 01:28:13"
         },
         {
             "name": "m12/neos-foundation-site",
@@ -937,12 +937,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.FoundationSite.git",
-                "reference": "2c0bd473ac1028b64d8918ec0aaeeb49c3fddcc6"
+                "reference": "c55c77892d370e9f4b4994074ca25cc62d129179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.FoundationSite/zipball/2c0bd473ac1028b64d8918ec0aaeeb49c3fddcc6",
-                "reference": "2c0bd473ac1028b64d8918ec0aaeeb49c3fddcc6",
+                "url": "https://api.github.com/repos/million12/M12.FoundationSite/zipball/c55c77892d370e9f4b4994074ca25cc62d129179",
+                "reference": "c55c77892d370e9f4b4994074ca25cc62d129179",
                 "shasum": ""
             },
             "require": {
@@ -975,7 +975,7 @@
                 }
             ],
             "description": "TYPO3 Neos site package for M12.Foundation",
-            "time": "2015-02-10 16:11:52"
+            "time": "2015-03-16 01:59:02"
         },
         {
             "name": "m12/neos-nodetype-slickcarousel",
