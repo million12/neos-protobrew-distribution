@@ -349,16 +349,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "5db6ab40e4c531f14dad4ca96a394dfce5d4255b"
+                "reference": "cd8daf2501e10c63dced7b8b9b905844316ae9d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/5db6ab40e4c531f14dad4ca96a394dfce5d4255b",
-                "reference": "5db6ab40e4c531f14dad4ca96a394dfce5d4255b",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/cd8daf2501e10c63dced7b8b9b905844316ae9d3",
+                "reference": "cd8daf2501e10c63dced7b8b9b905844316ae9d3",
                 "shasum": ""
             },
             "require": {
@@ -375,7 +375,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -389,17 +389,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -408,10 +397,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Common Library for Doctrine projects",
@@ -423,7 +418,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2014-05-21 19:28:51"
+            "time": "2015-04-02 19:55:44"
         },
         {
             "name": "doctrine/dbal",
@@ -623,12 +618,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "65978aa4e9ffca3bb632225ad8c6320077d80d85"
+                "reference": "b5fc18ea1499b7e2295f0c486e7c81acb86a8473"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/65978aa4e9ffca3bb632225ad8c6320077d80d85",
-                "reference": "65978aa4e9ffca3bb632225ad8c6320077d80d85",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/b5fc18ea1499b7e2295f0c486e7c81acb86a8473",
+                "reference": "b5fc18ea1499b7e2295f0c486e7c81acb86a8473",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +668,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2015-03-23 09:47:20"
+            "time": "2015-03-03 09:38:17"
         },
         {
             "name": "doctrine/orm",
@@ -889,12 +884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.Foundation.git",
-                "reference": "ff846adf20816f675b2e0d7475dc53e49aa97924"
+                "reference": "f0ef901fd24a376076ffe2139618bb24d6b72610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/ff846adf20816f675b2e0d7475dc53e49aa97924",
-                "reference": "ff846adf20816f675b2e0d7475dc53e49aa97924",
+                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/f0ef901fd24a376076ffe2139618bb24d6b72610",
+                "reference": "f0ef901fd24a376076ffe2139618bb24d6b72610",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +924,7 @@
                 }
             ],
             "description": "Foundation content elements",
-            "time": "2015-03-16 01:28:13"
+            "time": "2015-04-12 17:34:18"
         },
         {
             "name": "m12/neos-foundation-site",
@@ -937,12 +932,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.FoundationSite.git",
-                "reference": "c55c77892d370e9f4b4994074ca25cc62d129179"
+                "reference": "1a17544aad52dd42aa728c53ae2b829e5c9ef6ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.FoundationSite/zipball/c55c77892d370e9f4b4994074ca25cc62d129179",
-                "reference": "c55c77892d370e9f4b4994074ca25cc62d129179",
+                "url": "https://api.github.com/repos/million12/M12.FoundationSite/zipball/1a17544aad52dd42aa728c53ae2b829e5c9ef6ab",
+                "reference": "1a17544aad52dd42aa728c53ae2b829e5c9ef6ab",
                 "shasum": ""
             },
             "require": {
@@ -975,7 +970,7 @@
                 }
             ],
             "description": "TYPO3 Neos site package for M12.Foundation",
-            "time": "2015-03-16 01:59:02"
+            "time": "2015-04-12 18:09:21"
         },
         {
             "name": "m12/neos-nodetype-slickcarousel",
@@ -1061,17 +1056,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.5",
+            "version": "v2.6.6",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "53f86497ccd01677e22435cfb7262599450a90d1"
+                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/53f86497ccd01677e22435cfb7262599450a90d1",
-                "reference": "53f86497ccd01677e22435cfb7262599450a90d1",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
                 "shasum": ""
             },
             "require": {
@@ -1115,11 +1110,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2015-03-13 17:37:22"
+            "time": "2015-03-30 15:54:10"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.5.10",
+            "version": "v2.5.11",
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
@@ -1172,7 +1167,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.5.10",
+            "version": "v2.5.11",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
@@ -1247,7 +1242,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "821782428c620400ce9fb7cdccbbc3c9a95dd408"
+                "reference": "6be19dc896a854ea0b9d8d1d78275b8910ca3918"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1282,7 +1277,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-03-31 06:17:47"
+            "time": "2015-03-03 13:52:57"
         },
         {
             "name": "typo3/fluid",
@@ -1290,7 +1285,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "6d138117a946f65595a514c7b7867b2fb300b79e"
+                "reference": "f3a5f160760e8eade006bff9c6009abd1662bb92"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1306,7 +1301,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2015-03-20 06:27:31"
+            "time": "2015-03-02 18:28:34"
         },
         {
             "name": "typo3/form",
@@ -1386,7 +1381,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Media.git",
-                "reference": "1a9b1363e2f8de44a44aa0947885039ea3f36786"
+                "reference": "6eb9e5550296c7f9d734106ab88409dd92a5ad4e"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -1404,7 +1399,7 @@
                 "GPL-3.0+"
             ],
             "description": "The Media package",
-            "time": "2015-03-26 11:15:46"
+            "time": "2015-03-03 13:29:23"
         },
         {
             "name": "typo3/neos",
@@ -1412,7 +1407,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "8cacf1c5361da9097666cb681af7d318f8d10c8d"
+                "reference": "80e82451a3776dc0b325143530102683a290a621"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1442,7 +1437,7 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-03-30 18:11:34"
+            "time": "2015-03-04 14:33:24"
         },
         {
             "name": "typo3/neos-nodetypes",
@@ -1450,7 +1445,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.NodeTypes.git",
-                "reference": "6c65a1c177de92b581f8c48b7e3f5180160fb08f"
+                "reference": "3e7fd94ee641a06c3fe1815447dbb9e23256f712"
             },
             "require": {
                 "typo3/neos": "*"
@@ -1466,7 +1461,7 @@
                 "GPL-3.0+"
             ],
             "description": "Node type configuration for TYPO3 Neos",
-            "time": "2015-03-26 10:17:23"
+            "time": "2015-03-02 20:35:50"
         },
         {
             "name": "typo3/neos-seo",
@@ -1474,7 +1469,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.Seo.git",
-                "reference": "e08002e5a2e30f93e043f6483014cb38f1f72a2f"
+                "reference": "337340170e9f99be4fb1b1ffe6eecab1d5531bc1"
             },
             "require": {
                 "typo3/neos": "*"
@@ -1490,7 +1485,7 @@
                 "GPL-3.0+"
             ],
             "description": "SEO configuration and tools for TYPO3 Neos",
-            "time": "2015-03-27 16:14:33"
+            "time": "2015-02-26 07:46:27"
         },
         {
             "name": "typo3/party",
@@ -1498,7 +1493,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Party.git",
-                "reference": "50a99d49c3fce2969a35c5aa9ddf3acee5fc5676"
+                "reference": "7c455134c3cd7a118d5687a697e4e2fe8e832314"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1514,7 +1509,7 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2015-03-10 11:48:50"
+            "time": "2015-02-26 07:35:38"
         },
         {
             "name": "typo3/setup",
@@ -1522,7 +1517,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Setup.git",
-                "reference": "83c538e9520f725d7ab8c38c19d09206b3e495a1"
+                "reference": "643b7049bc539e89701ebc6a8853f7690747c859"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1540,7 +1535,7 @@
                 "LGPL-3.0+"
             ],
             "description": "An extensible setup tool for TYPO3 Flow based applications",
-            "time": "2015-03-10 10:32:48"
+            "time": "2015-03-01 23:22:48"
         },
         {
             "name": "typo3/twitter-bootstrap",
@@ -1572,7 +1567,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TYPO3CR.git",
-                "reference": "763159b26741c6d5a349d4a2fbc72b848086b956"
+                "reference": "15e3e5d5fe67665ab39c351e341fbdb57fe19d2c"
             },
             "require": {
                 "gedmo/doctrine-extensions": "2.3.*",
@@ -1590,7 +1585,7 @@
                 "GPL-3.0+"
             ],
             "description": "Content repository based on TYPO3 Flow, specifically made for TYPO3 Neos.",
-            "time": "2015-03-29 10:26:59"
+            "time": "2015-03-01 21:21:34"
         },
         {
             "name": "typo3/typoscript",
@@ -1598,7 +1593,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TypoScript.git",
-                "reference": "a0bf052ecb988a19c73ce777c6377ff371b126ba"
+                "reference": "5c883ecb1eb5e8aa375cc6e30848b6d1dd5012f9"
             },
             "require": {
                 "typo3/eel": "*",
@@ -1615,7 +1610,7 @@
                 "GPL-3.0+"
             ],
             "description": "TypoScript is a hierarchical, prototype based processing language",
-            "time": "2015-03-25 14:04:08"
+            "time": "2015-02-26 07:45:30"
         }
     ],
     "packages-dev": [
@@ -2047,16 +2042,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74"
+                "reference": "eab81d02569310739373308137284e0158424330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/db32c18eba00b121c145575fcbcd4d4d24e6db74",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/eab81d02569310739373308137284e0158424330",
+                "reference": "eab81d02569310739373308137284e0158424330",
                 "shasum": ""
             },
             "require": {
@@ -2092,7 +2087,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-01-17 09:51:32"
+            "time": "2015-04-08 04:46:07"
         },
         {
             "name": "phpunit/phpunit",
@@ -2168,25 +2163,25 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "c63d2367247365f688544f0d500af90a11a44c65"
+                "reference": "74ffb87f527f24616f72460e54b595f508dccb5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/c63d2367247365f688544f0d500af90a11a44c65",
-                "reference": "c63d2367247365f688544f0d500af90a11a44c65",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/74ffb87f527f24616f72460e54b595f508dccb5c",
+                "reference": "74ffb87f527f24616f72460e54b595f508dccb5c",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "~1.0,>=1.0.1",
+                "doctrine/instantiator": "~1.0,>=1.0.2",
                 "php": ">=5.3.3",
                 "phpunit/php-text-template": "~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.3"
+                "phpunit/phpunit": "~4.4"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -2219,7 +2214,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-10-03 05:12:11"
+            "time": "2015-04-02 05:36:41"
         },
         {
             "name": "sebastian/comparator",
@@ -2287,16 +2282,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "5843509fed39dee4b356a306401e9dd1a931fec7"
+                "reference": "863df9687835c62aa423a22412d26fa2ebde3fd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/5843509fed39dee4b356a306401e9dd1a931fec7",
-                "reference": "5843509fed39dee4b356a306401e9dd1a931fec7",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/863df9687835c62aa423a22412d26fa2ebde3fd3",
+                "reference": "863df9687835c62aa423a22412d26fa2ebde3fd3",
                 "shasum": ""
             },
             "require": {
@@ -2308,7 +2303,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -2335,32 +2330,32 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2014-08-15 10:29:00"
+            "time": "2015-02-22 15:13:53"
         },
         {
             "name": "sebastian/environment",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6e6c71d918088c251b181ba8b3088af4ac336dd7"
+                "reference": "5a8c7d31914337b69923db26c4221b81ff5a196e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e6c71d918088c251b181ba8b3088af4ac336dd7",
-                "reference": "6e6c71d918088c251b181ba8b3088af4ac336dd7",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/5a8c7d31914337b69923db26c4221b81ff5a196e",
+                "reference": "5a8c7d31914337b69923db26c4221b81ff5a196e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.3"
+                "phpunit/phpunit": "~4.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -2385,7 +2380,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-10-25 08:00:45"
+            "time": "2015-01-01 10:01:08"
         },
         {
             "name": "sebastian/exporter",
@@ -2559,16 +2554,16 @@
         },
         {
             "name": "sebastian/version",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/version.git",
-                "reference": "a77d9123f8e809db3fbdea15038c27a95da4058b"
+                "reference": "ab931d46cd0d3204a91e1b9a40c4bc13032b58e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/a77d9123f8e809db3fbdea15038c27a95da4058b",
-                "reference": "a77d9123f8e809db3fbdea15038c27a95da4058b",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/ab931d46cd0d3204a91e1b9a40c4bc13032b58e4",
+                "reference": "ab931d46cd0d3204a91e1b9a40c4bc13032b58e4",
                 "shasum": ""
             },
             "type": "library",
@@ -2590,7 +2585,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2014-12-15 14:25:24"
+            "time": "2015-02-24 06:35:25"
         },
         {
             "name": "typo3/buildessentials",
