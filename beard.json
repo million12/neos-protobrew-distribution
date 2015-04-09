@@ -5,13 +5,22 @@
     },
     "changes": [
         {
-            "name": "Pull in an extendable-contentcollections topic",
+            "name": "[TASK] Remove restirctions for ContentCollections to be extended",
             "type": "gerrit",
-            "topic": "extendable-contentcollections",
-            "branch": "master",
-            "paths": {
-                "Packages/TYPO3.Neos": "Packages/Application/TYPO3.Neos"
-            }
+            "path": "Packages/Application/TYPO3.Neos",
+            "change_id": "37964"
+        },
+        {
+            "name": "[FEATURE] Make inline editing handles behave the same as tree controls",
+            "type": "gerrit",
+            "path": "Packages/Application/TYPO3.Neos",
+            "change_id": "36926"
+        },
+        {
+            "name": "[TASK] Refactor the tree to use PositionSelector component",
+            "type": "gerrit",
+            "path": "Packages/Application/TYPO3.Neos",
+            "change_id": "38029"
         }
     ]
 }
