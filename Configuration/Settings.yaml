@@ -8,13 +8,3 @@ TYPO3:
         password: NEOS_DB_PASS
         host:     NEOS_DB_HOST
         port:     NEOS_DB_PORT
-
-  TypoScript:
-    # Due to random issues with content cache (not always cleaned) switch it of for now...
-    enableContentCache: FALSE
-  
-  # We don't really need it now, as scripts are re-compiled after applying Beard patches
-#  Neos:
-#    userInterface:
-#      loadMinifiedJavascript: FALSE
-#

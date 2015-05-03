@@ -13,6 +13,9 @@ PROJECT_NAME="NEOS-TYPOSTRAP-DISTRIBUTION"
 TYPO3_NEOS_PACKAGE_DIR="${CWD}/Packages/Application/TYPO3.Neos"
 M12_FOUNDATION_SITE_PACKAGE_DIR="${CWD}/Packages/Sites/M12.FoundationSite"
 
+#
+# This will install all development tools needed to run Neos 'grunt build'
+#
 function installNeosDevTools() {
   echo "Installing Neos dev tools..."
   mkdir -p /data/www && chown www:www /data/www # needed for `npm install for its cache, called from ./install-dev-tools.sh
@@ -60,7 +63,8 @@ case $@ in
     
     buildM12FoundationSite
     
-    if [ "${RUN_BEARD^^}" = TRUE ]; then
+    # Apply Beard Neos patches from Gerrit, if necessary.
+    if [[ -f beard.json && "${RUN_BEARD^^}" = TRUE ]]; then
       bin/beard patch
       grunt --gruntfile=Packages/Application/TYPO3.Neos/Scripts/Gruntfile.js build
     fi
