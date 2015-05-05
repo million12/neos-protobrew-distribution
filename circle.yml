@@ -7,9 +7,9 @@ machine:
 dependencies:
   pre:
     - docker info && docker version
-    - docker pull million12/mariadb:latest
-    - docker pull million12/php-app:latest
-    - docker pull million12/typo3-flow-neos-abstract:latest
+    - docker pull million12/mariadb
+    - docker pull million12/behat-selenium
+    - docker pull million12/typo3-flow-neos-abstract
 
   override:
     - docker run -d --name=db --env="MARIADB_PASS=my-pass" million12/mariadb
@@ -40,7 +40,7 @@ test:
     
     # Run Neos tests (unit, functional), but do not fail the build in case of any problems there. These are vendor tests and errors there do not indicate that this Docker image is faulty.
     - |
-      docker run -ti --volumes-from=neos-typostrap --link=neos-typostrap:web --link=db:db million12/php-app "
+      docker run -ti --volumes-from=neos-typostrap --link=neos-typostrap:web --link=db:db million12/behat-selenium "
         env && \
         echo \$WEB_PORT_80_TCP_ADDR \$WEB_ENV_T3APP_VHOST_NAMES >> /etc/hosts && cat /etc/hosts && \
         su www -c \"
