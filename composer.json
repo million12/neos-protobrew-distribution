@@ -7,26 +7,26 @@
         "bin-dir": "bin"
     },
     "require": {
-        "typo3/neos": "2.0.x-dev",
-        "typo3/neos-nodetypes": "2.0.x-dev",
+        "typo3/neos": "2.0.0-beta2",
+        "typo3/neos-nodetypes": "2.0.0-beta2",
 
         "doctrine/migrations": "dev-master",
 
-        "typo3/neos-seo": "@dev",
-        "typo3/imagine": "@dev",
-        "typo3/twitter-bootstrap": "@dev",
-        "typo3/form": "@dev",
-        "typo3/setup": "@dev",
+        "typo3/neos-seo": "~1.0",
+        "typo3/imagine": "~2.0",
+        "typo3/twitter-bootstrap": "~2.0",
+        "typo3/form": "~2.0",
+        "typo3/setup": "~2.0",
 
-        "typo3/typo3cr": "2.0.x-dev",
-        "typo3/typoscript": "2.0.x-dev",
-        "typo3/media": "2.0.x-dev",
+        "typo3/typo3cr": "2.0.0-beta2",
+        "typo3/typoscript": "2.0.0-beta2",
+        "typo3/media": "2.0.0-beta2",
 
-        "typo3/flow": "3.0.x-dev",
-        "typo3/fluid": "3.0.x-dev",
-        "typo3/eel": "3.0.x-dev",
-        "typo3/party": "3.0.x-dev",
-        "typo3/kickstart": "3.0.x-dev",
+        "typo3/flow": "3.0.*@beta",
+        "typo3/fluid": "3.0.*@beta",
+        "typo3/eel": "3.0.*@beta",
+        "typo3/party": "3.0.*@beta",
+        "typo3/kickstart": "3.0.*@beta",
 
         "m12/neos-utils": "@dev",
         "m12/neos-foundation": "dev-master",
@@ -34,7 +34,7 @@
         "m12/neos-foundation-site": "dev-master"
     },
     "require-dev": {
-        "typo3/buildessentials": "dev-master",
+        "typo3/buildessentials": "3.0.*@beta",
         "mikey179/vfsstream": "1.5.*",
         "phpunit/phpunit": "4.6.*",
         "flowpack/behat": "dev-master"

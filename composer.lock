@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2affcf881a9e8d8da2c8cdf4b5b83621",
+    "hash": "5795a6a18398c2d8a008e104c80c06f9",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -884,12 +884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.Foundation.git",
-                "reference": "75d90179a6edd8c9b608430aed539796617a22df"
+                "reference": "a16838fd81ab7bfb3789587be2bc0b10da6a9601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/75d90179a6edd8c9b608430aed539796617a22df",
-                "reference": "75d90179a6edd8c9b608430aed539796617a22df",
+                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/a16838fd81ab7bfb3789587be2bc0b10da6a9601",
+                "reference": "a16838fd81ab7bfb3789587be2bc0b10da6a9601",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 }
             ],
             "description": "Foundation content elements",
-            "time": "2015-05-05 21:20:57"
+            "time": "2015-05-20 22:17:59"
         },
         {
             "name": "m12/neos-foundation-site",
@@ -1056,17 +1056,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.6",
+            "version": "v2.6.7",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
+                "reference": "ebc5679854aa24ed7d65062e9e3ab0b18a917272"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ebc5679854aa24ed7d65062e9e3ab0b18a917272",
+                "reference": "ebc5679854aa24ed7d65062e9e3ab0b18a917272",
                 "shasum": ""
             },
             "require": {
@@ -1100,17 +1100,17 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-02 15:18:45"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1214,14 +1214,14 @@
         },
         {
             "name": "typo3/eel",
-            "version": "3.0.x-dev",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Eel.git",
-                "reference": "ae73f2404e699cf11177eab0e069a98baa57fba7"
+                "reference": "2fbc882240b917c5f43e87f9e8f49443dee3f6cc"
             },
             "require": {
-                "typo3/flow": "~3.0.0"
+                "typo3/flow": "3.0.0-beta2"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -1234,15 +1234,15 @@
                 "LGPL-3.0+"
             ],
             "description": "The Embedded Expression Language (Eel) is a building block for creating Domain Specific Languages",
-            "time": "2015-04-28 15:44:29"
+            "time": "2015-05-12 07:56:24"
         },
         {
             "name": "typo3/flow",
-            "version": "3.0.x-dev",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "bac29ab99693580cdde0628ab351f2742ff082a6"
+                "reference": "cb26c5e7eb7900fff2d7886d70893eac3e1e1e98"
             },
             "require": {
                 "composer/installers": "~1.0.2",
@@ -1257,8 +1257,8 @@
                 "symfony/console": "~2.0",
                 "symfony/dom-crawler": "~2.5.0",
                 "symfony/yaml": "~2.5.0",
-                "typo3/eel": "~3.0.0",
-                "typo3/fluid": "~3.0.0"
+                "typo3/eel": "3.0.0-beta2",
+                "typo3/fluid": "3.0.0-beta2"
             },
             "suggest": {
                 "doctrine/data-fixtures": "To manage and execute the loading of data fixtures for the Doctrine ORM or ODM",
@@ -1277,18 +1277,18 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2015-04-30 07:39:14"
+            "time": "2015-05-12 07:56:24"
         },
         {
             "name": "typo3/fluid",
-            "version": "3.0.x-dev",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "15dc7382b9b97e17d9bfd86743a7695052dc8dc4"
+                "reference": "ae19549e50e164cffefd70317bc67969bf263caa"
             },
             "require": {
-                "typo3/flow": "~3.0.0"
+                "typo3/flow": "3.0.0-beta2"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -1301,18 +1301,18 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2015-04-28 15:44:27"
+            "time": "2015-05-12 07:56:24"
         },
         {
             "name": "typo3/form",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Form.git",
-                "reference": "862764f0ef9ef31b60c515dc46455a193104bc9f"
+                "reference": "1ba108d322248285f83be3ebfcc9174c5fa99118"
             },
             "require": {
-                "typo3/flow": "*"
+                "typo3/flow": "~3.0"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1325,19 +1325,19 @@
                 "LGPL-3.0+"
             ],
             "description": "Extensible and flexible API for building web forms",
-            "time": "2015-04-30 13:28:50"
+            "time": "2015-05-08 09:10:20"
         },
         {
             "name": "typo3/imagine",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Imagine.git",
-                "reference": "06cda0f7ec2eedf353ddbbdb673d3d6a70b425b5"
+                "reference": "3e9897344d31e760949f13ae98bd38831ebf04a3"
             },
             "require": {
                 "imagine/imagine": "0.6.*",
-                "typo3/flow": "*"
+                "typo3/flow": "~3.0"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1349,18 +1349,19 @@
             "license": [
                 "GPL-3.0+"
             ],
-            "time": "2015-02-26 07:48:27"
+            "description": "Provides a Flow factory for the imagine library",
+            "time": "2015-05-08 08:54:15"
         },
         {
             "name": "typo3/kickstart",
-            "version": "3.0.x-dev",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Kickstart.git",
-                "reference": "824b0993e0a8007a69ebdb53a31c23a3c520d24b"
+                "reference": "985fbb707681f64f955e265799c0b7ebbf88e24a"
             },
             "require": {
-                "typo3/flow": "~3.0.0"
+                "typo3/flow": "3.0.0-beta2"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -1373,20 +1374,19 @@
                 "LGPL-3.0+"
             ],
             "description": "A simple generator for controller and views.",
-            "time": "2015-04-28 15:16:29"
+            "time": "2015-05-12 07:56:24"
         },
         {
             "name": "typo3/media",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Media.git",
-                "reference": "337b8fcaf3739eeb0c0dcd39c599370e6966446d"
+                "reference": "2687d62b0039baa12fd7de1e22d7f07864d290bd"
             },
             "require": {
-                "php": ">=5.4.0",
-                "typo3/flow": "*",
-                "typo3/imagine": "*"
+                "typo3/flow": "~3.0",
+                "typo3/imagine": "~2.0"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1399,22 +1399,22 @@
                 "GPL-3.0+"
             ],
             "description": "The Media package",
-            "time": "2015-05-05 08:53:58"
+            "time": "2015-05-13 09:19:12"
         },
         {
             "name": "typo3/neos",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.git",
-                "reference": "6122107dadc9f2f3d73785972e376d650c59f745"
+                "reference": "0027cb2a5be659115081acf9865cdc04ce94cd00"
             },
             "require": {
-                "typo3/flow": "~3.0.0",
+                "typo3/flow": "~3.0",
                 "typo3/media": "~2.0.0",
-                "typo3/party": "~3.0.0",
-                "typo3/setup": "*",
-                "typo3/twitter-bootstrap": "*",
+                "typo3/party": "~3.0",
+                "typo3/setup": "~2.0",
+                "typo3/twitter-bootstrap": "~2.0",
                 "typo3/typo3cr": "~2.0.0",
                 "typo3/typoscript": "~2.0.0"
             },
@@ -1437,15 +1437,15 @@
                 "GPL-3.0+"
             ],
             "description": "The next generation of the popular open-source CMS.",
-            "time": "2015-05-04 22:14:07"
+            "time": "2015-05-13 14:44:08"
         },
         {
             "name": "typo3/neos-nodetypes",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.NodeTypes.git",
-                "reference": "214e8090c24d9fce9ae14691915e8f8a77d84562"
+                "reference": "992db076035518607ed1d6f32a0a864b4a8b3afb"
             },
             "require": {
                 "typo3/neos": "~2.0.0"
@@ -1461,18 +1461,18 @@
                 "GPL-3.0+"
             ],
             "description": "Node type configuration for TYPO3 Neos",
-            "time": "2015-04-28 16:45:35"
+            "time": "2015-05-13 14:44:09"
         },
         {
             "name": "typo3/neos-seo",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Neos.Seo.git",
-                "reference": "55fa57ecaa57b3ab62f5138ddab483330429e6a2"
+                "reference": "1e7435dd873d3b36addc91e24c9a9f05d60bdde7"
             },
             "require": {
-                "typo3/neos": "*"
+                "typo3/neos": "~2.0"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1485,15 +1485,15 @@
                 "GPL-3.0+"
             ],
             "description": "SEO configuration and tools for TYPO3 Neos",
-            "time": "2015-03-31 21:21:13"
+            "time": "2015-04-26 15:07:44"
         },
         {
             "name": "typo3/party",
-            "version": "3.0.x-dev",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
-                "url": "https://git.typo3.org/Packages/TYPO3.Party.git",
-                "reference": "2235b23774a8b7b9cab4d46fc1c55bff09ca504a"
+                "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
+                "reference": "98722f288dd46916f0f098ac3162015488e5050c"
             },
             "require": {
                 "typo3/flow": "3.0.*"
@@ -1513,16 +1513,16 @@
         },
         {
             "name": "typo3/setup",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Setup.git",
-                "reference": "8b49b52cd27330948a77845acfb0a8c758df6af0"
+                "reference": "b84353e7b6bd1098333d6e51d7bdae878c2c4263"
             },
             "require": {
-                "typo3/flow": "*",
-                "typo3/form": "*",
-                "typo3/twitter-bootstrap": "*"
+                "typo3/flow": "~3.0",
+                "typo3/form": "~2.0",
+                "typo3/twitter-bootstrap": "~2.0"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1535,18 +1535,18 @@
                 "LGPL-3.0+"
             ],
             "description": "An extensible setup tool for TYPO3 Flow based applications",
-            "time": "2015-04-30 17:05:44"
+            "time": "2015-05-08 09:12:50"
         },
         {
             "name": "typo3/twitter-bootstrap",
-            "version": "dev-master",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.Twitter.Bootstrap.git",
-                "reference": "651ddfb1040062299bc245f199e98fb94534c880"
+                "reference": "297ff569baaf48e91b7442ba0716727397c99c7c"
             },
             "require": {
-                "typo3/flow": "*"
+                "typo3/flow": "~3.0"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1559,15 +1559,15 @@
                 "Apache-2.0"
             ],
             "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow",
-            "time": "2015-02-26 07:45:50"
+            "time": "2015-05-08 09:05:38"
         },
         {
             "name": "typo3/typo3cr",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TYPO3CR.git",
-                "reference": "21fa3a836bcb9f9e92e143569b06ec7873e13efa"
+                "reference": "460091eedc85140c7f7939e4ad7f9e37900f85d2"
             },
             "require": {
                 "gedmo/doctrine-extensions": "2.3.*",
@@ -1585,15 +1585,15 @@
                 "GPL-3.0+"
             ],
             "description": "Content repository based on TYPO3 Flow, specifically made for TYPO3 Neos.",
-            "time": "2015-05-05 08:12:49"
+            "time": "2015-04-26 15:05:52"
         },
         {
             "name": "typo3/typoscript",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Packages/TYPO3.TypoScript.git",
-                "reference": "0395376e45142716f1caa807e9d411b07123169c"
+                "reference": "c90506effee7e1052e3a2dcb34af557714a41025"
             },
             "require": {
                 "typo3/eel": "~3.0.0",
@@ -1610,7 +1610,7 @@
                 "GPL-3.0+"
             ],
             "description": "TypoScript is a hierarchical, prototype based processing language",
-            "time": "2015-04-28 16:45:39"
+            "time": "2015-05-08 09:31:32"
         }
     ],
     "packages-dev": [
@@ -2599,11 +2599,11 @@
         },
         {
             "name": "typo3/buildessentials",
-            "version": "dev-master",
+            "version": "3.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.typo3.org/Flow/BuildEssentials.git",
-                "reference": "b4baf61f0e3ee881e2bef5130238061609dc9a28"
+                "reference": "c72eec68894d313ef115cc53c32f7902b11cc462"
             },
             "require": {
                 "composer/installers": "~1.0.2"
@@ -2617,33 +2617,28 @@
                 "LGPL-3.0+"
             ],
             "description": "TYPO3 Flow Build Toolchain Essentials",
-            "time": "2015-04-28 15:44:50"
+            "time": "2015-04-20 15:55:31"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "typo3/neos": 20,
-        "typo3/neos-nodetypes": 20,
+        "typo3/neos": 10,
+        "typo3/neos-nodetypes": 10,
         "doctrine/migrations": 20,
-        "typo3/neos-seo": 20,
-        "typo3/imagine": 20,
-        "typo3/twitter-bootstrap": 20,
-        "typo3/form": 20,
-        "typo3/setup": 20,
-        "typo3/typo3cr": 20,
-        "typo3/typoscript": 20,
-        "typo3/media": 20,
-        "typo3/flow": 20,
-        "typo3/fluid": 20,
-        "typo3/eel": 20,
-        "typo3/party": 20,
-        "typo3/kickstart": 20,
+        "typo3/typo3cr": 10,
+        "typo3/typoscript": 10,
+        "typo3/media": 10,
+        "typo3/flow": 10,
+        "typo3/fluid": 10,
+        "typo3/eel": 10,
+        "typo3/party": 10,
+        "typo3/kickstart": 10,
         "m12/neos-utils": 20,
         "m12/neos-foundation": 20,
         "m12/neos-nodetype-slickcarousel": 20,
         "m12/neos-foundation-site": 20,
-        "typo3/buildessentials": 20,
+        "typo3/buildessentials": 10,
         "flowpack/behat": 20
     },
     "prefer-stable": false,
