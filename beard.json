@@ -1,0 +1,14 @@
+{
+    "defaults": {
+        "gerrit_api_endpoint": "https://review.typo3.org/",
+        "gerrit_git": "git.typo3.org"
+    },
+    "changes": [
+        {
+            "name": "[BUGFIX] Add cache definition to TYPO3.Neos.NodeTypes:Menu",
+            "type": "gerrit",
+            "path": "Packages/Application/TYPO3.Neos.NodeTypes",
+            "change_id": "39719"
+        }
+    ]
+}
