@@ -8,3 +8,6 @@ TYPO3:
         password: NEOS_DB_PASS
         host:     NEOS_DB_HOST
         port:     NEOS_DB_PORT
+
+  Imagine:
+    driver: 'Imagick'
