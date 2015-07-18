@@ -1,26 +1,24 @@
 {
-    "name": "million12/neos-typostrap-distribution",
-    "description": "TYPO3 Neos - Typostrap Distribution",
-    "license": "GPL-3.0+",
+    "name": "million12/ts-protos",
+    "description": "Core platform for Typostrap prototypes",
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
     },
     "require": {
-        "typo3/neos": "2.0.0-beta2",
-        "typo3/neos-nodetypes": "2.0.0-beta2",
+        "typo3/neos": "2.0.0-beta5",
+        "typo3/neos-nodetypes": "2.0.0-beta5",
 
-        "doctrine/migrations": "dev-master",
+        "doctrine/migrations": "@dev",
 
-        "typo3/neos-seo": "~1.0",
         "typo3/imagine": "~2.0",
         "typo3/twitter-bootstrap": "~2.0",
         "typo3/form": "~2.0",
         "typo3/setup": "~2.0",
 
-        "typo3/typo3cr": "2.0.0-beta2",
-        "typo3/typoscript": "2.0.0-beta2",
-        "typo3/media": "2.0.0-beta2",
+        "typo3/typo3cr": "2.0.0-beta5",
+        "typo3/typoscript": "2.0.0-beta5",
+        "typo3/media": "2.0.0-beta5",
 
         "typo3/flow": "3.0.*@beta",
         "typo3/fluid": "3.0.*@beta",
@@ -28,6 +26,7 @@
         "typo3/party": "3.0.*@beta",
         "typo3/kickstart": "3.0.*@beta",
 
+        "league/commonmark": "*",
         "m12/neos-utils": "@dev",
         "m12/neos-foundation": "dev-master",
         "m12/neos-nodetype-slickcarousel": "dev-master",

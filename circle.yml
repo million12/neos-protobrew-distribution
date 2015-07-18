@@ -36,7 +36,7 @@ test:
     - curl -L --head http://neos-typostrap:8080 && curl -s -L http://neos-typostrap:8080
     - curl -s --head http://neos-typostrap:8080 | grep "HTTP/1.1 200 OK"
     - curl -s --head http://neos-typostrap:8080 | grep "X-Flow-Powered"
-    - curl -s -L http://neos-typostrap:8080/neos | grep "TYPO3 Neos Login"
+    - curl -s -L http://neos-typostrap:8080/neos | grep "Neos Login"
     
     # Run Neos tests (unit, functional), but do not fail the build in case of any problems there. These are vendor tests and errors there do not indicate that this Docker image is faulty.
     - |
@@ -45,7 +45,7 @@ test:
         echo \$WEB_PORT_80_TCP_ADDR \$WEB_ENV_T3APP_VHOST_NAMES >> /etc/hosts && cat /etc/hosts && \
         su www -c \"
           cd ~/typo3-app && \
-          echo -e '\n\n======== RUNNING TYPO3 NEOS TESTS =======\n\n' && \
+          echo -e '\n\n======== RUNNING NEOS TESTS =======\n\n' && \
           bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml && \
           bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml
         \"
