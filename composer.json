@@ -6,25 +6,25 @@
         "bin-dir": "bin"
     },
     "require": {
-        "typo3/neos": "2.0.0-beta5",
-        "typo3/neos-nodetypes": "2.0.0-beta5",
+        "typo3/neos": "2.0.0-beta6",
+        "typo3/neos-nodetypes": "2.0.0-beta6",
 
-        "doctrine/migrations": "@dev",
+        "doctrine/migrations": "@rc",
 
         "typo3/imagine": "~2.0",
         "typo3/twitter-bootstrap": "~2.0",
         "typo3/form": "~2.0",
         "typo3/setup": "~2.0",
 
-        "typo3/typo3cr": "2.0.0-beta5",
-        "typo3/typoscript": "2.0.0-beta5",
-        "typo3/media": "2.0.0-beta5",
+        "typo3/typo3cr": "2.0.0-beta6",
+        "typo3/typoscript": "2.0.0-beta6",
+        "typo3/media": "2.0.0-beta6",
 
-        "typo3/flow": "3.0.*@beta",
-        "typo3/fluid": "3.0.*@beta",
-        "typo3/eel": "3.0.*@beta",
-        "typo3/party": "3.0.*@beta",
-        "typo3/kickstart": "3.0.*@beta",
+        "typo3/flow": "3.0.x-dev",
+        "typo3/fluid": "3.0.x-dev",
+        "typo3/eel": "3.0.x-dev",
+        "typo3/party": "3.0.x-dev",
+        "typo3/kickstart": "3.0.x-dev",
 
         "league/commonmark": "*",
         "m12/neos-utils": "@dev",
@@ -33,7 +33,7 @@
         "m12/neos-foundation-site": "dev-master"
     },
     "require-dev": {
-        "typo3/buildessentials": "3.0.*@beta",
+        "typo3/buildessentials": "3.0.x-dev",
         "mikey179/vfsstream": "1.5.*",
         "phpunit/phpunit": "4.6.*",
         "flowpack/behat": "dev-master"

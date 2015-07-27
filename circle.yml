@@ -36,7 +36,7 @@ test:
     - curl -L --head http://neos-typostrap:8080 && curl -s -L http://neos-typostrap:8080
     - curl -s --head http://neos-typostrap:8080 | grep "HTTP/1.1 200 OK"
     - curl -s --head http://neos-typostrap:8080 | grep "X-Flow-Powered"
-    - curl -s -L http://neos-typostrap:8080/neos | grep "Neos Login"
+    - curl -s -L http://neos-typostrap:8080/neos | grep "Login to"
     
     # Run Neos tests (unit, functional), but do not fail the build in case of any problems there. These are vendor tests and errors there do not indicate that this Docker image is faulty.
     - |
