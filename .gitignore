@@ -1,21 +1,25 @@
-/Build/Behat/*
-/Build/BuildEssentials
-/Build/Reports
-/Build/Resources
+/bin/
+/Build/Behat/
+/Build/BuildEssentials/
+/Build/Reports/
+/Build/Resources/
+/Build/Surf/
+/Build/create-branch.sh
+/Build/create-changelog.sh
+/Build/set-dependencies.sh
+/Build/tag-release.sh
 /Configuration/**/*.example
 /Configuration/PackageStates.php
 /Configuration/README
-/Configuration/Production/IncludeCachedConfigurations.php
+/Configuration/**/IncludeCachedConfigurations.php
+/Configuration/Development/
 /Data/
 /Packages/
 /Web/.htaccess
 /Web/index.php
 /Web/_Resources/
-/bin/
 /Readme.txt
 /Upgrading.txt
-/flow
-/flow.bat
 /*.rst
 
 # ignore the downloaded selenium server, config and the selenium
