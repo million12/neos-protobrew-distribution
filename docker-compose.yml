@@ -35,10 +35,10 @@ web:
     T3APP_USER_PASS: 'password'
     T3APP_USER_FNAME: 'Typostrap'
     T3APP_USER_LNAME: 'Demo'
-    T3APP_ALWAYS_DO_PULL: false
-    T3APP_DO_INIT_TESTS: false
-    T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: false
-#    RUN_BEARD: false # Temporarily switch off applying beard patches
+    T3APP_ALWAYS_DO_PULL: 'False'
+    T3APP_DO_INIT_TESTS: 'False'
+    T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: 'False'
+    RUN_BEARD: 'True' # Temporarily switch on applying beard patches
 
 ssh:
   image: million12/php-app-ssh
