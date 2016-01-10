@@ -1,6 +1,6 @@
 {
-    "name": "million12/ts-protos",
-    "description": "Core platform for Typostrap prototypes",
+    "name": "million12/neos-protobrew-distribution",
+    "description": "PrototypeBrewery.io distribution of Neos CMS",
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
@@ -16,9 +16,9 @@
         "m12/neos-foundation-site": "dev-master"
     },
     "require-dev": {
-        "typo3/buildessentials": "3.0.*@rc",
-        "mikey179/vfsstream": "1.5.*",
-        "phpunit/phpunit": "4.6.*",
+        "typo3/buildessentials": "3.1.x-dev",
+        "mikey179/vfsstream": "~1.6",
+        "phpunit/phpunit": "~5.0",
         "flowpack/behat": "dev-master"
     },
     "suggest": {

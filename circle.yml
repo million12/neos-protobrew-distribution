@@ -2,7 +2,7 @@ machine:
   services:
     - docker
   hosts:
-    neos-typostrap: 127.0.0.1
+    neos-protobrew.local: 127.0.0.1
 
 dependencies:
   pre:
@@ -19,28 +19,28 @@ dependencies:
 # Run tests
 test:
   pre:
-    - docker build --tag million12/neos-typostrap-distribution docker/
+    - docker build --tag million12/neos-protobrew-distribution docker/
   
   override:
     # ######################################################
-    # Run Typostrap Neos container, which includes
+    # Run Neos CMS container, which includes
     # M12.Foundation / M12.FoundationSite packages
     # and do some basics checks.
     # ######################################################
-    - docker run -d --name neos-typostrap -p 8080:80 --link db:db --env="T3APP_VHOST_NAMES=neos-typostrap" million12/neos-typostrap-distribution
-    - docker logs -f neos-typostrap > ${CIRCLE_ARTIFACTS}/docker-neos-typostrap.log 2>&1:
+    - docker run -d --name neos-protobrew -p 8080:80 --link db:db --env="T3APP_VHOST_NAMES=neos-protobrew" million12/neos-protobrew-distribution
+    - docker logs -f neos-protobrew > ${CIRCLE_ARTIFACTS}/docker-neos-protobrew.log 2>&1:
         background: true
-    - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos-typostrap.log; then break; else sleep 1; fi done
+    - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos-protobrew.log; then break; else sleep 1; fi done
     
     # Test: do basic front-end tests 
-    - curl -L --head http://neos-typostrap:8080 && curl -s -L http://neos-typostrap:8080
-    - curl -s --head http://neos-typostrap:8080 | grep "HTTP/1.1 200 OK"
-    - curl -s --head http://neos-typostrap:8080 | grep "X-Flow-Powered"
-    - curl -s -L http://neos-typostrap:8080/neos | grep "Login to"
+    - curl -L --head http://neos-protobrew.local:8080 && curl -s -L http://neos-protobrew.local:8080
+    - curl -s --head http://neos-protobrew.local:8080 | grep "HTTP/1.1 200 OK"
+    - curl -s --head http://neos-protobrew.local:8080 | grep "X-Flow-Powered"
+    - curl -s -L http://neos-protobrew.local:8080/neos | grep "Login to"
     
     # Run Neos tests (unit, functional), but do not fail the build in case of any problems there. These are vendor tests and errors there do not indicate that this Docker image is faulty.
     - |
-      docker run -ti --volumes-from=neos-typostrap --link=neos-typostrap:web --link=db:db million12/behat-selenium "
+      docker run -ti --volumes-from=neos-protobrew --link=neos-protobrew:web --link=db:db million12/behat-selenium "
         env && \
         echo \$WEB_PORT_80_TCP_ADDR \$WEB_ENV_T3APP_VHOST_NAMES >> /etc/hosts && cat /etc/hosts && \
         su www -c \"
@@ -53,6 +53,6 @@ test:
 
 deployment:
   rebuild_image_on_docker_hub:
-    branch: master
+    branch: /.*/
     commands:
-      - curl --data "build=true" -X POST https://registry.hub.docker.com/u/million12/neos-typostrap-distribution/trigger/c6f4025a-9b43-11e4-bf68-0242ac11006f/
+      - 'curl -H "Content-Type: application/json" --data "{\"source_type\": \"Branch\", \"source_name\": \"$CIRCLE_BRANCH\"}" -X POST https://registry.hub.docker.com/u/million12/neos-protobrew-distribution/trigger/9a92812e-e721-4b63-bf6b-44e1f15a4b67/'
