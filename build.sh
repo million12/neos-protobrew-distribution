@@ -7,10 +7,10 @@
 #
 
 CWD=$(pwd)
-RUN_BEARD=${RUN_BEARD:=true}
+RUN_BEARD=${RUN_BEARD:=false}
 
 PROJECT_NAME="NEOS-TYPOSTRAP-DISTRIBUTION"
-TYPO3_NEOS_PACKAGE_DIR="${CWD}/Packages/Application/TYPO3.Neos"
+TYPO3_NEOS_PACKAGE_DIR="${CWD}/Packages/Neos/TYPO3.Neos"
 M12_FOUNDATION_SITE_PACKAGE_DIR="${CWD}/Packages/Sites/M12.FoundationSite"
 
 #
@@ -42,15 +42,9 @@ case $@ in
   #
   *--preinstall*)
     echo && echo "$PROJECT_NAME BUILD SCRIPT: PREINSTALL"
-    
+
     set -e # exit with error if any of the following fail
-    
-    # Install Beard
-    echo "Installing Beard..."
-    curl -s http://beard.famelo.com/ > "$CWD/bin/beard" && chmod +x "$CWD/bin/beard"
-    
-    installNeosDevTools
-    
+#    installNeosDevTools
     buildM12FoundationSite
     ;;
  
@@ -61,13 +55,14 @@ case $@ in
     echo && echo "$PROJECT_NAME BUILD SCRIPT"
     git config --global user.email "www@build.user" &&  git config --global user.name "WWW User"
     
-    buildM12FoundationSite
+#    buildM12FoundationSite
     
     # Apply Beard Neos patches from Gerrit, if necessary.
-    if [[ -f beard.json && "${RUN_BEARD^^}" = TRUE ]]; then
-      bin/beard patch
-      grunt --gruntfile=Packages/Application/TYPO3.Neos/Scripts/Gruntfile.js build
-    fi
+#    if [[ -f beard.json && "${RUN_BEARD^^}" = TRUE ]]; then
+#      bin/beard patch
+#      grunt --gruntfile=Packages/Application/TYPO3.Neos/Scripts/Gruntfile.js build
+#    fi
+    echo "Done."
 esac
 
 echo "$PROJECT_NAME BUILD SCRIPT completed."
