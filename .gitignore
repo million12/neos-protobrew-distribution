@@ -20,6 +20,8 @@
 /Web/_Resources/
 /Readme.txt
 /Upgrading.txt
+/flow
+/flow.bat
 /*.rst
 
 # ignore the downloaded selenium server, config and the selenium
