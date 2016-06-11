@@ -6,9 +6,11 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/flow-development-collection": "3.1.x-dev",
-        "neos/neos-development-collection": "2.1.x-dev",
-        "league/commonmark": "*",
+        "neos/flow-development-collection": "3.2.x-dev",
+        "neos/neos-development-collection": "2.2.4",
+        "typo3/party": "~3.1",
+        "neos/redirecthandler-neosadapter": "~1.0",
+        "neos/redirecthandler-databasestorage": "~1.0",
 
         "m12/neos-utils": "@dev",
         "m12/neos-foundation": "dev-master",
@@ -16,9 +18,10 @@
         "m12/neos-foundation-site": "dev-master"
     },
     "require-dev": {
-        "typo3/buildessentials": "3.1.x-dev",
+        "typo3/buildessentials": "3.2.x-dev",
         "mikey179/vfsstream": "~1.6",
-        "phpunit/phpunit": "~5.0",
+        "phpunit/phpunit": "~5.2.0",
+        "symfony/css-selector": "~2.0",
         "flowpack/behat": "dev-master"
     },
     "suggest": {
@@ -27,7 +30,7 @@
     "scripts": {
         "post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
         "post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
-        "post-package-update":"TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
-        "post-package-install":"TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+        "post-package-update": "TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "TYPO3\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
     }
 }
