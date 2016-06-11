@@ -21,20 +21,20 @@ to serve Neos CMS. Therefore some familiarity with Docker is desired.
 
 #### Short version
 
-* map `DOCKER_IP dev.neos-protobrew.local neos-protobrew.local` in your `/etc/hosts` file
+* map `DOCKER_IP dev.neos-protobrew neos-protobrew` in your `/etc/hosts` file
 * clone this repository and run:  
 ```
 docker-compose pull
 docker-compose up
 ```
 * Once you see `success: nginx entered RUNNING state` in the console, 
-go to [http://dev.neos-protobrew.local:8899/](http://dev.neos-protobrew.local:8899) 
+go to [http://dev.neos-protobrew:8899/](http://dev.neos-protobrew:8899) 
 in your browser. PrototypeBrewery.io edition of Neos CMS is ready!
 
 #### Long version
 
 + You will need a machine with Docker daemon to run Docker containers.
-+ Add line with `DOCKER_IP dev.neos-protobrew.local neos-protobrew.local` 
++ Add line with `DOCKER_IP dev.neos-protobrew neos-protobrew` 
   to `/etc/hosts` file on your machine. 
 + Clone this repository (optionally: just grab 
   [docker-compose.yml](docker-compose.yml) file from here).
@@ -45,11 +45,11 @@ in your browser. PrototypeBrewery.io edition of Neos CMS is ready!
   Wait till all containers are running. You will see messages about 
   setting up Neos CMS and at the end you will see something like 
   `success: nginx entered RUNNING state` and `success: php-fpm entered RUNNING state`.
-+ Go to [http://dev.neos-protobrew.local:8899/neos](http://dev.neos-protobrew.local:8899/neos) 
++ Go to [http://dev.neos-protobrew:8899/neos](http://dev.neos-protobrew:8899/neos) 
   to login to Neos CMS back-end.  
   Use username: `admin`, password: `password` to log in.
 + The front-end page is available under 
-  [http://dev.neos-protobrew.local:8899/](http://neos-typostrap:8899). 
+  [http://dev.neos-protobrew:8899/](http://neos-protobrew:8899). 
   Caveat: **It'is blank** by default until you add and publish some content 
   there.
 
