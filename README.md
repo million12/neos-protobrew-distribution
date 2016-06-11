@@ -9,9 +9,9 @@ the prototyping tool built on top of [Neos CMS](http://neos.io/) and
 ## Background
 
 This is a **Prototype Brewery distribution** of Neos CMS. It is based on Neos CMS
-*Base distribution**, but with [M12.Foundation](https://github.com/million12/M12.Foundation)
+*[Base distribution](https://github.com/neos/neos-base-distribution)*, but with [M12.Foundation](https://github.com/million12/M12.Foundation)
 plugin installed (and its dependencies). M12.Foundation aims to implement
-all Foundation components, in the best possible way, inside Neos CMS.
+all Zurb Foundation components, in the best possible way, inside Neos CMS.
 
 This work uses [Docker](https://docker.com/) containers. It will launch 
 one container with MariaDB database and another container with Nginx/PHP 
@@ -36,9 +36,6 @@ in your browser. PrototypeBrewery.io edition of Neos CMS is ready!
 + You will need a machine with Docker daemon to run Docker containers.
 + Add line with `DOCKER_IP dev.neos-protobrew.local neos-protobrew.local` 
   to `/etc/hosts` file on your machine. 
-+ You will need [Docker Compose](https://docs.docker.com/compose/) installed 
-  on your machine, arguably the simplest tool to orchestrate running multiple 
-  Docker containers. Follow the documentation there.
 + Clone this repository (optionally: just grab 
   [docker-compose.yml](docker-compose.yml) file from here).
 + Run `docker-compose pull` to pull the necessary containers from 
