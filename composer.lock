@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3fa7c065bf5a549181a187fe115a85f3",
-    "content-hash": "7525861ffcec7b9f65c9e26479572d89",
+    "hash": "996872978c115610a499a569c905bdc9",
+    "content-hash": "a6d3902a3b3f5ef2f61a48ee9be7c9de",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -915,52 +915,6 @@
             "time": "2016-03-15 19:04:49"
         },
         {
-            "name": "m12/neos-foundation-site",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/million12/M12.FoundationSite.git",
-                "reference": "38633095eb837b310e78a1f7065f4c0f003af774"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.FoundationSite/zipball/38633095eb837b310e78a1f7065f4c0f003af774",
-                "reference": "38633095eb837b310e78a1f7065f4c0f003af774",
-                "shasum": ""
-            },
-            "require": {
-                "m12/neos-foundation": "*",
-                "m12/neos-nodetype-slickcarousel": "*",
-                "typo3/neos-nodetypes": "*"
-            },
-            "type": "typo3-flow-site",
-            "autoload": {
-                "psr-0": {
-                    "M12\\FoundationSite": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marcin Ryzycki",
-                    "email": "marcin@m12.io",
-                    "homepage": "http://m12.io",
-                    "role": "Back-end Developer"
-                },
-                {
-                    "name": "Samuel Ryzycki",
-                    "email": "samuel@m12.io",
-                    "homepage": "http://m12.io",
-                    "role": "Front-end Developer"
-                }
-            ],
-            "description": "TYPO3 Neos site package for M12.Foundation",
-            "time": "2016-01-10 01:56:09"
-        },
-        {
             "name": "m12/neos-nodetype-slickcarousel",
             "version": "dev-master",
             "source": {
@@ -997,6 +951,52 @@
             ],
             "description": "Slick carousel for TYPO3 Neos",
             "time": "2015-03-24 17:50:28"
+        },
+        {
+            "name": "m12/neos-pb-site",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/million12/Pb.Site.git",
+                "reference": "c037f83a4e6f6cc468ef69fbc518224b01dad09c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/c037f83a4e6f6cc468ef69fbc518224b01dad09c",
+                "reference": "c037f83a4e6f6cc468ef69fbc518224b01dad09c",
+                "shasum": ""
+            },
+            "require": {
+                "m12/neos-foundation": "*",
+                "m12/neos-nodetype-slickcarousel": "*",
+                "typo3/neos-nodetypes": "*"
+            },
+            "type": "typo3-flow-site",
+            "autoload": {
+                "psr-0": {
+                    "Pb\\Site": "Classes"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Marcin Ryzycki",
+                    "email": "marcin@m12.io",
+                    "homepage": "http://m12.io",
+                    "role": "Back-end Developer"
+                },
+                {
+                    "name": "Samuel Ryzycki",
+                    "email": "samuel@m12.io",
+                    "homepage": "http://m12.io",
+                    "role": "Front-end Developer"
+                }
+            ],
+            "description": "Neos CMS site package for M12.Foundation",
+            "support": {
+                "source": "https://github.com/million12/Pb.Site/tree/renaming",
+                "issues": "https://github.com/million12/Pb.Site/issues"
+            },
+            "time": "2016-06-11 12:38:42"
         },
         {
             "name": "m12/neos-utils",
@@ -2796,26 +2796,26 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.1.3",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "151c96874bff6fe61a25039df60e776613a61489"
+                "reference": "314f8c44019b4dfece2571b98938574e6342be59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/151c96874bff6fe61a25039df60e776613a61489",
-                "reference": "151c96874bff6fe61a25039df60e776613a61489",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/314f8c44019b4dfece2571b98938574e6342be59",
+                "reference": "314f8c44019b4dfece2571b98938574e6342be59",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
-                "php": ">=5.6",
-                "phpunit/php-text-template": "~1.2",
-                "sebastian/exporter": "~1.2"
+                "php": "^5.6 || ^7.0",
+                "phpunit/php-text-template": "^1.2",
+                "sebastian/exporter": "^1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "~5"
+                "phpunit/phpunit": "^5.4"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -2823,7 +2823,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1.x-dev"
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -2848,7 +2848,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-04-20 14:39:26"
+            "time": "2016-06-03 05:01:30"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3454,7 +3454,7 @@
         "m12/neos-utils": 20,
         "m12/neos-foundation": 20,
         "m12/neos-nodetype-slickcarousel": 20,
-        "m12/neos-foundation-site": 20,
+        "m12/neos-pb-site": 20,
         "typo3/buildessentials": 20,
         "flowpack/behat": 20
     },

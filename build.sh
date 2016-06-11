@@ -11,7 +11,7 @@ RUN_BEARD=${RUN_BEARD:=false}
 
 PROJECT_NAME="NEOS-PROTOBREW-DISTRIBUTION"
 TYPO3_NEOS_PACKAGE_DIR="${CWD}/Packages/Neos/TYPO3.Neos"
-M12_FOUNDATION_SITE_PACKAGE_DIR="${CWD}/Packages/Sites/M12.FoundationSite"
+SITE_PACKAGE_DIR="${CWD}/Packages/Sites/Pb.Site"
 
 #
 # This will install all development tools needed to run Neos 'grunt build'
@@ -26,12 +26,12 @@ function installNeosDevTools() {
   cd $CWD
 }
 
-function buildM12FoundationSite() {
-  echo "Building M12.FoundationSite..."
-  cd $M12_FOUNDATION_SITE_PACKAGE_DIR
+function buildSitePackage() {
+  echo "Building Pb.Site..."
+  cd $SITE_PACKAGE_DIR
   bower install --allow-root # this script is called as root in '--preinstall' phase
   npm install
-  gulp build --env=Production # build for production by default
+  gulp build
   cd $CWD
 }
 
@@ -45,7 +45,7 @@ case $@ in
 
     set -e # exit with error if any of the following fail
 #    installNeosDevTools
-    buildM12FoundationSite
+    buildSitePackage
     ;;
  
   #
@@ -54,14 +54,9 @@ case $@ in
   *)
     echo && echo "$PROJECT_NAME BUILD SCRIPT"
     git config --global user.email "www@build.user" &&  git config --global user.name "WWW User"
-    
-#    buildM12FoundationSite
-    
-    # Apply Beard Neos patches from Gerrit, if necessary.
-#    if [[ -f beard.json && "${RUN_BEARD^^}" = TRUE ]]; then
-#      bin/beard patch
-#      grunt --gruntfile=Packages/Application/TYPO3.Neos/Scripts/Gruntfile.js build
-#    fi
+
+#    buildSitePackage
+
     echo "Done."
 esac
 

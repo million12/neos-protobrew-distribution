@@ -24,7 +24,7 @@ test:
   override:
     # ######################################################
     # Run Neos CMS container, which includes
-    # M12.Foundation / M12.FoundationSite packages
+    # M12.Foundation and Pb.Site packages
     # and do some basics checks.
     # ######################################################
     - docker run -d --name neos-protobrew -p 8080:80 --link db:db --env="T3APP_VHOST_NAMES=neos-protobrew" million12/neos-protobrew-distribution

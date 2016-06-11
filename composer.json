@@ -15,7 +15,7 @@
         "m12/neos-utils": "@dev",
         "m12/neos-foundation": "dev-master",
         "m12/neos-nodetype-slickcarousel": "dev-master",
-        "m12/neos-foundation-site": "dev-master"
+        "m12/neos-pb-site": "dev-master"
     },
     "require-dev": {
         "typo3/buildessentials": "3.2.x-dev",
