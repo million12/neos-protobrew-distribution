@@ -11,7 +11,7 @@ db:
   volumes_from:
     - dbdata
   environment:
-    MARIADB_PASS: LJHoihuqo3i4href
+    - MARIADB_PASS=LJHoihuqo3i4href
 
 webdata:
   image: busybox:latest
@@ -21,6 +21,7 @@ webdata:
 
 web:
   image: million12/neos-protobrew-distribution
+  hostname: neos-protobrew
   ports:
     - '8899:80'
   links:
@@ -28,26 +29,27 @@ web:
   volumes_from:
     - webdata
   environment:
-    T3APP_NAME: 'neos-protobrew'
-    T3APP_VHOST_NAMES: 'neos-protobrew.local dev.neos-protobrew.local behat.dev.neos-protobrew.local'
-    T3APP_DB_NAME: 'neos_protobrew'
-    T3APP_USER_NAME: 'admin'
-    T3APP_USER_PASS: 'password'
-    T3APP_USER_FNAME: 'PrototypeBrewery'
-    T3APP_USER_LNAME: 'IO'
-    T3APP_ALWAYS_DO_PULL: 'False'
-    T3APP_DO_INIT_TESTS: 'False'
-    T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT: 'False'
-#    RUN_BEARD: 'True' # Temporarily switch on applying beard patches
+    - T3APP_VHOST_NAMES=neos-protobrew dev.neos-protobrew behat.dev.neos-protobrew
+    - T3APP_DB_NAME=neos_protobrew
+    - T3APP_USER_NAME=admin
+    - T3APP_USER_PASS=password
+    - T3APP_USER_FNAME=PrototypeBrewery
+    - T3APP_USER_LNAME=IO
+    - T3APP_ALWAYS_DO_PULL=false
+    - T3APP_DO_INIT_TESTS=false
+    - T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT=false
 
 ssh:
   image: million12/php-app-ssh
+  hostname: neos-protobrew-ssh
   ports:
     - '5555:22'
+    - '3000:3000'
+    - '3001:3001'
   links:
     - db:db
     - web:web
   volumes_from:
     - webdata
   environment:
-    IMPORT_GITHUB_PUB_KEYS: ryzy
+    - IMPORT_GITHUB_PUB_KEYS=ryzy
