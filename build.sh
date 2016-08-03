@@ -18,7 +18,7 @@ function buildSitePackage() {
   # Initialise NVM
   set +u && source $NVM_DIR/nvm.sh && nvm install && nvm use
 
-  npm install
+  npm install --unsafe-perm
   npm run build:prod
   cd $CWD
 }
