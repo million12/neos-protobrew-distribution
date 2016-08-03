@@ -1,55 +1,43 @@
-dbdata:
-  image: busybox:latest
-  command: echo dbdata
-  volumes:
-    - /var/lib/mysql
+version: '2'
 
-db:
-  image: million12/mariadb:latest
-  ports:
-    - 3306
-  volumes_from:
-    - dbdata
-  environment:
-    - MARIADB_PASS=LJHoihuqo3i4href
+services:
+  db:
+    image: million12/mariadb:latest
+    ports:
+      - 3306
+    environment:
+      - MARIADB_PASS=password
 
-webdata:
-  image: busybox:latest
-  command: echo webdata
-  volumes:
-    - /data
+  web:
+    image: million12/neos-protobrew-distribution
+    build: docker/
+    hostname: neos-protobrew
+    ports:
+      - '8899:80'
+    links:
+      - db:db
+    environment:
+      - T3APP_VHOST_NAMES=neos-protobrew dev.neos-protobrew behat.dev.neos-protobrew
+      - T3APP_DB_NAME=neos_protobrew
+      - T3APP_USER_NAME=admin
+      - T3APP_USER_PASS=password
+      - T3APP_USER_FNAME=PrototypeBrewery
+      - T3APP_USER_LNAME=IO
+      - T3APP_ALWAYS_DO_PULL=false
+      - T3APP_DO_INIT_TESTS=false
+      - T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT=false
 
-web:
-  image: million12/neos-protobrew-distribution
-  hostname: neos-protobrew
-  ports:
-    - '8899:80'
-  links:
-    - db:db
-  volumes_from:
-    - webdata
-  environment:
-    - T3APP_VHOST_NAMES=neos-protobrew dev.neos-protobrew behat.dev.neos-protobrew
-    - T3APP_DB_NAME=neos_protobrew
-    - T3APP_USER_NAME=admin
-    - T3APP_USER_PASS=password
-    - T3APP_USER_FNAME=PrototypeBrewery
-    - T3APP_USER_LNAME=IO
-    - T3APP_ALWAYS_DO_PULL=false
-    - T3APP_DO_INIT_TESTS=false
-    - T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT=false
-
-ssh:
-  image: million12/php-app-ssh
-  hostname: neos-protobrew-ssh
-  ports:
-    - '5555:22'
-    - '3000:3000'
-    - '3001:3001'
-  links:
-    - db:db
-    - web:web
-  volumes_from:
-    - webdata
-  environment:
-    - IMPORT_GITHUB_PUB_KEYS=ryzy
+  ssh:
+    image: million12/php-app-ssh
+    hostname: neos-protobrew-ssh
+    ports:
+      - '5555:22'
+      - '3000:3000'
+      - '3001:3001'
+    links:
+      - db:db
+      - web:web
+    volumes_from:
+      - web
+    environment:
+      - IMPORT_GITHUB_PUB_KEYS=ryzy
