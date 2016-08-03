@@ -60,12 +60,23 @@ run `docker-compose up` again to continue from where you left it.
 
 Docker Compose starts SSH container on port :5555.  
 Run `ssh -p 5555 www@DOCKER_IP` and you are inside.  
-The code resides inside `~/neos-protobrew` directory. You can use this access 
+The code resides inside `~/neos-site` directory. You can use this access 
 to run `./flow` tool and edit/change/upload files via SFTP. 
 
 Authorisation to this SSH is possible via your public key. 
 Set `IMPORT_GITHUB_PUB_KEYS` in `docker-compose.yml` to your GitHub username
 and your key will be imported from there automatically (using public GitHub API).
+
+#### Front-end development
+
+Go to `~/neos-site/Packages/Sites/Pb.Site`. Available npm commands:
+
+```
+npm install
+npm build
+npm build:prod
+npm watch
+```
 
 
 ## Author(s)
