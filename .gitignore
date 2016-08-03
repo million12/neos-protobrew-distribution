@@ -14,7 +14,12 @@
 /Configuration/**/IncludeCachedConfigurations.php
 /Configuration/Development/
 /Data/
-/Packages/
+/Packages/Application/
+/Packages/Framework/
+/Packages/Libraries/
+/Packages/Neos/
+/Packages/Plugins/
+/Packages/Sites/
 /Web/.htaccess
 /Web/index.php
 /Web/_Resources/
@@ -32,3 +37,6 @@ Build/Resources/Java/selenium-server-standalone*
 
 .idea/
 .vagrant/
+
+node_modules/
+bower_components/

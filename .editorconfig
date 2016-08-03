@@ -19,3 +19,6 @@ indent_size = 2
 [*.xml]
 indent_style = space
 indent_size = 1
+
+[package.json]
+indent_size = 2
