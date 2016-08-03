@@ -15,6 +15,7 @@
         "m12/neos-utils": "@dev",
         "m12/neos-foundation": "dev-master",
         "m12/neos-nodetype-slickcarousel": "dev-master",
+        "pb/neos-wistia": "dev-master",
         "m12/neos-pb-site": "dev-master"
     },
     "require-dev": {
