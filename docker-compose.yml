@@ -26,6 +26,7 @@ services:
       - T3APP_ALWAYS_DO_PULL=false
       - T3APP_DO_INIT_TESTS=false
       - T3APP_NEOS_SITE_PACKAGE_FORCE_REIMPORT=false
+      - SET_INTERNAL_PROXY_ON_PORT=3000
 
   ssh:
     image: million12/php-app-ssh
