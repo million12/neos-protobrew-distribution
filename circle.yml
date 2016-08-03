@@ -30,10 +30,10 @@ test:
     # M12.Foundation and Pb.Site packages
     # and do some basics checks.
     # ######################################################
-    - docker run -d --name neos-protobrew -p 8899:80 --link db:db million12/neos-protobrew-distribution
-    - docker logs -f neos-protobrew > ${CIRCLE_ARTIFACTS}/docker-neos-protobrew.log 2>&1:
+    - docker run -d --name neos -p 8899:80 --link db:db million12/neos-protobrew-distribution
+    - docker logs -f neos > ${CIRCLE_ARTIFACTS}/docker-neos.log 2>&1:
         background: true
-    - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos-protobrew.log; then break; else sleep 1; fi done
+    - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos.log; then break; else sleep 1; fi done
     
     # Test: do basic front-end tests 
     - curl -sSLi http://neos-protobrew:8899
@@ -42,19 +42,27 @@ test:
     - curl -sSLi http://neos-protobrew:8899 | grep "This is an empty page."
     - curl -sSLi http://neos-protobrew:8899/neos | grep "Login to"
     
-    # Run Neos tests (unit, functional), but do not fail the build in case of any problems there. These are vendor tests and errors there do not indicate that this Docker image is faulty.
+    # Run unit tests:
     - |
-      docker run -ti --volumes-from=neos-protobrew --link=neos-protobrew:web --link=db:db million12/php-testing "
+      docker run -ti --volumes-from=neos --link=neos:web --link=db:db million12/php-testing "
+        su www -c \"
+          cd ~/neos-site && \
+          echo -e '\n\n======== RUNNING UNIT TESTS =======\n\n' && \
+          bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml --colors
+        \"
+      "
+    # Run functional tests (but don't fail):
+    - |
+      docker run -ti --volumes-from=neos --link=neos:web --link=db:db million12/php-testing "
         env && \
         echo \$WEB_PORT_80_TCP_ADDR \$WEB_ENV_T3APP_VHOST_NAMES >> /etc/hosts && cat /etc/hosts && \
         su www -c \"
-          cd ~/neos-site/ && \
-          echo -e '\n\n======== RUNNING NEOS UNIT TESTS =======\n\n' && \
-          bin/phpunit -c Build/BuildEssentials/PhpUnit/UnitTests.xml && \
-          echo -e '\n\n======== RUNNING NEOS FUNCTIONAL TESTS =======\n\n' && \
-          bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml
+          cd ~/neos-site && \
+          echo -e '\n\n======== RUNNING FUNCTIONAL TESTS =======\n\n' && \
+          bin/phpunit -c Build/BuildEssentials/PhpUnit/FunctionalTests.xml --colors
         \"
       " || true
+
 
 deployment:
   rebuild_image_on_docker_hub:
