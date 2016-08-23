@@ -75,7 +75,7 @@ Go to `~/neos-site/Packages/Sites/Pb.Site`. Available npm commands:
 npm install
 npm build
 npm build:prod
-npm watch
+npm start # starts BrowserSync with watch
 ```
 
 
