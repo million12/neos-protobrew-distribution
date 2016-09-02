@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "76622dd203a7eaef8f299139cdd71fdb",
-    "content-hash": "c4517cc16eff463d501691b3c3c69e96",
+    "hash": "622beba49c776941929574acc11fbf34",
+    "content-hash": "ab506af76b1faff9dbe0658c9e477831",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -463,6 +463,60 @@
             "time": "2015-11-06 14:35:42"
         },
         {
+            "name": "doctrine/instantiator",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/instantiator.git",
+                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
+                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3,<8.0-DEV"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1.8",
+                "ext-pdo": "*",
+                "ext-phar": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
+            "homepage": "https://github.com/doctrine/instantiator",
+            "keywords": [
+                "constructor",
+                "instantiate"
+            ],
+            "time": "2015-06-14 21:17:01"
+        },
+        {
             "name": "doctrine/lexer",
             "version": "v1.0.1",
             "source": {
@@ -587,28 +641,31 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.4.8",
+            "version": "v2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "5aedac1e5c5caaeac14798822c70325dc242d467"
+                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/5aedac1e5c5caaeac14798822c70325dc242d467",
-                "reference": "5aedac1e5c5caaeac14798822c70325dc242d467",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
+                "reference": "bc4ddbfb0114cb33438cc811c9a740d8aa304aab",
                 "shasum": ""
             },
             "require": {
-                "doctrine/collections": "~1.1",
-                "doctrine/dbal": "~2.4",
+                "doctrine/cache": "~1.4",
+                "doctrine/collections": "~1.2",
+                "doctrine/common": ">=2.5-dev,<2.7-dev",
+                "doctrine/dbal": ">=2.5-dev,<2.6-dev",
+                "doctrine/instantiator": "~1.0.1",
                 "ext-pdo": "*",
-                "php": ">=5.3.2",
-                "symfony/console": "~2.0"
+                "php": ">=5.4",
+                "symfony/console": "~2.5|~3.0"
             },
             "require-dev": {
-                "satooshi/php-coveralls": "dev-master",
-                "symfony/yaml": "~2.1"
+                "phpunit/phpunit": "~4.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -620,7 +677,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.6.x-dev"
                 }
             },
             "autoload": {
@@ -656,7 +713,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-08-31 13:19:01"
+            "time": "2016-01-05 21:34:58"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -865,12 +922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.Foundation.git",
-                "reference": "40c579e163f463ab6af440e7374684ae911a04ea"
+                "reference": "13e4299b5fb4d5b7e365f270909c16eccfe2cbd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/40c579e163f463ab6af440e7374684ae911a04ea",
-                "reference": "40c579e163f463ab6af440e7374684ae911a04ea",
+                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/13e4299b5fb4d5b7e365f270909c16eccfe2cbd4",
+                "reference": "13e4299b5fb4d5b7e365f270909c16eccfe2cbd4",
                 "shasum": ""
             },
             "require": {
@@ -912,7 +969,7 @@
                 }
             ],
             "description": "Foundation content elements",
-            "time": "2016-07-04 13:34:10"
+            "time": "2016-09-02 07:40:41"
         },
         {
             "name": "m12/neos-nodetype-slickcarousel",
@@ -958,12 +1015,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/Pb.Site.git",
-                "reference": "2f1b5a4153674dc98887d85b87d552afaafe2b17"
+                "reference": "27b60b10fe96d1fa5d89c2256a75d666ba77da10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/2f1b5a4153674dc98887d85b87d552afaafe2b17",
-                "reference": "2f1b5a4153674dc98887d85b87d552afaafe2b17",
+                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/27b60b10fe96d1fa5d89c2256a75d666ba77da10",
+                "reference": "27b60b10fe96d1fa5d89c2256a75d666ba77da10",
                 "shasum": ""
             },
             "require": {
@@ -993,7 +1050,7 @@
                 }
             ],
             "description": "Neos CMS site package for M12.Foundation",
-            "time": "2016-08-03 17:34:52"
+            "time": "2016-08-05 16:09:11"
         },
         {
             "name": "m12/neos-utils",
@@ -1041,7 +1098,7 @@
         },
         {
             "name": "neos/composer-plugin",
-            "version": "1.0.6",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/composer-plugin.git",
@@ -1074,34 +1131,34 @@
         },
         {
             "name": "neos/flow-development-collection",
-            "version": "3.2.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/flow-development-collection.git",
-                "reference": "ffdc3da930addc8cdddefdfb4a7da50e3280c30d"
+                "reference": "2c63fad31301c5e52194e75a87ac769ff5f5f8e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/flow-development-collection/zipball/ffdc3da930addc8cdddefdfb4a7da50e3280c30d",
-                "reference": "ffdc3da930addc8cdddefdfb4a7da50e3280c30d",
+                "url": "https://api.github.com/repos/neos/flow-development-collection/zipball/2c63fad31301c5e52194e75a87ac769ff5f5f8e1",
+                "reference": "2c63fad31301c5e52194e75a87ac769ff5f5f8e1",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~2.5.0",
                 "doctrine/migrations": "~1.3.0",
-                "doctrine/orm": "~2.4.0",
+                "doctrine/orm": "~2.5.0",
                 "ext-json": ">=1.2.0",
                 "ext-mbstring": "*",
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "ext-zlib": "*",
-                "neos/composer-plugin": "^1.0.1",
+                "neos/composer-plugin": "^2.0.0",
                 "paragonie/random_compat": "^1.0",
                 "php": ">=5.5.0",
                 "ramsey/uuid": "^3.0.0",
-                "symfony/console": "~2.0",
-                "symfony/dom-crawler": "~2.5.0",
-                "symfony/yaml": "~2.5.0"
+                "symfony/console": "~2.8",
+                "symfony/dom-crawler": "~2.8.0",
+                "symfony/yaml": "~2.8.0"
             },
             "replace": {
                 "neos/error-messages": "self.version",
@@ -1120,7 +1177,6 @@
                 "typo3/kickstart": "self.version"
             },
             "require-dev": {
-                "doctrine/orm": "~2.4.0",
                 "mikey179/vfsstream": "~1.6",
                 "phpunit/phpunit": "~4.8 || ~5.2.0"
             },
@@ -1134,7 +1190,16 @@
             "extra": {
                 "installer-name": "Framework",
                 "neos": {
-                    "warning": "AUTOGENERATED FILE, ONLY MODIFY THE .composer.json IN THIS DIRECTORY AND RUN THE MERGE SCRIPT."
+                    "warning": "AUTOGENERATED FILE, ONLY MODIFY THE .composer.json IN THIS DIRECTORY AND RUN THE MERGE SCRIPT.",
+                    "package-key": [
+                        "Neos.Utility.Arrays",
+                        "Neos.Utility.Files",
+                        "Neos.Utility.MediaTypes",
+                        "Neos.Utility.ObjectHandling",
+                        "Neos.Utility.OpcodeCache",
+                        "Neos.Utility.Pdo",
+                        "Neos.Utility.Schema"
+                    ]
                 }
             },
             "autoload": {
@@ -1184,34 +1249,34 @@
                 "MIT"
             ],
             "description": "Flow packages in a joined repository for pull requests.",
-            "time": "2016-08-02 08:45:47"
+            "time": "2016-08-31 13:30:05"
         },
         {
             "name": "neos/neos-development-collection",
-            "version": "2.2.5",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/neos-development-collection.git",
-                "reference": "8eb54fdcc953bc6bd2a559352cc9f07ef1ac5592"
+                "reference": "b4b9346a84cf9299ec8eda70bbe7cb86f9612764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/neos-development-collection/zipball/8eb54fdcc953bc6bd2a559352cc9f07ef1ac5592",
-                "reference": "8eb54fdcc953bc6bd2a559352cc9f07ef1ac5592",
+                "url": "https://api.github.com/repos/neos/neos-development-collection/zipball/b4b9346a84cf9299ec8eda70bbe7cb86f9612764",
+                "reference": "b4b9346a84cf9299ec8eda70bbe7cb86f9612764",
                 "shasum": ""
             },
             "require": {
                 "behat/transliterator": "~1.0",
                 "gedmo/doctrine-extensions": "~2.3.0",
                 "league/commonmark": "^0.12.0",
-                "neos/flow-development-collection": "3.2.x-dev",
+                "neos/flow-development-collection": "dev-master",
                 "php": ">=5.5.0",
-                "typo3/flow": "~3.2.0",
-                "typo3/imagine": "~2.0",
-                "typo3/kickstart": "~3.2.0",
-                "typo3/party": "~3.1",
-                "typo3/setup": "~2.0",
-                "typo3/twitter-bootstrap": "~2.0"
+                "typo3/flow": "*",
+                "typo3/imagine": "*",
+                "typo3/kickstart": "*",
+                "typo3/party": "*",
+                "typo3/setup": "*",
+                "typo3/twitter-bootstrap": "*"
             },
             "replace": {
                 "neos/diff": "self.version",
@@ -1241,15 +1306,29 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Neos\\Diff\\": "Neos.Diff/Classes"
+                    "Neos\\Diff\\": [
+                        "Neos.Diff/Classes"
+                    ]
                 },
                 "psr-0": {
-                    "TYPO3\\Media": "TYPO3.Media/Classes",
-                    "TYPO3\\Neos\\Kickstarter": "TYPO3.Neos.Kickstarter/Classes",
-                    "TYPO3\\Neos\\NodeTypes": "TYPO3.Neos.NodeTypes/Classes",
-                    "TYPO3\\Neos": "TYPO3.Neos/Classes",
-                    "TYPO3\\TYPO3CR": "TYPO3.TYPO3CR/Classes",
-                    "TYPO3\\TypoScript": "TYPO3.TypoScript/Classes"
+                    "TYPO3\\Media": [
+                        "TYPO3.Media/Classes"
+                    ],
+                    "TYPO3\\Neos\\Kickstarter": [
+                        "TYPO3.Neos.Kickstarter/Classes"
+                    ],
+                    "TYPO3\\Neos\\NodeTypes": [
+                        "TYPO3.Neos.NodeTypes/Classes"
+                    ],
+                    "TYPO3\\Neos": [
+                        "TYPO3.Neos/Classes"
+                    ],
+                    "TYPO3\\TYPO3CR": [
+                        "TYPO3.TYPO3CR/Classes"
+                    ],
+                    "TYPO3\\TypoScript": [
+                        "TYPO3.TypoScript/Classes"
+                    ]
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1257,7 +1336,7 @@
                 "GPL-3.0+"
             ],
             "description": "Neos packages in a joined repository for pull requests.",
-            "time": "2016-06-17 18:09:13"
+            "time": "2016-08-29 20:48:13"
         },
         {
             "name": "neos/redirecthandler",
@@ -1712,24 +1791,24 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.5.12",
-            "target-dir": "Symfony/Component/DomCrawler",
+            "version": "v2.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35"
+                "reference": "aac03b7ea2a7adff10a3599d614e79e6101230ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/3860edcf7ff7e173cfe2151f0d425e610e77cc35",
-                "reference": "3860edcf7ff7e173cfe2151f0d425e610e77cc35",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/aac03b7ea2a7adff10a3599d614e79e6101230ab",
+                "reference": "aac03b7ea2a7adff10a3599d614e79e6101230ab",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
-                "symfony/css-selector": "~2.3"
+                "symfony/css-selector": "~2.8|~3.0.0"
             },
             "suggest": {
                 "symfony/css-selector": ""
@@ -1737,13 +1816,16 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\DomCrawler\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1751,17 +1833,17 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony DomCrawler Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-01-03 08:01:13"
+            "homepage": "https://symfony.com",
+            "time": "2016-07-30 07:20:35"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1824,32 +1906,34 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.5.12",
-            "target-dir": "Symfony/Component/Yaml",
+            "version": "v2.8.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Yaml.git",
-                "reference": "6eb40abc613d80828d55a40811c7a3ca491bc926"
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "0ceab136f43ed9d3e97b3eea32a7855dc50c121d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/6eb40abc613d80828d55a40811c7a3ca491bc926",
-                "reference": "6eb40abc613d80828d55a40811c7a3ca491bc926",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0ceab136f43ed9d3e97b3eea32a7855dc50c121d",
+                "reference": "0ceab136f43ed9d3e97b3eea32a7855dc50c121d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Yaml\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1857,34 +1941,34 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-01-25 04:37:39"
+            "homepage": "https://symfony.com",
+            "time": "2016-07-17 09:06:15"
         },
         {
             "name": "typo3/form",
-            "version": "2.0.3",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/form.git",
-                "reference": "54beb13f35b4cf69c26ee15d6620c202d39d1dfb"
+                "reference": "bde4fe739e921ee4459cbbf8a5b081c0cadcc7a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/form/zipball/54beb13f35b4cf69c26ee15d6620c202d39d1dfb",
-                "reference": "54beb13f35b4cf69c26ee15d6620c202d39d1dfb",
+                "url": "https://api.github.com/repos/neos/form/zipball/bde4fe739e921ee4459cbbf8a5b081c0cadcc7a1",
+                "reference": "bde4fe739e921ee4459cbbf8a5b081c0cadcc7a1",
                 "shasum": ""
             },
             "require": {
-                "typo3/flow": "~3.0"
+                "typo3/flow": "*"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1897,25 +1981,25 @@
                 "LGPL-3.0+"
             ],
             "description": "Extensible and flexible API for building web forms",
-            "time": "2016-06-14 21:08:05"
+            "time": "2015-09-08 22:24:56"
         },
         {
             "name": "typo3/imagine",
-            "version": "2.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/imagine.git",
-                "reference": "c1e924548084b92639d3672ad8f1eb6ad8ffc40e"
+                "reference": "323197f2d669510ff3bb41d9307c63771ce250a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/imagine/zipball/c1e924548084b92639d3672ad8f1eb6ad8ffc40e",
-                "reference": "c1e924548084b92639d3672ad8f1eb6ad8ffc40e",
+                "url": "https://api.github.com/repos/neos/imagine/zipball/323197f2d669510ff3bb41d9307c63771ce250a4",
+                "reference": "323197f2d669510ff3bb41d9307c63771ce250a4",
                 "shasum": ""
             },
             "require": {
                 "imagine/imagine": "0.6.*",
-                "typo3/flow": "~3.0"
+                "typo3/flow": "*"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1927,25 +2011,24 @@
             "license": [
                 "GPL-3.0+"
             ],
-            "description": "Provides a Flow factory for the imagine library",
-            "time": "2015-05-10 20:10:53"
+            "time": "2014-11-13 20:51:36"
         },
         {
             "name": "typo3/party",
-            "version": "3.1.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/party.git",
-                "reference": "7c47321aa391406ac3acb47f41d0cb971aba2b5b"
+                "reference": "e0319bd2c35033b5f15bd787ceecb0b51cbae058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/party/zipball/7c47321aa391406ac3acb47f41d0cb971aba2b5b",
-                "reference": "7c47321aa391406ac3acb47f41d0cb971aba2b5b",
+                "url": "https://api.github.com/repos/neos/party/zipball/e0319bd2c35033b5f15bd787ceecb0b51cbae058",
+                "reference": "e0319bd2c35033b5f15bd787ceecb0b51cbae058",
                 "shasum": ""
             },
             "require": {
-                "typo3/flow": "~3.1"
+                "typo3/flow": "*"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1958,26 +2041,26 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2016-06-28 08:44:42"
+            "time": "2016-06-15 06:45:16"
         },
         {
             "name": "typo3/setup",
-            "version": "2.0.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/setup.git",
-                "reference": "8790e408426eea35dc8790845cb5344f28b4505f"
+                "reference": "856c6af4c3256d102429ec075882553bc4be223c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/setup/zipball/8790e408426eea35dc8790845cb5344f28b4505f",
-                "reference": "8790e408426eea35dc8790845cb5344f28b4505f",
+                "url": "https://api.github.com/repos/neos/setup/zipball/856c6af4c3256d102429ec075882553bc4be223c",
+                "reference": "856c6af4c3256d102429ec075882553bc4be223c",
                 "shasum": ""
             },
             "require": {
-                "typo3/flow": "~3.0",
-                "typo3/form": "~2.0",
-                "typo3/twitter-bootstrap": "~2.0"
+                "typo3/flow": "*",
+                "typo3/form": "*",
+                "typo3/twitter-bootstrap": "*"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -1990,24 +2073,24 @@
                 "LGPL-3.0+"
             ],
             "description": "An extensible setup tool for TYPO3 Flow based applications",
-            "time": "2016-07-08 20:38:03"
+            "time": "2016-08-29 17:32:27"
         },
         {
             "name": "typo3/twitter-bootstrap",
-            "version": "2.2.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/twitter-bootstrap.git",
-                "reference": "a8dd9d8b7c150549ee9800105eb3359245a50d1d"
+                "reference": "651ddfb1040062299bc245f199e98fb94534c880"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/twitter-bootstrap/zipball/a8dd9d8b7c150549ee9800105eb3359245a50d1d",
-                "reference": "a8dd9d8b7c150549ee9800105eb3359245a50d1d",
+                "url": "https://api.github.com/repos/neos/twitter-bootstrap/zipball/651ddfb1040062299bc245f199e98fb94534c880",
+                "reference": "651ddfb1040062299bc245f199e98fb94534c880",
                 "shasum": ""
             },
             "require": {
-                "typo3/flow": "~3.0"
+                "typo3/flow": "*"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -2020,7 +2103,7 @@
                 "Apache-2.0"
             ],
             "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow",
-            "time": "2015-06-11 09:19:56"
+            "time": "2015-02-26 07:45:50"
         },
         {
             "name": "zendframework/zend-code",
@@ -2131,60 +2214,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "doctrine/instantiator",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8e884e78f9f0eb1329e445619e04456e64d8051d",
-                "reference": "8e884e78f9f0eb1329e445619e04456e64d8051d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3,<8.0-DEV"
-            },
-            "require-dev": {
-                "athletic/athletic": "~0.1.8",
-                "ext-pdo": "*",
-                "ext-phar": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.com/"
-                }
-            ],
-            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
-            "homepage": "https://github.com/doctrine/instantiator",
-            "keywords": [
-                "constructor",
-                "instantiate"
-            ],
-            "time": "2015-06-14 21:17:01"
-        },
         {
             "name": "flowpack/behat",
             "version": "dev-master",
@@ -2835,16 +2864,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.3",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "b13d0d9426ced06958bd32104653526a6c998a52"
+                "reference": "46b249b43fd2ed8e127aa0fdb3cbcf56e9bc0e49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/b13d0d9426ced06958bd32104653526a6c998a52",
-                "reference": "b13d0d9426ced06958bd32104653526a6c998a52",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/46b249b43fd2ed8e127aa0fdb3cbcf56e9bc0e49",
+                "reference": "46b249b43fd2ed8e127aa0fdb3cbcf56e9bc0e49",
                 "shasum": ""
             },
             "require": {
@@ -2890,7 +2919,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-06-12 07:37:26"
+            "time": "2016-08-26 05:51:59"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3055,23 +3084,23 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.7",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716"
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/4e8f0da10ac5802913afc151413bc8c53b6c2716",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/be2c607e43ce4c89ecd60e75c6a85c126e754aea",
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.4"
+                "phpunit/phpunit": "^4.8 || ^5.0"
             },
             "type": "library",
             "extra": {
@@ -3101,7 +3130,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-05-17 03:18:57"
+            "time": "2016-08-18 05:49:44"
         },
         {
             "name": "sebastian/exporter",
@@ -3460,20 +3489,20 @@
         },
         {
             "name": "typo3/buildessentials",
-            "version": "3.2.x-dev",
+            "version": "3.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neos/BuildEssentials.git",
-                "reference": "06ea1c76233cbe7c687e9f89ae36a6e9cc03dd14"
+                "reference": "c9c606c8c41860c738c467f333ec85e915e4075c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neos/BuildEssentials/zipball/06ea1c76233cbe7c687e9f89ae36a6e9cc03dd14",
-                "reference": "06ea1c76233cbe7c687e9f89ae36a6e9cc03dd14",
+                "url": "https://api.github.com/repos/neos/BuildEssentials/zipball/c9c606c8c41860c738c467f333ec85e915e4075c",
+                "reference": "c9c606c8c41860c738c467f333ec85e915e4075c",
                 "shasum": ""
             },
             "require": {
-                "neos/composer-plugin": "^1.0.1"
+                "neos/composer-plugin": "^1.0.6|^2.0.0"
             },
             "type": "typo3-flow-build",
             "extra": {
@@ -3484,32 +3513,33 @@
                 "LGPL-3.0+"
             ],
             "description": "TYPO3 Flow Build Toolchain Essentials",
-            "time": "2016-04-11 15:12:47"
+            "time": "2016-08-17 18:00:06"
         },
         {
             "name": "webmozart/assert",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde"
+                "reference": "bb2d123231c095735130cc8f6d31385a44c7b308"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
-                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/bb2d123231c095735130cc8f6d31385a44c7b308",
+                "reference": "bb2d123231c095735130cc8f6d31385a44c7b308",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3|^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.6"
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -3533,13 +3563,15 @@
                 "check",
                 "validate"
             ],
-            "time": "2015-08-24 13:29:44"
+            "time": "2016-08-09 15:02:57"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "neos/flow-development-collection": 20,
+        "typo3/party": 20,
+        "typo3/setup": 20,
         "m12/neos-utils": 20,
         "m12/neos-foundation": 20,
         "m12/neos-nodetype-slickcarousel": 20,
