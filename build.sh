@@ -18,7 +18,7 @@ function buildSitePackage() {
   # Initialise NVM
   set +u && source $NVM_DIR/nvm.sh && nvm install && nvm use
 
-  npm install --unsafe-perm
+  npm install --unsafe-perm # --unsafe-perm required to call postinstall script, when executed as root user
   npm run build:prod
   cd $CWD
 }

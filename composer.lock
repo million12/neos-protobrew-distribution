@@ -1015,12 +1015,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/Pb.Site.git",
-                "reference": "27b60b10fe96d1fa5d89c2256a75d666ba77da10"
+                "reference": "5270e0653914fd236db4ec82fcb394364ebbd9dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/27b60b10fe96d1fa5d89c2256a75d666ba77da10",
-                "reference": "27b60b10fe96d1fa5d89c2256a75d666ba77da10",
+                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/5270e0653914fd236db4ec82fcb394364ebbd9dd",
+                "reference": "5270e0653914fd236db4ec82fcb394364ebbd9dd",
                 "shasum": ""
             },
             "require": {
@@ -1050,7 +1050,7 @@
                 }
             ],
             "description": "Neos CMS site package for M12.Foundation",
-            "time": "2016-08-05 16:09:11"
+            "time": "2016-09-02 11:14:33"
         },
         {
             "name": "m12/neos-utils",
