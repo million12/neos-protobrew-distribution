@@ -1,10 +1,16 @@
 version: '2'
 
+volumes:
+  dbdata:
+  webdata:
+
 services:
   db:
     image: million12/mariadb:latest
     ports:
       - 3306
+    volumes:
+      - dbdata:/var/lib/mysql
     environment:
       - MARIADB_PASS=password
 
@@ -14,8 +20,10 @@ services:
     hostname: neos-protobrew
     ports:
       - '8899:80'
-    links:
-      - db:db
+    depends_on:
+      - db
+    volumes:
+      - webdata:/data
     environment:
       - T3APP_VHOST_NAMES=neos-protobrew dev.neos-protobrew behat.dev.neos-protobrew
       - T3APP_DB_NAME=neos_protobrew
@@ -35,10 +43,9 @@ services:
       - '5555:22'
       - '3000:3000'
       - '3001:3001'
-    links:
-      - db:db
-      - web:web
-    volumes_from:
+    depends_on:
       - web
+    volumes:
+      - webdata:/data
     environment:
       - IMPORT_GITHUB_PUB_KEYS=ryzy
