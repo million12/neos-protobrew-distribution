@@ -922,12 +922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/M12.Foundation.git",
-                "reference": "13e4299b5fb4d5b7e365f270909c16eccfe2cbd4"
+                "reference": "3b03285e677f06774dc3f09b3be4f43952c8eef3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/13e4299b5fb4d5b7e365f270909c16eccfe2cbd4",
-                "reference": "13e4299b5fb4d5b7e365f270909c16eccfe2cbd4",
+                "url": "https://api.github.com/repos/million12/M12.Foundation/zipball/3b03285e677f06774dc3f09b3be4f43952c8eef3",
+                "reference": "3b03285e677f06774dc3f09b3be4f43952c8eef3",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +969,7 @@
                 }
             ],
             "description": "Foundation content elements",
-            "time": "2016-09-02 07:40:41"
+            "time": "2016-09-06 15:21:12"
         },
         {
             "name": "m12/neos-nodetype-slickcarousel",
@@ -977,12 +977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/Neos.Plugin.SlickCarousel.git",
-                "reference": "331c1b453de7a723b4783ee2e00d92303d611307"
+                "reference": "02f1082d43091db151d05d8ccd9cdf913fa3a355"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/Neos.Plugin.SlickCarousel/zipball/331c1b453de7a723b4783ee2e00d92303d611307",
-                "reference": "331c1b453de7a723b4783ee2e00d92303d611307",
+                "url": "https://api.github.com/repos/million12/Neos.Plugin.SlickCarousel/zipball/02f1082d43091db151d05d8ccd9cdf913fa3a355",
+                "reference": "02f1082d43091db151d05d8ccd9cdf913fa3a355",
                 "shasum": ""
             },
             "require": {
@@ -1007,7 +1007,7 @@
                 }
             ],
             "description": "Slick carousel for Neos CMS",
-            "time": "2016-07-13 12:09:13"
+            "time": "2016-09-06 12:56:04"
         },
         {
             "name": "m12/neos-pb-site",
@@ -1015,12 +1015,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/Pb.Site.git",
-                "reference": "5270e0653914fd236db4ec82fcb394364ebbd9dd"
+                "reference": "bc09ca202ed915a4f600478461bd21e8aca5884c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/5270e0653914fd236db4ec82fcb394364ebbd9dd",
-                "reference": "5270e0653914fd236db4ec82fcb394364ebbd9dd",
+                "url": "https://api.github.com/repos/million12/Pb.Site/zipball/bc09ca202ed915a4f600478461bd21e8aca5884c",
+                "reference": "bc09ca202ed915a4f600478461bd21e8aca5884c",
                 "shasum": ""
             },
             "require": {
@@ -1050,7 +1050,7 @@
                 }
             ],
             "description": "Neos CMS site package for M12.Foundation",
-            "time": "2016-09-02 11:14:33"
+            "time": "2016-09-06 13:26:01"
         },
         {
             "name": "m12/neos-utils",
@@ -1617,12 +1617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/million12/Pb.Neos.Wistia.git",
-                "reference": "bf7655c199ad4c533ea4bd8f4ef4d0e0d65b1cc9"
+                "reference": "f2363084e45be69af05c4cb2a75cafb8ade8dbfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/million12/Pb.Neos.Wistia/zipball/bf7655c199ad4c533ea4bd8f4ef4d0e0d65b1cc9",
-                "reference": "bf7655c199ad4c533ea4bd8f4ef4d0e0d65b1cc9",
+                "url": "https://api.github.com/repos/million12/Pb.Neos.Wistia/zipball/f2363084e45be69af05c4cb2a75cafb8ade8dbfe",
+                "reference": "f2363084e45be69af05c4cb2a75cafb8ade8dbfe",
                 "shasum": ""
             },
             "require": {
@@ -1647,7 +1647,7 @@
                 }
             ],
             "description": "Wistia.com video inside Neos CMS",
-            "time": "2016-02-25 17:45:41"
+            "time": "2016-09-06 14:39:52"
         },
         {
             "name": "ramsey/uuid",
@@ -1731,16 +1731,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.8.9",
+            "version": "v2.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "36e62335caca8a6e909c5c5bac4a8128149911c9"
+                "reference": "bac1eb5869c1848a173852aee61df960e3a49197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/36e62335caca8a6e909c5c5bac4a8128149911c9",
-                "reference": "36e62335caca8a6e909c5c5bac4a8128149911c9",
+                "url": "https://api.github.com/repos/symfony/console/zipball/bac1eb5869c1848a173852aee61df960e3a49197",
+                "reference": "bac1eb5869c1848a173852aee61df960e3a49197",
                 "shasum": ""
             },
             "require": {
@@ -1787,11 +1787,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-30 07:20:35"
+            "time": "2016-08-19 06:48:01"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.8.9",
+            "version": "v2.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -1906,16 +1906,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.9",
+            "version": "v2.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "0ceab136f43ed9d3e97b3eea32a7855dc50c121d"
+                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/0ceab136f43ed9d3e97b3eea32a7855dc50c121d",
-                "reference": "0ceab136f43ed9d3e97b3eea32a7855dc50c121d",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
+                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
                 "shasum": ""
             },
             "require": {
@@ -1951,7 +1951,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-17 09:06:15"
+            "time": "2016-09-02 01:57:56"
         },
         {
             "name": "typo3/form",
@@ -3436,7 +3436,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v2.8.9",
+            "version": "v2.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
